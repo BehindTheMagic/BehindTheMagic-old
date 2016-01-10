@@ -1,0 +1,19 @@
+CACHE MANIFEST
+
+#v1.0
+#2015-12-14 17:43:38
+
+CACHE:
+
+index.html
+css/app.css
+app.js
+
+assets/launcher/r2beep.mp3
+assets/launcher/splash.png
+
+NETWORK:
+*
+
+FALLBACK:
+*

@@ -1,0 +1,229 @@
+/* Normalize.css */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden], template {
+  display: none; }
+
+a {
+  background-color: transparent;
+  text-decoration: none; }
+
+a:active, a:hover {
+  outline: 0; }
+
+img {
+  border: 0; }
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+a:hover, a:focus, a:visited {
+  outline: none;
+  text-decoration: none; }
+
+button {
+  overflow: visible; }
+
+button, select {
+  text-transform: none; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+body {
+  background: black; }
+
+::-moz-focus-inner {
+  border: 0;
+  outline: 0; }
+
+button, button:focus, input, input:focus {
+  outline: 0; }
+
+@font-face {
+  font-family: 'Mech';
+  src: url("fonts/mech_monoline-webfont.eot");
+  src: url("fonts/mech_monoline-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/mech_monoline-webfont.woff2") format("woff2"), url("fonts/mech_monoline-webfont.woff") format("woff"), url("fonts/mech_monoline-webfont.ttf") format("truetype"), url("fonts/mech_monoline-webfont.svg#_.uploaded_file") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+#app {
+  position: absolute;
+  width: 640px;
+  height: 480px;
+  top: 0;
+  left: 0; }
+
+@media (min-width: 640px) {
+  #app {
+    top: 50%;
+    left: 50%;
+    margin: -240px 0 0 -320px; } }
+#app .view {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: none; }
+
+.active {
+  display: block !important; }
+
+/*
+Import all partials for each panel for the app
+*/
+.mainMenu {
+  background-image: url("/assets/GENERAL/IMAGES/MAINMENU.JPG"); }
+  .mainMenu nav {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    height: 100%; }
+  .mainMenu hr {
+    width: 220px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    margin-left: 28px;
+    margin-right: 14px; }
+  .mainMenu a div {
+    width: 235px;
+    height: 37px;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    letter-spacing: 1px;
+    font-family: 'Mech';
+    font-size: 20px;
+    line-height: 37px;
+    text-align: center;
+    text-decoration: none; }
+  .mainMenu a:hover > div, .mainMenu a:focus > div {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-color: white; }
+  .mainMenu video {
+    position: absolute;
+    top: 102px;
+    left: 257px; }
+
+.mainMenu_map {
+  background-image: url("/assets/GENERAL/IMAGES/MAINMAP.JPG"); }
+  .mainMenu_map span {
+    color: white;
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: 'Mech';
+    letter-spacing: 1px;
+    font-size: 30px; }
+  .mainMenu_map .main {
+    color: #A0F0D8;
+    font-family: 'Mech';
+    letter-spacing: 1px;
+    font-size: 20px; }
+  .mainMenu_map .sub {
+    color: #C8C8C8;
+    font-size: 12px;
+    display: block; }
+  .mainMenu_map a:hover, .mainMenu_map a:focus {
+    color: white; }
+
+/*
+Making a cute launcher
+*/
+.launcher {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%); }
+  .launcher img {
+    display: block;
+    border: 1px solid white; }
+  .launcher span, .launcher button {
+    display: block;
+    width: 312px;
+    height: 25px;
+    font-size: 16px; }
+  .launcher button:hover, .launcher button:focus {
+    font-weight: bold; }
+  .launcher span {
+    color: white;
+    text-align: center;
+    line-height: 25px; }

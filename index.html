@@ -1,0 +1,105 @@
+<!doctype html>
+<html manifest="cache.manifest">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <meta name="viewport" content="width=640, height=480, initial-scale=1">
+    <title>Star Wars: Behind The Magic</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+
+    <div class="launcher">
+        <img src="assets/launcher/splash.png">
+        <span id="launcherSpan">Loading assets...<noscript> JavaScript is needed to bring you Magic !</noscript></span>
+    </div>
+
+    <div class="siteCredits">
+        <!-- Social Networks, credits, tools used
+    https://archive.org/details/cdrom-star-wars-behind-the-magic
+    Bundle Explorer
+    Mplayer and FFMPEG to convert snm files into sound or videos
+
+    -->
+    </div>
+
+    <script type="text/html" data-id="mainMenu" data-class="view mainMenu"
+    onsubmit="document.getElementById('mainMenu-Anim').start()"
+    onreset="document.getElementById('mainMenu-Anim').pause()">
+        <nav>
+            <a href="#characters/"><div>Characters</div></a>
+            <a href="#technology/"><div>Technology</div></a>
+            <a href="#locations/"><div>Locations</div></a>
+            <a href="#events/"><div>Events</div></a>
+            <a href="#episode1/"><div>Episode I Preview</div></a>
+            <hr>
+            <a href="#scenes/"><div>Scene by Scene</div></a>
+            <a href="#behind/"><div>Behind the Scenes</div></a>
+            <a href="#expanded/"><div>Expanded Universe</div></a>
+            <hr>
+            <a href="#glossary/"><div>Glossary</div></a>
+        </nav>
+        <video id="mainMenu-Anim" src="assets/GENERAL/MAINANIM.SNM.mp4" loop></video>
+    </script>
+
+    <script type="text/html" data-id="mainMenu/map" data-class="view mainMenu_map"
+    onsubmit=""
+    onreset="">
+        <span>Main Map</span>
+
+        <a class="main mchars" href="#characters/">Characters</a>
+        <ul class="chars">
+            <a class="sub" href="#characters/main/">Main Characters</a>
+            <a class="sub" href="#characters/aliens/">Creatures &amp; Aliens</a>
+            <a class="sub" href="#characters/groups/">Groups &amp; Organizations</a>
+        </ul>
+
+        <a class="main mep1" href="#episode1/">Episode 1 Preview</a>
+
+        <a class="main mtech" href="#technology/">Technology</a>
+        <ul class="tech">
+            <a class="sub" href="#technology/vehicles/">Vehicles</a>
+            <a class="sub" href="#technology/weapons/">Weapons</a>
+            <a class="sub" href="#technology/devices/">Devices</a>
+        </ul>
+
+        <a class="main mevts" href="#events/">Events</a>
+
+        <a class="main mlocs" href="#locations/">Locations</a>
+
+        <a class="main mexpd" href="#expanded/">Expanded Universe</a>
+        <ul class="expd">
+            <a class="sub" href="#expanded/sources/">Sources</a>
+            <a class="sub" href="#expanded/timeline/">Timeline</a>
+        </ul>
+
+        <a class="main mscenes" href="#scenes/">Scene by Scene</a>
+        <ul class="scenes">
+            <a class="sub" href="#scenes/SW/">Star Wars</a>
+            <a class="sub" href="#scenes/ESB/">The Empire Strikes Back</a>
+            <a class="sub" href="#scenes/ROJ/">Return of the Jedi</a>
+            <a class="sub" href="#scenes/lost/">Lost Scenes</a>
+        </ul>
+
+        <a class="main mbehind" href="#behind/">Behind the Scenes</a>
+        <ul class="behind">
+            <a class="sub" href="#behind/people/">People</a>
+            <a class="sub" href="#behind/processes/">Processes</a>
+            <a class="sub" href="#behind/culture/">Culture</a>
+            <a class="sub" href="#behind/companies/">Lucas Companies</a>
+            <a class="sub" href="#behind/timeline/">Timeline</a>
+        </ul>
+
+        <a class="main mglos" href="#glossary/">Glossary</a>
+
+        <button onclick="history.back()"></button>
+    </script>
+
+
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

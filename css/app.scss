@@ -1,0 +1,81 @@
+/* Normalize.css */
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent;text-decoration:none;}a:active,a:hover{outline:0}img{border:0}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}a:hover,a:focus,a:visited{outline:none;text-decoration:none}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}body{background:black}::-moz-focus-inner{border:0;outline:0}button,button:focus,input,input:focus{outline:0}
+
+
+@font-face {
+    font-family: 'Mech';
+    src: url('fonts/mech_monoline-webfont.eot');
+    src: url('fonts/mech_monoline-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/mech_monoline-webfont.woff2') format('woff2'),
+         url('fonts/mech_monoline-webfont.woff') format('woff'),
+         url('fonts/mech_monoline-webfont.ttf') format('truetype'),
+         url('fonts/mech_monoline-webfont.svg#_.uploaded_file') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+//Main view styles
+#app {
+    position: absolute;
+    width: 640px;
+    height: 480px;
+    top: 0; left: 0;
+}
+
+@media(min-width:640px){
+    #app{
+        top: 50%; left: 50%;
+        margin: -240px 0 0 -320px;
+    }
+}
+
+#app .view {
+    //configure app view to relative standard settings...
+    width:100%; height:100%;
+    position: relative;
+    display:none;
+}
+
+.active{
+    display:block !important;
+}
+
+/*
+Import all partials for each panel for the app
+*/
+@import 'partials/mainMenu';
+
+
+
+/*
+Making a cute launcher
+*/
+.launcher {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    img {
+        display: block;
+        border: 1px solid white;
+    }
+
+    span, button {
+        display: block;
+        width: 312px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    button:hover, button:focus{
+        font-weight:bold;
+    }
+
+    span {
+        color: white;
+        text-align: center;
+        line-height: 25px;
+    }
+}

@@ -1,5 +1,5 @@
-# BehindTheMagic.github.io
-Star Wars: Behind The Magic
+# Star Wars: Behind The Magic 
+https://BehindTheMagic.github.io/
 
 ## OK:
 - asset loader (appcache) and cache.manifest generator (PHP)

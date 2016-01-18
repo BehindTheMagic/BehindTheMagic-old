@@ -1,0 +1,53 @@
+.characters_menu{
+    background-image: url('/assets/CHARS/IMAGES/CHARMENU.JPG');
+
+    video{
+        position: absolute;
+        top: 58px; left: 0px;
+    }
+
+    span{
+        position: absolute;
+        top: 18px; left: 504px;
+        font-family: 'Mech';
+        font-size: 36px;
+        color:white;
+    }
+
+    a{
+        display: block;
+        position: absolute;
+        top: 59px; height: 395px;
+    }
+
+    a:hover{
+        background-color: rgba(255,255,255,0.05);
+    }
+
+    a[href*="main"]{
+        width: 210px;
+    }
+
+    a[href*="aliens"]{
+        left: 211px;
+        width: 216px;
+    }
+
+    a[href*="groups"]{
+        left: 428px;
+        width: 212px;
+    }
+
+    a p{
+        position: relative; top: 360px;
+        width: 95%; margin: 0 auto;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border: 2px white solid;
+
+        font-size: 20px;
+        font-family:'Mech';
+        color: white;
+    }
+}

@@ -281,6 +281,47 @@ Import all partials for each panel for the app
     left: -4px;
     font-size: 8px; }
 
+.characters_menu {
+  background-image: url("/assets/CHARS/IMAGES/CHARMENU.JPG"); }
+  .characters_menu video {
+    position: absolute;
+    top: 58px;
+    left: 0px; }
+  .characters_menu span {
+    position: absolute;
+    top: 18px;
+    left: 504px;
+    font-family: 'Mech';
+    font-size: 36px;
+    color: white; }
+  .characters_menu a {
+    display: block;
+    position: absolute;
+    top: 59px;
+    height: 395px; }
+  .characters_menu a:hover {
+    background-color: rgba(255, 255, 255, 0.05); }
+  .characters_menu a[href*="main"] {
+    width: 210px; }
+  .characters_menu a[href*="aliens"] {
+    left: 211px;
+    width: 216px; }
+  .characters_menu a[href*="groups"] {
+    left: 428px;
+    width: 212px; }
+  .characters_menu a p {
+    position: relative;
+    top: 360px;
+    width: 95%;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 2px white solid;
+    font-size: 20px;
+    font-family: 'Mech';
+    color: white; }
+
 /*
 Making a cute launcher
 */

@@ -98,6 +98,16 @@
         <button onclick="history.back()">X</button>
     </script>
 
+    <script type="text/html" data-id="characters/" data-class="view characters_menu"
+    onsubmit="document.getElementById('charactersMenu-Anim').start()"
+    onreset="document.getElementById('charactersMenu-Anim').pause()">
+        <span>Characters</span>
+        <video id="charactersMenu-Anim" src="assets/CHARS/IMAGES/CHARMENU.SNM.mp4" loop></video>
+        <a href="#characters/main/"><p>Main Characters</p></a>
+        <a href="#characters/aliens/"><p>Aliens &amp; Creatures</p></a>
+        <a href="#characters/groups/"><p>Groups &amp; Organizations</p></a>
+    </script>
+
 
     <script type="text/javascript" src="app.js"></script>
 </body>

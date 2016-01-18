@@ -194,16 +194,92 @@ Import all partials for each panel for the app
     letter-spacing: 1px;
     font-size: 30px; }
   .mainMenu_map .main {
+    position: absolute;
     color: #A0F0D8;
     font-family: 'Mech';
     letter-spacing: 1px;
     font-size: 20px; }
+  .mainMenu_map ul {
+    position: absolute; }
   .mainMenu_map .sub {
     color: #C8C8C8;
-    font-size: 12px;
-    display: block; }
+    font-size: 10px;
+    display: block;
+    padding: 1px 0; }
   .mainMenu_map a:hover, .mainMenu_map a:focus {
     color: white; }
+  .mainMenu_map .mchars {
+    top: 60px;
+    left: 150px;
+    padding: 5px 38px 5px 0; }
+  .mainMenu_map .chars {
+    top: 70px;
+    left: 65px;
+    text-align: right; }
+  .mainMenu_map .mtech {
+    top: 152px;
+    left: 80px;
+    padding: 5px 38px 5px 0; }
+  .mainMenu_map .tech {
+    top: 162px;
+    left: 55px;
+    text-align: right; }
+  .mainMenu_map .mlocs {
+    top: 258px;
+    left: 90px;
+    padding: 5px 38px 5px 0; }
+  .mainMenu_map .mevts {
+    left: 466px;
+    padding: 5px 0 5px 38px;
+    top: 152px; }
+  .mainMenu_map .mep1 {
+    left: 396px;
+    padding: 5px 0 5px 38px;
+    top: 60px; }
+  .mainMenu_map .mscenes {
+    top: 338px;
+    left: 117px;
+    padding: 5px 38px 5px 0; }
+  .mainMenu_map .scenes {
+    top: 347px;
+    left: 45px;
+    text-align: right; }
+  .mainMenu_map .mbehind {
+    left: 403px;
+    padding: 5px 0 5px 38px;
+    top: 338px; }
+  .mainMenu_map .behind {
+    left: 414px;
+    top: 345px; }
+  .mainMenu_map .mexpd {
+    left: 462px;
+    padding: 5px 0 5px 38px;
+    top: 258px; }
+  .mainMenu_map .expd {
+    left: 479px;
+    top: 266px; }
+  .mainMenu_map .mglos {
+    left: 295px;
+    padding: 38px 0 0 0;
+    top: 366px; }
+  .mainMenu_map button {
+    position: absolute;
+    top: 15px;
+    left: 610px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    padding: 0 0 0 0;
+    font-size: 10px;
+    background-color: white;
+    border-color: white; }
+  .mainMenu_map button::after {
+    content: "Done";
+    color: white;
+    position: absolute;
+    top: 15px;
+    left: -4px;
+    font-size: 8px; }
 
 /*
 Making a cute launcher

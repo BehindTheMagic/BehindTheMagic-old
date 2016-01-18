@@ -1,4 +1,4 @@
-# Star Wars: Behind The Magic 
+# Star Wars: Behind The Magic
 https://BehindTheMagic.github.io/
 
 ## OK:
@@ -12,7 +12,8 @@ https://BehindTheMagic.github.io/
 - favicon and font :)
 
 ## Views and modals ready:
-- mainMenu (styles, buttons, mainMenu video)
+- #mainMenu (styles, buttons, mainMenu video)
+- #mainMenu/map (position links, style "Done" button)
 
 ## What's wrong:
 - huge assets folder (over 500MB), need to compress

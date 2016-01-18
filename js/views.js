@@ -33,11 +33,12 @@ function renderViews() {
     document.body.appendChild(app);
 }
 
-function switchTo(hash) {
+function switchTo(hash, isFromEvent) {
     hash = hash.slice(1) // no # in views object
+    isFromEvent = isFromEvent || false;
 
     if (!isValidHash(hash)) {
-        console.log("Moving to #mainMenu because a switch to an unknown hash has been attempted: " + hash||"[empty hash, no problem]");
+        console.log("Moving to #mainMenu because a switch to an unknown hash has been attempted: #" + hash||"[empty hash, no problem]");
         hash = "mainMenu";
     }
 
@@ -48,6 +49,7 @@ function switchTo(hash) {
 
     viewsOBJ[hash].focus();
     viewsOBJ[hash].selector.classList.add("active");
+    if(!isFromEvent){ location.hash = hash }
     switchTo.active = hash;
 }
 switchTo.active = "";
@@ -57,6 +59,11 @@ function isValidHash(hash) {
     return (viewsOBJ.hasOwnProperty(hash));
 }
 
-window.addEventListener("hashchange",function(hashchange){
-    switchTo(location.hash);
+window.addEventListener("hashchange", function(hashchange){
+    var videoPlayer = document.getElementById("videoPlayer");
+    if( videoPlayer.classList.contains("active") ){
+        videoPlayer.pause();
+        videoPlayer.classList.remove("active");
+    }
+    switchTo(location.hash, true);
 })

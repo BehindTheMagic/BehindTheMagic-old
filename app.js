@@ -6,6 +6,11 @@ function watchingAppCache() {
     });
     window.applicationCache.addEventListener("noupdate", showBtn);
     window.applicationCache.addEventListener("cached", showBtn);
+    window.applicationCache.addEventListener("updateready", function(){
+        window.applicationCache.swapCache();
+        window.location.reload();
+        }
+    )
 
     function showBtn() {
         loadingSpan.innerHTML = "Star Wars: Behind The Magic is ready.";

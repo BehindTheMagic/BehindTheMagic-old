@@ -1,7 +1,7 @@
 CACHE MANIFEST
 
 #v1.0
-#2015-12-14 17:43:38
+#2016-01-27 21:00:00
 
 CACHE:
 
@@ -11,9 +11,7 @@ app.js
 
 assets/launcher/r2beep.mp3
 assets/launcher/splash.png
+assets/CHARS/IMAGES/CHARMENU.JPG
 
 NETWORK:
-*
-
-FALLBACK:
 *

@@ -1,0 +1,45 @@
+.technology_menu{
+    background-image: url('/assets/TECH/IMAGES/TECHMENO.JPG');
+
+    span{
+        position: absolute;
+        top: 18px; left: 504px;
+        font-family: 'Mech';
+        font-size: 36px;
+        color: white;
+    }
+
+    video{
+        position: absolute;
+        top: 55px; left: 141px;
+    }
+
+    a{
+        display: block;
+        position: absolute;
+        left: 10px;
+        width: 599px; height: 94px;
+        padding: 40px 0px 0px 25px;
+
+        font-size: 30px;
+        font-family:'Mech';
+        color: #B4B4B4;
+    }
+
+    a:hover{
+        color: white;
+    }
+
+    a[href*="vehicles"]{
+        top: 53px;
+    }
+
+    a[href*="weapons"]{
+        top: 187px;
+        height: 90px;
+    }
+
+    a[href*="devices"]{
+        top: 317px;
+    }
+}

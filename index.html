@@ -99,7 +99,7 @@
     </script>
 
     <script type="text/html" data-id="characters/" data-class="view characters_menu"
-    onsubmit="document.getElementById('charactersMenu-Anim').start()"
+    onsubmit="startIntro('charint2.snm.mp4', function(){document.getElementById('charactersMenu-Anim').start()})"
     onreset="document.getElementById('charactersMenu-Anim').pause()">
         <span>Characters</span>
         <video id="charactersMenu-Anim" src="assets/CHARS/IMAGES/CHARMENU.SNM.mp4" loop></video>
@@ -109,7 +109,7 @@
     </script>
 
     <script type="text/html" data-id="technology/" data-class="view technology_menu"
-    onsubmit="document.getElementById('technologyMenu-Anim').start()"
+    onsubmit="startIntro('techintr.snm.mp4', function(){document.getElementById('technologyMenu-Anim').start()})"
     onreset="document.getElementById('technologyMenu-Anim').pause()">
         <span>Technology</span>
         <video id="technologyMenu-Anim" src="/assets/TECH/IMAGES/TECHMENU.SNM.mp4" loop></video>

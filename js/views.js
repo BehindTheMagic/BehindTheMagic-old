@@ -47,8 +47,8 @@ function switchTo(hash, isFromEvent) {
         viewsOBJ[switchTo.active].selector.classList.remove("active");
     }
 
-    viewsOBJ[hash].focus();
     viewsOBJ[hash].selector.classList.add("active");
+    viewsOBJ[hash].focus();
     if(!isFromEvent){ location.hash = hash }
     switchTo.active = hash;
 }

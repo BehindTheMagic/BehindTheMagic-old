@@ -38,3 +38,21 @@ function startVideo(src, actions) {
 
 }
 
+function startIntro(src, actions){
+    /* global updateSettings */
+
+    var nextview = document.querySelector(".active");
+    nextview.classList.remove("active");
+
+    if (window.BTMsettings.playIntros || !window.BTMsettings[src]){
+        updateSettings(src, true);
+        startVideo("/assets/INTRO/"+src, function(){
+            nextview.classList.add("active");
+            actions();
+        });
+    } else{
+        nextview.classList.add("active");
+        actions();
+    }
+
+}

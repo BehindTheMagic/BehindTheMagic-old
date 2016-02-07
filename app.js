@@ -92,6 +92,45 @@ function startVideo(src, actions) {
 
 }
 
+function startIntro(src, actions){
+    /* global updateSettings */
+
+    var nextview = document.querySelector(".active");
+    nextview.classList.remove("active");
+
+    if (window.BTMsettings.playIntros || !window.BTMsettings[src]){
+        updateSettings(src, true);
+        startVideo("/assets/INTRO/"+src, function(){
+            nextview.classList.add("active");
+            actions();
+        });
+    } else{
+        nextview.classList.add("active");
+        actions();
+    }
+
+}window.BTMsettings = {
+    "volume": 0.8,
+    "playIntros": false, // false: once, true: always
+    "charint2.snm.mp4": false,
+    "techintr.snm.mp4": false,
+    "locintr2.snm.mp4": false,
+    "eventint.snm.mp4": false,
+    "epi_int.snm.mp4": false,
+    "triviaAnswered": 0,
+    "triviaCorrect": 0
+};
+
+if (!localStorage.getItem("BTMsettings")){
+    localStorage.setItem("BTMsettings", JSON.stringify(window.BTMsettings));
+} else {
+    window.BTMsettings = JSON.parse( localStorage.getItem("BTMsettings") );
+}
+
+function updateSettings(key, value){
+    window.BTMsettings[key] = value;
+    localStorage.setItem("BTMsettings", JSON.stringify(window.BTMsettings));
+}
 var viewsOBJ = {}, modalsOBJ = {};
 function renderViews() {
     var app = document.createElement("div");
@@ -141,8 +180,8 @@ function switchTo(hash, isFromEvent) {
         viewsOBJ[switchTo.active].selector.classList.remove("active");
     }
 
-    viewsOBJ[hash].focus();
     viewsOBJ[hash].selector.classList.add("active");
+    viewsOBJ[hash].focus();
     if(!isFromEvent){ location.hash = hash }
     switchTo.active = hash;
 }

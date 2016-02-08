@@ -1,0 +1,105 @@
+.locations_menu{
+    background-image: url('/assets/LOCALE/IMAGES/LOCMENU.JPG');
+
+    span{
+        font-family: 'Mech';
+        font-size: 22px;
+        color: white;
+        position: absolute;
+    }
+
+    .txt_title{
+        font-size: 36px;
+        top: 14px; left: 526px;
+    }
+
+    .txt_core{
+        top: 14px; left: 300px;
+        letter-spacing: 1px;
+    }
+
+    .txt_mid{
+        top: 172px; left: 246px;
+        letter-spacing: 1px;
+
+    }
+
+    .txt_outer{
+        top: 282px; left: 426px;
+        letter-spacing: 1px;
+    }
+
+    .bullet {
+        color: white;
+        font-size: 13px;
+        text-decoration: none;
+        position: absolute;
+    }
+
+    .bullet:before{
+        content:'';
+        display: inline-block;
+        background-color:#606060;
+        width: 10px; height: 10px;
+        border: 1px solid #C0C0C0;
+        box-shadow: inset -1px -1px 4px black;
+        border-radius: 50%;
+        margin-right: 4px;
+    }
+
+    .bullet[href*="real"]{
+        top: 58px; left: 462px;
+    }
+    .bullet[href*="hyperspace"]{
+        top: 78px; left: 462px;
+    }
+
+    .bullet:hover:before{
+        box-shadow: inset -1px -1px 4px black, 0 0 7px white;
+    }
+
+    .circle{
+        position: absolute;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+
+    .circle:hover{
+        background-color:rgba(255,255,255, 0.2);
+    }
+
+    .circle[href*="CORE"]{
+        top: 23px; left: 33px;
+        width: 132px; height: 132px;
+    }
+
+    .circle[href*="CORU"]{
+        top: 36px; left: 188px;
+        width: 118px; height: 118px;
+    }
+
+    .circle[href*="KASH"]{
+        top: 161px; left: 108px;
+        width: 132px; height: 132px;
+    }
+
+    .circle[href*="BESP"]{
+        top: 300px; left: 40px;
+        width: 118px; height: 118px;
+    }
+
+    .circle[href*="HOTH"]{
+        top: 300px; left: 181px;
+        width: 132px; height: 132px;
+    }
+
+    .circle[href*="ENDO"]{
+        top: 300px; left: 328px;
+        width: 132px; height: 132px;
+    }
+
+    .circle[href*="TATO"]{
+        top: 300px; left: 478px;
+        width: 118px; height: 118px;
+    }
+}

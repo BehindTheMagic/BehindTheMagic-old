@@ -358,6 +358,94 @@ Import all partials for each panel for the app
     padding-top: 38px;
     height: 92px; }
 
+.locations_menu {
+  background-image: url("/assets/LOCALE/IMAGES/LOCMENU.JPG"); }
+  .locations_menu span {
+    font-family: 'Mech';
+    font-size: 22px;
+    color: white;
+    position: absolute; }
+  .locations_menu .txt_title {
+    font-size: 36px;
+    top: 14px;
+    left: 526px; }
+  .locations_menu .txt_core {
+    top: 14px;
+    left: 300px;
+    letter-spacing: 1px; }
+  .locations_menu .txt_mid {
+    top: 172px;
+    left: 246px;
+    letter-spacing: 1px; }
+  .locations_menu .txt_outer {
+    top: 282px;
+    left: 426px;
+    letter-spacing: 1px; }
+  .locations_menu .bullet {
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    position: absolute; }
+  .locations_menu .bullet:before {
+    content: '';
+    display: inline-block;
+    background-color: #606060;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #C0C0C0;
+    box-shadow: inset -1px -1px 4px black;
+    border-radius: 50%;
+    margin-right: 4px; }
+  .locations_menu .bullet[href*="real"] {
+    top: 58px;
+    left: 462px; }
+  .locations_menu .bullet[href*="hyperspace"] {
+    top: 78px;
+    left: 462px; }
+  .locations_menu .bullet:hover:before {
+    box-shadow: inset -1px -1px 4px black, 0 0 7px white; }
+  .locations_menu .circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent; }
+  .locations_menu .circle:hover {
+    background-color: rgba(255, 255, 255, 0.2); }
+  .locations_menu .circle[href*="CORE"] {
+    top: 23px;
+    left: 33px;
+    width: 132px;
+    height: 132px; }
+  .locations_menu .circle[href*="CORU"] {
+    top: 36px;
+    left: 188px;
+    width: 118px;
+    height: 118px; }
+  .locations_menu .circle[href*="KASH"] {
+    top: 161px;
+    left: 108px;
+    width: 132px;
+    height: 132px; }
+  .locations_menu .circle[href*="BESP"] {
+    top: 300px;
+    left: 40px;
+    width: 118px;
+    height: 118px; }
+  .locations_menu .circle[href*="HOTH"] {
+    top: 300px;
+    left: 181px;
+    width: 132px;
+    height: 132px; }
+  .locations_menu .circle[href*="ENDO"] {
+    top: 300px;
+    left: 328px;
+    width: 132px;
+    height: 132px; }
+  .locations_menu .circle[href*="TATO"] {
+    top: 300px;
+    left: 478px;
+    width: 118px;
+    height: 118px; }
+
 /*
 Making a cute launcher
 */

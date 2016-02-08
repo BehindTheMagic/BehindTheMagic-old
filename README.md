@@ -16,6 +16,7 @@ https://BehindTheMagic.github.io/
 - #mainMenu/map (position links, style "Done" button)
 - #characters (menu: video, links, lighten on hover)
 - #technology (menu: video, links, hover)
+- #locations (menu: music, circle links and hover)
 
 ## What's wrong:
 - huge assets folder (over 500MB), need to compress

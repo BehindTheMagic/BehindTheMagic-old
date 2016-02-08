@@ -55,6 +55,7 @@ function start(href) {
 document.addEventListener('DOMContentLoaded', watchingAppCache);/* global HTMLMediaElement */
 HTMLMediaElement.prototype.start = function(){
     this.currentTime = 0;
+    this.volume = window.BTMsettings.volume;
     this.play();
 };
 

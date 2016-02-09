@@ -15,6 +15,7 @@ https://BehindTheMagic.github.io/
 - #mainMenu (styles, buttons, mainMenu video)
 - #mainMenu/map (position links, style "Done" button)
 - #characters (menu: video, links, lighten on hover)
+- #characters/main (menu: music, circle links and hover, text)
 - #technology (menu: video, links, hover)
 - #locations (menu: music, circle links and hover)
 

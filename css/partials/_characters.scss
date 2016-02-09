@@ -51,3 +51,154 @@
         color: white;
     }
 }
+
+.characters_main{
+    background-image: url('/assets/CHARS/MAINCHAR/IMAGES/CMB_BACK.JPG');
+
+    span{
+        font-family: 'Mech';
+        position: absolute;
+        letter-spacing: 1px;
+    }
+
+    .title{
+        color: black;
+        top: 209px; left: 277px;
+        font-size: 34px; font-weight: bold;
+    }
+
+    .obiwan, .c3po, .luke, .leia, .solo, .vader{
+        color: white;
+        font-size: 30px;
+    }
+
+    .imperials, .jedi, .droids, .bounty, .tatooine, .smugglers, .rebels{
+        color: #B8CCF8;
+        font-size: 22px;
+    }
+
+    .obiwan{ top: 156px; left: 267px;}
+    .c3po  { top: 193px; left: 372px;}
+    .luke  { top: 241px; left: 372px;}
+    .leia  { top: 279px; left: 273px;}
+    .solo  { top: 241px; left: 204px;}
+    .vader { top: 192px; left: 182px;}
+
+    .imperials{ top: 23px; left: 34px;}
+    .jedi     { top: 4px; left: 233px;}
+    .droids   { top: 24px; left: 474px;}
+    .bounty   { top: 241px; left: 5px;}
+    .tatooine { top: 246px; left: 575px;}
+    .smugglers{ top: 422px; left: 118px;}
+    .rebels   { top: 415px; left: 475px;}
+
+    a{
+        position: absolute;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+
+    a:hover{
+        background-color:rgba(255,255,255, 0.2);
+    }
+
+    a[href*="PALP"]{
+        top: 32px; left: 40px;
+        width: 102px; height: 102px;
+    }
+
+    a[href*="YODA"]{
+        top: 8px; left: 175px;
+        width: 80px; height: 80px;
+    }
+
+    a[href*="OBIW"]{
+        top: 6px; left: 244px;
+        width: 154px; height: 154px;
+    }
+
+    a[href*="21B"]{
+        top: 8px; left: 388px;
+        width: 80px; height: 80px;
+    }
+
+    a[href*="R2D2"]{
+        top: 30px; left: 495px;
+        width: 102px; height: 102px;
+    }
+
+    a[href*="TARK"]{
+        top: 115px; left: 3px;
+        width: 80px; height: 80px;
+    }
+
+    a[href*="DART"]{
+        top: 80px; left: 116px;
+        width: 154px; height: 154px;
+    }
+
+    a[href*="C3PO"]{
+        top: 81px; left: 371px;
+        width: 154px; height: 154px;
+    }
+
+    a[href*="BIGG"]{
+        top: 113px; left: 556px;
+        width: 80px; height: 80px;
+    }
+
+    a[href*="BOBA"]{
+        top: 179px; left: 40px;
+        width: 102px; height: 102px;
+    }
+
+    a[href*="OWEN"]{
+        top: 180px; left: 495px;
+        width: 102px; height: 102px;
+    }
+
+    a[href*="JABB"]{
+        top: 265px; left: 2px;
+        width: 80px; height: 80px;
+    }
+
+    a[href*="HANS"]{
+        top: 226px; left: 116px;
+        width: 154px; height: 154px;
+    }
+
+    a[href*="LUKE"]{
+        top: 227px; left: 371px;
+        width: 154px; height: 154px;
+    }
+
+    a[href*="ACKB"]{
+        top: 264px; left: 556px;
+        width: 80px; height: 80px;
+    }
+
+    a[href*="CHEW"]{
+        top: 325px; left: 39px;
+        width: 102px; height: 102px;
+    }
+
+    a[href*="LNDO"]{
+        top: 371px; left: 174px;
+        width: 80px; height: 80px;
+    }
+
+    a[href*="LEIA"]{
+        top: 298px; left: 244px;
+        width: 154px; height: 154px;
+    }
+
+    a[href*="EWKS"]{
+        top: 371px; left: 390px;
+        width: 80px; height: 80px;
+    }
+
+    a[href*="MONM"]{
+        top: 325px; left: 495px;
+        width: 102px; height: 102px;
+    }
+}

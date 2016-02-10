@@ -88,7 +88,7 @@ function startVideo(src, actions) {
 
     document.addEventListener("keydown", vP_keydown, false);
 
-    videoPlayer.play();
+    videoPlayer.start();
     videoPlayer.onended = callback.bind(this, videoPlayer);
 
 }

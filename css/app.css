@@ -486,6 +486,299 @@ Import all partials for each panel for the app
     width: 102px;
     height: 102px; }
 
+.characters_main_map {
+  background-image: url("/assets/CHARS/MAINCHAR/IMAGES/CLB_MAP.JPG"); }
+  .characters_main_map button {
+    position: absolute;
+    top: 22px;
+    left: 620px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    padding: 0 0 0 0;
+    font-size: 10px;
+    background-color: white;
+    border-color: white; }
+  .characters_main_map button::after {
+    content: "Done";
+    color: white;
+    position: absolute;
+    top: 15px;
+    left: -4px;
+    font-size: 8px; }
+  .characters_main_map span {
+    font-family: 'Mech';
+    font-size: 30px;
+    color: white;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 438px;
+    left: 448px; }
+  .characters_main_map a {
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: inset 1px 0 3px white;
+    font-size: 10px;
+    white-space: nowrap; }
+  .characters_main_map .e:after {
+    position: relative;
+    left: 15px;
+    content: attr(data-name); }
+  .characters_main_map .ne:after {
+    position: relative;
+    left: 15px;
+    top: -7px;
+    content: attr(data-name); }
+  .characters_main_map .s:after {
+    position: relative;
+    left: -20px;
+    top: 15px;
+    content: attr(data-name); }
+  .characters_main_map .n:after {
+    position: relative;
+    top: -15px;
+    left: -20px;
+    content: attr(data-name); }
+  .characters_main_map .nw:after {
+    position: relative;
+    top: -7px;
+    left: -39px;
+    content: attr(data-name); }
+  .characters_main_map .w4:after {
+    position: relative;
+    left: -25px;
+    content: attr(data-name); }
+  .characters_main_map .w5:after {
+    position: relative;
+    left: -31px;
+    content: attr(data-name); }
+  .characters_main_map .w6:after {
+    position: relative;
+    left: -36.4px;
+    content: attr(data-name); }
+  .characters_main_map .w7:after {
+    position: relative;
+    left: -42px;
+    content: attr(data-name); }
+  .characters_main_map .w9:after {
+    position: relative;
+    left: -54px;
+    content: attr(data-name); }
+  .characters_main_map .w13:after {
+    position: relative;
+    left: -80px;
+    content: attr(data-name); }
+  .characters_main_map .w14:after {
+    position: relative;
+    left: -84px;
+    content: attr(data-name); }
+  .characters_main_map .w15:after {
+    position: relative;
+    left: -90px;
+    content: attr(data-name); }
+  .characters_main_map .w18:after {
+    position: relative;
+    left: -108px;
+    content: attr(data-name); }
+  .characters_main_map [href*="OBIW"], .characters_main_map [href*="C3PO"], .characters_main_map [href*="LUKE"], .characters_main_map [href*="LEIA"], .characters_main_map [href*="HANS"], .characters_main_map [href*="DART"] {
+    background-color: #999999;
+    color: white; }
+  .characters_main_map [href*="YODA"], .characters_main_map [href*="ANAK"] {
+    background-color: #F04438;
+    color: #F04438; }
+  .characters_main_map [href*="PALP"], .characters_main_map [href*="TARK"], .characters_main_map [href*="PIET"], .characters_main_map [href*="IMPO"], .characters_main_map [href*="VEER"], .characters_main_map [href*="THRA"] {
+    background-color: #3874C8;
+    color: #3874C8; }
+  .characters_main_map [href*="MARA"], .characters_main_map [href*="ZUCK"], .characters_main_map [href*="BOSS"], .characters_main_map [href*="DENG"],
+  .characters_main_map [href*="IG88"], .characters_main_map [href*="BOUS"], .characters_main_map [href*="GREE"], .characters_main_map [href*="BOBA"],
+  .characters_main_map [href*="JABB"], .characters_main_map [href*="BIBF"], .characters_main_map [href*="CRUM"], .characters_main_map [href*="REBO"],
+  .characters_main_map [href*="OOLA"], .characters_main_map [href*="JSKF"], .characters_main_map [href*="JCRT"], .characters_main_map [href*="JDRO"] {
+    background-color: #F87800;
+    color: #F87800; }
+  .characters_main_map [href*="LNDO"], .characters_main_map [href*="LOBO"],
+  .characters_main_map [href*="CHEW"], .characters_main_map [href*="CFAM"], .characters_main_map [href*="HKID"], .characters_main_map [href*="WARR"], .characters_main_map [href*="EWKS"] {
+    background-color: #68D860;
+    color: #68D860; }
+  .characters_main_map [href*="REBE"], .characters_main_map [href*="NIEN"], .characters_main_map [href*="MONM"], .characters_main_map [href*="WEDG"], .characters_main_map [href*="BIGG"],
+  .characters_main_map [href*="ACKB"], .characters_main_map [href*="DODO"], .characters_main_map [href*="MADI"], .characters_main_map [href*="RIEE"], .characters_main_map [href*="GARM"] {
+    background-color: #E0B028;
+    color: #E0B028; }
+  .characters_main_map [href*="LFRI"], .characters_main_map [href*="OWEN"], .characters_main_map [href*="GARI"], .characters_main_map [href*="CANP"],
+  .characters_main_map [href*="NODE"], .characters_main_map [href*="R2D2"], .characters_main_map [href*="21B"], .characters_main_map [href*="4LOM"], .characters_main_map [href*="FX7"] {
+    background-color: #909CF8;
+    color: #909CF8; }
+  .characters_main_map [href*="OBIW"] {
+    top: 117px;
+    left: 313px; }
+  .characters_main_map [href*="C3PO"] {
+    top: 154px;
+    left: 374px; }
+  .characters_main_map [href*="DART"] {
+    top: 154px;
+    left: 251px; }
+  .characters_main_map [href*="HANS"] {
+    top: 224px;
+    left: 251px; }
+  .characters_main_map [href*="LUKE"] {
+    top: 224px;
+    left: 374px; }
+  .characters_main_map [href*="LEIA"] {
+    top: 260px;
+    left: 313.5px; }
+  .characters_main_map [href*="YODA"] {
+    top: 70px;
+    left: 313px; }
+  .characters_main_map [href*="ANAK"] {
+    top: 88px;
+    left: 258px; }
+  .characters_main_map [href*="PALP"] {
+    top: 130px;
+    left: 213px; }
+  .characters_main_map [href*="TARK"] {
+    top: 158px;
+    left: 202px; }
+  .characters_main_map [href*="PIET"] {
+    top: 106px;
+    left: 233px; }
+  .characters_main_map [href*="IMPO"] {
+    top: 71px;
+    left: 201px; }
+  .characters_main_map [href*="VEER"] {
+    top: 45px;
+    left: 237px; }
+  .characters_main_map [href*="THRA"] {
+    top: 35px;
+    left: 170px; }
+  .characters_main_map [href*="MARA"] {
+    top: 79px;
+    left: 136px; }
+  .characters_main_map [href*="ZUCK"] {
+    top: 134px;
+    left: 109px; }
+  .characters_main_map [href*="BOSS"] {
+    top: 188px;
+    left: 103px; }
+  .characters_main_map [href*="DENG"] {
+    top: 189px;
+    left: 151px; }
+  .characters_main_map [href*="IG88"] {
+    top: 247px;
+    left: 108px; }
+  .characters_main_map [href*="BOUS"] {
+    top: 233px;
+    left: 155px; }
+  .characters_main_map [href*="GREE"] {
+    top: 221px;
+    left: 201px; }
+  .characters_main_map [href*="BOBA"] {
+    top: 189px;
+    left: 198px; }
+  .characters_main_map [href*="JABB"] {
+    top: 247px;
+    left: 213px; }
+  .characters_main_map [href*="BIBF"] {
+    top: 271px;
+    left: 232px; }
+  .characters_main_map [href*="CRUM"] {
+    top: 272px;
+    left: 174px; }
+  .characters_main_map [href*="REBO"] {
+    top: 294px;
+    left: 130px; }
+  .characters_main_map [href*="OOLA"] {
+    top: 305px;
+    left: 198px; }
+  .characters_main_map [href*="JSKF"] {
+    top: 339px;
+    left: 165px; }
+  .characters_main_map [href*="JCRT"] {
+    top: 374px;
+    left: 210px; }
+  .characters_main_map [href*="JDRO"] {
+    top: 394px;
+    left: 263px; }
+  .characters_main_map [href*="LNDO"] {
+    top: 290px;
+    left: 256px; }
+  .characters_main_map [href*="LOBO"] {
+    top: 331px;
+    left: 233px; }
+  .characters_main_map [href*="CHEW"] {
+    top: 302px;
+    left: 283px; }
+  .characters_main_map [href*="CFAM"] {
+    top: 347px;
+    left: 272px; }
+  .characters_main_map [href*="HKID"] {
+    top: 400px;
+    left: 315px; }
+  .characters_main_map [href*="WARR"] {
+    top: 346px;
+    left: 357px; }
+  .characters_main_map [href*="EWKS"] {
+    top: 331px;
+    left: 394px; }
+  .characters_main_map [href*="REBE"] {
+    top: 289px;
+    left: 371px; }
+  .characters_main_map [href*="NIEN"] {
+    top: 270px;
+    left: 395px; }
+  .characters_main_map [href*="MONM"] {
+    top: 247px;
+    left: 415px; }
+  .characters_main_map [href*="WEDG"] {
+    top: 220px;
+    left: 426px; }
+  .characters_main_map [href*="BIGG"] {
+    top: 188px;
+    left: 431px; }
+  .characters_main_map [href*="ACKB"] {
+    top: 272px;
+    left: 459px; }
+  .characters_main_map [href*="DODO"] {
+    top: 233px;
+    left: 472px; }
+  .characters_main_map [href*="MADI"] {
+    top: 304px;
+    left: 430px; }
+  .characters_main_map [href*="RIEE"] {
+    top: 337px;
+    left: 465px; }
+  .characters_main_map [href*="GARM"] {
+    top: 295px;
+    left: 499px; }
+  .characters_main_map [href*="LFRI"] {
+    top: 190px;
+    left: 526px; }
+  .characters_main_map [href*="OWEN"] {
+    top: 145px;
+    left: 472px; }
+  .characters_main_map [href*="GARI"] {
+    top: 133px;
+    left: 414px; }
+  .characters_main_map [href*="CANP"] {
+    top: 106px;
+    left: 457px; }
+  .characters_main_map [href*="NODE"] {
+    top: 84px;
+    left: 494px; }
+  .characters_main_map [href*="R2D2"] {
+    top: 88px;
+    left: 371px; }
+  .characters_main_map [href*="21B"] {
+    top: 74px;
+    left: 431px; }
+  .characters_main_map [href*="4LOM"] {
+    top: 47px;
+    left: 395px; }
+  .characters_main_map [href*="FX7"] {
+    top: 32px;
+    left: 355px; }
+
 .technology_menu {
   background-image: url("/assets/TECH/IMAGES/TECHMENO.JPG"); }
   .technology_menu span {

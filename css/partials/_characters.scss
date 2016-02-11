@@ -202,3 +202,231 @@
         width: 102px; height: 102px;
     }
 }
+
+.characters_main_map{
+    background-image: url("/assets/CHARS/MAINCHAR/IMAGES/CLB_MAP.JPG");
+
+    button{
+        position: absolute;
+        top: 22px;
+        left: 620px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        padding: 0 0 0 0;
+        font-size: 10px;
+        background-color: white;
+        border-color: white;
+    }
+
+    button::after{
+        content: "Done";
+        color: white;
+        position: absolute;
+        top: 15px;
+        left: -4px;
+        font-size: 8px;
+    }
+
+    span{
+        font-family: 'Mech';
+        font-size: 30px;
+        color: white;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 438px; left: 448px;
+    }
+
+    a {
+        position: absolute;
+        display: block;
+        width: 12px; height: 12px; border-radius: 50%;
+        box-shadow: inset 1px 0 3px white;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .e:after{
+        position: relative;
+        left: 15px;
+        content: attr(data-name);
+    }
+
+    .ne:after{
+        position: relative;
+        left: 15px; top: -7px;
+        content: attr(data-name);
+    }
+
+    .s:after{
+        position: relative;
+        left: -20px; top: 15px;
+        content: attr(data-name);
+    }
+
+    .n:after{
+        position: relative;
+        top: -15px; left: -20px;
+        content: attr(data-name);
+    }
+
+    .nw:after{
+        position: relative;
+        top: -7px; left: -39px;
+        content: attr(data-name);
+    }
+
+    .w4:after{
+        position: relative;
+        left: -25px;
+        content: attr(data-name);
+    }
+
+    .w5:after{
+        position: relative;
+        left: -31px;
+        content: attr(data-name);
+    }
+    .w6:after{
+        position: relative;
+        left: -36.4px;
+        content: attr(data-name);
+    }
+    .w7:after{
+        position: relative;
+        left: -42px;
+        content: attr(data-name);
+    }
+    .w9:after{
+        position: relative;
+        left: -54px;
+        content: attr(data-name);
+    }
+    .w13:after{
+        position: relative;
+        left: -80px;
+        content: attr(data-name);
+    }
+    .w14:after{
+        position: relative;
+        left: -84px;
+        content: attr(data-name);
+    }
+    .w15:after{
+        position: relative;
+        left: -90px;
+        content: attr(data-name);
+    }
+    .w18:after{
+        position: relative;
+        left: -108px;
+        content: attr(data-name);
+    }
+
+
+
+
+    [href*="OBIW"], [href*="C3PO"], [href*="LUKE"], [href*="LEIA"], [href*="HANS"], [href*="DART"] {
+        background-color:#999999;
+        color: white;
+    }
+
+    [href*="YODA"], [href*="ANAK"]{
+        background-color: #F04438;
+        color: #F04438;
+    }
+
+    [href*="PALP"], [href*="TARK"], [href*="PIET"], [href*="IMPO"], [href*="VEER"], [href*="THRA"]{
+        background-color: #3874C8;
+        color: #3874C8;
+    }
+
+    [href*="MARA"], [href*="ZUCK"], [href*="BOSS"], [href*="DENG"],
+    [href*="IG88"], [href*="BOUS"], [href*="GREE"], [href*="BOBA"],
+    [href*="JABB"], [href*="BIBF"], [href*="CRUM"], [href*="REBO"],
+    [href*="OOLA"], [href*="JSKF"], [href*="JCRT"], [href*="JDRO"]{
+        background-color: #F87800;
+        color: #F87800;
+    }
+
+    [href*="LNDO"], [href*="LOBO"],
+    [href*="CHEW"], [href*="CFAM"], [href*="HKID"], [href*="WARR"], [href*="EWKS"]{
+        background-color: #68D860;
+        color: #68D860;
+    }
+
+    [href*="REBE"], [href*="NIEN"], [href*="MONM"], [href*="WEDG"], [href*="BIGG"],
+    [href*="ACKB"], [href*="DODO"], [href*="MADI"], [href*="RIEE"], [href*="GARM"]{
+        background-color: #E0B028;
+        color: #E0B028;
+    }
+    [href*="LFRI"], [href*="OWEN"], [href*="GARI"], [href*="CANP"],
+    [href*="NODE"], [href*="R2D2"], [href*="21B"], [href*="4LOM"], [href*="FX7"]{
+        background-color: #909CF8;
+        color: #909CF8;
+    }
+
+    [href*="OBIW"]{top: 117px; left: 313px;}
+    [href*="C3PO"]{top: 154px; left: 374px;}
+    [href*="DART"]{top: 154px; left: 251px;}
+    [href*="HANS"]{top: 224px; left: 251px;}
+    [href*="LUKE"]{top: 224px; left: 374px;}
+    [href*="LEIA"]{top: 260px; left: 313.5px;}
+
+    [href*="YODA"]{top: 70px; left: 313px;}
+    [href*="ANAK"]{top: 88px; left: 258px;}
+
+    [href*="PALP"]{top: 130px; left: 213px;}
+    [href*="TARK"]{top: 158px; left: 202px;}
+    [href*="PIET"]{top: 106px; left: 233px;}
+    [href*="IMPO"]{top: 71px; left: 201px;}
+    [href*="VEER"]{top: 45px; left: 237px;}
+    [href*="THRA"]{top: 35px; left: 170px;}
+
+    [href*="MARA"]{top: 79px; left: 136px;}
+    [href*="ZUCK"]{top: 134px; left: 109px;}
+    [href*="BOSS"]{top: 188px; left: 103px;}
+    [href*="DENG"]{top: 189px; left: 151px;}
+    [href*="IG88"]{top: 247px; left: 108px;}
+    [href*="BOUS"]{top: 233px; left: 155px;}
+    [href*="GREE"]{top: 221px; left: 201px;}
+    [href*="BOBA"]{top: 189px; left: 198px;}
+    [href*="JABB"]{top: 247px; left: 213px;}
+    [href*="BIBF"]{top: 271px; left: 232px;}
+    [href*="CRUM"]{top: 272px; left: 174px;}
+    [href*="REBO"]{top: 294px; left: 130px;}
+    [href*="OOLA"]{top: 305px; left: 198px;}
+    [href*="JSKF"]{top: 339px; left: 165px;}
+    [href*="JCRT"]{top: 374px; left: 210px;}
+    [href*="JDRO"]{top: 394px; left: 263px;}
+
+    [href*="LNDO"]{top: 290px; left: 256px;}
+    [href*="LOBO"]{top: 331px; left: 233px;}
+    [href*="CHEW"]{top: 302px; left: 283px;}
+    [href*="CFAM"]{top: 347px; left: 272px;}
+    [href*="HKID"]{top: 400px; left: 315px;}
+    [href*="WARR"]{top: 346px; left: 357px;}
+    [href*="EWKS"]{top: 331px; left: 394px;}
+
+    [href*="REBE"]{top: 289px; left: 371px;}
+    [href*="NIEN"]{top: 270px; left: 395px;}
+    [href*="MONM"]{top: 247px; left: 415px;}
+    [href*="WEDG"]{top: 220px; left: 426px;}
+    [href*="BIGG"]{top: 188px; left: 431px;}
+    [href*="ACKB"]{top: 272px; left: 459px;}
+    [href*="DODO"]{top: 233px; left: 472px;}
+    [href*="MADI"]{top: 304px; left: 430px;}
+    [href*="RIEE"]{top: 337px; left: 465px;}
+    [href*="GARM"]{top: 295px; left: 499px;}
+
+    [href*="LFRI"]{top: 190px; left: 526px;}
+    [href*="OWEN"]{top: 145px; left: 472px;}
+    [href*="GARI"]{top: 133px; left: 414px;}
+    [href*="CANP"]{top: 106px; left: 457px;}
+    [href*="NODE"]{top: 84px; left: 494px;}
+    [href*="R2D2"]{top: 88px; left: 371px;}
+    [href*="21B"]{top: 74px; left: 431px;}
+    [href*="4LOM"]{top: 47px; left: 395px;}
+    [href*="FX7"]{top: 32px; left: 355px;}
+
+}

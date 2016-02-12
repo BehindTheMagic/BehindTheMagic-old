@@ -224,9 +224,9 @@
     onreset="document.getElementById('technologyMenu-Anim').pause()">
         <span>Technology</span>
         <video id="technologyMenu-Anim" src="/assets/TECH/IMAGES/TECHMENU.SNM.mp4" loop></video>
-        <a href="#tecnology/vehicles/">Vehicles</a>
-        <a href="#tecnology/weapons/">Weapons</a>
-        <a href="#tecnology/devices/">Devices</a>
+        <a href="#technology/vehicles/">Vehicles</a>
+        <a href="#technology/weapons/">Weapons</a>
+        <a href="#technology/devices/">Devices</a>
     </script>
 
     <script type="text/html" data-id="locations/" data-class="view locations_menu"
@@ -251,6 +251,50 @@
 
     </script>
 
+    <script type="text/html" data-id="glossary/" data-class="view glossary"
+    onsubmit="document.getElementById('glossary-Music').start()"
+    onreset="document.getElementById('glossary-Music').pause()">
+        <audio id="glossary-Music" src="/assets/GENERAL/MUSIC/lost.snm.mp3"></audio>
+        <span class="glossary">Glossary of Terms</span>
+        <button class="fprev">Find Prev &#9664;</button>
+        <input type="text" id="glossary-search" style="text-align:center;">
+        <button class="fnext">&#9654 Find Next</button>
+
+        <select size="6" id="glossary-category">
+            <option value="" selected>All</option>
+            <option value="Z">Alien Species</option>
+            <option value="A">Characters - Aliens</option>
+            <option value="D">Characters - Droids</option>
+            <option value="H">Characters - Human</option>
+            <option value="E">Events</option>
+            <option value="F">Flora and Fauna</option>
+            <option value="G">Groups and Organizations</option>
+            <option value="C">Locations - Cities</option>
+            <option value="L">Locations - Misc</option>
+            <option value="P">Locations - Planets</option>
+            <option value="R">Locations - Space</option>
+            <option value="S">Locations - Systems</option>
+            <option value="K">Technology</option>
+            <option value="T">Terminology</option>
+            <option value="N">Vehicles (named)</option>
+            <option value="V">Vehicles (types)</option>
+            <option value="W">Weapons</option>
+        </select>
+
+        <select size="20" id="glossary-terms"></select>
+
+        <button class="prevent">&#9664; Previous Entry</button>
+
+        <button class="nextent">&#9654; Next Entry</button>
+
+        <span id="glosname"></span>
+        <div id="glospicture"></div>
+        <p id="glosdescription"></p>
+        <a href="#" id="glostopic">Go To Topic</a>
+        <ul id="glosappears">
+        </ul>
+
+    </script>
 
     <script type="text/javascript" src="app.js"></script>
 </body>

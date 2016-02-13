@@ -38,6 +38,9 @@ function start(href) {
     //Render HTML chunks commented inside views
     /* global renderViews */ renderViews();
 
+    // Init some views
+    /* global initGlossary*/ initGlossary();
+
     if (href == "" || href == "#mainMenu") {
         //Start the intro video and switch to MainMenu when it ends or on skip
         /* global startVideo */

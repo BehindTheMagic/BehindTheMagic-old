@@ -1,5 +1,5 @@
 "use strict";
-var glossary = <i>{
+var glossary = [{
     "name": "2-1B (Too-Onebee)",
     "description": "A medical droid in the service of the Rebel Alliance. 2-1B is programmed to perform first aid, surgery, prosthetic replacement, and a host of related duties. Together with FX-7, Too-Onebee resurrected Luke Skywalker from the brink of death after the young Jedi fell under attack by the vicious wampa ice creature. The droid later escaped Hoth aboard the <i>Bright Hope</i>, surviving several disasters until he was reunited with the Rebel fleet. There, he was again called upon to heal Luke, who had been critically injured in combat with Darth Vader.",
     "category": "D",
@@ -4176,7 +4176,8 @@ var glossary = <i>{
     "description": "A Snivvian bounty hunter. Like most of his species, Zutton is a tortured artist driven to live out the stories he creates. One of his stories led him to an out-of-the-way cantina in Mos Eisley on the little-visited planet of Tatooine. During his stay, he picked up the nickname Snaggletooth because of his pronounced canine fangs. He was on retainer to Jabba the Hutt.",
     "category": "A",
     "appearance": "CCG,GG12, SWAJ"
-}</i>;function initGlossary(){
+}];
+function initGlossary(){
     var selectCategory = document.getElementById("glossary-category")
     , selectTerms = document.getElementById("glossary-terms")
     , buttonFprev = document.getElementById("glosfprev")

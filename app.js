@@ -4177,7 +4177,96 @@ var glossary = [{
     "category": "A",
     "appearance": "CCG,GG12, SWAJ"
 }];
-function initGlossary(){
+var acronyms = {
+    "AC": "Ambush at Corellia",
+    "AS": "Assault at Selonia",
+    "BTS": "Before the Storm",
+    "BW": "X-Wing: The Bacta War",
+    "CCG": "Star Wars Customizable Card Game",
+    "COF": "Champions of the Force",
+    "COJ": "Children of the Jedi",
+    "CPL": "The Courtship of Princess Leia",
+    "CS": "The Crystal Star",
+    "CSSB": "Han Solo and the Corporate Sector Sourcebook",
+    "CSW": "Classic Star Swars (Dark Horse Comics)",
+    "DA": "Dark Apprentice",
+    "DE": "Dark Empire",
+    "DE2": "Dark Empire II",
+    "DESB": "Dark Empire Sourcebook",
+    "DF": "Dark Forces (Video Game)",
+    "DFR": "Dark Force Rising",
+    "DFRSB": "Dark Force Rising Source Book",
+    "DLS": "Tales of the Jedi: Dark Lords of the Sith",
+    "DS": "Star Wars Droids Special (Dark Horse Comics)",
+    "DSTC": "Death Star Technical Companion",
+    "EE": "Empire's End",
+    "EGC": "The Essential Guide to Characters",
+    "EGPM": "The Essential Guide to Planets and Moons",
+    "EGV": "The Essential Guide to Vehicles and Vessels",
+    "ESB": "The Empire Strikes Back",
+    "ESBN": "The Empire Strikes Back (novel)",
+    "ESBR": "The Empire Strikes Back (radio)",
+    "ESBSB": "The Empire Strikes Back Sketchbook",
+    "ETV": "Star Wars: Ewoks (animated TV series)",
+    "FNU": "Tales of the Jedi: Freedon Nadd Uprising",
+    "FP": "Farlander Papers",
+    "GDV": "The Glove of Darth Vader",
+    "GG1": "Galaxy Guide 1: A New Hope",
+    "GG2": "Galaxy Guide 2: Yavin and Bespin",
+    "GG3": "Galaxy Guide 3: The Empire Strikes Back",
+    "GG4": "Galaxy Guide 4: Alien Races",
+    "GG5": "Galaxy Guide 5: Return of the Jedi",
+    "GG7": "Galaxy Guide 7: Mos Eisley",
+    "GG11": "Galaxy Guide 11: Criminal Organizations",
+    "GG12": "Galaxy Guide 12: Aliens — Enemies and Allies",
+    "GSWU": "A Guide to the Star Wars Universe",
+    "HE": "Heir to the Empire",
+    "HESB": "Heir to the Empire Sourcebook",
+    "HSE": "Han Solo at Stars' End",
+    "HLL": "Han Solo Lost Legacy",
+    "HSR": "Han Solo's Revenge",
+    "ISB": "Imperial Sourcebook",
+    "ISWU": "The Illustrated Star Wars Universe",
+    "JS": "Jedi Search",
+    "LC": "The Last Command",
+    "MTS": "Movie Trilogy Sourcebook",
+    "MTSB": "Movie Trilogy Sourcebook",
+    "NR": "The New Rebellion",
+    "PDS": "Prophets of the Dark Side",
+    "POT": "Planet of Twilight",
+    "RJ": "Return of the Jedi",
+    "RJN": "Return of the Jedi (novel)",
+    "ROC": "River of Chaos (Dark Horse Comics)",
+    "SAC": "Showdown at Centerpoint",
+    "SFS": "Strike Force Shantipole",
+    "SOL": "Shield of Lies",
+    "SOTE": "Shadows of the Empire",
+    "SOTESB": "Shadows of the Empire Sourcebook",
+    "SW": "Star Wars: A New Hope",
+    "SWAJ": "Star Wars Adventure Journal",
+    "SWN": "Star Wars: A New Hope (novel)",
+    "SWCG": "The Essential Guide to Characters",
+    "SWR": "Star Wars: Rebellion",
+    "SWSB": "The Star Wars Sourcebook",
+    "SWVG": "The Essential Guide to Vehicles and Vessels",
+    "SWWT": "The Essential Guide to Weapons and Technology",
+    "TAB": "The Truce at Bakura",
+    "TBH": "Tales of the Bounty Hunters",
+    "TJP": "Tales from Jabba's Palace",
+    "TMEC": "Tales from Mos Eisley Cantina",
+    "TOBH": "Tales of the Bounty Hunters (Again)",
+    "TOJ": "Tales of the Jedi (Dark Horse Comic)",
+    "TOJFSE": "Tales of the Jedi: The Fall of the Sith Empire",
+    "TOJGA": "Tales of the Jedi: The Golden Age of the Sith",
+    "TOJDL": "Tales of the Jedi: Dark Lords of the Sith",
+    "TOJSW": "Tales of the Jedi: The Sith War",
+    "TSW": "Tales of the Jedi: The Sith War",
+    "TT": "Tyrant's Test",
+    "XW": "X-Wing series",
+    "XWSA": "X-Wing: Starfighters of Adumar",
+    "YJK": "Young Jedi Knights",
+    "etc.": "Luke is everywhere"
+};function initGlossary(){
     var selectCategory = document.getElementById("glossary-category")
     , selectTerms = document.getElementById("glossary-terms")
     , buttonFprev = document.getElementById("glosfprev")
@@ -4189,7 +4278,8 @@ function initGlossary(){
     , placeholderPicture = document.getElementById("glospicture")
     , pDescription = document.getElementById("glosdescription")
     , aTopic = document.getElementById("glostopic")
-    , ulAppears = document.getElementById("glosappears");
+    , divAppears = document.getElementById("glosappears")
+    , btnDivAppears = document.getElementById("btnglosappears");
 
 
     function clearSelectTerms(){
@@ -4209,6 +4299,24 @@ function initGlossary(){
         }
     }
 
+    function addSources(acronymsSTR){
+        var acronymsArr = acronymsSTR.split(",");
+        acronymsArr = acronymsArr.map(function(el){
+            return el.trim();
+        });
+        var ul = document.createElement("ul");
+        for(var i=0; i<acronymsArr.length; i++){
+            /* global acronyms */
+            if(acronyms[ acronymsArr[i] ]){
+                var value = acronyms[ acronymsArr[i] ];
+                var li = document.createElement("li");
+                li.innerHTML = '<i>'+value+'</i>';
+                ul.appendChild(li);
+            }
+        }
+        divAppears.appendChild(ul);
+    }
+
     function displayFile(index){
         var file = glossary[index];
         spanName.innerHTML = file.name;
@@ -4225,9 +4333,10 @@ function initGlossary(){
         } else { aTopic.style.display= "none" }
 
         if (file.appearance){
-            ulAppears.innerHTML = file.appearance;
-            ulAppears.style.display = "block";
-        } else { ulAppears.style.display = "none"; }
+            divAppears.innerHTML = '<span>References in the Expanded Universe</span><button id="glosAppearsCLOSE" onclick="document.getElementById(\'glosappears\').style.display = \'none\';">X</button>';
+            addSources(file.appearance);
+            btnDivAppears.style.display = "block";
+        } else { btnDivAppears.style.display = "none"; }
     }
 
     function search(str, direction){
@@ -4283,6 +4392,7 @@ function initGlossary(){
 
 
     constructSelectTerms(glossary);
+    selectTerms.selectedIndex = 0;
     displayFile(0);
 }
 

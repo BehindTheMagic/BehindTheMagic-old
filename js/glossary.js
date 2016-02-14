@@ -10,7 +10,8 @@ function initGlossary(){
     , placeholderPicture = document.getElementById("glospicture")
     , pDescription = document.getElementById("glosdescription")
     , aTopic = document.getElementById("glostopic")
-    , ulAppears = document.getElementById("glosappears");
+    , divAppears = document.getElementById("glosappears")
+    , btnDivAppears = document.getElementById("btnglosappears");
 
 
     function clearSelectTerms(){
@@ -30,6 +31,24 @@ function initGlossary(){
         }
     }
 
+    function addSources(acronymsSTR){
+        var acronymsArr = acronymsSTR.split(",");
+        acronymsArr = acronymsArr.map(function(el){
+            return el.trim();
+        });
+        var ul = document.createElement("ul");
+        for(var i=0; i<acronymsArr.length; i++){
+            /* global acronyms */
+            if(acronyms[ acronymsArr[i] ]){
+                var value = acronyms[ acronymsArr[i] ];
+                var li = document.createElement("li");
+                li.innerHTML = '<i>'+value+'</i>';
+                ul.appendChild(li);
+            }
+        }
+        divAppears.appendChild(ul);
+    }
+
     function displayFile(index){
         var file = glossary[index];
         spanName.innerHTML = file.name;
@@ -46,9 +65,10 @@ function initGlossary(){
         } else { aTopic.style.display= "none" }
 
         if (file.appearance){
-            ulAppears.innerHTML = file.appearance;
-            ulAppears.style.display = "block";
-        } else { ulAppears.style.display = "none"; }
+            divAppears.innerHTML = '<span>References in the Expanded Universe</span><button id="glosAppearsCLOSE" onclick="document.getElementById(\'glosappears\').style.display = \'none\';">X</button>';
+            addSources(file.appearance);
+            btnDivAppears.style.display = "block";
+        } else { btnDivAppears.style.display = "none"; }
     }
 
     function search(str, direction){
@@ -104,6 +124,7 @@ function initGlossary(){
 
 
     constructSelectTerms(glossary);
+    selectTerms.selectedIndex = 0;
     displayFile(0);
 }
 

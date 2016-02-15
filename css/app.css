@@ -262,24 +262,9 @@ Import all partials for each panel for the app
     left: 295px;
     padding: 38px 0 0 0;
     top: 366px; }
-  .mainMenu_map button {
-    position: absolute;
+  .mainMenu_map .close {
     top: 15px;
-    left: 610px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    padding: 0 0 0 0;
-    font-size: 10px;
-    background-color: white;
-    border-color: white; }
-  .mainMenu_map button::after {
-    content: "Done";
-    color: white;
-    position: absolute;
-    top: 15px;
-    left: -4px;
-    font-size: 8px; }
+    left: 610px; }
 
 .characters_menu {
   background-image: url("/assets/CHARS/IMAGES/CHARMENU.JPG"); }
@@ -488,24 +473,9 @@ Import all partials for each panel for the app
 
 .characters_main_map {
   background-image: url("/assets/CHARS/MAINCHAR/IMAGES/CLB_MAP.JPG"); }
-  .characters_main_map button {
-    position: absolute;
+  .characters_main_map .close {
     top: 22px;
-    left: 620px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    padding: 0 0 0 0;
-    font-size: 10px;
-    background-color: white;
-    border-color: white; }
-  .characters_main_map button::after {
-    content: "Done";
-    color: white;
-    position: absolute;
-    top: 15px;
-    left: -4px;
-    font-size: 8px; }
+    left: 620px; }
   .characters_main_map span {
     font-family: 'Mech';
     font-size: 30px;

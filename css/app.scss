@@ -41,6 +41,31 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     display:block !important;
 }
 
+
+.close {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    padding: 0 0 0 0;
+    font-size: 10px;
+    background-color: white;
+    border-color: white;
+}
+.close:after{
+        content: "Done";
+        color: white;
+        position: absolute;
+        top: 15px;
+        left: -4px;
+        font-size: 8px;
+}
+
+.modal{
+    position: absolute;
+    border-radius: 10px;
+}
+
 /*
 Import all partials for each panel for the app
 */

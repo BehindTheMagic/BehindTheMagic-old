@@ -4340,7 +4340,23 @@ var acronyms = {
     }
 
     function search(str, direction){
+        if (str == "") { return false }
 
+        selectTerms.selectedIndex += direction;
+        while (selectTerms.value && !glossary[selectTerms.value].description.includes(str) ){
+            selectTerms.selectedIndex += direction;
+        }
+
+        if(selectTerms.selectedIndex < 0 || selectTerms.selectedIndex > glossary.length){
+            selectTerms.selectedIndex = direction < 0 ? 0 : selectTerms.childElementCount -1;
+        }
+
+            selectTerms.onchange();
+
+            var escapedstr = (function escapeRegExp(str) {
+                return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+            })(str)
+            pDescription.innerHTML = pDescription.innerHTML.replace(new RegExp(escapedstr, "g"), "<mark>"+str+"</mark>");
     }
 
     /* global glossary */

@@ -1,0 +1,49 @@
+.modal{
+    position: absolute;
+    display: none;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.modal-active{
+    display: block;
+    z-index: 6;
+}
+
+.modal-active::before{
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 5;
+}
+
+
+.modal-text{
+    top: 28px;
+    left: 93px;
+    width: 445px;
+    height: 342px;
+    box-shadow: 10px 10px 10px #111;
+}
+
+.modal-text-inner{
+    z-index: inherit;
+    height: 307px;
+    width: 440px;
+    top: 10px;
+    left: 5px;
+    position: relative;
+    border-radius: 10px;
+    color: white;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+.modal-title{
+    position: relative;
+    color: white;
+    top: 5px; left: 10px;
+    font-family: "Mech";
+    font-size: 24px;
+}

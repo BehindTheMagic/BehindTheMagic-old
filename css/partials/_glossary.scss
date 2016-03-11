@@ -38,12 +38,14 @@
         border-radius: 15px 0 0 0;
         width: 270px;
         padding-right: 200px;
+        white-space: nowrap;
     }
     .fnext{
         top: 12px; left: 530px;
         background-color: black;
         border-radius: 0 15px 0 0;
         width: 75px;
+        white-space: nowrap;
     }
 
     .prevent{

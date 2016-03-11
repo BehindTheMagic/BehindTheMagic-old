@@ -148,7 +148,8 @@ button, button:focus, input, input:focus {
   padding: 0 0 0 0;
   font-size: 10px;
   background-color: white;
-  border-color: white; }
+  border-color: white;
+  z-index: inherit; }
 
 .close:after {
   content: "Done";
@@ -156,15 +157,58 @@ button, button:focus, input, input:focus {
   position: absolute;
   top: 15px;
   left: -4px;
-  font-size: 8px; }
-
-.modal {
-  position: absolute;
-  border-radius: 10px; }
+  font-size: 8px;
+  z-index: inherit; }
 
 /*
 Import all partials for each panel for the app
 */
+.modal {
+  position: absolute;
+  display: none;
+  border-radius: 10px;
+  background-color: black; }
+
+.modal-active {
+  display: block;
+  z-index: 6; }
+
+.modal-active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5; }
+
+.modal-text {
+  top: 28px;
+  left: 93px;
+  width: 445px;
+  height: 342px;
+  box-shadow: 10px 10px 10px #111; }
+
+.modal-text-inner {
+  z-index: inherit;
+  height: 307px;
+  width: 440px;
+  top: 10px;
+  left: 5px;
+  position: relative;
+  border-radius: 10px;
+  color: white;
+  overflow-y: auto;
+  font-size: 14px; }
+
+.modal-title {
+  position: relative;
+  color: white;
+  top: 5px;
+  left: 10px;
+  font-family: "Mech";
+  font-size: 24px; }
+
 .mainMenu {
   background-image: url("/assets/GENERAL/IMAGES/MAINMENU.JPG"); }
   .mainMenu nav {
@@ -945,13 +989,15 @@ Import all partials for each panel for the app
     background-color: black;
     border-radius: 15px 0 0 0;
     width: 270px;
-    padding-right: 200px; }
+    padding-right: 200px;
+    white-space: nowrap; }
   .glossary .fnext {
     top: 12px;
     left: 530px;
     background-color: black;
     border-radius: 0 15px 0 0;
-    width: 75px; }
+    width: 75px;
+    white-space: nowrap; }
   .glossary .prevent {
     top: 57px;
     left: 415px;

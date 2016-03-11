@@ -46,7 +46,7 @@ function initGlossary(){
                 ul.appendChild(li);
             }
         }
-        divAppears.appendChild(ul);
+        return ul;
     }
 
     function displayFile(index){
@@ -65,9 +65,15 @@ function initGlossary(){
         } else { aTopic.style.display= "none" }
 
         if (file.appearance){
-            divAppears.innerHTML = '<span>References in the Expanded Universe</span><button id="glosAppearsCLOSE" onclick="document.getElementById(\'glosappears\').style.display = \'none\';">X</button>';
-            addSources(file.appearance);
+            var ul = addSources(file.appearance);
             btnDivAppears.style.display = "block";
+            btnDivAppears.onclick = createModalText.bind(null,
+                {
+                    "title": "References in the Expanded Universe",
+                    "background": "lightblue",
+                    "content": ul
+                }
+            );
         } else { btnDivAppears.style.display = "none"; }
     }
 

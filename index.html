@@ -291,9 +291,14 @@
         <div id="glospicture"></div>
         <p id="glosdescription"></p>
         <a href="#" id="glostopic">Go To Topic</a>
-        <button id="btnglosappears" onclick="document.getElementById('glosappears').style.display = 'none'">References in the Expanded Universe</button>
-        <div id="glosappears" style="display:none"></div>
+        <button id="btnglosappears">References in the Expanded Universe</button>
 
+    </script>
+
+    <script type="text/html" data-id="modal-text" data-class="modal modal-text">
+        <button class="close" style="top:5px; right:5px" onclick="this.parentElement.classList.remove('modal-active')">X</button>
+        <span class="modal-title" id="modal-text-title">Title des Modals</span>
+        <div class="modal-text-inner" id="modal-text-inner"></div>
     </script>
 
     <script type="text/javascript" src="app.js"></script>

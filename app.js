@@ -4314,7 +4314,7 @@ var acronyms = {
                 ul.appendChild(li);
             }
         }
-        divAppears.appendChild(ul);
+        return ul;
     }
 
     function displayFile(index){
@@ -4333,9 +4333,15 @@ var acronyms = {
         } else { aTopic.style.display= "none" }
 
         if (file.appearance){
-            divAppears.innerHTML = '<span>References in the Expanded Universe</span><button id="glosAppearsCLOSE" onclick="document.getElementById(\'glosappears\').style.display = \'none\';">X</button>';
-            addSources(file.appearance);
+            var ul = addSources(file.appearance);
             btnDivAppears.style.display = "block";
+            btnDivAppears.onclick = createModalText.bind(null,
+                {
+                    "title": "References in the Expanded Universe",
+                    "background": "lightblue",
+                    "content": ul
+                }
+            );
         } else { btnDivAppears.style.display = "none"; }
     }
 
@@ -4547,8 +4553,7 @@ if (!localStorage.getItem("BTMsettings")){
 function updateSettings(key, value){
     window.BTMsettings[key] = value;
     localStorage.setItem("BTMsettings", JSON.stringify(window.BTMsettings));
-}
-var viewsOBJ = {}, modalsOBJ = {};
+}var viewsOBJ = {}, modalsOBJ = {};
 function renderViews() {
     var app = document.createElement("div");
     app.id = "app";
@@ -4607,6 +4612,21 @@ switchTo.active = "";
 function isValidHash(hash) {
     // Valid until now, need to say yes when there is characters/weapons/vehicles name in the hash
     return (viewsOBJ.hasOwnProperty(hash));
+}
+
+function createModalText(options){
+    options = {
+        "title": options.title || "Modal Window",
+        "background": options.background || "black",
+        "content": options.content || ""
+    }
+
+    document.getElementById("modal-text-title").innerHTML = options.title;
+    var inner = document.getElementById("modal-text-inner");
+    inner.style.background = options.background;
+    inner.innerHTML = "";
+    inner.appendChild(options.content);
+    modalsOBJ["modal-text"].selector.classList.add("modal-active");
 }
 
 window.addEventListener("hashchange", function(hashchange){

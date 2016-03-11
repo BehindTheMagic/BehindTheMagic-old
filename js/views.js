@@ -59,6 +59,21 @@ function isValidHash(hash) {
     return (viewsOBJ.hasOwnProperty(hash));
 }
 
+function createModalText(options){
+    options = {
+        "title": options.title || "Modal Window",
+        "background": options.background || "black",
+        "content": options.content || ""
+    }
+
+    document.getElementById("modal-text-title").innerHTML = options.title;
+    var inner = document.getElementById("modal-text-inner");
+    inner.style.background = options.background;
+    inner.innerHTML = "";
+    inner.appendChild(options.content);
+    modalsOBJ["modal-text"].selector.classList.add("modal-active");
+}
+
 window.addEventListener("hashchange", function(hashchange){
     var videoPlayer = document.getElementById("videoPlayer");
     if( videoPlayer.classList.contains("active") ){

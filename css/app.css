@@ -203,7 +203,7 @@ Import all partials for each panel for the app
 
 .modal-title {
   position: relative;
-  color: white;
+  color: #989898;
   top: 5px;
   left: 10px;
   font-family: "Mech";
@@ -850,6 +850,61 @@ Import all partials for each panel for the app
     top: 317px;
     padding-top: 38px;
     height: 92px; }
+
+.technology_vehicles {
+  background-image: url("/assets/TECH/VEHICLES/IMAGES/VEHIMENU.JPG"); }
+  .technology_vehicles span {
+    position: absolute;
+    bottom: 40px;
+    left: 555px;
+    font-family: 'Mech';
+    font-size: 36px;
+    color: white; }
+  .technology_vehicles .vehicles_category {
+    position: absolute;
+    top: 0;
+    width: 107px;
+    color: white;
+    text-align: center;
+    padding-top: 114px;
+    padding-bottom: 6px;
+    font-size: 16px;
+    font-family: "Mech";
+    letter-spacing: 0.5px; }
+  .technology_vehicles .vehicles_category:hover {
+    background-color: rgba(255, 255, 255, 0.2); }
+  .technology_vehicles a[href*="star"] {
+    left: 1px; }
+  .technology_vehicles a[href*="aircraft"] {
+    left: 107px; }
+  .technology_vehicles a[href*="ground"] {
+    left: 214px; }
+  .technology_vehicles a[href*="capital"] {
+    left: 321px; }
+  .technology_vehicles a[href*="other"] {
+    left: 428px; }
+  .technology_vehicles a[href*="topics"] {
+    left: 533px; }
+  .technology_vehicles a[href*="falcwalk"] {
+    position: absolute;
+    display: block;
+    top: 406px;
+    left: 80px;
+    color: white;
+    font-family: "Mech";
+    font-size: 20px;
+    letter-spacing: 1px; }
+  .technology_vehicles a[href*="falcwalk"]:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+    left: -50px;
+    background-color: #dddddd; }
+  .technology_vehicles a[href*="falcwalk"]:hover:before {
+    box-shadow: 0 0 10px white; }
 
 .locations_menu {
   background-image: url("/assets/LOCALE/IMAGES/LOCMENU.JPG"); }

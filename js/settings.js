@@ -1,12 +1,12 @@
 window.BTMsettings = {
     "volume": 0.8,
-    "playIntros": false, // false: once, true: always
+    "playIntros": true, // false: once, true: always
     "charint2.snm.mp4": false,
     "techintr.snm.mp4": false,
     "locintr2.snm.mp4": false,
     "eventint.snm.mp4": false,
     "epi_int.snm.mp4": false,
-    "triviaAnswered": 0,
+    "triviaAnswered": [],
     "triviaCorrect": 0
 };
 

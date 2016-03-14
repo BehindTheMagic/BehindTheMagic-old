@@ -10,7 +10,6 @@ function initGlossary(){
     , placeholderPicture = document.getElementById("glospicture")
     , pDescription = document.getElementById("glosdescription")
     , aTopic = document.getElementById("glostopic")
-    , divAppears = document.getElementById("glosappears")
     , btnDivAppears = document.getElementById("btnglosappears");
 
 
@@ -47,6 +46,14 @@ function initGlossary(){
             }
         }
         return ul;
+    }
+
+    function indexGlossary(name){
+        return glossary.indexOf(
+            glossary.find(
+                function(a){return a.name.indexOf(name) != -1}
+            )
+        )
     }
 
     function displayFile(index){
@@ -125,7 +132,7 @@ function initGlossary(){
         }
     }
     buttonNextEntry.onclick = function(){
-        if(selectTerms.selectedIndex != (selectCategory.childElementCount - 1) ){
+        if(selectTerms.selectedIndex != (selectTerms.childElementCount - 1) ){
             selectTerms.selectedIndex++;
             selectTerms.onchange();
         }

@@ -4278,7 +4278,6 @@ var acronyms = {
     , placeholderPicture = document.getElementById("glospicture")
     , pDescription = document.getElementById("glosdescription")
     , aTopic = document.getElementById("glostopic")
-    , divAppears = document.getElementById("glosappears")
     , btnDivAppears = document.getElementById("btnglosappears");
 
 
@@ -4315,6 +4314,14 @@ var acronyms = {
             }
         }
         return ul;
+    }
+
+    function indexGlossary(name){
+        return glossary.indexOf(
+            glossary.find(
+                function(a){return a.name.indexOf(name) != -1}
+            )
+        )
     }
 
     function displayFile(index){
@@ -4393,7 +4400,7 @@ var acronyms = {
         }
     }
     buttonNextEntry.onclick = function(){
-        if(selectTerms.selectedIndex != (selectCategory.childElementCount - 1) ){
+        if(selectTerms.selectedIndex != (selectTerms.childElementCount - 1) ){
             selectTerms.selectedIndex++;
             selectTerms.onchange();
         }
@@ -4534,13 +4541,13 @@ function startIntro(src, actions){
 
 }window.BTMsettings = {
     "volume": 0.8,
-    "playIntros": false, // false: once, true: always
+    "playIntros": true, // false: once, true: always
     "charint2.snm.mp4": false,
     "techintr.snm.mp4": false,
     "locintr2.snm.mp4": false,
     "eventint.snm.mp4": false,
     "epi_int.snm.mp4": false,
-    "triviaAnswered": 0,
+    "triviaAnswered": [],
     "triviaCorrect": 0
 };
 

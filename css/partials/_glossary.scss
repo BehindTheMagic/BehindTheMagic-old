@@ -36,7 +36,7 @@
         top: 12px; left: 260px;
         background-color: black;
         border-radius: 15px 0 0 0;
-        width: 270px;
+        width: 270px; height: 19px;
         padding-right: 200px;
         white-space: nowrap;
     }
@@ -44,7 +44,7 @@
         top: 12px; left: 530px;
         background-color: black;
         border-radius: 0 15px 0 0;
-        width: 75px;
+        width: 75px; height: 19px;
         white-space: nowrap;
     }
 
@@ -137,18 +137,4 @@
         border: black solid 1px;
         background-color: #151515;
     }
-
-    /*
-    #glosappears {
-        background-color: red;
-        position: absolute;
-        width: 500px;
-        height: 320px;
-        top: 80px;
-        left: 70px;
-    }
-    #glosappears span{
-        text-align: center;
-    }
-    */
 }

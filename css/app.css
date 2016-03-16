@@ -1,117 +1,57 @@
-/* Normalize.css */
+/*Trying a new reset: http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation */
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  font: 16px/1 sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+h1, h2, h3, h4, p, blockquote, figure, ol, ul {
+  margin: 0;
+  padding: 0; }
+
+main, li {
   display: block; }
 
-audio, canvas, progress, video {
-  display: inline-block;
-  vertical-align: baseline; }
+h1, h2, h3, h4 {
+  font-size: inherit; }
 
-audio:not([controls]) {
-  display: none;
-  height: 0; }
+strong {
+  font-weight: bold; }
 
-[hidden], template {
-  display: none; }
+a, button {
+  color: inherit;
+  transition: .3s; }
 
 a {
-  background-color: transparent;
-  text-decoration: none; }
-
-a:active, a:hover {
-  outline: 0; }
-
-img {
-  border: 0; }
-
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0; }
-
-button, input, optgroup, select, textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0; }
-
-a:hover, a:focus, a:visited {
-  outline: none;
   text-decoration: none; }
 
 button {
-  overflow: visible; }
-
-button, select {
-  text-transform: none; }
-
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
-  -webkit-appearance: button;
+  overflow: visible;
+  border: 0;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  background: none;
   cursor: pointer; }
 
-button[disabled], html input[disabled] {
-  cursor: default; }
+::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
+:focus {
+  outline: 0; }
 
-input {
-  line-height: normal; }
-
-input[type="checkbox"], input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0; }
-
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
-  height: auto; }
-
-input[type="search"] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box; }
-
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
-
-legend {
-  border: 0;
-  padding: 0; }
-
-textarea {
-  overflow: auto; }
-
-optgroup {
-  font-weight: bold; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-td, th {
-  padding: 0; }
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0; }
 
 body {
-  background: black; }
-
-::-moz-focus-inner {
-  border: 0;
-  outline: 0; }
-
-button, button:focus, input, input:focus {
-  outline: 0; }
+  background-color: black; }
 
 @font-face {
   font-family: 'Mech';
@@ -995,20 +935,7 @@ Import all partials for each panel for the app
     height: 118px; }
 
 .glossary {
-  background-image: url("/assets/GLOSSARY/GLOSBACK.jpg");
-  /*
-  #glosappears {
-      background-color: red;
-      position: absolute;
-      width: 500px;
-      height: 320px;
-      top: 80px;
-      left: 70px;
-  }
-  #glosappears span{
-      text-align: center;
-  }
-  */ }
+  background-image: url("/assets/GLOSSARY/GLOSBACK.jpg"); }
   .glossary span {
     font-family: 'Mech';
     font-size: 30px;
@@ -1044,6 +971,7 @@ Import all partials for each panel for the app
     background-color: black;
     border-radius: 15px 0 0 0;
     width: 270px;
+    height: 19px;
     padding-right: 200px;
     white-space: nowrap; }
   .glossary .fnext {
@@ -1052,6 +980,7 @@ Import all partials for each panel for the app
     background-color: black;
     border-radius: 0 15px 0 0;
     width: 75px;
+    height: 19px;
     white-space: nowrap; }
   .glossary .prevent {
     top: 57px;
@@ -1140,13 +1069,20 @@ Making a cute launcher
   .launcher img {
     display: block;
     border: 1px solid white; }
-  .launcher span, .launcher button {
+  .launcher span {
     display: block;
     width: 312px;
     height: 25px;
     font-size: 16px; }
+  .launcher button {
+    display: block;
+    background-color: #bbb;
+    width: 312px;
+    height: 25px;
+    font-size: 16px; }
   .launcher button:hover, .launcher button:focus {
-    font-weight: bold; }
+    background-color: white;
+    font-size: 18px; }
   .launcher span {
     color: white;
     text-align: center;

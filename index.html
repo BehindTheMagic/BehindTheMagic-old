@@ -219,6 +219,30 @@
         <a class="e" href="#characters/main/FX7/" data-name="FX-7"></a>
     </script>
 
+    <script type="text/html" data-id="characters/aliens/" data-class="view characters_aliens"
+    onsubmit="document.getElementById('characters-Music').start()"
+    onreset="document.getElementById('characters-Music').pause()">
+
+    </script>
+
+    <script type="text/html" data-id="characters/aliens/map" data-class="view characters_aliens_map"
+    onsubmit=""
+    onreset="">
+
+    </script>
+
+    <script type="text/html" data-id="characters/groups/" data-class="view characters_groups"
+    onsubmit="document.getElementById('characters-Music').start()"
+    onreset="document.getElementById('characters-Music').pause()">
+
+    </script>
+
+    <script type="text/html" data-id="characters/groups/map" data-class="view characters_groups_map"
+    onsubmit=""
+    onreset="">
+
+    </script>
+
     <script type="text/html" data-id="technology/" data-class="view technology_menu"
     onsubmit="startIntro('techintr.snm.mp4', function(){document.getElementById('technologyMenu-Anim').start()})"
     onreset="document.getElementById('technologyMenu-Anim').pause()">
@@ -241,6 +265,16 @@
         <a class="vehicles_category" href="#technology/vehicles/other/">Other Craft</a>
         <a class="vehicles_category" href="#technology/vehicles/topics/">Charts</a>
         <a href="#technology/vehicles/falcwalk/">Begin <i>Millenium Falcon</i> &nbsp;Walkthrough</a>
+    </script>
+
+    <script type="text/html" data-id="technology/weapons/" data-class="view technology_weapons"
+    onsubmit="document.getElementById('tech_weapons_music').start(); enableAnimation(this)"
+    onreset="document.getElementById('tech_weapons_music').pause(); removeEnableAnimation(this)">
+        <span class="title">Weapons</span>
+        <audio src="/assets/GENERAL/MUSIC/weapons.snm.mp3" id="tech_weapons_music"></audio>
+        <a href="#technology/weapons/personal/">Personal Weapons</a>
+        <a href="#technology/weapons/large/"><span class="large">Starship &amp;<br>Planetary Weapons</span></a>
+        <a href="#technology/weapons/weaptest/">Weapons Tests</a>
     </script>
 
     <script type="text/html" data-id="locations/" data-class="view locations_menu"

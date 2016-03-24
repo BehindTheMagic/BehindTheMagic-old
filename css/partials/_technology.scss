@@ -119,3 +119,64 @@
         box-shadow: 0 0 10px white;
     }
 }
+
+.technology_weapons{
+    background-image: url('/assets/TECH/WEAPONS/IMAGES/WEAPMENU.JPG');
+
+    .title{
+        position: absolute;
+        transform: translateX(0);
+        top: 18px; left: 650px;
+        font-family: 'Mech';
+        font-size: 70px;
+        color: white;
+        transition: transform 0.5s ease-out;
+    }
+    &.enableAnimation > .title{
+        transform: translateX(-170px);
+        transition: transform 0;
+    }
+
+    a{
+        display: block;
+        position: absolute;
+        font-size: 30px;
+        font-family:'Mech';
+        color: white;
+        opacity: 0;
+        text-align: center;
+        transition: opacity 0.5s linear 0.2s;
+    }
+
+    &.enableAnimation > a{
+        opacity: 1;
+        transition: opacity 0;
+    }
+
+    a:hover{
+        background-color: rgba(255,255,255, 0.2);
+    }
+
+    a[href*="personal"]{
+        top: 19px; left: 27px;
+        width: 279px; height: 306px;
+        padding-top: 26px;
+    }
+
+    a[href*="large"]{
+        top: 105px; left: 334px;
+        width: 279px; height: 332px;
+    }
+
+    .large{
+        text-align: right;
+        position: absolute;
+        bottom: 7px; right: 13px;
+    }
+
+    a[href*="weaptest"]{
+        top: 367px; left: 27px;
+        width: 279px; height: 49px;
+        padding-top: 20px;
+    }
+}

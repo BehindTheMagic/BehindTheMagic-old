@@ -29,8 +29,9 @@
 
 .modal-text-inner{
     z-index: inherit;
-    height: 307px;
-    width: 440px;
+    height: 287px;
+    width: 420px;
+    padding: 10px;
     top: 10px;
     left: 5px;
     position: relative;
@@ -38,6 +39,7 @@
     color: white;
     overflow-y: auto;
     font-size: 14px;
+    text-align: justify;
 }
 
 .modal-title{

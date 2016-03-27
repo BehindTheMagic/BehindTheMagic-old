@@ -57,3 +57,39 @@ function startIntro(src, actions){
     }
 
 }
+
+function weapTest(vid){
+    var player = document.getElementById("tech_weaptest_vid");
+    switch(vid){
+        case "ewok":
+            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_ROCK.SNM.mp4";
+            player.start();
+        break;
+        case "blaster":
+            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_BLAST.SNM.mp4";
+            player.start();
+        break;
+        case "lightsaber":
+            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_SABRE.SNM.mp4";
+            player.start();
+        break;
+        case "thermal":
+            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_THERM.SNM.mp4";
+            player.start();
+        break;
+        case "dsray":
+            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/STDAUDIO.SNM.mp4";
+            player.start();
+            player.onended = function(){ player.src=""}
+        break;
+        case "init":
+            player.style.backgroundImage = 'url("/assets/TECH/WEAPONS/TOPICS/WEAPTEST/WTBACK0.JPG")';
+            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_BLAST.SNM.mp4";
+            player.currentTime = 22;
+            player.volume = window.BTMsettings.volume;
+            player.onended = function(){ player.style.backgroundImage = "url('/assets/TECH/WEAPONS/TOPICS/WEAPTEST/WT_BACK.JPG')"; }
+            player.play()
+        break;
+    }
+
+}

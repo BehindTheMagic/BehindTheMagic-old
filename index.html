@@ -222,7 +222,25 @@
     <script type="text/html" data-id="characters/aliens/" data-class="view characters_aliens"
     onsubmit="document.getElementById('characters-Music').start()"
     onreset="document.getElementById('characters-Music').pause()">
-
+        <span class="title">Creatures &amp; Aliens</span>
+        <span class="other">Animals &amp; Other<br>Creatures</span>
+        <span class="aliens">Aliens</span>
+        <span class="monstrous">Monstrous Beasts</span>
+        <a href="#characters/aliens/BITH/"></a>
+        <a href="#characters/aliens/ITHO/"></a>
+        <a href="#characters/aliens/YUZZ/"></a>
+        <a href="#characters/aliens/EWOK/"></a>
+        <a href="#characters/aliens/TUSK/"></a>
+        <a href="#characters/aliens/TWIL/"></a>
+        <a href="#characters/aliens/GAMO/"></a>
+        <a href="#characters/aliens/BANT/"></a>
+        <a href="#characters/aliens/BOGW/"></a>
+        <a href="#characters/aliens/BUBO/"></a>
+        <a href="#characters/aliens/DEWB/"></a>
+        <a href="#characters/aliens/WAMP/"></a>
+        <a href="#characters/aliens/RANC/"></a>
+        <a href="#characters/aliens/DIAN/"></a>
+        <a href="#characters/aliens/SLUG/"></a>
     </script>
 
     <script type="text/html" data-id="characters/aliens/map" data-class="view characters_aliens_map"
@@ -268,10 +286,27 @@
     </script>
 
     <script type="text/html" data-id="technology/weapons/" data-class="view technology_weapons"
-    onsubmit="document.getElementById('tech_weapons_music').start(); enableAnimation(this)"
-    onreset="document.getElementById('tech_weapons_music').pause(); removeEnableAnimation(this)">
+    onsubmit="document.getElementById('tech_weapons_music').start()"
+    onreset="document.getElementById('tech_weapons_music').pause()">
         <span class="title">Weapons</span>
         <audio src="/assets/GENERAL/MUSIC/weapons.snm.mp3" id="tech_weapons_music"></audio>
+        <a href="#technology/weapons/personal/">Personal Weapons</a>
+        <a href="#technology/weapons/large/"><span class="large">Starship &amp;<br>Planetary Weapons</span></a>
+        <a href="#technology/weapons/weaptest/">Weapons Tests</a>
+    </script>
+
+    <script type="text/html" data-id="technology/weapons/weaptest/" data-class="view technology_weaptest"
+    onsubmit="weapTest('init')"
+    onreset="document.getElementById('tech_weaptest_vid').pause()">
+        <video src="/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_BLAST.SNM.mp4" id="tech_weaptest_vid"></video>
+        <div class="bottom-weapons">
+            <span class="title">Weapon<br>Comparison<br>Test Bay</span>
+            <button class="ewok" onclick="weapTest('ewok')">Ewok Rock</button>
+            <button class="blaster" onclick="weapTest('blaster')">Blaster</button>
+            <button class="lightsaber" onclick="weapTest('lightsaber')">Lightsaber</button>
+            <button class="thermal" onclick="weapTest('thermal')">Thermal Detonator</button>
+            <button class="dsray" onclick="weapTest('dsray')">Death Star Ray</button>
+        </div>
         <a href="#technology/weapons/personal/">Personal Weapons</a>
         <a href="#technology/weapons/large/"><span class="large">Starship &amp;<br>Planetary Weapons</span></a>
         <a href="#technology/weapons/weaptest/">Weapons Tests</a>

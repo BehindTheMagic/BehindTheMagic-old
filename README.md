@@ -17,7 +17,10 @@ https://BehindTheMagic.github.io/
 - #characters (menu: video, links, lighten on hover)
 - #characters/main (menu: music, circle links and hover, text)
 - #characters/main/map (links and labels)
+- #characters/aliens/
 - #technology (menu: video, links, hover)
+- #technology/vehicles/
+- #technology/weapons/ 
 - #locations (menu: music, circle links and hover)
 
 ## What's wrong:

@@ -132,15 +132,17 @@ Import all partials for each panel for the app
 
 .modal-text-inner {
   z-index: inherit;
-  height: 307px;
-  width: 440px;
+  height: 287px;
+  width: 420px;
+  padding: 10px;
   top: 10px;
   left: 5px;
   position: relative;
   border-radius: 10px;
   color: white;
   overflow-y: auto;
-  font-size: 14px; }
+  font-size: 14px;
+  text-align: justify; }
 
 .modal-title {
   position: relative;
@@ -314,12 +316,19 @@ Import all partials for each panel for the app
     font-family: 'Mech';
     color: white; }
 
+.characters_main span, .characters_aliens span {
+  font-family: 'Mech';
+  position: absolute;
+  letter-spacing: 1px; }
+.characters_main a, .characters_aliens a {
+  position: absolute;
+  border-radius: 50%;
+  background-color: transparent; }
+.characters_main a:hover, .characters_aliens a:hover {
+  background-color: rgba(255, 255, 255, 0.2); }
+
 .characters_main {
   background-image: url("/assets/CHARS/MAINCHAR/IMAGES/CMB_BACK.JPG"); }
-  .characters_main span {
-    font-family: 'Mech';
-    position: absolute;
-    letter-spacing: 1px; }
   .characters_main .title {
     color: black;
     top: 209px;
@@ -371,12 +380,6 @@ Import all partials for each panel for the app
   .characters_main .rebels {
     top: 415px;
     left: 475px; }
-  .characters_main a {
-    position: absolute;
-    border-radius: 50%;
-    background-color: transparent; }
-  .characters_main a:hover {
-    background-color: rgba(255, 255, 255, 0.2); }
   .characters_main a[href*="PALP"] {
     top: 32px;
     left: 40px;
@@ -756,6 +759,101 @@ Import all partials for each panel for the app
     top: 32px;
     left: 355px; }
 
+.characters_aliens {
+  background-image: url("/assets/CHARS/ALIENS/IMAGES/CRMENU.JPG"); }
+  .characters_aliens span {
+    color: white;
+    font-size: 20px; }
+  .characters_aliens .aliens {
+    top: 23px;
+    left: 308px; }
+  .characters_aliens .monstrous {
+    top: 320px;
+    left: 486px; }
+  .characters_aliens .other {
+    top: 283px;
+    left: 125px;
+    text-align: right; }
+  .characters_aliens .title {
+    font-size: 26px;
+    top: 413px;
+    left: 263px; }
+  .characters_aliens a[href*="BITH"] {
+    top: 0;
+    left: 32px;
+    width: 116px;
+    height: 116px; }
+  .characters_aliens a[href*="ITHO"] {
+    top: 52px;
+    left: 129px;
+    width: 116px;
+    height: 116px; }
+  .characters_aliens a[href*="YUZZ"] {
+    top: 2px;
+    left: 206px;
+    width: 74px;
+    height: 74px; }
+  .characters_aliens a[href*="EWOK"] {
+    top: 43px;
+    left: 229px;
+    width: 190px;
+    height: 190px; }
+  .characters_aliens a[href*="TUSK"] {
+    top: 2px;
+    left: 367px;
+    width: 74px;
+    height: 74px; }
+  .characters_aliens a[href*="TWIL"] {
+    top: 52px;
+    left: 404px;
+    width: 116px;
+    height: 116px; }
+  .characters_aliens a[href*="GAMO"] {
+    top: 2px;
+    left: 498px;
+    width: 116px;
+    height: 116px; }
+  .characters_aliens a[href*="BANT"] {
+    top: 170px;
+    left: 54px;
+    width: 116px;
+    height: 116px; }
+  .characters_aliens a[href*="BOGW"] {
+    top: 263px;
+    left: 5px;
+    width: 96px;
+    height: 96px; }
+  .characters_aliens a[href*="BUBO"] {
+    top: 339px;
+    left: 39px;
+    width: 116px;
+    height: 116px; }
+  .characters_aliens a[href*="DEWB"] {
+    top: 224px;
+    left: 126px;
+    width: 190px;
+    height: 190px; }
+  .characters_aliens a[href*="WAMP"] {
+    top: 224px;
+    left: 329px;
+    width: 190px;
+    height: 190px; }
+  .characters_aliens a[href*="RANC"] {
+    top: 171px;
+    left: 481px;
+    width: 116px;
+    height: 116px; }
+  .characters_aliens a[href*="DIAN"] {
+    top: 263px;
+    left: 542px;
+    width: 96px;
+    height: 96px; }
+  .characters_aliens a[href*="SLUG"] {
+    top: 338px;
+    left: 487px;
+    width: 116px;
+    height: 116px; }
+
 .technology_menu {
   background-image: url("/assets/TECH/IMAGES/TECHMENO.JPG"); }
   .technology_menu span {
@@ -897,6 +995,53 @@ Import all partials for each panel for the app
     width: 279px;
     height: 49px;
     padding-top: 20px; }
+
+.technology_weaptest {
+  background-color: black; }
+  .technology_weaptest video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 360px; }
+  .technology_weaptest .bottom-weapons {
+    position: absolute;
+    top: 360px;
+    left: 0;
+    width: 640px;
+    height: 87px;
+    background-image: url("/assets/TECH/WEAPONS/TOPICS/WEAPTEST/WT_BOTT.JPG"); }
+  .technology_weaptest .title {
+    position: absolute;
+    top: 5px;
+    left: 101px;
+    font-family: "Mech";
+    font-size: 24px;
+    color: white; }
+  .technology_weaptest button {
+    position: absolute;
+    color: white;
+    font-size: 14px; }
+  .technology_weaptest .ewok {
+    left: 212px;
+    top: 6px;
+    padding: 10px 0 10px 40px; }
+  .technology_weaptest .blaster {
+    left: 350px;
+    top: 6px;
+    padding: 10px 0 10px 60px; }
+  .technology_weaptest .lightsaber {
+    left: 479px;
+    top: 6px;
+    padding: 10px 0 10px 70px; }
+  .technology_weaptest .thermal {
+    left: 260px;
+    top: 49px;
+    padding: 10px 0 10px 35px; }
+  .technology_weaptest .dsray {
+    left: 441px;
+    top: 49px;
+    padding: 10px 0 10px 35px; }
 
 .locations_menu {
   background-image: url("/assets/LOCALE/IMAGES/LOCMENU.JPG"); }

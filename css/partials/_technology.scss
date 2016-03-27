@@ -180,3 +180,57 @@
         padding-top: 20px;
     }
 }
+
+.technology_weaptest{
+    background-color: black;
+    video{
+        position: absolute;
+        top: 0; left: 0;
+        width: 640px; height: 360px;
+    }
+    .bottom-weapons{
+        position: absolute;
+        top: 360px; left: 0;
+        width: 640px; height: 87px;
+        background-image: url("/assets/TECH/WEAPONS/TOPICS/WEAPTEST/WT_BOTT.JPG");
+    }
+    .title{
+        position: absolute;
+        top: 5px; left: 101px;
+        font-family: "Mech";
+        font-size: 24px;
+        color: white;
+    }
+    button{
+        position: absolute;
+        color: white;
+        font-size: 14px;
+    }
+
+
+    .ewok{
+        left: 212px;
+        top: 6px;
+        padding: 10px 0 10px 40px;
+    }
+    .blaster{
+        left: 350px;
+        top: 6px;
+        padding: 10px 0 10px 60px;
+    }
+    .lightsaber{
+        left: 479px;
+        top: 6px;
+        padding: 10px 0 10px 70px;
+    }
+    .thermal{
+        left: 260px;
+        top: 49px;
+        padding: 10px 0 10px 35px;
+    }
+    .dsray{
+        left: 441px;
+        top: 49px;
+        padding: 10px 0 10px 35px
+    }
+}

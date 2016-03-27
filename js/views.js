@@ -44,12 +44,24 @@ function switchTo(hash, isFromEvent) {
 
 
     if (switchTo.active !== "") {
-        viewsOBJ[switchTo.active].blur.apply(viewsOBJ[switchTo.active].selector);
-        viewsOBJ[switchTo.active].selector.classList.remove("active");
+        var el = viewsOBJ[switchTo.active];
+        el.blur.apply(viewsOBJ[switchTo.active].selector);
+        el.selector.classList.remove('enableAnimation')
+        el.selector.classList.remove("active");
     }
 
-    viewsOBJ[hash].selector.classList.add("active");
-    viewsOBJ[hash].focus.apply(viewsOBJ[hash].selector);
+    el = viewsOBJ[hash];
+    el.selector.classList.add("active");
+    el.focus.apply(viewsOBJ[hash].selector);
+
+    /* These piece of code is hack.
+    Transitions don't fire when there is display:none to block on the element
+    Workaround is to add custom class which will trigger transitions after DOM has rendered the element
+    */
+    setTimeout(function(){
+        el.selector.classList.add('enableAnimation')
+    }, 10)
+
     if(!isFromEvent){ location.hash = hash }
     switchTo.active = hash;
 }
@@ -59,23 +71,6 @@ function isValidHash(hash) {
     // Valid until now, need to say yes when there is characters/weapons/vehicles name in the hash
     return (viewsOBJ.hasOwnProperty(hash));
 }
-
-
-/* These two functions are hacks.
-Transitions don't fire when there is display:none to block on the element
-Workaround is to add custom class which will trigger transitions after DOM has rendered the element
-*/
-function enableAnimation(el){
-    setTimeout(function(){
-        el.classList.add('enableAnimation')
-    }, 10)
-}
-
-function removeEnableAnimation(el){
-    el.classList.remove('enableAnimation')
-}
-
-
 
 function createModalText(options){
     options = {

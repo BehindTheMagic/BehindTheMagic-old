@@ -52,14 +52,27 @@
     }
 }
 
-.characters_main{
-    background-image: url('/assets/CHARS/MAINCHAR/IMAGES/CMB_BACK.JPG');
-
+%characters_submenu_styles{
     span{
         font-family: 'Mech';
         position: absolute;
         letter-spacing: 1px;
     }
+
+    a{
+        position: absolute;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+
+    a:hover{
+        background-color:rgba(255,255,255, 0.2);
+    }
+}
+
+.characters_main{
+    @extend %characters_submenu_styles;
+    background-image: url('/assets/CHARS/MAINCHAR/IMAGES/CMB_BACK.JPG');
 
     .title{
         color: black;
@@ -91,16 +104,6 @@
     .tatooine { top: 246px; left: 575px;}
     .smugglers{ top: 422px; left: 118px;}
     .rebels   { top: 415px; left: 475px;}
-
-    a{
-        position: absolute;
-        border-radius: 50%;
-        background-color: transparent;
-    }
-
-    a:hover{
-        background-color:rgba(255,255,255, 0.2);
-    }
 
     a[href*="PALP"]{
         top: 32px; left: 40px;
@@ -412,4 +415,95 @@
     [href*="4LOM"]{top: 47px; left: 395px;}
     [href*="FX7"]{top: 32px; left: 355px;}
 
+}
+
+.characters_aliens{
+    @extend %characters_submenu_styles;
+    background-image: url('/assets/CHARS/ALIENS/IMAGES/CRMENU.JPG');
+
+    span{
+        color: white;
+        font-size: 20px;
+    }
+
+    .aliens{
+        top: 23px; left: 308px;
+    }
+
+    .monstrous{
+        top: 320px;
+        left: 486px;
+    }
+
+    .other{
+        top: 283px;
+        left: 125px;
+        text-align: right;
+    }
+    .title{
+        font-size: 26px;
+        top: 413px;
+        left: 263px;
+    }
+
+    a[href*="BITH"]{
+        top: 0; left: 32px;
+        width: 116px; height: 116px;
+    }
+    a[href*="ITHO"]{
+        top: 52px; left: 129px;
+        width: 116px; height: 116px;
+    }
+    a[href*="YUZZ"]{
+        top: 2px; left: 206px;
+        width: 74px; height: 74px;
+    }
+    a[href*="EWOK"]{
+        top: 43px; left: 229px;
+        width: 190px; height: 190px;
+    }
+    a[href*="TUSK"]{
+        top: 2px; left: 367px;
+        width: 74px; height: 74px;
+    }
+    a[href*="TWIL"]{
+        top: 52px; left: 404px;
+        width: 116px; height: 116px;
+    }
+    a[href*="GAMO"]{
+        top: 2px; left: 498px;
+        width: 116px; height: 116px;
+    }
+    a[href*="BANT"]{
+        top: 170px; left: 54px;
+        width: 116px; height: 116px;
+    }
+    a[href*="BOGW"]{
+        top: 263px; left: 5px;
+        width: 96px; height: 96px;
+    }
+    a[href*="BUBO"]{
+        top: 339px; left: 39px;
+        width: 116px; height: 116px;
+    }
+    a[href*="DEWB"]{
+        top: 224px; left: 126px;
+        width: 190px; height: 190px;
+    }
+    a[href*="WAMP"]{
+        top: 224px; left: 329px;
+        width: 190px; height: 190px;
+    }
+    a[href*="RANC"]{
+        top: 171px; left: 481px;
+        width: 116px; height: 116px;
+    }
+    a[href*="DIAN"]{
+        top: 263px; left: 542px;
+        width: 96px; height: 96px;
+    }
+    a[href*="SLUG"]{
+        top: 338px; left: 487px;
+        width: 116px; height: 116px;
+    }
 }

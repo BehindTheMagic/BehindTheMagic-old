@@ -1,5 +1,7 @@
 "use strict";
-var glossary = [{
+function getTopRoute(href){
+    return href.substr(0, href.slice(0, -1).lastIndexOf("/") + 1)
+}var glossary = [{
     "name": "2-1B (Too-Onebee)",
     "description": "A medical droid in the service of the Rebel Alliance. 2-1B is programmed to perform first aid, surgery, prosthetic replacement, and a host of related duties. Together with FX-7, Too-Onebee resurrected Luke Skywalker from the brink of death after the young Jedi fell under attack by the vicious wampa ice creature. The droid later escaped Hoth aboard the <i>Bright Hope</i>, surviving several disasters until he was reunited with the Rebel fleet. There, he was again called upon to heal Luke, who had been critically injured in combat with Darth Vader.",
     "category": "D",
@@ -4266,31 +4268,1896 @@ var acronyms = {
     "XWSA": "X-Wing: Starfighters of Adumar",
     "YJK": "Young Jedi Knights",
     "etc.": "Luke is everywhere"
-};function initGlossary(){
-    var selectCategory = document.getElementById("glossary-category")
-    , selectTerms = document.getElementById("glossary-terms")
-    , buttonFprev = document.getElementById("glosfprev")
-    , buttonFnext = document.getElementById("glosfnext")
-    , inputSearch = document.getElementById("glossary-search")
-    , buttonPrevEntry = document.getElementById("glosprevent")
-    , buttonNextEntry = document.getElementById("glosnextent")
-    , spanName = document.getElementById("glosname")
-    , placeholderPicture = document.getElementById("glospicture")
-    , pDescription = document.getElementById("glosdescription")
-    , aTopic = document.getElementById("glostopic")
-    , btnDivAppears = document.getElementById("btnglosappears");
+};
+var characters_main = {
+    "location": "/assets/CHARS/MAINCHAR/",
+    "WEDG": {
+        "name": "Wedge Antilles",
+        "shortname": "Wedge",
+        "shortdesc": "A decorated Alliance pilot and the soul of the famous Rogue Squadron. One of the few men to have survived the three major conflicts of the Galactic Civil War, Wedge flew against both Death Stars and was directly responsible for the small Rebel victories during the Battle of Hoth. From his first flights for the fledgling Rebellion to his distinguished career as a general within the New Republic, Wedge has always embodied the luck, loyalty, confidence, and courage required of every Rebel pilot.",
+        "species": "Human",
+        "height": "1.7 meters",
+        "homeworld": "Corellia",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "Born and raised on outer Gus Tetra, a spaceport in the <a href='#glossary/' onclick='glossary.displayFromExternal('Corellian sys')'>Corellian system</a>, Wedge Antilles became an orphan as a teenager after his parents were killed by pirates. With money from an insurance settlement, he purchased a stock light freighter and tried to launch a legitimate shipping business, but was soon smuggling weapons for the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel Al')'>Rebel Alliance</a>. At the age of 16, he jumped into the cockpit of an X-wing fighter and quickly became one of the Rebellion's most skilled pilots. An invaluable warrior, Wedge earned a post in <a href='#glossary/' onclick='glossary.displayFromExternal('Red Squ')'>Red Squadron</a> at the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, where he first met <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>.<br><br>After the destruction of the first <a href='#glossary/' onclick='glossary.displayFromExternal('Death')'>Death Star</a>, Wedge and Luke founded Rogue Squadron and soon surrounded themselves with some of the best pilots in the galaxy. Armed with <a href='#glossary/' onclick='glossary.displayFromExternal('snows')'>snowspeeders</a>, Rogue Squadron flew against the Imperial <a href='#glossary/' onclick='glossary.displayFromExternal('All terrain armor')'>AT-ATs</a> at the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>. During the engagement, Wedge and his copilot, <a href='#glossary/' onclick='glossary.displayFromExternal('Janson, Lie')'>Wes Janson</a>, managed to use their vehicle's power harpoon and tow cable to entangle the legs of a walker, causing the AT-AT to topple over and explode.<br><br>When Luke Skywalker began embarking on personal missions throughout the latter half of the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a>, Wedge was promoted to captain and took control of the Rogues. With <a href='#glossary/' onclick='glossary.displayFromExternal('Ackbar')'>Admiral Ackbar</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Calr')'>Lando Calrissian</a>, he planned the attack on the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. At the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Wedge led his squadron against an Imperial <a href='#glossary/' onclick='glossary.displayFromExternal('Star Dest')'>Star Destroyer</a> and later followed the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a> into the heart of the space station and aided in the Death Star's destruction.<br><br>As the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a> struggled into existence, Wedge became heavily involved with the mission to Bakura and, five years later, led Rogue Squadron against the forces of <a href='#glossary/' onclick='glossary.displayFromExternal('Thrawn')'>Grand Admiral Thrawn</a>. In the intervening years, Wedge and his fellow Rogues flew numerous missions for the New Republic, often undertaking covert missions under the guise of \"Wraith Squadron.\" Many of these adventures are recounted in several volumes of the <i>X-Wing</i> novel series.<br><br>After Thrawn's defeat, Antilles agreed to accept the rank of general under the condition that he could still lead Rogue Squadron. He proved an incredible tactician, but both he and Lando Calrissian suffered heavy losses in the war against the reborn Emperor. Despite such setbacks, Wedge has remained a confident yet humble leader and one of the New Republic's most heroic figures.",
+        "bts": "Denis Lawson was originally rejected for the role of Wedge, but was contacted by Lucasfilm when the actor originally awarded the part did not work out. Lawson then returned for both <i>The Empire Strikes Back</i> and <i>Return of the Jedi</i>. There has been some confusion over Wedge's true identity in <i>Star Wars</i> because Lawson's first name is spelled \"Dennis\" in the film's credits. In addition, an uncredited actor other than Lawson appears as \"Wedge\" in the Rebel briefing room shortly before the Battle of Yavin. Coincidentally, Denis \"Wedge\" Lawson is the uncle of actor Ewan McGregor, who will be starring as Obi-Wan Kenobi in the first of the prequels.<br><br>Although he has only 19 lines in the trilogy, Wedge Antilles has attracted a devoted group of loyal fans. He has reappeared in several novels and comic books, and was ranked Number 8 on the <i>Star Wars Insider</i>'s list of the Top Twenty <i>Star Wars</i> Characters.",
+        "gallery": [
+            "Wedge in his X-wing in <i>Star Wars</i>.",
+            "Luke with \"fake\" Wedge.",
+            "Wedge in his snowspeeder from <i>The Empire Strikes Back.</i>",
+            "Wedge in Rebel Pilot uniform."
+        ],
+        "triviaNumber": 128,
+        "introductionRight": true,
+        "relations": {
+            "n": "BIGG",
+            "so": "MONM"
+        }
+    },
+    "BOUS": {
+        "name": "Boushh",
+        "shortname": "Boushh",
+        "shortdesc": "An Ubese bounty hunter contracted to work for Prince Xizor's criminal Black Sun organization. Boushh eventually allowed his greed to surpass his good judgment and he crossed Black Sun. For this transgression, he was murdered. Princess Leia subsequently assumed Boushh's identity in order to infiltrate Black Sun and, later, Jabba the Hutt's palace.",
+        "species": "Ubese",
+        "height": "Unknown",
+        "homeworld": "Ubese",
+        "affiliation": "None",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "Virtually nothing has been revealed about Boushh aside from his connections to <a href='#glossary/' onclick='glossary.displayFromExternal('Black')'>Black Sun</a> and the acknowledgment of his untimely death. He was an <a href='#glossary/' onclick='glossary.displayFromExternal('Ubese')'>Ubese</a> who spoke in a strange, metallic voice and wore a helmet presumably equipped with numerous sensors, a macrobinocular viewplate, and other gadgets. <br><br>Although a skilled bounty hunter, he eventually tried to charge Black Sun more than he was owed after completing a mission for the group. Rather than trifle with Boushh, <a href='#glossary/' onclick='glossary.displayFromExternal('Xiz')'>Prince Xizor</a> simply had him eliminated. <i>Shadows of the Empire</i> reveals that Boushh's rank costume fell into the hands of Xizor's android, <a href='#glossary/' onclick='glossary.displayFromExternal('Guri')'>Guri</a>, who in turn supplied <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Pri')'>Princess Leia</a> with the suit. Fortunately, Leia had a working knowledge of Ubese and convincingly portrayed the bounty hunter. When Leia arrived at <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba's</a> palace, even <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a> was fooled by her disguise. Eventually, however, the ruse was discovered and Boushh was finally allowed to rest in peace.",
+        "bts": "The novelization of <i>Return of the Jedi</i> indicates that the Ubese are a nomadic species. They speak in a metallic language and are well-adapted to the rarefied atmosphere of their home planet.",
+        "gallery": [
+            "Boushh enters Jabba's palace, with Chewbacca in tow."
+        ],
+        "btsimages": [
+            "Joe Johnston's concept sketches for Leia's bounty hunter disguise.",
+            "Boushh costume design sketches by Nilo Rodis-Jamero.",
+            "Helmet design sketch by Rodis-Jamero.",
+            "The Boushh mask under construction.",
+            "A back view of the Boushh maquette.",
+            "Boushh maquette, side view.",
+            "The complete Boushh costume."
+        ],
+        "triviaNumber": 91,
+        "introductionRight": true,
+        "tech": true,
+        "relations": {
+            "ne": "GREE",
+            "so": "IG88"
+        }
+    },
+    "BIGG": {
+        "name": "Biggs Darklighter",
+        "shortname": "Biggs",
+        "shortdesc": "Luke Skywalker's closest childhood friend and one of the men responsible for fostering the young Jedi's idealism and courage. Born on Tatooine, Biggs nurtured his own skills as a pilot in T-16 skyhoppers, then escaped the desert world and attended the Imperial Academy. Like many others before him, he came to loathe the Empire and eventually defected to the Rebel Alliance. Alongside Luke, Biggs braved the trenches of the Death Star at the Battle of Yavin, where he gave his life for the cause he held so dearly.",
+        "species": "Human",
+        "height": "1.83 meters",
+        "homeworld": "Tatooine",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "Unlike <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luke')'>Luke Skywalker</a>, Biggs Darklighter was born into one of <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine's</a> very few wealthy families. His father, <a href='#glossary/' onclick='glossary.displayFromExternal('Darklighter, Hu')'>Huff</a>, was a wildly successful food magnate who made his money at the expense of the world's struggling moisture farmers. Despite their differences, Biggs and Luke crossed paths in the small town of <a href='#glossary/' onclick='glossary.displayFromExternal('Anch')'>Anchorhead</a> and became fast friends soon after. The pair often raced <a href='#glossary/' onclick='glossary.displayFromExternal('land')'>landspeeders</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('T-16')'>skyhoppers</a> through the winding corridors of <a href='#glossary/' onclick='glossary.displayFromExternal('Beg')'>Beggar's Canyon</a>, developing a healthy sense of competition. Eventually, however, the elder Biggs entered the <a href='#glossary/' onclick='glossary.displayFromExternal('Acad')'>Imperial Space Academy</a>, leaving Tatooine and Luke behind.<br><br>While attending the Academy, Biggs became more aware of the threat posed by the <a href='#glossary/' onclick='glossary.displayFromExternal('Empi')'>Empire</a>. Along with several classmates, Biggs vowed to defect to the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel Alli')'>Rebel Alliance</a> at the first possible moment. At 24, Biggs graduated from the Academy and was appointed to First Officer aboard the merchant ship <a href='#glossary/' onclick='glossary.displayFromExternal('Rand')'><i>Rand Ecliptic</i></a>, where he soon discovered that several of his fellow crew members had actually made contact with the Rebels. During a brief trip to Tatooine, Biggs was reunited with Luke and confessed his plan to join the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>. In the weeks that followed, Biggs joined the <i>Rand Ecliptic</i>'s executive officer in a mutiny. Together, they stole the ship and its cargo, then joined the Alliance.<br><br>In his short time with the Rebels, Biggs flew an <a href='#glossary/' onclick='glossary.displayFromExternal('X-win')'>X-wing</a> into several clashes with the Empire. He was finally reunited with Luke on <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin 4')'>Yavin 4</a> as the Alliance forces prepared to attack the first <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a>. During the battle, Biggs valiantly protected Luke, destroyed several <a href='#glossary/' onclick='glossary.displayFromExternal('TIE fighter')'>TIE fighters</a>, and bravely entered the space station's harrowing trenches. Sadly, he was doggedly pursued by Darth Vader, who murdered the heroic young pilot only moments before Luke launched his <a href='#glossary/' onclick='glossary.displayFromExternal('proton')'>proton torpedoes</a> into the heart of the Death Star.",
+        "gallery": [
+            "Biggs Darklighter and Luke Skywalker discuss their futures.",
+            "Biggs at the Battle of Yavin."
+        ],
+        "triviaNumber": 89,
+        "introductionRight": false,
+        "relations": {
+            "ne": "OWEN",
+            "e": "LFRI",
+            "s": "WEDG",
+            "so": "LUKE"
+        }
+    },
+    "DENG": {
+        "name": "Dengar",
+        "shortname": "Dengar",
+        "shortdesc": "An ill-tempered bounty hunter with a grudge against Han Solo. Dengar was a professional swoop jockey on the fast track to fame and fortune, until he challenged Solo to a race. During the contest, Dengar crashed into Han's swoop and was grievously injured. The Empire repaired Dengar, transforming him into an unfeeling assassin in the process. When he heard of the immense bounty Jabba the Hutt had placed on Solo's head, Dengar vowed to corner his old nemesis. Although he has failed time and again, Dengar remains obsessed.",
+        "species": "Human",
+        "height": "1.8 meters",
+        "homeworld": "Unknown",
+        "affiliation": "None",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Dengar's near fatal <a href='#glossary/' onclick='glossary.displayFromExternal('swoo')'>swoop</a> crash occurred in the crystal swamps of Agrilat, where he foolishly went head-to-head with <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Han')'>Han Solo</a>. As they neared the finish line, Dengar lost sight of Solo, who was just above him. Dengar foolishly pulled up and collided with the main fin on Han's swoop. The accident left Dengar with severe head trauma, massive scarring, and a reputation as a reckless racer. He was ejected from the professional swoop-racing league and became a bitter, hateful man. He blamed Solo for all his suffering and vowed to exact his revenge.<br><br>Dengar wandered the galaxy for a short time, but soon found himself in the employ of the <a href='#glossary/' onclick='glossary.displayFromExternal('Empire')'>Empire</a>. Imperial forces completely rebuilt Dengar, removing his hypothalamus and replacing it with circuitry. Dengar was also repeatedly injected with drugs to enhance his memory, although the injections left him plagued by hallucinations. Regardless, he became a skilled assassin who served the Empire faithfully until he was ordered to kill the holy children of Asrat. When Dengar refused to commit this atrocity, he was expelled from Imperial service. To support himself, he quickly became a freelance bounty hunter. His early assignments are undocumented, but it is known that he once tried to kill <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a>. Eventually, he discovered the bounty placed on Han Solo's head and rushed to find his nemesis. He missed his opportunity to capture Solo on several occasions and finally lost his quarry to <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a>, who captured Han on <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud CI')'>Cloud City</a>.<br><br>After Jabba the Hutt's death, Dengar visited the site of the crime lord's demise to search for his bloated body. Instead, he found Boba Fett near the edge of the <a href='#glossary/' onclick='glossary.displayFromExternal('Cark')'>Great Pit of Carkoon</a>. Fett had just escaped the gut of the voracious <a href='#glossary/' onclick='glossary.displayFromExternal('Sarl')'>Sarlacc</a> and was grievously injured, but Dengar managed to nurse him back to health. Since this encounter, the two have joined forces on numerous occasions in their continued pursuit of Han Solo and his allies. Between missions, Dengar has found the time to marry Manarro, a technological empath who has managed to partially restore many of Dengar's emotions.",
+        "bts": "Although he has no lines in the <i>The Empire Strikes Back</i>, Dengar ranked 19th in a poll of the Top Twenty <i>Star Wars</i> Characters conducted by the <i>Star Wars Insider</i>. In <i>Return of the Jedi</i>, the character reappeared during crowd scenes in Jabba's palace.",
+        "gallery": [
+            "Lord Vader instructs Dengar on the mission to find and capture the <i>Millennium Falcon</i>."
+        ],
+        "btsimages": [
+            "A costume photo of Dengar."
+        ],
+        "triviaNumber": 96,
+        "introductionRight": false,
+        "relations": {
+            "e": "BOBA",
+            "so": "IG88",
+            "no": "ZUCK"
+        }
+    },
+    "DODO": {
+        "name": "General Jan Dodonna",
+        "shortname": "Dodonna",
+        "shortdesc": "The grizzled Rebel leader who devised the plan to destroy the first Death Star. Dodonna, formerly an officer of the Old Republic, defected to the Rebellion soon after the Emperor's rise to power. When he received the Death Star schematics, his brilliant tactical mind discovered the battle station's weakness and allowed the Alliance to claim its first victory. After the Battle of Yavin, Dodonna was captured by Imperial forces and spent the next several years in a prison camp, but he eventually escaped and became one of the New Republic's most trusted advisors.",
+        "species": "Human",
+        "height": "1.82 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "During his military training, Dodonna focused his studies on logistics, data analysis, and siege warfare. His expertise in these areas allowed him to take an assignment as one of the first <a href='#glossary/' onclick='glossary.displayFromExternal('Star D')'>Star Destroyer</a> captains. He eventually resigned this post when it became clear that <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Senator Palpatine</a> would become the Emperor. Dodonna would have been content to live out the rest of his life far removed from the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a>, but Imperial officers believed he could be a threat to their <a href='#glossary/' onclick='glossary.displayFromExternal('New Ord')'>New Order</a>. Thus, they decided to execute the aging general. Just as Imperial troops arrived to carry out these orders, Dodonna was rescued by Alliance commandos. After realizing the extent of the Empire's evil, Dodonna willingly joined the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>. He rapidly became one of the Alliance's highest-ranking military commanders, answering only to <a href='#glossary/' onclick='glossary.displayFromExternal('Moth')'>Mon Mothma</a> and the Alliance Council.<br><br>Shortly before the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, bat')'>Battle of Yavin</a>, Dodonna was presented with the <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a> schematics. In a matter of hours, he and Commander Evram Lajaie discovered the Death Star's weakness: a small exhaust port leading into the reactor shaft and the very heart of the space station. He theorized that a <a href='#glossary/' onclick='glossary.displayFromExternal('proton')'>proton torpedo</a> fired directly into the port would travel into the reactor core and cause a chain reaction that would destroy the Death Star. <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> proved Dodonna's theory correct and the Death Star was consumed in a massive explosion.<br><br>Throughout the year following the Battle of Yavin, Dodonna remained in command of the Rebel base on <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin 4')'>Yavin 4</a>. When his son was tragically killed, Dodonna entered several months of deep depression, but he continued to serve faithfully. Eventually, Imperial forces rallied and invaded the base and Dodonna was forced to order a full-scale evacuation. However, the withered general opted to stay behind as his allies fled. As the Imperials approached, he activated concussion charges responsible for destroying an entire fleet of <a href='#glossary/' onclick='glossary.displayFromExternal('TIE b')'>TIE bombers</a>. Unfortunately, Dodonna was wounded and captured in the process. Although already crippled by his experiences, Dodonna was imprisoned in the <i>Lusankya</i>, a buried Imperial <a href='#glossary/' onclick='glossary.displayFromExternal('Super St')'>Super Star Destroyer</a> that had been converted into a harsh penal institution. While incarcerated, Dodonna helped at least one Rebel escape the prison. He was later rescued by an Alliance assault team.<br><br>Once reunited with the Rebellion, Dodonna entered a state of semiretirement. His many months of suffering had weakened his body, and his injuries left him dependent upon a cane. Yet, six years after the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Dodonna reappeared and aided the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a> in the war against the reborn Emperor. During this conflict, Dodonna's advice led to the defeat of the Imperial World Devastators, as chronicled in <i>Dark Empire</i>.",
+        "gallery": [
+            "Jan Dodonna and his allies during the Battle of Yavin.",
+            "Dodonna and Leia listen as Rebels attack the Death Star.",
+            "Dodonna during one of the Alliance's most desperate hours."
+        ],
+        "triviaNumber": 109,
+        "introductionRight": true,
+        "relations": {
+            "so": "ACKB"
+        }
+    },
+    "MARA": {
+        "name": "Mara Jade",
+        "shortname": "Mara Jade",
+        "shortdesc": "A misguided yet loyal servant of the Emperor with an affinity for the Force. Prior to the Battle of Endor, the Emperor ordered Mara to murder Luke Skywalker, but she lost the young Jedi at Jabba the Hutt's palace on Tatooine. Soon after, the Emperor was killed aboard the second Death Star, and Mara held Luke responsible. For years, she hounded Skywalker, until she finally released her hatred by killing Luke's evil clone. Free of her thirst for revenge, she hesitantly accepted Luke as her teacher and began learning the ways of the light side of the Force.",
+        "species": "Human",
+        "height": "1.6 meters",
+        "homeworld": "Unknown",
+        "affiliation": "New Republic",
+        "firstapp": "<i>Heir to the<br>Empire</i>",
+        "biography": "Mara Jade originally served as the \"<a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor's</a> Hand,\" traveling throughout the universe to carry out his will. Most often, she functioned as his personal assassin, and her missions proved so secret that even the Emperor's closest aides did not know of her existence. Strong in the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>, Mara Jade was able to communicate telepathically with the Emperor, sometimes receiving his orders from across the galaxy.<br><br>Shortly after <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a> failed to capture <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luke')'>Luke Skywalker</a> on <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>, the Emperor commanded Jade to kill the young <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Kn')'>Jedi</a>. Predicting that Luke would eventually surface at <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba's</a> palace, Mara infiltrated the crime lord's cartel disguised as 'Melina Carniss.' As related in <i>Tales from Jabba's Palace</i>, she missed her opportunity to kill Luke and, soon after, learned that the Emperor had perished aboard the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. Mara blamed Luke for the Emperor's death and vowed to complete her mission by finally assassinating her enemy. Unfortunately, she also discovered that her Force powers had diminished considerably with the Emperor's passing.<br><br>An outcast with no allegiance, Jade eventually found employment with the smuggler <a href='#glossary/' onclick='glossary.displayFromExternal('Karr')'>Talon Karrde</a>. After only six months, she worked her way through his organization until she became Karrde's second-in-command. Her hatred for Skywalker never diminished, however. In a strange twist of fate, Karrde decided to capture Luke in order to gain leverage in his dealings with <a href='#glossary/' onclick='glossary.displayFromExternal('Thr')'>Grand Admiral Thrawn</a>. Although Mara would have killed Luke immediately, Karrde wanted to bide his time and ordered that Skywalker be imprisoned instead. Luke later escaped and Mara recaptured him, but then found herself protecting Skywalker from Imperials and other dangers. During this time, they forged an uneasy alliance.<br><br>As Thrawn gained more power, Jade and Karrde were drawn into the conflict. The mad Jedi clone, <a href='#glossary/' onclick='glossary.displayFromExternal('C'baoth, Joruu')'>Joruus C'baoth</a>, confronted Luke and Mara, and revealed Skywalker's clone, <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luu')'>Luuke</a>. In the ensuing battle, Mara killed Luuke, which greatly eased her hatred for the real Skywalker. Free of the Emperor's grip, she stood by Karrde as he formed the Smuggler's Alliance and supported the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>. She later took control of Karrde's operations, briefly studied with Luke at his <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi a')'>Jedi academy</a>, and fought against Imperial <a href='#glossary/' onclick='glossary.displayFromExternal('Daa')'>Admiral Daala</a>. She also joined forces with <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Ha')'>Han Solo</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Calri')'>Lando Calrissian</a> on several missions, and aided in the defeat of <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Jedi')'>Dark Jedi</a> Kueller.",
+        "bts": "Mara Jade was created specifically for the Thrawn trilogy of novels, which includes <i>Heir to the Empire</i>. She has also appeared in several comic books and other works, including <i>Dark Apprentice</i> and <i>Darksaber</i>. <br><br>Mara Jade is also the only character who does not appear in the films yet ranked among the Top Twenty <i>Star Wars</i> characters, as compiled by <i>Star Wars Insider</i>, published in issue 38. She ranked 20th.",
+        "btsimages": [
+            "Concept design for Mara Jade by Cory Allemeier, for the game <i>Masters of Ter's K'si</i> by LucasArts.",
+            "Additional Mara Jade images by Allemeier.",
+            "Mara Jade appears in both <i>Masters of Ter's K'si</i> and <i>Mysteries of the Sith</i> by LucasArts.",
+            "Mara Jade in costume, by Cory Allemeier.",
+            "Mara Jade as she appears in <i>Heir to the Empire</i> by Dark Horse Comics.",
+            "Mara Jade is suspicious by nature.",
+            "Jade watches a hologram image of C-3PO in <i>Heir to the Empire</i>. The image is a message to Mara and Luke from Talon Karrde.",
+            "Cory Allemeier and Mai Nguyen's computer-generated version of Mara Jade, used in both <i>Masters of Ter's K'si</i> and <i>Mysteries of the Sith</i>.",
+            "Mara Jade is beautiful, but deadly.",
+            "Another look at the computer-generated Jade model.",
+            "Mara Jade eventually turns away from her dark past and begins to learn the ways of the light side of the Force."
+        ],
+        "triviaNumber": 119,
+        "introductionRight": true,
+        "relations": {
+            "ne": "THRA"
+        }
+    },
+    "OBIW": {
+        "name": "Obi-Wan \"Ben\" Kenobi",
+        "shortname": "Obi-Wan Kenobi",
+        "shortdesc": "The wizened Jedi Knight who first revealed the mysteries of the Force to young Luke Skywalker. Long before, Obi-Wan had taken another student in Luke's father, Anakin. Sadly, Obi-Wan underestimated the power of the dark side and ultimately lost Anakin to the lure of evil. Years later, Obi-Wan tried to redeem himself by confronting Anakin, who had been transformed into the vile Darth Vader. Kenobi was struck down, but even after death, he managed to guide Luke as the young Jedi attempted to save Anakin's spirit and topple the Empire.",
+        "species": "Human",
+        "height": "1.75 meters",
+        "homeworld": "Tatooine",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "While many of Obi-Wan Kenobi's early exploits have been poorly recounted, his heroism during the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a> is well-documented. Obi-Wan may have been born and raised on <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooine')'>Tatooine</a>, and he may have had a brother named <a href='#glossary/' onclick='glossary.displayFromExternal('Lars')'>Owen Lars</a>. At some point, he encountered <a href='#glossary/' onclick='glossary.displayFromExternal('Yoda')'>Jedi Master Yoda</a> and began training in the ways of the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>. It is known that Obi-Wan served with <a href='#glossary/' onclick='glossary.displayFromExternal('Orga')'>Bail Organa</a>, and possibly <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, An')'>Anakin Skywalker</a>, in the <a href='#glossary/' onclick='glossary.displayFromExternal('Clone')'>Clone Wars</a>. As General Kenobi, he became a great war hero during that conflict. He also decided to teach Anakin Skywalker to wield the Force.<br><br>The details surrounding Obi-Wan's ascension as a <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi kn')'>Jedi Knight</a> and his failure with Anakin Skywalker have yet to be revealed. Some reports indicate that Kenobi confronted Anakin after he realized that Skywalker had succumbed to the dark side. The two became embroiled in a duel near a molten pit of lava, and Anakin toppled into the magma. Although Obi-Wan initially believed that his student had perished, he soon discovered that Anakin had, in fact, been transformed into <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a>.<br><br>When Vader joined forces with <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor Palpatine</a> and began slaughtering the Jedi, Obi-Wan agreed to hide the twin son and daughter born to Skywalker's estranged wife. The infant girl was entrusted to Bail Organa, while the boy was given to Owen Lars and his wife Beru to raise as their \"nephew.\" Neither child was to be told of their true parentage. Kenobi himself became a hermit near the edge of Tatooine's Western <a href='#glossary/' onclick='glossary.displayFromExternal('Dune')'>Dune Sea</a>, where he could secretly watch over young <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>.<br><br>As Luke grew older, Kenobi realized that the boy was strongly connected to the Force. He made one early attempt to contact Luke and present him with Anakin Skywalker's original <a href='#glossary/' onclick='glossary.displayFromExternal('lightsa')'>lightsaber</a>, but Owen would not allow this. Eventually, however, Kenobi rescued Luke from <a href='#glossary/' onclick='glossary.displayFromExternal('Tusk')'>Tusken Raiders</a> and invited the boy back to his home. There, Luke finally received Anakin's weapon and learned of <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Pr')'>Princess Leia's</a> mission. Kenobi urged Luke to join him on a trip to <a href='#glossary/' onclick='glossary.displayFromExternal('Ald')'>Alderaan</a>, and Luke eventually accepted after discovering that Imperial <a href='#glossary/' onclick='glossary.displayFromExternal('stormt')'>stormtroopers</a> had murdered Owen and Beru.<br><br>Kenobi hired <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Ha')'>Han Solo</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a> in order to make the trip to Alderaan, and during their journey, he began teaching Luke to control the Force. Unfortunately, when the group arrived at Alderaan's coordinates, they found that the planet had been completely destroyed by the Imperial super weapon, the <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a>. The battle station soon trapped the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>, Solo's ship, but the heroes eluded capture. Obi-Wan used his considerable abilities to deactivate the Death Star's tractor beam, but was confronted by Vader. During the ensuing lightsaber duel, Kenobi distracted Vader and nearby stormtroopers, allowing Skywalker and his allies to escape. To divert his enemy, Kenobi allowed himself to be struck down by Vader. The Jedi's cloak fell empty to the Death Star floor: Kenobi had finally become one with the Force.<br><br>Yet, even in seeming death, Obi-Wan remained Luke's mentor and protector. He continued to guide Luke, urging the boy to \"use the Force\" during Skywalker's successful attack on the Death Star. He advised Luke to visit the planet <a href='#glossary/' onclick='glossary.displayFromExternal('Dag')'>Dagobah</a> and continue his training under Jedi Master Yoda. After Yoda's own demise, Obi-Wan insisted that Luke confront Vader in order to save the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>.<br><br>After the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, the spirit of Obi-Wan appeared to Luke on several occasions. But in his final manifestation on <a href='#glossary/' onclick='glossary.displayFromExternal('Corus')'>Coruscant</a>, Kenobi told Luke that the distances were too great for him to appear again. \"I loved you as a son, and as a student, and as a friend,\" Kenobi told Skywalker. \"Until we meet again, may the Force be with you.\"  Luke, he said, was not the last of the Jedi, but \"the first of the new.\"",
+        "bts": "Obi-Wan's character evolved through several drafts of the original <i>Star Wars</i> screenplay. Initially, he was quite eccentric, very brusque, and very enigmatic. While supportive of Luke, Obi-Wan was also a difficult instructor, much more akin to Yoda in <i>The Empire Strikes Back</i>.<br><br>Alec Guinness, who would ultimately become Obi-Wan on film, first discovered <i>Star Wars</i> when an unsolicited script landed in his dressing room while he was filming <i>Murder by Death</i> at Warner Bros. Studios in Burbank, California. The cover of the script was adorned with comic-strip artwork portraying an early design of Luke Skywalker. Guinness later met with Lucas and agreed to appear in the film, after hearing the director's vision of Obi-Wan. Other actors considered for the role included Japanese actor Toshiro Mifune.<br><br>Although Alec Guinness developed the character of Obi-Wan in <i>Star Wars</i>, it was not known until late in the filming of <i>The Empire Strikes Back</i> whether or not he would reprise the role. As of August, 1979, Guinness was recuperating from an eye operation and was urged by his doctors to avoid bright lights, such as those found on a studio set. However, on September 5, Guinness arrived at Elstree Studios for a single, six-hour day of shooting.<br><br>While Ben Kenobi's past will be developed in <i>Star Wars</i>: Episode I, there are hints about his history in the novelizations and radio adaptations of the <i>Star Wars</i> trilogy. In the radio version of <i>Star Wars</i>, for example, it is revealed that General Kenobi helped Alderaan survive the Clone Wars.",
+        "gallery": [
+            "Although he is a Jedi Knight and war hero, Obi-Wan Kenobi is known to the people of Tatooine as \"old Ben,\" a slightly addled hermit.",
+            "After he rescues Luke Skywalker, Obi-Wan reveals some truths about Luke's father.",
+            "Luke receives his father's lightsaber from Obi-Wan Kenobi.",
+            "After Luke discovers that his aunt and uncle have been murdered by Imperials, he asks Obi-Wan to teach him the ways of the Force.",
+            "Obi-Wan carefully watches the streets of Mos Eisley while Luke sells his landspeeder to Wioslea.",
+            "Obi-Wan and Han Solo watch as Luke trains. Moments before, Obi-Wan sensed the destruction of Alderaan as a \"great disturbance in the Force.\"",
+            "Obi-Wan disables the Death Star's tractor beam, allowing his allies to escape aboard the <i>Millennium Falcon</i>.",
+            "After many years, Obi-Wan prepares to face Darth Vader again.",
+            "Obi-Wan engages Darth Vader in a lightsaber duel. The battle will be Kenobi's last.",
+            "The spirit of Obi-Wan Kenobi appears before Luke on Hoth. Kenobi instructs Skywalker to visit Dagobah and receive training from Jedi Master Yoda."
+        ],
+        "btsimages": [
+            "Concept sketches for Obi-Wan Kenobi (with Luke at far right).",
+            "The ghostly form of Obi-Wan Kenobi in a production painting.",
+            "Alec Guinness (left) and George Lucas during filming of <i>Star Wars</i>.",
+            "Alec Guinness (right) as Obi-Wan Kenobi on the set of <i>Star Wars</i>, with director Lucas (far left) and Mark Hamill (Luke, on ground).",
+            "Guinness and David Prowse (Darth Vader) during filming of the lightsaber duel. The lightsaber glow was added in post-production.",
+            "Guinness with lightsaber prop.",
+            "Alec Guinness films a scene on Dagobah. A blue glow surrounding the actor was added in post-production.",
+            "Guinness and Mark Hamill film a conversation on Dagobah for <i>Return of the Jedi</i>."
+        ],
+        "triviaNumber": 257,
+        "introductionRight": true,
+        "videoClip": true,
+        "relations": {
+            "n": "YODA",
+            "ne": "R2D2",
+            "se": "C3PO",
+            "so": "DART",
+            "o": "ANAK"
+        }
+    },
+    "OWEN": {
+        "name": "Owen and Beru Lars",
+        "shortname": "Owen & Beru Lars",
+        "shortdesc": "Luke Skywalker's surrogate parents, who raised him in anonymity on Tatooine to protect him from Darth Vader. Owen and Beru were industrious moisture farmers and they taught Luke the value of loyalty and hard work. Although they attempted to shield him from the galactic conflict, they also indulged his natural talent as a pilot by purchasing the boy a skyhopper and allowing him to practice in Beggar's Canyon. Owen and Beru were murdered by stormtroopers searching for R2-D2 and C-3PO. Their deaths forced Luke onto the Jedi's path.",
+        "species": "Humans",
+        "height": "1.7 and 1.5 meters",
+        "homeworld": "Tatooine",
+        "affiliation": "None",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "While Owen and Beru Lars devoted their lives to protecting and caring for <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luke')'>Luke Skywalker</a>, their exact relationship to the boy remains unclear. It is known that <a href='#glossary/' onclick='glossary.displayFromExternal('Keno')'>Obi-Wan Kenobi</a> turned to the couple soon after Luke's birth and implored them to care for the child. They clearly had some knowledge of <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, An')'>Anakin Skywalker</a>, who later became <a href='#glossary/' onclick='glossary.displayFromExternal('Vade')'>Darth Vader</a>, and sought to protect Luke from traveling his father's path. Owen, in particular, tried desperately to keep Luke on the <a href='#glossary/' onclick='glossary.displayFromExternal('mois')'>moisture farm</a> even as the boy planned to attend the <a href='#glossary/' onclick='glossary.displayFromExternal('Aca')'>Academy</a>. Beru, in contrast, was more understanding of Luke's dreams.<br><br>Above all else, Owen and Beru were extremely protective of Luke. When Imperial <a href='#glossary/' onclick='glossary.displayFromExternal('storm')'>stormtroopers</a> arrived on their farm, the couple refused to answer any questions, fearing that Luke's safety would be threatened. For this insolence, they were killed. The Imperials then set the moisture farm afire, and when Luke returned he found only the charred remains of his lifelong guardians. From tragedy, however, triumph would ultimately emerge: As Luke stared at the burning bodies, he resolved to master the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a> and destroy the <a href='#glossary/' onclick='glossary.displayFromExternal('Empir')'>Empire</a>.",
+        "bts": "During story conferences for <i>Return of the Jedi</i>, it was suggested that Owen Lars was, in fact, Obi-Wan Kenobi's brother. According to the story meetings, Owen and Beru agreed to care for Luke, but Owen always resented his brother for imposing the boy on the struggling moisture farmers.",
+        "gallery": [
+            "Owen Lars and Luke Skywalker head toward the Jawa sandcrawler to purchase a pair of droids.",
+            "Owen and his charge on Tatooine.",
+            "Owen Lars haggles with the Jawas while buying droids.",
+            "Beru Lars in her kitchen on Tatooine. Beru grows most of her own vegetables in a special hydroponic greenhouse located beneath the Lars moisture farm.",
+            "Owen, Luke, and Beru sit down to a meal. Throughout his youth, Owen and Beru tried to protect Luke from traveling the same road as his father, Anakin."
+        ],
+        "triviaNumber": 124,
+        "introductionRight": false,
+        "relations": {
+            "se": "LFRI",
+            "so": "BIGG"
+        }
+    },
+    "MADI": {
+        "name": "General Crix Madine",
+        "shortname": "Madine",
+        "shortdesc": "One of many Imperial officers who, disgusted by the Emperor's rule, defected to the Rebel Alliance. Madine originally earned his reputation as a brilliant leader while in charge of the Storm Commandos, an elite army unit ordered to commit heinous crimes in the Emperor's name. Madine eventually came to loathe such atrocities and willingly joined the Alliance, where he was placed in command of covert actions. In this capacity, he devised the attack on the Endor shield generator and trained the soldiers who accompanied Han Solo to the forest moon.",
+        "species": "Human",
+        "height": "1.7 meters",
+        "homeworld": "Corellia",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "Crix Madine did not join the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel All')'>Rebel Alliance</a> until shortly after the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, when his conscience and strong morals finally forced him to refuse a direct order from the <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor</a>. A wanted criminal, Madine had no choice but to join the Rebels. He then rediscovered his old friend <a href='#glossary/' onclick='glossary.displayFromExternal('Riee')'>Carlist Rieekan</a>. Based on Rieekan's recommendation, Madine was accepted by <a href='#glossary/' onclick='glossary.displayFromExternal('Moth')'>Mon Mothma</a> despite his past affiliations. Mon Mothma's decision proved incredibly wise, for Madine immediately began transforming the Rebel ground forces into fighting units capable of repelling heavily armed <a href='#glossary/' onclick='glossary.displayFromExternal('storm')'>stormtroopers</a>.<br><br>When the Alliance discovered that the <a href='#glossary/' onclick='glossary.displayFromExternal('Empire')'>Empire</a> was building a second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a> above the forest moon of <a href='#glossary/' onclick='glossary.displayFromExternal('Endor')'>Endor</a>, General Madine took it upon himself to find a way to destroy the shield generator protecting the new battle station. First, he assigned the task of capturing an <a href='#glossary/' onclick='glossary.displayFromExternal('Imperial shu')'>Imperial shuttle</a> to a unit of soldiers. Madine personally recruited and trained these operatives, and was therefore justifiably pleased when their mission proved a complete success. Next, Madine proposed that a small Rebel strike team use the stolen shuttle to land on Endor and target the shield generator. Again, he chose and prepared these soldiers, mapped out the attack, and devised strategies for dealing with resistance. The strike force, led by <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Ha')'>Han Solo</a>, succeeded in deactivating the shield around the Death Star, allowing the Rebel fleet to attack and destroy the space station. <br><br>After the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Madine declined a seat on the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic's</a> Provisional Council. He subsequently became Supreme Allied Commander for Intelligence, and was deeply involved in the New Republic's clash with <a href='#glossary/' onclick='glossary.displayFromExternal('Thrawn')'>Grand Admiral Thrawn</a>. He also devised methods for attacking the Imperial World Devastators when these massive craft attacked <a href='#glossary/' onclick='glossary.displayFromExternal('Mon Cal')'>Mon Calamari</a>. Sadly, Madine eventually met a grisly end on a highly sensitive mission. While leading a commando force in search of a massive super weapon being built for Durga the Hutt, Madine and his entire team were captured. Shortly before Alliance ships arrived to rescue the general and his unit, Durga shot Madine through the heart, killing him instantly.",
+        "gallery": [
+            "Crix Madine aboard <i>Home One</i> prior to the Battle of Endor.",
+            "Crix Madine is a serious leader who expects nothing short of total devotion from his troops.",
+            "Madine outlines the attack on the Endor shield generator."
+        ],
+        "btsimages": [
+            "Crix Madine on the set of the Rebel briefing room."
+        ],
+        "triviaNumber": 108,
+        "introductionRight": true,
+        "relations": {
+            "ne": "ACKB",
+            "se": "RIEE"
+        }
+    },
+    "MONM": {
+        "name": "Mon Mothma",
+        "shortname": "Mon Mothma",
+        "shortdesc": "The Rebel Alliance's central leader and quiet conscience throughout the Galactic Civil War. Once the Senior Senator of the Old Republic, Mon Mothma joined forces with several of her peers to thwart Emperor Palpatine's bid for ultimate power. When this failed, she founded the Rebellion. Throughout the conflict, she led with grace, dignity, wisdom, and conviction. She continued to display great inner strength and insight as the New Republic's first Chief of State, a position Mon Mothma held for several tumultuous years.",
+        "species": "Human",
+        "height": "1.5 meters",
+        "homeworld": "Chandrila",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "Born on <a href='#glossary/' onclick='glossary.displayFromExternal('Chan')'>Chandrila</a>, Mon Mothma received her political training early in life. Her father was an arbiter-general for the <a href='#glossary/' onclick='glossary.displayFromExternal('Old')'>Old Republic</a>, trained to bring peace between clashing species, while her mother served as a planetary governor. The couple taught their daughter the importance of all living creatures and the essential doctrines of strong leadership. With surprising speed, Mon Mothma grasped her parents' teachings and became the youngest person elected to the Republic Senate, an honor she held until the rise of <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Pr')'>Princess Leia Organa</a> of <a href='#glossary/' onclick='glossary.displayFromExternal('Alde')'>Alderaan</a>.<br><br>Due to her great wisdom, Mon Mothma quickly realized that the Old Republic was crumbling. When <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Senator Palpatine</a> gained control, she began quietly petitioning senators who opposed his rule. She found kindred spirits in <a href='#glossary/' onclick='glossary.displayFromExternal('Orga')'>Senator Bail Organa</a>, Leia's father, and the Corellian <a href='#glossary/' onclick='glossary.displayFromExternal('Bel')'>Senator Garm Bel Iblis</a>. Together, they plotted to thwart Palpatine, but the villain became too powerful and eventually ascended to the position of Emperor. Mon Mothma's 'treachery' was soon unearthed, and both she and Bel Iblis were forced into hiding. With Organa, they drafted the Declaration of Rebellion, unifying several systems into the Rebel Alliance and officially challenging the Emperor's rule. As retaliation, the Emperor simply disbanded the Imperial Senate.<br><br>Throughout the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a>, Mothma used her diplomatic talents to recruit new worlds and systems to the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion's</a> cause. Her powerful presence attracted hordes of loyal Rebels and dozens of important military leaders, including <a href='#glossary/' onclick='glossary.displayFromExternal('Ack')'>Admiral Ackbar</a>. She only failed in her relationship with Bel Iblis, who came to believe that Mothma simply wished to supplant the Emperor as a galactic dictator. When Bel Iblis abandoned the organized Rebellion, Mothma replaced him with <a href='#glossary/' onclick='glossary.displayFromExternal('Madine')'>General Crix Madine</a>, Princess Leia, and other heroes. Her leadership led directly to the Empire's defeat at the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>.<br><br>After the death of the Emperor, Mon Mothma took responsibility for creating a new government, dubbed the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>. She began by creating a Provisional Council, which included Leia, Ackbar, and many other important figures. She also sent diplomats and ambassadors to convert worlds loyal to the Empire to the doctrines of the New Republic. Only rarely did she authorize violence, although the Republic was constantly plagued by remnants of the Imperial fleet and other threats. She did order the attack on <a href='#glossary/' onclick='glossary.displayFromExternal('Corus')'>Coruscant</a>, which later became the capital of the New Republic, and declared war against <a href='#glossary/' onclick='glossary.displayFromExternal('Thrawn')'>Grand Admiral Thrawn</a> and his successors. In all these instances, the Republic eventually met with victory.<br><br>Although Mon Mothma was forced to endure an assassination attempt, the New Republic's brief exile from Coruscant, and the return of the Emperor, she remained a stable and dedicated leader. Eventually, however, Mon Mothma stepped down from her post as Chief of State, presenting the title to Princess Leia.",
+        "gallery": [
+            "Mon Mothma aboard <i>Home One</i> shortly before the Battle of Endor.",
+            "Mon Mothma warns the Rebels that they face their most desperate hour.",
+            "Mon Mothma listens as Crix Madine outlines the attack on the Imperial installation on Endor."
+        ],
+        "btsimages": [
+            "Mon Mothma depicted in <i>Heir to the Empire</i> by Dark Horse Comics."
+        ],
+        "triviaNumber": 59,
+        "introductionRight": false,
+        "relations": {
+            "n": "WEDG",
+            "se": "ACKB",
+            "so": "NIEN",
+            "no": "LUKE"
+        }
+    },
+    "PALP": {
+        "name": "Emperor Palpatine",
+        "shortname": "Emperor",
+        "shortdesc": "The diabolical Dark Jedi who ruled the galaxy through fear until his death aboard the second Death Star. As Emperor, Palpatine dissolved the Imperial Senate, ordered the destruction of the last Jedi Knights, and corrupted Darth Vader. In his quest for power, Palpatine also attempted to kill Luke Skywalker. Ultimately, however, Palpatine underestimated Darth Vader's inherent goodness: Upon seeing Luke in agony, the Dark Lord intervened and hurled Palpatine into the Death Star's reactor core, where the villain perished.",
+        "species": "Human",
+        "height": "1.73 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Empire",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Palpatine ruled the galaxy for over 40 years, first rising to the position of Senate President before taking the title of Emperor. In both roles, Palpatine promoted the doctrines of hatred, racism, and tyranny. He eliminated all opposition in violent fashion, forcing senators such as <a href='#glossary/' onclick='glossary.displayFromExternal('Moth')'>Mon Mothma</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Bel')'>Garm Bel Iblis</a> to disappear into hiding. As Emperor, he used <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a> as his enforcer and hounded the <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Kn')'>Jedi Knights</a>, slaughtering the last of this noble sect to ensure that he would never be challenged. Meanwhile, he launched a massive military buildup and began constructing incredibly destructive starships, space stations, and weapons. During this dark time, hundreds of worlds were enslaved or ravaged, dissidents were murdered, and entire industries were nationalized. Shortly before the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, the Emperor, whose ascension had been made possible by corruption and apathy throughout the <a href='#glossary/' onclick='glossary.displayFromExternal('Old')'>Old Republic</a>, abolished the <a href='#glossary/' onclick='glossary.displayFromExternal('Imperial Sen')'>Imperial Senate</a>. With this deed done, there was little to stand in Palpatine's path toward ultimate power.<br><br>Palpatine's numerous plots and schemes resulted in the construction of the <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a>, which was used to vaporize the peaceful world of <a href='#glossary/' onclick='glossary.displayFromExternal('Ald')'>Alderaan</a>. When this massive space station was itself destroyed by the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>, the Emperor charged Darth Vader with crushing the Alliance. The diabolical pair soon discovered the existence of Vader's son, <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>, and agreed to convert him to the dark side. Neither man accurately gauged Luke's willpower, however, and the young Jedi struggled valiantly against their attempts to lead him down a path of evil. Frustrated by this failure, the Emperor opted to murder Luke aboard the second, larger <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. Content that he had Vader under his complete control, the Emperor turned his back on the <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Lord')'>Dark Lord of the Sith</a> as he tormented Luke with painful blue <a href='#glossary/' onclick='glossary.displayFromExternal('Force light')'>Force lightning</a>. But Vader was rescued from the depths of the dark side by his son's pleas. Despite his crippling injuries, Vader hoisted the Emperor above his head and threw the despot into the Death Star's power core. Minutes later, the Rebel fleet obliterated the space station.<br><br>While the Emperor's original body was destroyed aboard the second Death Star, <i>Dark Empire</i> reveals that Palpatine had used the Empire's wealth to develop advanced cloning techniques to ensure his survival. Thus, six years after the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, the Emperor was reborn in a secret cloning facility on <a href='#glossary/' onclick='glossary.displayFromExternal('Byss Emp')'>Byss</a>. Again, Palpatine set out to convert Luke, who actually accepted the Emperor's training in the ways of the dark side for a short time. Ultimately, the combined might of Luke and his sister, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Pr')'>Princess Leia</a>, overwhelmed the Emperor and seemingly killed him yet again.<br><br>Months later, the events of <i>Dark Empire II</i> and <i>Empire's End</i> unfolded when the Emperor's spirit entered the body of yet another clone. In this incarnation, he conspired to kidnap Leia, claim her unborn son and lead him toward the dark side, and use a new superweapon called the <a href='#glossary/' onclick='glossary.displayFromExternal('galaxy gun')'>Galaxy Gun</a> to completely destroy the leading Alliance officials. All of his plots fell apart and he was killed, presumably for the last time, even as he attempted to join his spirit with the body of the newborn <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, An')'>Anakin Solo</a>.",
+        "bts": "The Emperor first appears in a hologram in <i>The Empire Strikes Back</i>. For this scene, an older woman was filmed wearing pale-green make-up. Chimpanzee eyes were later matted into the eye sockets to achieve the Emperor's bizarre stare.<br><br>In <i>Return of the Jedi</i>, Ian McDiarmid took on the role of the Emperor. It required four hours for make-up artist Nick Dudman to transform McDiarmid into the Emperor. The actor arrived at the studio around three in the morning and usually slept through most of the application process.<br><br>Although believed dead at the end of <i>Return of the Jedi</i>, the Emperor has resurfaced in works such as <i>Dark Empire</i> and <i>Dark Empire II</i>. His evil ways have made him the villain that fans love to hate: in <i>Star Wars Insider</i> #38, Palpatine was ranked no. 14 on the list of the Top Twenty <i>Star Wars</i> Characters.",
+        "triviaNumber": 97,
+        "gallery":[
+            "The evil Emperor Palpatine, ruler of the galaxy.",
+            "The Emperor in his throne room. The despot's throne was located atop a tower at the Death Star's pole.",
+            "Before his death, Emperor Palpatine was a withered old man kept alive by the power of the dark side.",
+            "The Emperor boasts of the dark side's power. His attempts to seduce Luke to the dark side ultimately fail.",
+            "The Emperor uses his vile powers to attack Luke Skywalker. He almost slays the young Jedi, but Darth Vader intervenes."
+        ],
+        "btsimages":[
+            "Production painting of the Emperor's ruthless attack on Luke Skywalker.",
+            "Ian McDiarmid portrayed Palpatine in [Return of the Jedi]. He will reprise the role in the upcoming prequel.",
+            "McDiarmid in full make-up and costume descends from the gangplank of the full-scaled Imperial shuttle.",
+            "McDiarmid on the Emperor's throne room set.",
+            "McDiarmid enacts the Emperor's attack on Luke. The blue Force lightning was added in post-production."
+        ],
+        "introductionRight": true,
+        "relations": {
+            "ne": "PIET",
+            "se": "DART",
+            "so": "TARK"
+        }
+    },
+    "ANAK": {
+        "name": "Anakin Skywalker",
+        "shortname": "Anakin Skywalker",
+        "shortdesc": "The father of Luke Skywalker and Leia Organa, and a powerful Jedi, skilled pilot, and legendary war hero. As a young man, Anakin was tempted by the dark side and plunged into a world of evil and corruption. Under the tutelage of Emperor Palpatine, he became the vile Darth Vader, Dark Lord of the Sith. However, a small shard of Anakin Skywalker survived. When Luke faced death at the hands of the Emperor, Anakin valiantly struggled against himself until he vanquished his Vader persona, destroyed Palpatine, and ultimately reclaimed his spirit.",
+        "species": "Human",
+        "height": "2.02 meters",
+        "homeworld": "Unknown",
+        "affiliation": "None",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "Anakin Skywalker's past is tangled in myth and speculation, but it is known that he displayed incredible affinity for the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a> even as a child. Eventually, he came to the attention of <a href='#glossary/' onclick='glossary.displayFromExternal('Keno')'>Obi-Wan Kenobi</a>, who guided the boy during his formative years. Anakin soon became a heroic pilot and, together with Obi-Wan, battled in the legendary <a href='#glossary/' onclick='glossary.displayFromExternal('Clone')'>Clone Wars</a>. Sadly, Obi-Wan was overconfident in his ability to properly teach Anakin the ways of the Force. Under the influence of the evil <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Senator Palpatine</a>, Anakin was seduced by the dark side; he gradually succumbed to burning feelings of anger and hate until he was transformed into <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a>, the <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Lor')'>Dark Lord of the Sith</a>. In this new incarnation, he launched a campaign to purge the universe of the <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Kn')'>Jedi Knights</a>, paving the way for Palpatine's rise to power.<br><br>Although the details of Anakin's metamorphosis into Darth Vader are unclear, some tales hold that his final fall occurred on the edge of a molten pit during a duel with his former teacher, Obi-Wan Kenobi. The battle was fierce but Anakin faltered and plummeted into the pit, where he almost perished. When he finally emerged, horribly scarred and grievously wounded, all remnants of Anakin had slipped away and he was wholly one with the dark side. The remains of his physical body were supported by a fearsome armored suit, and his burned face was covered by the mask of Darth Vader.<br><br>Whatever the cause of his transformation, it is clear that Anakin embraced his Darth Vader identity. As Vader, he pursued the remaining Jedi Knights throughout the galaxy, virtually extinguishing the order. When Palpatine took the title of Emperor, Vader was appointed his enforcer. In this role, he joined <a href='#glossary/' onclick='glossary.displayFromExternal('Tark')'>Grand Moff Tarkin</a> in the construction of the <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a> and hounded the fledgling <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel Alli')'>Rebel Alliance</a>. After Tarkin's death at the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, Vader took full control of the Imperial forces and devoted all his energies toward extinguishing the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>. He maintained his position through a constant campaign of terror, murder, and intimidation.<br><br>In the end, however, Anakin Skywalker proved stronger than Darth Vader. When Vader discovered that he had a son, he and Palpatine began plotting to corrupt <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>. But after this proved impossible, the Emperor attempted to murder the young Jedi. As Luke struggled in agony, Vader managed to break free of the influence of the dark side and became Anakin Skywalker once more. He then risked himself to rescue Luke from certain death and hurled Palpatine into the reactor core of the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. Anakin perished soon after, but before he died he instructed Luke to remove his helmet. For the first time, Anakin looked upon his son with his own eyes, and at last his redemption was complete. A short time later, Luke saw a vision of his father, alongside Obi-Wan Kenobi and <a href='#glossary/' onclick='glossary.displayFromExternal('Yo')'>Yoda</a>, as a luminous being finally at peace with the Force.",
+        "bts": "Although one of the most surprising revelations from <i>Return of the Jedi</i>, originally Lucas did not have a specific idea about what Vader/Anakin would look like beneath his helmet. He only knew that the character had survived numerous battles and may have been sent into a volcano by Ben Kenobi. When he crawled from the volcano, Vader was all but dead and had to rely on technology to survive. According to Lucas, Anakin/Vader is \"kind of this three-quarter mechanical man and one-quarter human, and the suit he wears is like a walking iron lung.\" In the film, veteran actor Sebastian Shaw took on the role of Anakin, bringing to life the redeemed villain.",
+        "gallery": [
+            "Anakin Skywalker, moments before he becomes one with the Force aboard the second Death Star."
+        ],
+        "btsimages": [
+            "Sebastian Shaw in full Anakin Skywalker make-up.",
+            "Shaw poses for a costume photo."
+        ],
+        "triviaNumber": 86,
+        "introductionRight": true,
+        "relations": {
+            "se": "OBIW",
+            "so": "DART"
+        }
+    },
+    "HANS": {
+        "name": "Han Solo",
+        "shortname": "han Solo",
+        "shortdesc": "The former smuggler and gambler who transcended his reputation as a scoundrel and emerged as one of the Rebellion's greatest heroes, while remaining one of its most contradictory figures. Although often considered greedy and self-serving, Han constantly places himself in harm's way to protect his friends. While his arrogance is unsurpassed, neither is his skill as a pilot. He is at once brash and suspicious, charming and insufferable, confident and stubborn. Despite these vagaries, he is a symbol of courage and strength within the Rebel Alliance.",
+        "species": "Human",
+        "height": "1.83 meters",
+        "homeworld": "Corellia",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "Han Solo's early life is shrouded in mystery, although almost all sources agree that he was an orphan with few family ties. According to <i>The Paradise Snare</i>, as a youth he became an unwilling member of a criminal cartel, where he encountered his first <a href='#glossary/' onclick='glossary.displayFromExternal('Wook')'>Wookiee</a> and learned to speak the Wookiee language. Eventually, Han escaped the cartel and enrolled in the <a href='#glossary/' onclick='glossary.displayFromExternal('Acad')'>Imperial Academy</a>. He excelled at the Academy, but was ousted after he saved the life of an enslaved Wookiee named <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a>. For this selfless act, the Wookiee swore a life debt to Han Solo and has remained at his side throughout numerous harrowing adventures.<br><br>Soon after joining forces with Chewbacca, Han Solo embarked upon his career as a smuggler. To aid in his chosen profession, Solo won a Corellian light freighter, the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>, from his friend and sometime-employer, <a href='#glossary/' onclick='glossary.displayFromExternal('Calris')'>Lando Calrissian</a>. Han and Chewbacca drastically modified the <i>Falcon</i>, converting it into one of the galaxy's most versatile starships. As the <a href='#glossary/' onclick='glossary.displayFromExternal('Empire')'>Empire</a> rose to power, the pair focused their attention on <a href='#glossary/' onclick='glossary.displayFromExternal('Corpor')'>the Corporate Sector</a>, a vast region of space virtually untouched by Imperial forces; their adventures during this time are recounted in <i>Han Solo at Stars' End</i>, <i>Han Solo's Revenge</i>, and <i>Han Solo and the Lost Legacy</i>. <br><br>A few years later, Solo found himself running a regular glitterstim <a href='#glossary/' onclick='glossary.displayFromExternal('spice')'>spice</a> smuggling route for <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a>. Unfortunately, during one mission, Imperial customs officials boarded the <i>Millennium Falcon</i> and Han was forced to dump his shipment. This greatly enraged Jabba, who subsequently placed a bounty on the smuggler and his Wookiee partner. As a result, bounty hunters hounded Solo for years to come. <br><br>In an attempt to pay back Jabba, Solo agreed to transport <a href='#glossary/' onclick='glossary.displayFromExternal('Keno')'>Ben Kenobi</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('R2-D')'>R2-D2</a> to <a href='#glossary/' onclick='glossary.displayFromExternal('Ald')'>Alderaan</a>. This seemingly simple mission led Han into the heart of the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>. He aided in the rescue of <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Pr')'>Princess Leia</a> from the <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a>, then joined the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a> in time to save Luke from <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader's</a> approaching starfighter. Rather than returning to <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a> and paying his debt to Jabba, Han spent the next three years helping the Rebels find a safe haven on the ice planet <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth')'>Hoth</a>. This long delay further incensed the Hutt, who placed a death mark on Han's head.<br><br>Eventually, the huge reward for Han's capture would be collected. At Darth Vader's command, <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a> and several other bounty hunters launched an effort to locate the <i>Millennium Falcon</i>. Fett succeeded when he discovered that Han was bound for <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>, where the smuggler hoped to find sanctuary with his friend, Lando Calrissian. Sadly, Vader's forces arrived first and the <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Lor')'>Dark Lord of the Sith</a> compelled Lando to betray Han. Solo was then tortured, in the hope that his agony would attract Darth Vader's true target: Luke Skywalker. Once Vader received confirmation that Luke was indeed racing toward Cloud City, Solo was encased in <a href='#glossary/' onclick='glossary.displayFromExternal('carboni')'>carbonite</a> and presented to Fett. The bounty hunter transported Han to Jabba's palace and received the substantial reward.<br><br>Han would have remained trapped in carbonite forever if not for the courage of his friends. Led by Luke, Han's allies infiltrated Jabba's palace and released Solo from his plight. In the ensuing battle, Princess Leia killed Jabba. After rejoining the Rebellion, Solo became a general and led a strike force to the forest moon of <a href='#glossary/' onclick='glossary.displayFromExternal('Endor')'>Endor</a>. With the aid of the native <a href='#glossary/' onclick='glossary.displayFromExternal('Ewoks')'>Ewoks</a>, he succeeded in disabling a shield generator protecting the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. While on Endor, he openly expressed his deep love for Princess Leia. They were married four years later, and Han soon became the father of <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jac')'>Jacen</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jai')'>Jaina</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, An')'>Anakin</a>, all powerful in the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>.<br><br>Despite his growing family, Han Solo remains a vital member of the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>, willingly accepting countless missions for the fledgling government. During these exploits, he has been pursued relentlessly by Boba Fett, imprisoned in the spice mines of <a href='#glossary/' onclick='glossary.displayFromExternal('Kess')'>Kessel</a>, wrongfully accused of treason, and captured by the <a href='#glossary/' onclick='glossary.displayFromExternal('Yev')'>Yevetha</a>. Yet, even when in grave peril, Han Solo's bravery, conviction, and confidence have never wavered.",
+        "bts": "A character called \"Han Solo\" first appears in the <i>Star Wars</i> rough draft as a tall \"green-skinned monster with no nose and large gills.\" In this version and the first draft, Solo is a reserved and respectful Jedi warrior who aids General Skywalker. By the second draft, Solo becomes a pirate and smuggler. In later drafts, including the shooting script, Han is first introduced in the company of a young alien woman. In fact, in the first cut of the cantina segment, Han is first seen with a woman at his side; as Obi-Wan and Luke approach the smuggler, he sends his companion away.<br><br>While working on his concept sketches for Han Solo, Ralph McQuarrie admits that he initially viewed the rogue as \"a much more dapper sort of fellow. In fact, I saw him looking a bit like George (Lucas)'beard and all'but dressed up in really tailored clothes.\"<br><br>While casting <i>Star Wars</i>, Lucas made it clear that he did not want to hire actors who had appeared in his previous films. Harrison Ford, who had been cast in Lucas' <i>American Graffiti</i>, was asked to read the part of Han Solo during screen tests for Luke and Leia. Ford agreed to do so as a favor to the director, but became frustrated that he was reading for a part he believed he could never land. During the screen tests, however, it became clear that Ford was perfect for the part. He was selected from a pool of actors that included Nick Nolte and Christopher Walken. Lucas later realized that he had subconsciously written the role of Han Solo with Harrison Ford in mind.",
+        "gallery": [
+            "Han Solo, a Corellian smuggler, lounges in the Mos Eisley cantina on Tatooine.",
+            "Solo joins Luke Skywalker in rescuing Princess Leia from the Death Star.",
+            "Always brash and unpredictable, Solo chases a group of stormtroopers around a corner, only to be surprised by a legion of Imperials.",
+            "On the ice planet Hoth, Han sits astride a tauntaun as he searches for Luke.",
+            "Within Echo Base, Solo inspects the <i>Millennium Falcon</i>'s landing gear.",
+            "An expert mechanic, Solo is constantly at work on his temperamental starship, the <i>Millennium Falcon</i>.",
+            "Solo finally expresses his true feelings for Princess Leia.",
+            "After he is betrayed by Lando Calrissian and captured by Darth Vader, Han Solo is encased in carbonite. Boba Fett later delivers the smuggler to Jabba the Hutt.",
+            "With Boushh's help, Han Solo is freed from carbonite. Unfortunately, he suffers from blinding hibernation sickness upon his release.",
+            "Princess Leia throws off her Boushh disguise and embraces Han.",
+            "Solo and Leia in Jabba's palace, moments before they are captured by the crime lord.",
+            "Jabba's cronies surround Leia and Han as Solo makes an unsuccessful attempt to bribe the Hutt.",
+            "During the mission to disable the second Death Star's shield generator on Endor, Han and his allies are captured by the Ewoks, who plan to roast the heroes.",
+            "After he becomes a general within the Rebel Alliance, Han leads the successful mission to destroy the Endor shield generator.",
+            "With the Empire's defeat, Han and Leia at last find time for one another. Four years after the Battle of Endor, they will finally marry."
+        ],
+        "btsimages": [
+            "Early concept designs for Han Solo.",
+            "Harrison Ford and Carrie Fisher during filming of <i>The Empire Strikes Back</i>.",
+            "Ford takes a break during location filming in Norway.",
+            "Ford and the crew film a scene in which Han Solo shoves Luke Skywalker into the belly of a tauntaun to protect the young Jedi from Hoth's harsh climate.",
+            "On the Echo Base medical bay set, Ford and Mark Hamill review a scene for <i>The Empire Strikes Back</i>.",
+            "Ford on the asteroid cave set used in <i>The Empire Strikes Back</i>.",
+            "Ford on the set of <i>The Empire Strikes Back</i>.",
+            "Ford discusses the extremely difficult carbon-freezing scene with director Irvin Kershner.",
+            "Ford subjects himself to a messy mold-making session. The mold of Ford's face will later be used to create the carbonite block bearing the actor's likeness.",
+            "Four plaster molds of Ford's face, made for the scene in <i>Return of the Jedi</i> in which Han is released from the carbonite block.",
+            "Harrison Ford and George Lucas on the set of <i>Return of the Jedi</i> in Crescent City, California.",
+            "Ford and Peter Mayhew (Chewbacca) during <i>Jedi</i> location filming.",
+            "Ford and Fisher enact their battle against Imperial stormtroopers while George Lucas looks on from the left.",
+            "Harrison Ford as Han Solo in <i>Return of the Jedi</i>."
+        ],
+        "triviaNumber": 52,
+        "introductionRight": false,
+        "tech": true,
+        "videoClip": true,
+        "relations": {
+            "n": "DART",
+            "se": "LEIA",
+            "s": "CHEW",
+            "o": "JABB",
+            "no": "BOBA"
+        }
+    },
+    "TARK": {
+        "name": "Grand Moff Willhuff Tarkin",
+        "shortname": "Tarkin",
+        "shortdesc": "The vile and ruthless commander of the original Death Star. Gaunt and imposing, Tarkin began his career as a regional governor, but his keen military mind and malevolence ensured his place as the first Imperial Grand Moff. In this capacity, he commanded numerous sectors vital to the Empire and reported directly to the Emperor. Tarkin's greatest achievement was the construction of the Death Star battle station, where he met his demise when he arrogantly underestimated the Rebellion's assault at the Battle of Yavin.",
+        "species": "Human",
+        "height": "1.8 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Empire",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "Tarkin first entered galactic politics when he was appointed governor of the Seswenna sector of space. He fully supported <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Palpatine's</a> bid to become Emperor, and for this he was given the title of Moff of the <a href='#glossary/' onclick='glossary.displayFromExternal('Outer Rim')'>Outer Rim Territories</a>. He rapidly advanced in rank until he became the Grand Moff, the highest-ranking official beneath the Emperor. During his reign, he advanced the \"Tarkin Doctrine,\" which insisted that the galaxy should be ruled through fear and force. The Tarkin Doctrine culminated in the construction of the <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a>, the ultimate weapon of terror.<br><br>Some sources suggest that the cold-hearted Tarkin took an Imperial Navy officer named <a href='#glossary/' onclick='glossary.displayFromExternal('Daa')'>Daala</a> as his mistress. He then placed her in command of the Maw Installation, the top-secret base where the Death Star was conceived. During a visit to the facility, Tarkin's ship was attacked by <a href='#glossary/' onclick='glossary.displayFromExternal('Rebels')'>Rebels</a>. The Alliance troops boarded the vessel and rescued Tarkin's <a href='#glossary/' onclick='glossary.displayFromExternal('Mon Calamari ali')'>Mon Calamari</a> servant, <a href='#glossary/' onclick='glossary.displayFromExternal('Ack')'>Ackbar</a>, who supplied the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a> with vital information concerning the Death Star and many of Tarkin's other plots. Later, Ackbar would become an Alliance admiral and lead the attack on the second, much larger <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a> at the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>.<br><br>Tarkin may have considered challenging Palpatine's rule, but he never acted on these plots. Instead, he devoted himself to rooting out the Rebellion, a task that took on greater urgency after the Rebels acquired plans to the Death Star. When <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a> captured <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Pr')'>Princess Leia</a>, Tarkin ordered that the young senator be tortured until she revealed the location of the hidden Rebel base. Leia resisted her interrogation, and Tarkin retaliated by using the Death Star to destroy her home planet of <a href='#glossary/' onclick='glossary.displayFromExternal('Ald')'>Alderaan</a>. With a single command, Tarkin extinguished a billion lives. Tarkin later allowed Leia to escape aboard <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo's</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>, but only after a tracking device had been placed aboard the starship. The beacon led Tarkin, and the Death Star, to the Rebel outpost on <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin 4')'>Yavin 4</a>. Confident of victory, Tarkin refused to abandon the space station even after his advisors discovered a minute weakness in the Death Star's defenses. He scoffed at the notion that a handful of Rebel fighters could defeat the Empire's greatest weapon, and thus perished when the Death Star was indeed destroyed.",
+        "bts": "Grand Moff Tarkin was portrayed in <i>Star Wars</i> by veteran actor Peter Cushing, a familiar face to science fiction and horror fans who starred in dozens of films. Cushing died in 1994.",
+        "gallery": [
+            "Grand Moff Tarkin threatens Princess Leia in his quest to uncover the location of the hidden Rebel base.",
+            "Tarkin and Darth Vader discuss the future of the Empire with other Imperial officers.",
+            "Tarkin and Chief Bast aboard the first Death Star, shortly before its destruction.",
+            "Tarkin answered to no one, save the Emperor. He was one of the few men who could issue orders to Darth Vader.",
+            "Tarkin was a sinister and ruthless leader who became the first Grand Moff. His death was a crushing blow to the Empire.",
+            "Grand Moff Tarkin was the mastermind behind the Death Star. He had no compunction about killing millions to achieve his goals.",
+            "Tarkin aboard the Death Star. The battle station served as Tarkin's home during his last weeks. It also represented one of the greatest threats the galaxy has ever known."
+        ],
+        "btsimages": [
+            "Grand Moff Tarkin was played by veteran actor Peter Cushing."
+        ],
+        "triviaNumber": 111,
+        "introductionRight": true,
+        "relations": {
+            "ne": "PALP",
+            "e": "DART"
+        }
+    },
+    "DART": {
+        "name": "Darth Vader",
+        "shortname": "Darth Vader",
+        "shortdesc": "The imposing personification of the dark side of the Force and Emperor Palpatine's enforcer. Once known as Anakin Skywalker, Vader was seduced by evil and accepted the title of Dark Lord of the Sith. He was thus transformed into a cruel and unrelenting Dark Jedi, unable to accept failure in others and willing to use any means necessary to achieve his diabolical goals. Yet a shred of goodness remained in this incredibly evil man, a light that Luke Skywalker finally exposed, ending Vader's reign forever.",
+        "species": "Human",
+        "height": "2.03 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Empire",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "Although he had once been the good and just <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, An')'>Anakin Skywalker</a>, the man known as Darth Vader was almost thoroughly vile. Consumed by rage and a disregard for all life, Vader committed numerous atrocities during his rise through the Imperial ranks. He lusted after power, served the <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor's</a> every whim, and knew nothing of compassion or forgiveness.<br><br>Vader first emerged when Anakin was introduced to the dark side of the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a> by Senator Palpatine. After succumbing to his aggression and hate, Skywalker began falling deeper into Palpatine's clutches. His former teacher, <a href='#glossary/' onclick='glossary.displayFromExternal('Keno')'>Obi-Wan Kenobi</a>, eventually realized the path that Anakin had chosen and tried to save his friend from the dark side. According to legend, a <a href='#glossary/' onclick='glossary.displayFromExternal('lights')'>lightsaber</a> duel erupted between the two and Anakin ultimately plummeted into a molten pit. When he emerged from the pit, Anakin had truly become Darth Vader. Due to his injuries, Vader relied upon his terrible black armor and a rasping breather, but these only made him seem more intimidating.<br><br>Soon after his confrontation with Kenobi, Vader embarked on a quest to exterminate the remaining <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Kn')'>Jedi Knights</a>. Obi-Wan and <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Mas')'>Jedi Master</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Yod')'>Yoda</a> went into hiding to avoid the purge. Kenobi also secreted away Vader's newborn twins, separating the children to protect them from their father. Vader, however, had no knowledge of his offspring and went on sowing the seeds of terror throughout the galaxy. When the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a> became a threat, he assembled an Imperial task force to eliminate the Alliance.<br><br>While aboard the first <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a>, a devastating battle station designed to destroy the Emperor's enemies in one fell blow, Darth Vader was once again confronted by his mentor, Obi-Wan. During this duel, however, Vader proved victorious and Obi-Wan was struck down. <br><br>Although the Death Star was eventually destroyed, Vader continued to plague the Rebels. He also discovered that <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke</a> was his son and began plotting to convert the boy to the dark side. To this end, he made all of Luke's allies suffer unspeakably on <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>. Fortunately, Luke escaped Vader during their violent clash on the mining colony, but not before Vader revealed his true identity. This knowledge would haunt Luke throughout the months that followed.<br><br>Ultimately, Vader's attempts to transform Luke into a <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Jedi')'>Dark Jedi</a> culminated in a dramatic duel between father and son aboard the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. While the Emperor watched, Luke struggled against his hatred and aggression, an inner conflict that the young Jedi ultimately won. Determined to destroy Luke, the Emperor enveloped Skywalker in blue <a href='#glossary/' onclick='glossary.displayFromExternal('Force light')'>Force lightning</a> until the boy hovered on the edge of death. Yet, Luke's pleas to his father awakened the spirit of Anakin Skywalker. Vader then grabbed the Emperor and threw him into the Death Star's reactor core, where Palpatine perished. Vader collapsed soon after and began to die. At Vader's request, Luke removed his father's helmet, revealing Anakin's face. In that moment, the evil being known as Darth Vader was destroyed and only Anakin Skywalker remained. Sadly, Anakin was unable to recover from his injuries and he became one with the Force shortly before the destruction of the second Death Star. To honor his father's passing, Luke took Vader's mask and black armor to the forest moon of <a href='#glossary/' onclick='glossary.displayFromExternal('Endor')'>Endor</a>, where he burned them in a huge pyre. A short time later, he saw that his father had joined <a href='#glossary/' onclick='glossary.displayFromExternal('Yod')'>Yoda</a> and Obi-Wan Kenobi as a luminous being basking in the light side of the Force.",
+        "bts": "Darth Vader began, in Lucas' mind, as an intergalactic mercenary and bounty hunter, but eventually evolved and took on a more knightly stature. The medieval influences became more pronounced over time, and the bounty hunter aspect was eventually dropped completely. However, these early concepts for Darth Vader appeared again in the character of Boba Fett. According to Lucas, Vader's name is meant to suggest \"dark father.\"<br><br>Darth Vader's helmet design was initially inspired by a \"kabuto,\" a Japanese helmet from the medieval period. Ralph McQuarrie added the breathing mask to Darth Vader's helmet simply to allow the villain to move from ship to ship in space. However, Lucas felt that the mask was perfect for conveying Vader's sinister quality and decided to make it a permanent part of the Dark Lord's costume. The final mask is reminiscent of a \"mempo,\" a steel or iron mask worn by a Japanese warlord.<br><br>While casting <i>Star Wars</i>, Lucas approached English actor and body builder David Prowse with the opportunity to portray either Vader or Han Solo's sidekick, Chewbacca. Prowse chose the role of the villain and donned the costume in all three films. Although Vader has a sinister presence on screen, on the set, the cast jokingly referred to the character as Darth Farmer because of actor Prowse's thick West Country accent. Later, Prowse's voice was replaced by that of James Earl Jones. It took Jones about two and one half hours to loop Vader's voice for the first film, and almost eight hours to perform the same duty on the second film. Because of the minimal studio time, he asked that his name be omitted from the final credits on <i>Star Wars</i>. To complete Vader's mystique, the sound effects department utilized a scuba regulator to simulate his heavy, modulated breathing.<br><br>During stunts and especially grueling combat sequences, Vader was brought to life by stuntman Peter Diamond, while Bob Anderson served as Vader's sword fight stand-in. In the final installment of the trilogy, actor Sebastian Shaw took on the role of the unmasked Vader/Anakin Skywalker.",
+        "gallery": [
+            "Darth Vader murders Captain Antilles in his quest to uncover the stolen Death Star plans.",
+            "Vader confronts Princess Leia aboard the <i>Tantive IV</i>.",
+            "With Imperial snowtroopers in tow, Vader scours Echo Base for Luke Skywalker.",
+            "Flanked by his cadre of stormtroopers and an Imperial officer, Vader captures Leia, Han, and Chewbacca.",
+            "While Lando watches in dismay, Vader promises to deliver Han Solo to Boba Fett.",
+            "Vader silently observes as Han Solo is encased in carbonite.",
+            "Vader searches for Luke on Cloud City during their climactic lightsaber duel.",
+            "Vader beckons Luke to join him and learn the ways of the dark side.",
+            "Aboard the second Death Star, Vader awaits the Emperor's arrival.",
+            "Darth Vader, Dark Lord of the Sith."
+        ],
+        "btsimages": [
+            "Concept sketches for Vader's intricate costume.",
+            "A storyboard depiction of Vader.",
+            "A storyboard portraying Vader as he storms aboard Leia's ship.",
+            "Vader and a stormtrooper commit further evil acts.",
+            "Production painting of Darth Vader engaged in a deadly lightsaber duel.",
+            "David Prowse (Darth Vader) is cooled by a small fan on the <i>Executor</i> set.",
+            "Filming takes place on the set of Vader's meditation chamber.",
+            "David Prowse (left) and Alec Guinness on the set of <i>Star Wars</i>.",
+            "Vader's grotesquely scarred head is prepared for a brief shot in <i>The Empire Strikes Back</i>.",
+            "Cel animation was used for the moment Vader attacks the Emperor and is bombarded by Force lightning.",
+            "Crew members have a bit of fun with multiple Vader costumes that were constructed.",
+            "David Prowse with a likeness of the villain he brought to life on screen.",
+            "Darth Vader as depicted in Dark Horse comic book artwork.",
+            "Vader (Prowse) kneels before an empty hologram chamber. The hologram image of the Emperor was inserted in post-production."
+        ],
+        "triviaNumber": "51",
+        "introductionRight": true,
+        "tech": true,
+        "videoClip": true,
+        "relations": {
+            "n": "PIET",
+            "ne": "ANAK",
+            "e": "OBIW",
+            "s": "HANS",
+            "o": "TARK",
+            "no": "PALP"
+        }
+    },
+    "21B": {
+        "name": "2-1B<br>Too-Onebee",
+        "shortname": "2-1B",
+        "shortdesc": "A medical droid in the service of the Rebel Alliance. 2-1B is programmed to perform first aid, surgery, prosthetic replacement, and a host of related duties. Together with FX-7, Too-Onebee resurrected Luke Skywalker from the brink of death after the young Jedi fell under attack by the vicious wampa ice creature. The droid later escaped Hoth aboard the <i>Bright Hope</i>, surviving several disasters until he was reunited with the Rebel fleet. There, he was again called upon to heal Luke, who had been seriously injured in combat with Darth Vader.",
+        "species": "Genetech 2-1B Surgical Droid",
+        "height": "1.5 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Alliance",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "A sentient droid with free will and an unfaltering desire to preserve human life, Too-Onebee was once owned by an Imperial Governor named Lord Cuvir. When Cuvir was murdered by a Rebel spy, the <a href='#glossary/' onclick='glossary.displayFromExternal('medical droid')'>medical droid</a> joined forces with the Alliance operative and fled to <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth')'>Hoth</a>, where he encountered and healed <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>. <br><br>According to <i>Tales of the Bounty Hunters</i>, Too-Onebee and his assistant, <a href='#glossary/' onclick='glossary.displayFromExternal('FX-7')'>Effex-Seven</a>, were aboard the <i>Bright Hope</i> when that transport fled <a href='#glossary/' onclick='glossary.displayFromExternal('Echo')'>Echo Base</a> during the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>. The last transport to leave the ice planet, the <i>Bright Hope</i> was disabled by the bounty hunters <a href='#glossary/' onclick='glossary.displayFromExternal('Zuc')'>Zuckuss</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('4')'>4-LOM</a>, but Too-Onebee proved instrumental in saving the lives of many of the transport's 90 passengers. Soon after, the <i>Bright Hope</i> reached the Rebel rendezvous point, where Too-Onebee was again called upon to tend Luke's injuries. At the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, he was stationed aboard <a href='#glossary/' onclick='glossary.displayFromExternal('Home')'><i>Home One</i></a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Ack')'>Admiral Ackbar's</a> personal flagship.<br><br>Like most droids of his type, the humanoid Too-Onebee has two complex manipulation appendages, a built-in medical diagnostic computer, a separate treatment-analysis computer, and a wide range of surgical attachments. His speech synthesizer provides the droid with a low and soothing electronic voice.",
+        "bts": "The Too-Onebee model was constructed based on design sketches by Ralph McQuarrie. In shots in which only Too-Onebee's surgical appendage is visible, a crew member operated the droid's \"hand\" from off-screen. The torso model constructed for <i>The Empire Strikes Back</i> reappears in <i>Return of the Jedi</i>, during the Rebel briefing scene aboard the Headquarters Frigate.<br><br>In the radio drama, it is revealed that Too-Onebee once practiced medicine in an Imperial clinic.",
+        "gallery": [
+            "Too-Onebee oversees Echo Base's advanced medical facility, which includes the bacta tank in the background.",
+            "Too-Onebee functions as both a field medic and surgeon.",
+            "As Rebel officers confer with Han Solo, Too-Onebee studies a tauntaun corpse."
+        ],
+        "btsimages": [
+            "Concept sketch for the medical droid.",
+            "Too-Onebee under construction.",
+            "Too-Onebee continues to take shape.",
+            "An unpainted version of the medical droid model.",
+            "The filmmakers manipulate one of Too-Onebee's appendages from off-screen. This scene was not used in <i>The Empire Strikes Back</i>.",
+            "The Too-Onebee model was positioned on a rotating base for some scenes.",
+            "Too-Onebee, Carrie Fisher, and Mark Hamill during filming.",
+            "The subplot involving a wampa attack, which claimed the life of this tauntaun, was ultimately dropped from <i>Empire</i>."
+        ],
+        "triviaNumber": "71",
+        "introductionRight": true,
+        "tech": true,
+        "relations": {
+            "so": "R2D2",
+            "no": "4LOM"
+        }
+    },
+    "4LOM": {
+        "name": "4-LOM",
+        "shortname": "4-LOM",
+        "shortdesc": "An older model protocol droid who altered his programming to become a master thief and, later, an infamous bounty hunter. Along with his partner, Zuckuss, 4-LOM was employed by both Jabba the Hutt and Darth Vader to hunt down and capture Han Solo. Although 4-LOM devoted much of his life to violence, the droid's central goal involved achieving true self-awareness. After rescuing Rebels trapped aboard the <i>Bright Hope</i> and joining the Alliance, he finally transcended his programming and developed the equivalent of intuition.",
+        "species": "Industrial Automaton 4-LOM protocol droid",
+        "height": "1.6 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Alliance",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "4-LOM's criminal career began when he was appointed to a post as a valet and human-cyborg relations specialist aboard a passenger liner called the <i>Kuari Princess</i>. There, he manipulated the ship's computers to subtly alter his programming until he was transformed into a skilled thief. It did not take him long to join forces with <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a>, who further modified the droid's programming to allow him to become one of the galaxy's most feared bounty hunters. Jabba wisely introduced 4-LOM to <a href='#glossary/' onclick='glossary.displayFromExternal('Zuc')'>Zuckuss</a>, an incomparable Gand tracker, and the pair began hunting prey throughout the galaxy. Their reputation attracted the attention of <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a>, who hired Zuckuss and 4-LOM, along with several other bounty hunters, to capture <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> and the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>.<br><br><i>Tales of the Bounty Hunters</i> reveals that shortly after the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>, 4-LOM and his partner attacked and seriously damaged a <a href='#glossary/' onclick='glossary.displayFromExternal('transport')'>Rebel transport</a>, the <i>Bright Hope</i>. Soon after their meeting with Vader, however, the bounty hunters became sympathetic to the Rebel cause. The pair evacuated the <i>Bright Hope</i> and allegedly joined the Alliance, where they worked in Special Forces. During this time, 4-LOM began to develop a sense of intuition, something he had desired for years. Interestingly, in the comic book adaptation of <i>Shadows of the Empire</i>, 4-LOM and several other bounty hunters, including Zuckuss and <a href='#glossary/' onclick='glossary.displayFromExternal('Boss')'>Bossk</a>, conspire to steal Han Solo's frozen body from <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a>. During the course of this mission, 4-LOM is dismembered and deactivated by Fett.",
+        "bts": "Pieces of a protocol droid costume, originally designed for C-3PO, were integrated into the 4-LOM costume.",
+        "gallery": [
+            "4-LOM (second from right) joins several other bounty hunters aboard Darth Vader's flagship."
+        ],
+        "btsimages": [
+            "The 4-LOM mask as seen in <i>The Empire Strikes Back</i>.",
+            "4-LOM attempts to steal Han Solo's body from Boba Fett in the <i>Shadows of the Empire</i> comic book.",
+            "Fett hounds 4-LOM in <i>Shadows of the Empire</i>.",
+            "As <i>Shadows of the Empire</i> reveals, 4-LOM is tenacious and continues to fight even after suffering a serious injury."
+        ],
+        "triviaNumber": "82",
+        "introductionRight": false,
+        "tech": true,
+        "relations": {
+            "e": "21B",
+            "no": "FX7"
+        }
+    },
+    "R2D2": {
+        "name": "R2-D2<br>Artoo-Detoo",
+        "shortname": "R2-D2",
+        "shortdesc": "A bold and spirited astromech droid in the service of Luke Skywalker. Artoo played a major role in the destruction of the first Death Star by delivering that battle station's technical read-outs to the Rebel Alliance. He has since aided Luke on countless flights, joining the young Jedi at the Battle of Yavin and on his perilous trip to Dagobah. The inquisitive little droid has been programmed for navigation and repair, but he is also capable of independent thought and his quick thinking has saved his friends numerous times.",
+        "species": "Industrial Automaton R2 Astromech Droid",
+        "height": ".96 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "Like all <a href='#glossary/' onclick='glossary.displayFromExternal('astromech')'>astromech droids</a>, Artoo-Detoo is designed to operate in deep space, interfacing with fighter craft and computer systems to augment the capabilities of ships and their pilots, usually from a socket behind the cockpit. He monitors and diagnoses flight performance, maps and stores hyperspace data, and pinpoints technical errors or faulty computer coding. He is also well-versed in starship repair for hundreds of styles of spacecraft, and is able to exist in the vacuum of space indefinitely. Artoo converses in a dense electronic language consisting primarily of beeps, chirps and whistles. He can understand most forms of human speech but must have his own communications interpreted by a starship's computers or an interpreter droid, such as <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a>.<br><br>Artoo's domed head, which can rotate a full 360 degrees, contains infrared receptors, electromagnetic-field sensors, a register read-out and logic dispenser, dedicated energy receptors, a radar eye, heat and motion detectors, and a holographic recorder and projector. His cylindrical body hides numerous devices, including a storage/retrieval jack for computer link-up, auditory receivers, flame-retardant foam dispenser, electric shock prod, high-powered spotlight, grasping claw, laser welder, circular saw, and a cybot acoustic signaler. Artoo usually travels on two treaded legs, although his third leg can be lowered for extra stability. In addition, Artoo has flotation devices and a periscoping visual scanner to guide him while submerged.<br><br>Artoo's early history remains completely obscured. According to the <i>Droids</i> comic books and animated television series, Artoo and Threepio undertook numerous adventures with a string of owners before finding themselves embroiled in the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>. It is known that they were aboard the <a href='#glossary/' onclick='glossary.displayFromExternal('Tant')'><i>Tantive IV</i></a> when it was captured by the Imperial <a href='#glossary/' onclick='glossary.displayFromExternal('Star Des')'>Star Destroyer</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Devas')'><i>Devastator</i></a>, at which point Artoo was entrusted with the secret <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a> plans. In the years that followed, they became deeply involved with the Alliance. However, while Threepio often served <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia</a>, Artoo was always at <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker's</a> side.<br><br>After the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Artoo continued to prove invaluable to the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>. He aided in the destruction of the massive World Devastators, joined <a href='#glossary/' onclick='glossary.displayFromExternal('Calris')'>Lando Calrissian</a> on his mission to unravel the mysteries of the <a href='#glossary/' onclick='glossary.displayFromExternal('Telj')'>Teljkon vagabond</a> ghost ship, and helped foil a plot by the <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Jed')'>Dark Jedi</a> Kueller to destroy <a href='#glossary/' onclick='glossary.displayFromExternal('Rogue Squad')'>Rogue Squadron</a>. He joins Luke on almost all his adventures and has yet to disappoint his allies.",
+        "bts": "George Lucas first conceived R2-D2's unique appearance, but allowed Ralph McQuarrie to further develop the character. In McQuarrie's early designs, Artoo traveled on a single large ball bearing rather than three legs. Other than the addition of legs, however, the droid underwent few design revisions.<br><br>Unfortunately, the process for creating Artoo on the set proved much more trying. For <i>Star Wars</i>, several models were constructed for a variety of uses. This brigade of droids included a few remote-controlled units with three legs for added stability. However, these units never worked properly because of the terrain and interference from nearby equipment. In fact, according to Lucas, Artoo did not move more than three feet in the entire film. <br><br>Other two-legged Artoo models allowed for actor Kenny Baker to sit within the droid and control movements of the head and body. In <i>Star Wars</i>, Baker peered from the droid through an opaque window that distorted his perception of distance. The inside of the R2's head had various screws and bolts protruding at odd angles, and these projections had a tendency to cut and bruise Baker. Eventually, the crew removed the screws and bolts or covered them in foam to protect the actor.<br><br>During shots with Artoo seated in the rear of Luke's X-wing, the little droid had to be filmed in front of a blue screen. However, Artoo's blue sections'notably his cranial ports'blended too easily with the blue screen. As a result, these blue sections became transparent when placed against a matte, causing the background (usually a starfield) to show through the droid. To solve this problem, the crew selected one of the Artoo units and painted all of its blue sections black, an alteration evident in the original versions of all three films. For the Special Edition release of the trilogy, digital artists reversed the change, restoring Artoo to his natural colors.<br><br>Sound effects for Artoo also involved a great deal of work. Sound designer Ben Burtt spent about 18 months collecting and editing sounds for the little droid.",
+        "gallery": [
+            "R2-D2 uses his scomp link to access the Death Star's central computer.",
+            "Artoo serves as Luke's copilot during the Battle of Yavin.",
+            "While housed in the astromech socket on an X-wing, Artoo can perform in-flight repairs and help with astrogation. He also stores hyperspace coordinates.",
+            "Artoo has a large central eye and a smaller holographic projector on his domed head.",
+            "Artoo on Dagobah, where the little droid had a dangerous encounter with a dragonsnake.",
+            "Luke consoles Artoo on Dagobah.",
+            "Artoo and Luke discuss their plight while on the swamp world.",
+            "R2-D2 in one of Cloud City's hallways. The little droid proves instrumental in the escape from Bespin.",
+            "Artoo is programmed to repair virtually everything and even reassemble complex droids such as C-3PO.",
+            "While in the service of Jabba the Hutt, R2-D2 was relegated to serving drinks to the crime lord's guests."
+        ],
+        "btsimages": [
+            "R2-D2 in an early storyboard for <i>Star Wars</i>.",
+            "Another storyboard depiction of R2-D2.",
+            "Concept sketch for R2-D2 and his many appendages.",
+            "A number of R2 units were built for different functions. These R2s were used in <i>The Empire Strikes Back</i>.",
+            "British effects supervisor Brian Johnson stands with the remote-controlled unit of R2-D2 on the lot of Elstree Studios outside London.",
+            "One of the many Artoo units used in the trilogy.",
+            "An Artoo unit, constructed for submersion in water, is prepared for its scene on the Dagobah set.",
+            "Kenny Baker portrayed R2-D2 throughout the trilogy. Here, he is prepared for a scene on Dagobah.",
+            "The submersible Artoo unit receives a quick touch-up during filming.",
+            "An Artoo unit on the Dagobah set.",
+            "Director Richard Marquand directs Kenny Baker inside his Artoo unit on the set of <i>Return of the Jedi</i>."
+        ],
+        "triviaNumber": "13",
+        "introductionRight": true,
+        "tech": true,
+        "relations": {
+            "ne": "21B",
+            "se": "C3PO",
+            "so": "OBIW",
+            "no": "FX7"
+        }
+    },
+    "C3PO": {
+        "name": "C-3PO<br>See-Threepio",
+        "shortname": "C-3PO",
+        "shortdesc": "A golden protocol droid fluent in over six million languages and loyal to the Rebellion. Threepio is anxious and prone to berating those around him, but he is also a grand storyteller and is totally devoted to Princess Leia, Luke Skywalker, and his counterpart, R2-D2. Despite a cowardly personality, C-3PO participated in the rescue of Leia from the first Death Star and joined Han Solo's strike team on the forest moon of Endor, where he convinced the Ewoks to join the Rebels.",
+        "species": "Cybot Galactica 3PO Human-Cyborg Relations Droid",
+        "height": "1.67 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "C-3PO was activated many years before the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, although his original form was reportedly very different from the golden droid so familiar to the heroes of the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a>. His first job involved programming binary load lifters, but he subsequently went on to serve a host of employers before receiving his protocol programming. At some point, it is believed that he encountered <a href='#glossary/' onclick='glossary.displayFromExternal('R2-D')'>R2-D2</a> and the pair embarked on numerous adventures together. Eventually, both droids found themselves aboard <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia's</a> consular ship, the <a href='#glossary/' onclick='glossary.displayFromExternal('Tant')'><i>Tantive IV</i></a>, in the service of Captain Antilles. When Imperials flooded the starship, Threepio reluctantly joined Artoo in an <a href='#glossary/' onclick='glossary.displayFromExternal('escape')'>escape pod</a> that subsequently crashed on <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>. On that desert world, C-3PO met his new master, <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luke')'>Luke Skywalker</a>, and subsequently began a long series of missions for the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel Al')'>Rebel Alliance</a>.<br><br>After the fall of the <a href='#glossary/' onclick='glossary.displayFromExternal('Empire')'>Empire</a> and the rise of the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>, Threepio took on the role of guardian and tutor to <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> and Princess Leia's three children. He also periodically joined Luke, Leia, Han, <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('Calris')'>Lando Calrissian</a> on various quests throughout the galaxy. He continues to be one of the New Republic's most valuable assets, and a true friend to those he serves. <br><br>Although most droids are subject to periodic memory wipes, C-3PO has managed to avoid this fate for over a century. As a result, he has developed sentience and a true personality. He has become extremely creative and is entirely capable of independent thought. Yet he remains incredibly devoted to the leaders of the New Republic and is determined to faithfully serve his allies.",
+        "bts": "Like many of the characters central to the trilogy, much of C-3PO's past remains a mystery. However, in 1977 Lucas did compose a character sketch of Threepio for author Brian Daley. In that document, Lucas reveals that the droid was constructed in a robotic factory on the planet Affa, an outland region in the third sector of the Galactic Empire, about 112 years before the Galactic Civil War. Furthermore, Threepio had about 43 owners before becoming the property of Captain Antilles. Seventy-two years prior to the Battle of Yavin, Threepio was assigned to the Court of Alderaan after serving in a subembassy in the Granicus system. This history should not be taken as truth, however, as much of Threepio's past has been altered since this 1977 sketch. For example, in that same sketch, Lucas asserts that Threepio and Artoo met aboard the <i>Tantive IV</i>. According to the current canon, however, the droids met much earlier and had numerous adventures before joining the Alliance. Fortunately, some of Threepio's past may be revealed in <i>Star Wars</i>: Episode I.<br><br>As Lucas worked through the droid's background, Threepio also underwent numerous design changes during his early creation. Ultimately, much of the droid's appearance was influenced by Maria, the elegant humanoid robot from the film <i>Metropolis</i>. The final design contains numerous art deco elements, such as the circular patterns on Threepio's midsection.<br><br>Actually creating the C-3PO suit proved a time-consuming process that put actor Anthony Daniels through many trials. When Daniels first arrived at the studio, he was stripped and encased in plaster to create a mold. The first suit created was made of latex rubber, but Daniels experienced an allergic skin reaction to the costume and found it unbearably hot. Sculptors used sheet steel when designing an early version of the gloves, but the metal hands proved far too heavy.<br><br>The costume designers used fiberglass to construct the bulk of the final costume. The arms, however, were aluminum, and plastic was used for the hands and head. On his feet, Daniels wore white sailing shoes concealed by a sheath of gold plastic. The black midsection consisted of black rubber overlaid with wires. Finally, strips of cloth bearing painted wires were sewn onto knees and elbows of the undersuit worn by Daniels. The snug costume was held together by bolts in the neck and waist, while the arms were attached to hooks at the shoulders. A strip of black tape placed on the inside of the mask covered the mouth hole to prevent the audience from seeing Daniels' lips moving.<br><br>The actor wore the complete suit only once before flying to Tunisia to begin filming, and on the first day of shooting, it took two hours to don the costume. As Daniels left his tent, he suddenly found the suit was extremely painful, as the interlocking pieces had a tendency to pinch and slice the actor. During many takes, pieces of the costume fell apart or dropped away completely. In some instances, sections of the suit also became shredded and cut the actor.<br><br>The costume had other disadvantages as well. The mask provided a very small field of vision and Daniels could not raise his head more than about 30 degrees. On the set, he normally had difficulty hearing the other actors, even while wearing a small ear phone, and his own lines were usually lost behind his mask. Daniels could not sit or climb a flight of stairs, and he had to be carried between sets on a stretcher or dolly. During shots of Threepio sitting down, pieces of gold plastic were taped to Daniels' legs to hide the fact that he wasn't wearing his whole costume. In addition to all these constraints, Daniels quickly learned that there was very little room to breathe in the suit. When he found himself out of breath, perhaps after running a short distance, he had difficulty taking in enough oxygen and nearly passed out.<br><br>Despite the trials of wearing the C-3PO costume, Anthony Daniels reprised the role in both <i>The Empire Strikes Back</i> and <i>Return of the Jedi</i>. Throughout the trilogy, he spoke 278 lines of dialogue. He also supplied the droid's voice for the radio adaptations of all three films. According to writer Brian Daley, writing dialogue for Threepio proved difficult because the droid does not breathe. Of course, Daniels could not deliver long passages of dialogue without inhaling and exhaling, and therefore many of Threepio's lines had to be condensed or broken into manageable segments.",
+        "gallery": [
+            "C-3PO and another protocol droid (U-3PO) aboard the <i>Tantive IV</i>.",
+            "C-3PO in the wastes of Tatooine, shortly before meeting Luke Skywalker.",
+            "Threepio and Artoo spend a moment discussing their plight.",
+            "Threepio emerges from an oil bath in Luke's garage.",
+            "Threepio waits nervously for Han, Luke, Leia, and Chewbacca to return to the <i>Millennium Falcon</i>.",
+            "A closer look at Threepio's detailed face. The circular device beneath his chin is actually his olfactory sensor.",
+            "After talking directly to the <i>Falcon</i>, Threepio advises Chewbacca on necessary repairs.",
+            "Threepio unwittingly interrupts a romantic moment between Han and Leia.",
+            "The unfortunate droid finds himself completely dismembered on Bespin's Cloud City.",
+            "Threepio suffers through a brief tenure as Jabba the Hutt's interpreter.",
+            "A Gamorrean guard watches over C-3PO's shoulder in Jabba's palace.",
+            "Threepio suffers great mistreatment at Jabba's hands while serving as the crime lord's interpreter.",
+            "Jabba the Hutt holds court while Threepio attempts to translate without offending his new master.",
+            "Never far from Leia's side, Threepio accompanies the Heroes of Yavin to the forest moon of Endor."
+        ],
+        "btsimages": [
+            "An early concept sketch of Threepio's face.",
+            "Early concept art depicting Threepio.",
+            "Additional concept art. Notice the bolt at the top of the robot's head, a touch that appears in the final Threepio design.",
+            "C-3PO as he appeared in storyboard artwork for <i>Star Wars</i>.",
+            "Shelves lined with unpainted Threepio masks.",
+            "Anthony Daniels and Mark Hamill on the set of <i>Star Wars</i>. As evidenced here, the C-3PO costume often needed to be repaired quickly during filming.",
+            "Because he had only limited mobility in the C-3PO costume, actor Anthony Daniels was carried from set to set on a stretcher.",
+            "While filming <i>Star Wars</i>, George Lucas directs Anthony Daniels on location in Tunisia.",
+            "Daniels is cooled during filming of <i>The Empire Strikes Back</i>.",
+            "Harrison Ford helps Daniels to his feet on the set of the <i>Millennium Falcon</i>'s main hold.",
+            "While filming a close-up shot of a dismembered C-3PO, Peter Mayhew (Chewbacca) pulls Daniels through the hallways of Cloud City.",
+            "From within the C-3PO costume, Daniels consults with director Richard Marquand before shooting a scene for <i>Return of the Jedi</i>.",
+            "With the help of a crew member, Daniels makes his way across Jabba's sail barge.",
+            "Work on Threepio's dislodged eye for <i>Return of the Jedi</i>.",
+            "Anthony Daniels surrounded by pieces of his alter ego."
+        ],
+        "triviaNumber": "50",
+        "introductionRight": false,
+        "tech": true,
+        "videoClip": true,
+        "relations": {
+            "n": "R2D2",
+            "s": "LUKE",
+            "no": "OBIW"
+        }
+    },
+    "FX7": {
+        "name": "FX-7<br>Effex-Seven",
+        "shortname": "FX-7",
+        "shortdesc": "An antiquated medical droid loyal to the Rebellion. While stationed at Echo Base on Hoth, Effex-Seven served as 2-1B's assistant. In this capacity, the cylindrical robot healed Luke after his encounter with the wampa ice creature. Later, FX-7 fled Hoth aboard the <i>Bright Hope</i>, where he was instrumental in saving the lives of 90 Rebels when the transport was attacked by bounty hunters.",
+        "species": "Medtech Industries Medical Assistant Droid",
+        "height": "1.7 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Alliance",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "FX-7 is equipped with over a dozen complex appendages arranged around his body. Each arm is fitted into a modular slot, allowing a huge variety of different surgical limbs to be attached as they are needed. FX-7's head contains an array of medical sensors and diagnostic devices, and he is equipped with a scomp link for connecting directly to medical computers, other droids, or a host of surgical machines. Unlike his partner, <a href='#glossary/' onclick='glossary.displayFromExternal('2-1')'>2-1B</a>, Effex-Seven has no speech capability, although computerized read-out screens allow him to communicate with sentient beings. As with all <a href='#glossary/' onclick='glossary.displayFromExternal('medical droid')'>medical droids</a> of his class, FX-7 is largely immobile, but can be easily transported aboard any small repulsorcart.<br><br>FX-7's work history is unknown until he found himself apprenticed to 2-1B at <a href='#glossary/' onclick='glossary.displayFromExternal('Echo')'>Echo Base</a>. He served faithfully, and used all of his resources and programming to cure <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker's</a> wounds. When the Imperial invasion of Echo Base began, FX-7 was loaded aboard the <i>Bright Hope</i>, the last transport to leave <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth')'>Hoth</a>. The vessel was subsequently attacked by the bounty hunters <a href='#glossary/' onclick='glossary.displayFromExternal('4-LOM')'>4-LOM</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Zuc')'>Zuckuss</a>. During the assault, numerous Rebels were badly injured, but FX-7 devoted all his energies toward healing the wounded. After Zuckuss and 4-LOM experienced a change of heart and rescued the disabled transport, the medical droid presumably returned to the Rebel Alliance and continued his outstanding service.",
+        "gallery": [],
+        "btsimages": [
+            "The full-scale model used to portray FX-7 during filming of <i>The Empire Strikes Back</i>.",
+            "A closer look at the detailed FX-7 model.",
+            "The FX-7 model had articulated appendages.",
+            "A close-up of one of FX-7's manipulator arms.",
+            "The FX-7 model's head had numerous gadgets and protrusions.",
+            "FX-7 poses for a reference shot."
+        ],
+        "triviaNumber": "98",
+        "introductionRight": true,
+        "tech": true,
+        "relations": {
+            "e": "4LOM",
+            "s": "R2D2"
+        }
+    },
+    "IG88": {
+        "name": "IG-88",
+        "shortname": "IG-88",
+        "shortdesc": "A heartless assassin droid who became one of the galaxy's most feared and proficient bounty hunters. IG-88 was designed with dozens of built-in weapons, including a grenade launcher, blaster rifle, missile launcher, and flamethrower. He was also programmed with sentience, which allowed him to murder his creators the moment he was activated. In the years since, he has slaughtered over 150 intelligent beings and earned the equivalent of a death sentence in 40 systems. IG-88 was also among the bounty hunters charged with finding Han Solo.",
+        "species": "Holowan Mechanicals IG-series Assassin Droid",
+        "height": "1.96 meters",
+        "homeworld": "Holowan Laboratories",
+        "affiliation": "None",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Created within the bowels of the high-security Holowan Laboratories, IG-88 became a terrible scourge the moment his programmers instilled the droid with sentience and independence. After activating himself and three other IG-88 replicas, the assassin droid proved his efficiency by slaughtering his creators. He then embarked on a career of mayhem, using his 'clones' to usurp control of a droid production plant on Mechis III. With his new progeny, produced on Mechis III and specially programmed by IG-88 himself, he plotted to instigate a droid revolt by broadcasting a simple signal throughout the galaxy.<br><br>To earn enough funds to put his scheme into action, IG-88 worked throughout the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Co')'>Galactic Core</a> as a bounty hunter. After claiming an untold number of lives, he attracted the attention of <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a>, who hired the droid, <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a>, and four other bounty hunters to find <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> and the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>. While IG-88's fate is somewhat difficult to surmise, <i>Tales of the Bounty Hunters</i> suggests that he began his quest for Solo by planting a homing device on Boba Fett's <a href='#glossary/' onclick='glossary.displayFromExternal('Slave I')'><i>Slave I</i></a>. Once Fett tracked Solo to <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>, he was confronted by one of IG-88's clones. Fett blasted this droid with an <a href='#glossary/' onclick='glossary.displayFromExternal('ion c')'>ion cannon</a>, and later destroyed two additional IG-88 replicas and their ships during a climactic battle over <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>. A year after his clones had been defeated, the original IG-88 managed to transplant his consciousness into the computer core of the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. He planned to use the giant space station to broadcast his droid activation signal, thus causing the droid revolt. However, moments before IG-88 put his plan into motion, <a href='#glossary/' onclick='glossary.displayFromExternal('Calris')'>Lando Calrissian</a> destroyed the battle station.",
+        "gallery": [
+            "IG-88 aboard the <i>Executor</i>."
+        ],
+        "btsimages": [
+            "Early concept designs for IG-88.",
+            "The full-scale IG-88 model on the <i>Executor</i> set.",
+            "IG-88 in <i>Droids: The Kalarba Adventures</i> by Dark Horse comics."
+        ],
+        "triviaNumber": "113",
+        "introductionRight": false,
+        "tech": true,
+        "relations": {
+            "n": "BOSS",
+            "ne": "DENG",
+            "e": "BOUS"
+        }
+    },
+    "LOBO": {
+        "name": "Lobot",
+        "shortname": "Lobot",
+        "shortdesc": "Lando Calrissian's administrative aide, and Cloud City's computer liaison officer. Lobot has been fitted with a cybernetic implant wrapped around his skull, which increases his intelligence and allows him to directly communicate with most computers, including Cloud City's central computer core. Lobot assisted Lando in Cloud City's daily operations and was instrumental in the rescue of Princess Leia and Chewbacca from Imperial forces.",
+        "species": "Human Cyborg",
+        "height": "1.75",
+        "homeworld": "Unknown",
+        "affiliation": "Alliance",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Often considered the real mastermind behind <a href='#glossary/' onclick='glossary.displayFromExternal('Bespin')'>Bespin's</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>, Lobot's life did not always hold the promise of a bright future. He was born the son of a slaver and was apprenticed in that vile profession early in life. However, when Lobot was only 15, his father was killed by pirates during a raid into an <a href='#glossary/' onclick='glossary.displayFromExternal('Outer Rim')'>Outer Rim</a> system. The murderers took Lobot captive and forced him into a grueling life of slavery, much as he and his father had done to so many others.<br><br>After serving his pirate masters for two years, Lobot managed to escape and fled to Cloud City. Unfortunately, he found himself alone, impoverished, and on the verge of starvation. In order to survive, Lobot became a thief, but the lifestyle did not suit him well and he was soon captured. Although convicted of his crimes, Lobot attracted the attention of Cloud City's Baroness Administrator Ellisa Shallence. For quite some time, the Baroness had been troubled by Cloud City's complex computer core, which controlled all of the floating city's functions but needed constant maintenance, upgrades, and repairs. In Lobot, Shallence saw a solution to her dilemma. The Baroness approached Lobot with an enticing offer: Rather than spend the next several decades in prison, as had been his sentence, Lobot could repay his debt by becoming Cloud City's first computer-liaison officer. Lobot readily accepted, although he understood that he would be enslaved to Cloud City for quite some time. <br><br>To serve his new post, Lobot needed a method for communicating with Cloud City's central computer core. Thus, he was fitted with numerous cybernetic enhancements, including a computer bracket implanted into the back of his head. These modifications drastically increased Lobot's intelligence and gave him full access to the central core, allowing him to control all of Cloud City's computers, security devices, comm systems, repulsorlifts, gas-mining equipment, and life-support systems. In exchange for this vast power, the cybernetic enhancements damaged his speech centers, limiting him to brief and infrequent sentences.<br><br>For the next 15 years, Lobot served Cloud City faithfully. Around the time that the <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor</a> dissolved the <a href='#glossary/' onclick='glossary.displayFromExternal('Imperial Sena')'>Imperial Senate</a>, his case was reviewed by the Bespin authorities and he was officially released from his forced servitude. However, Lobot so enjoyed his new life and position that he chose to remain on Cloud City. His loyalty was rewarded with a promotion and Lobot became the chief administrative aide to the Baron Administrator.<br><br>In his new capacity, Lobot served under a variety of Baron Administrators, some of whom did little to improve conditions on Cloud City. When the foppish Baron Administrator Raynor came to power, Lobot began plotting a subtle overthrow. He recognized his opportunity when the gambler <a href='#glossary/' onclick='glossary.displayFromExternal('Calris')'>Lando Calrissian</a> arrived on Cloud City. Calrissian challenged Raynor to a game of sabacc, with the title of Baron Administrator at stake. Although Lando's skill at the game placed him at a great advantage over Raynor, Lobot secretly aided the rogue in his endeavor, ensuring Lando's victory.<br><br>Almost immediately, Lobot realized that he had made a wise choice in Lando. Under Calrissian, Cloud City began to flourish as profits and production increased dramatically. Lando also introduced gambling casinos and expensive restaurants to the mining colony in order to attract the wealthy from across the galaxy. Although Lando had difficulty parting with his roguish ways and often used Cloud City as the site for illegal transactions, he greatly strengthened the police force to keep violence and petty crimes in check. Together, Lando and Lobot also managed to secretly supply the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a> with needed resources and even cleared a group of Rebels falsely accused of murder.<br><br>Lando's dangerous lifestyle eventually caught up with the soldier-of-fortune on Cloud City. On one occasion, the deranged droid <a href='#glossary/' onclick='glossary.displayFromExternal('EV-9')'>EV-9D9</a> planted bombs throughout Cloud City in order to escape the colony. When a few of these explosives ripped through the floating metropolis, Lando was almost thrown into Bespin's upper atmosphere, where he would have surely died. Fortunately, Lobot was on hand to rescue Calrissian.<br><br>Shortly after the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>, Lando and Lobot were faced with a difficult choice between losing their beloved city to Imperial forces or committing a heinous act of betrayal. <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a>, the Emperor's personal enforcer, had arrived on Cloud City and decreed that the colony would fall under the Empire's rule unless Lando helped Vader capture a group of Rebels, including Calrissian's old friend, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>. Lando reluctantly agreed and Solo was frozen in <a href='#glossary/' onclick='glossary.displayFromExternal('carbonit')'>carbonite</a>. However, when it became apparent that Vader could not be trusted, Lando planned a desperate escape attempt and turned to Lobot for aid. At Lando's behest, Lobot gathered together a dozen of Calrissian's most trusted guardsmen. Under the cyborg's leadership, this strike force ambushed the Imperial troops transporting <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia</a> and the Wookiee <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a> to Vader's personal shuttle. The Imperials were forced to surrender and the Rebels escaped, with Lando in tow. Lobot chose to remain behind, despite the Imperial presence that was sure to materialize.<br><br>Over the next year, the Empire took full control of Cloud City and Lobot was again forced into servitude until shortly after the Emperor's death at the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, when rebellious <a href='#glossary/' onclick='glossary.displayFromExternal('Ugna')'>Ugnaughts</a> finally revolted against Imperial rule. In the ensuing chaos, the Imperials were routed, but Lobot's motivational-programming capsule was damaged by the Ugnaughts, leaving the cyborg violently deranged. A few months after he destroyed the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>, Lando returned to Cloud City. In his confused state, Lobot ambushed Calrissian, who barely managed to subdue the cyborg. Lando removed and repaired the damaged capsule, restoring Lobot's sanity. Lobot then used his cyborg abilities to find and disarm 11 bombs that the Ugnaughts had hidden around Cloud City, rescuing the colony from utter destruction.<br><br>Shortly after Lobot and Lando were reunited, Cloud City was stormed by Imperial forces under the leadership of Imperial Navy Captain Treece. The officer confronted Lando and, in the subsequent fight, Calrissian was pitched from the floating colony. Lando would have surely died if not for Lobot, who used life-jets to rescue his ill-fated Baron Administrator. After being ousted from Cloud City, Lobot and Lando allied themselves with the Ugnaughts, <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>, and Lieutenant Shira Brei. Together, this small army defeated Treece, although the Imperial officer managed to shoot Lobot's headpiece, destroying the cybernetic implant. Lando, of course, had Lobot repaired immediately and the cyborg once again took up his duties as Cloud City's chief computer-liaison.<br><br>About a year after the Battle of Endor, Calrissian lost Cloud City to <a href='#glossary/' onclick='glossary.displayFromExternal('Zorb')'>Zorba</a> the Hutt during a rigged game of sabacc. Rather than remain and serve the vile crime lord, Lobot fled Bespin and disappeared amid the stars. Eleven years later, he finally resurfaced during the <a href='#glossary/' onclick='glossary.displayFromExternal('Yeve')'>Yevethan</a> crisis. Lando had taken it upon himself to plumb the mysteries of the <a href='#glossary/' onclick='glossary.displayFromExternal('Telj')'>Teljkon</a> vagabond, a ghost ship that always jumped into hyperspace before it could be boarded. With the promise of a \"vacation,\" Calrissian convinced Lobot to join him on the quest. Accompanied by <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('R2-D')'>R2-D2</a>, they managed to dock with and board the vagabond, but the quartet was then taken hostage when the ship leapt into hyperspace.<br><br>During their efforts to escape, Lobot interfaced with Artoo and learned the droid's language. Together, the pair communicated with the ship and discovered that it was built by the Qella, a race destroyed by the Empire to prove Imperial might. Although Lobot conversed freely with the vagabond ghost ship, he was unable to gain control of the vessel and it appeared as if Lando and his team would be trapped forever. Fortunately, Luke used the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a> to prevent the ship from escaping into hyperspace when it appeared at Matha Obex.<br><br>Six years after his misadventures aboard the vagabond ghost ship, Lobot was still closely allied with Lando. When Calrissian devised GemDiver Station, a mining colony in orbit around <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin')'>Yavin</a>, the cyborg once again became Lando's chief aide. At one point, the industrial complex was visited by <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jac')'>Jacen</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jai')'>Jaina Solo</a>, Han and Leia's children, and Chewbacca's nephew, <a href='#glossary/' onclick='glossary.displayFromExternal('Lowb')'>Lowbacca</a>, all trainees at Luke Skywalker's <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi aca')'>Jedi academy</a>. During this field trip, GemDiver was assaulted by Imperial ships and the <a href='#glossary/' onclick='glossary.displayFromExternal('Datho')'>Dathomir</a> Nightsister Tamith Kai, who wanted to capture and convert the young Jedi. Lobot fought valiantly alongside Lando, but the children were ultimately captured. Guilt-ridden, both men offered to pursue Kai across the galaxy, but the mission had already been assigned to Luke and Tenel Ka, one of the Witches of Dathomir. Undaunted, Lobot decided to devote all of his energies toward ensuring that GemDiver would never again be the setting of a successful invasion.",
+        "bts": "Most versions of the screenplay for <i>The Empire Strikes Back</i> contain a character who serves as Lando's assistant. In many production paintings, this character is depicted as a tall, regal black woman. The notion that the position should be filled by a cyborg did not come until a late draft of the script. <br><br>Once Lobot's appearance was decided upon, the filmmakers selected actor John Hollis to portray the character. At that time, Hollis was hired for a full week's work, but due to the extended shooting schedule, he ultimately spent 10 weeks on the Bespin set at Elstree Studios.<br><br>Lobot originally had a great deal of dialogue, largely during conversations with Lando (Billy Dee Williams). However, the filmmakers decided that Lobot had been lobotomized to accommodate his cybernetic implant, and the process had left the character a mute. Hollis was reportedly unfazed by this decision.<br><br>In addition to Lobot's dialogue, the filmmakers opted to remove a scene in which the critically injured cyborg is carried away by several men wearing white masks. This shot served as Lobot's death scene, but it was excised because there was a possibility that the character would need to reappear in <i>Return of the Jedi</i>.<br><br>Although the role of Lobot had no dialogue, it proved demanding in its own way. The \"cybernetic implant\" Hollis wore needed to be self-contained, and thus it was completely battery-powered. The unit was connected to a spring clip that fit snugly around the actor's head. Unfortunately, the \"implant\" was quite heavy and very uncomfortable.",
+        "gallery": [
+            "Lobot on Cloud City.",
+            "Lobot is \"escorted\" by Lord Vader's personal unit of Imperial stormtroopers.",
+            "Lobot and the cybernetic implant that allows him to communicate with Cloud City's central computer."
+        ],
+        "btsimages": [],
+        "triviaNumber": "117",
+        "introductionRight": false,
+        "relations": {
+            "ne": "LNDO"
+        }
+    },
+    "ACKB": {
+        "name": "Admiral Ackbar",
+        "shortname": "Ackbar",
+        "shortdesc": "The brilliant military strategist who led the Rebel fleet against the second Death Star. Ackbar was once a major political figure on the watery world of Mon Calamari, but when Imperial forces enslaved his people, he was forced into servitude as Grand Moff Tarkin's interpreter. Ackbar was eventually rescued by the Rebellion and joined the Alliance. He subsequently recruited a huge number of Mon Calamari pilots and engineers, devised the B-wing starfighter, and placed himself at the forefront of several monumental clashes, including the Battle of Endor.",
+        "species": "Mon Calamari",
+        "height": "1.88 meters",
+        "homeworld": "Mon Calamari",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "Although most well-known for heading the successful attack on <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star II</a>, Admiral Ackbar's greatest contribution to the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel Al')'>Rebel Alliance</a> may have been convincing his own people, the <a href='#glossary/' onclick='glossary.displayFromExternal('Mon Calamari ali')'>Mon Calamari</a>, to join the Rebel cause. Once they committed to the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>, the Mon Cal donated several powerful <a href='#glossary/' onclick='glossary.displayFromExternal('star cru')'>star cruisers</a> and hordes of skilled technicians and pilots. Before his promotion to admiral, Ackbar also pioneered the Shantipole Project, which resulted in the versatile <a href='#glossary/' onclick='glossary.displayFromExternal('B-wi')'>B-wing starfighter</a>.<br><br>Even after the Alliance's victory at the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Ackbar remained a major political and tactical force within the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>. As depicted in <i>Heir to the Empire</i>, Ackbar was appointed to the Inner Council and aided in the conflict against <a href='#glossary/' onclick='glossary.displayFromExternal('Thrawn')'>Grand Admiral Thrawn</a>. Sadly, he was accused of treason when Thrawn planted evidence suggesting that Ackbar had embezzled funds from the New Republic. Ackbar was eventually cleared of these charges and managed to lead the New Republic forces to victory in the war against the vile Grand Admiral Thrawn.<br><br>Admiral Ackbar continues to remain a major figure in the expanding <i>Star Wars</i> galaxy and appears in a host of new works, including the Jedi Academy Trilogy. In these tales, Ackbar has battled the reborn <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor Palpatine</a>, led several assaults against <a href='#glossary/' onclick='glossary.displayFromExternal('Corus')'>Coruscant</a>, and protected his homeworld from at least one enemy invasion.",
+        "bts": "Admiral Ackbar first appears in the second draft of <i>Return of the Jedi</i>, which closely resembles the final film. In that version, however, Ackbar is described only as a pale-blue nonhuman.<br><br>On the set, actor Tim Rose portrayed the Mon Calamari admiral. He wore two different masks during the shoot: one for long shots and a second, far more detailed and articulated mask for close-ups. A hand puppet was also used for extremely tight shots.<br><br>Since the films, the character has reappeared in countless <i>Star Wars</i> novels and has become a fan favorite. He even ranked as No. 16 on the <i>Star Wars Insider</i>'s list of the Top Twenty <i>Star Wars</i> Characters.",
+        "gallery": [
+            "Admiral Ackbar commands the Rebel fleet from the bridge of <i>Home One</i>.",
+            "Ackbar is a powerful and decisive leader who issues orders without hesitation.",
+            "<i>Home One</i> is rocked by an Imperial attack, but Admiral Ackbar keeps his wits about him.",
+            "Admiral Ackbar sits in a specialized command chair that reacts to his unique body movements.",
+            "Ackbar is one of the Rebellion's most dedicated and stoic leaders.",
+            "Admiral Ackbar devotes himself to victory at the Battle of Endor.",
+            "Like other Mon Calamari, Ackbar has huge eyes, a large mouth, and waterproof skin."
+        ],
+        "btsimages": [
+            "Concept art for Admiral Ackbar by Nilo Rodis-Jamero.",
+            "Admiral Ackbar costume photo.",
+            "Phil Tippett provides the actor portraying Ackbar with cool air between takes during the filming of <i>Return of the Jedi</i>."
+        ],
+        "triviaNumber": "84",
+        "introductionRight": false,
+        "videoClip": true,
+        "relations": {
+            "n": "DODO",
+            "se": "GARM",
+            "so": "MADI",
+            "no": "MONM"
+        }
+    },
+    "BOSS": {
+        "name": "Bossk",
+        "shortname": "Bossk",
+        "shortdesc": "A reptilian Trandoshan bounty hunter devoted to capturing Wookiees. Bossk has spent much of his life in pursuit of the heroic Chewbacca and his partner, Han Solo. Although he has managed to corner the pair several times, these encounters always resulted in Bossk's defeat and humiliation. Yet the tenacious and greedy hunter continues his quest undaunted, most often plying the stars in his starship, the <i>Hound's Tooth</i>. As with all members of his species, Bossk exudes a brackish stench, has sensitive eyes, and can regenerate lost limbs.",
+        "species": "Trandoshan",
+        "height": "1.9 meters",
+        "homeworld": "Trandosha",
+        "affiliation": "None",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Like most of the bounty hunters hired by <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a> to capture <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>, Bossk holds a special hatred for the smuggler and his <a href='#glossary/' onclick='glossary.displayFromExternal('Wook')'>Wookiee</a> copilot. Years before the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>, Bossk had become obsessed with capturing and skinning <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a>, one of the most feared Wookiees in the galaxy. When he finally cornered Chewie, who was aiding Wookiee slaves, Han Solo intervened and rescued the entire group. Humiliated, Bossk vowed to exact revenge.<br><br>Bossk's quest to apprehend Solo and Chewbacca has consisted solely of failure. As revealed in <i>Tales of the Bounty Hunters</i>, after heeding Vader's call Bossk was led astray by a bounty hunter named Chenlambec, who happened to be a Wookiee. Chenlambec claimed to know Chewbacca's location, but he and his human assistant betrayed Bossk and presented the reptiloid to Imperial forces. Bossk then found himself in the clutches of an Imperial governor, who planned to execute the <a href='#glossary/' onclick='glossary.displayFromExternal('Trando')'>Trandoshan</a> in order to fashion a reptile-skin dress for his wife.<br><br>While details are unclear, it is believed that Bossk avoided this fate. After <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a> captured Han, Bossk reappeared and pursued Fett across the galaxy in an attempt to steal the smuggler's frozen body. This vain pursuit is covered in the comic book adaptation of <i>Shadows of the Empire</i>. Fett ultimately escaped and delivered Solo to <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a>. Bossk then spent some time in Jabba's palace, but probably fled the Hutt's <a href='#glossary/' onclick='glossary.displayFromExternal('sail')'>sail barge</a> before <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia</a> destroyed the craft. Throughout the years, Bossk has continued to hunt the stars, chasing such <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a> luminaries as <a href='#glossary/' onclick='glossary.displayFromExternal('Calris')'>Lando Calrissian</a>, but Chewbacca has always remained his most sought-after quarry.",
+        "bts": "In the novelization of <i>The Empire Strikes Back</i>, Bossk is described as a creature with a \"soft, baggy face\" and huge, bloodshot eyes. The actual costume constructed for the film, which depicts a reptilian creature, was reused for scenes in Jabba's palace in <i>Return of the Jedi</i>, although it cannot be seen on screen.",
+        "gallery": [
+            "The reptilian Bossk (far right) aboard the <i>Executor</i>.",
+            "Bossk aboard Jabba the Hutt's sail barge."
+        ],
+        "btsimages": [
+            "An actor in the Bossk costume on the set of Jabba's sail barge."
+        ],
+        "triviaNumber": "90",
+        "introductionRight": false,
+        "relations": {
+            "n": "ZUCK",
+            "s": "IG88"
+        }
+    },
+    "CHEW": {
+        "name": "Chewbacca",
+        "shortname": "Chewbacca",
+        "shortdesc": "Han Solo's towering Wookiee partner and the very embodiment of loyalty and strength. One of the Rebellion's most revered heroes, Chewbacca is a mechanical genius, remarkable pilot, and skilled combatant. He is also considered to be the conscience of those around him, and it was Chewbacca who convinced Han to return to the Battle of Yavin. Throughout the Galactic Civil War, the Wookiee continued to risk himself to protect Princess Leia, Han, Luke, Lando Calrissian, and even C-3PO.",
+        "species": "Wookiee",
+        "height": "2.29 meters",
+        "homeworld": "Kashyyyk",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "One of the most courageous heroes of the Rebel Alliance, Chewbacca is a <a href='#glossary/' onclick='glossary.displayFromExternal('Wook')'>Wookiee</a> native to the forest world of <a href='#glossary/' onclick='glossary.displayFromExternal('Kash')'>Kashyyyk</a>. Like all members of his species, he is a lanky, hairy humanoid with keen smell and sight, great strength, and a deep sense of honor. While all Wookiees are physically formidable, both Chewbacca's size and strength are exceptional even among his own species. When angered, Chewbacca's ferocity knows no bounds, but he is usually compassionate, sentimental, and affectionate. However, Chewbacca's most valued attributes are his undying loyalty, his intense sense of honor and commitment, and his loud conscience.<br><br>Like his partner, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>, much of Chewbacca's past is unknown. He left his homeworld at the age of 50 to explore the galaxy and, according to some sources, eventually found himself enslaved. He was rescued from this plight by Han, and subsequently swore a Wookiee \"life debt\" to the smuggler. This pledge of fealty gradually evolved into an undying friendship, and Chewbacca participated in many of Han Solo's early adventures. Unfortunately, the pair eventually earned the ire of <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a>, who placed a large bounty on both Chewbacca and Han after they dumped a shipment of the crime lord's precious <a href='#glossary/' onclick='glossary.displayFromExternal('spice')'>spice</a>. Soon after, Chewie and Solo found themselves embroiled in the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a>. Reluctantly, they joined <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> in rescuing <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia</a> from the <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a>, then safely delivered the hidden plans for that immense battle station to the Rebel Alliance on <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin 4')'>Yavin 4</a>. During the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, Chewbacca urged Han to enter the fray, where they saved Luke Skywalker from the evil <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a>. Luke subsequently destroyed the Death Star, ending the first chapter in the Galactic Civil War.<br><br>The next four years were tumultuous for Chewbacca. He and Han narrowly escaped disaster numerous times and were almost captured by Imperials at the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>. The pair were then betrayed by <a href='#glossary/' onclick='glossary.displayFromExternal('Calris')'>Lando Calrissian</a> on <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>, where Chewbacca was forced to watch as Darth Vader had Solo encased in <a href='#glossary/' onclick='glossary.displayFromExternal('carbonit')'>carbonite</a>. To rescue his friend, Chewie braved the dangers of Jabba the Hutt's palace. Eventually, he and Han were reunited and together they led the ground assault during the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>.<br><br>In the years that followed the Galactic Civil War, Chewbacca continued to fight oppression throughout the galaxy and served the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a> faithfully. He was deeply involved in a mission to bring peace to <a href='#glossary/' onclick='glossary.displayFromExternal('Baku')'>Bakura</a>, battled the forces of <a href='#glossary/' onclick='glossary.displayFromExternal('Thrawn')'>Grand Admiral Thrawn</a>, protected Han and Leia's children from numerous threats, and snatched Solo from enemy hands during the <a href='#glossary/' onclick='glossary.displayFromExternal('Yeve')'>Yevethan</a> crisis. Throughout all his missions and adventures, Chewbacca's courage has never faltered, and he remains one of the New Republic's most revered figures.",
+        "bts": "Chewbacca was inspired by George Lucas' Alaskan malamute, Indiana, who was frequently at the director's side while he was first conceiving <i>Star Wars</i>. In the rough draft, the shaggy humanoid has a few traits that don't manifest on screen, including glowing eyes.<br><br>Chewbacca's costume was designed by Stuart Freeborn, and was knitted from mohair and straight yak hair. Before donning the over-suit, Mayhew put on a leotard. Knitted padding was added to his shoulders, chest, and back to produce Chewbacca's broad upper body. The entire costume weighed 15 pounds. <br><br>A lightweight, honeycomb plastic formed the skull, while a layer of foam-rubber padding provided the shape of Chewie's head and face. His teeth were acrylic, and numerous toggles around the mouth, eyes, and nose provided realistic facial movement. Before this multilayered mask was put into place, Mayhew had large, black circles painted around his eyes. Although he wore black gloves and boots during filming, these were concealed by long strands of hair. <br><br>The suit was so well-received that the design was never altered in any significant manner. However, during filming of <i>Star Wars</i>, the suit did need to be thickened and reknotted because, it was discovered, the suit had a tendency to molt in hot weather. Duplicate portions of the costume were built throughout the trilogy, and Freeborn completed an entirely new suit for <i>Return of the Jedi</i>.<br> <br>According to Mayhew, the costume was not unduly uncomfortable when he was performing on location. However, the suit did become rather hot while shooting beneath the large lights on studio sets. Under normal studio conditions, Mayhew found that he could only keep the mask on for 30 or 40 minutes. Scenes in the carbon-freezing chamber, a set that often exceeded 90 degrees F, proved especially trying. While filming in the cockpit of the <i>Millennium Falcon</i>, a small spotlight actually ignited part of the costume. During the skiff battle in <i>Return of the Jedi</i>, Chewie again caught fire when a spark from a nearby explosion hit the hairy costume. Fortunately, in both instances the flames were extinguished before Mayhew was injured.<br><br>Chewbacca's voice was a combination of many varied animal sounds from Ben Burtt's personal collection, including bears, walruses, camels, and badgers. It took about two weeks for Burtt to perfectly record all of Chewie's dialogue on tape. One of the major components of Chewbacca's vocals was the voice of a black bear named Tarik, who lived at the Happy Hollow Zoo in San Jose, California. Tarik died in 1994, at the age of 16, of congestive heart failure, liver disease, and cancer.<br><br>After the release of <i>Star Wars</i>, Chewbacca became a favorite character among fans. As a result, Peter Mayhew began receiving between 2,000 and 3,000 fan letters a week.",
+        "gallery": [
+            "Aside from his great strength and courage, Chewbacca is also a skilled mechanic.",
+            "Chewbacca howls in anguish at the thought of losing his best friend to the elements on Hoth.",
+            "Like Han, Chewbacca is devoted to the <i>Falcon</i> and spends many hours making small modifications and repairs.",
+            "Chewbacca in Hoth's Echo Base.",
+            "As copilot of the <i>Falcon</i>, Chewie braves Cloud City's twin-pod cars.",
+            "Always a loyal friend, Chewbacca dutifully collects C-3PO's dismembered parts from the Ugnaughts on Cloud City.",
+            "Chewbacca's enhanced senses are exploited by Darth Vader when the Wookiee is subjected to painful noises within a torture chamber on Cloud City.",
+            "Chewbacca thoughtfully studies his injured friend.",
+            "Armed with his mechanical aptitude and determination, Chewbacca attempts to repair C-3PO.",
+            "Like many Wookiees, Chewbacca is a ferocious combatant and an incredible marksman.",
+            "Chewbacca rescues R2-D2 from a potentially dangerous overload when the little droid accidentally connects to a power outlet.",
+            "In order to rescue Han, Chewbacca allows himself to be sold to Jabba the Hutt.",
+            "Chewbacca on Endor, shortly before the attack on the Imperial shield generator."
+        ],
+        "btsimages": [
+            "An early concept sketch for Chewbacca.",
+            "Another concept for the hairy Wookiee.",
+            "Chewbacca as portrayed in storyboards for <i>Star Wars</i>.",
+            "Stuart Freeborn details a Chewbacca mask used during filming.",
+            "Freeborn continues his work on the incredibly detailed mask.",
+            "Freeborn helps Peter Mayhew don the Chewbacca mask.",
+            "The major components of the Chewbacca costume.",
+            "The complete Chewbacca costume on display.",
+            "During filming, the Chewbacca costume required constant upkeep.",
+            "Peter Mayhew's costume is adjusted between takes on the Echo Base hangar set.",
+            "Peter Mayhew unmasked.",
+            "Mayhew on location in Finse, Norway.",
+            "Mayhew prepares for his scene.",
+            "George Lucas and Peter Mayhew on the <i>Star Wars</i> trash compactor set.",
+            "Peter Mayhew, as Chewbacca, fends off a mynock during filming of <i>The Empire Strikes Back</i>."
+        ],
+        "triviaNumber": "93",
+        "introductionRight": false,
+        "videoClip": true,
+        "relations": {
+            "ne": "LEIA",
+            "s": "CFAM",
+            "o": "LNDO",
+            "no": "HANS"
+        }
+    },
+    "CRUM": {
+        "name": "Salacious Crumb",
+        "shortname": "Salacious Crumb",
+        "shortdesc": "Jabba the Hutt's sadistic court jester. A Kowakian monkey-lizard, Salacious is a semi-intelligent creature known for his wicked cackle and vicious mean streak. Once a stowaway on Jabba's personal starship, the scrawny beast was captured and almost eaten by the crime lord. But Crumb's frantic capering and wild laughter earned Jabba's favor and Salacious found a place within the Hutt's court. Like most of Jabba's henchmen, Salacious perished when Luke Skywalker and Princess Leia destroyed the Hutt's sail barge.",
+        "species": "Kowakian Monkey-Lizard",
+        "height": ".7 meters",
+        "homeworld": "Kowak",
+        "affiliation": "Loyal to Jabba the Hutt",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "Salacious Crumb encountered <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a> by chance aboard the Kwenn space station. While being pursued by Mantilorrian rat catchers, Crumb slipped aboard Jabba's starship and hid within the Hutt's personal quarters. The bold creature eventually stole into Jabba's feeding bowl and began eating a greenish goo that the crime lord enjoyed. Jabba discovered Crumb and tried to eat the monkey-lizard, but Salacious proved too quick and escaped to the ceiling struts. When Jabba's cronies <a href='#glossary/' onclick='glossary.displayFromExternal('Fort')'>Bib Fortuna</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Kwerv')'>Bidlo Kwerve</a> arrived, Crumb splattered them with the green ooze. This display greatly amused Jabba, who offered Salacious a job as his court jester. Crumb's only responsibility was to make Jabba laugh, every day without fail. Evidently, Crumb served his master well, for he survived most of the Hutt's rages. <br><br>Crumb had an affinity for tormenting Jabba's other employees, most notably the Hutt's interpreters. When <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a> became Jabba's property, Salacious antagonized the golden protocol droid mercilessly. As <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> freed his allies, Crumb physically attacked Threepio, ripping the droid's eye from its socket. Fortunately, R2-D2 arrived and used his electric prod to shock the little beast. An angry Crumb retreated, and died moments later when the sail barge exploded.",
+        "bts": "On the set of <i>Return of the Jedi</i>, Salacious Crumb was an intricate and detailed puppet about 80 centimeters tall. The puppet was operated by a single hand inserted at the bottom. A hole was cut in Jabba's throne, allowing Crumb's puppeteer to hide beneath the dais and manipulate the puppet from below. The character was originally intended to serve as a background element, but during filming the puppet's expressive features captivated the cast and crew. Therefore, Salacious Crumb's role was gradually expanded throughout the shoot.",
+        "gallery": [
+            "Salacious Crumb cackles wildly at another's misfortune.",
+            "As Jabba the Hutt's jester, Crumb holds a special place in the crime lord's court.",
+            "Like many other members of Jabba's court, Crumb is cruel and cunning."
+        ],
+        "btsimages": [
+            "The head of the Salacious Crumb puppet, profile view.",
+            "Crumb puppet, front view.",
+            "A closer look at the Crumb puppet's hands and feet.",
+            "Salacious Crumb puppet, back view.",
+            "Profile view of the entire Crumb puppet.",
+            "The Salacious Crumb puppet has incredibly detailed features.",
+            "A look at the back of an unpainted Salacious Crumb.",
+            "Unpainted Crumb puppet, front view.",
+            "A prototype version of the Salacious Crumb puppet.",
+            "Salacious Crumb on display.",
+            "A puppeteer operates Salacious Crumb on the set."
+        ],
+        "triviaNumber": "125",
+        "introductionRight": true,
+        "relations": {
+            "ne": "JABB",
+            "so": "REBO"
+        }
+    },
+    "BIBF": {
+        "name": "Bib Fortuna",
+        "shortname": "Bib Fortuna",
+        "shortdesc": "Jabba the Hutt's majordomo and a vile, deceitful being who was a slaver and spice smuggler before he joined Jabba's court. Although the craven Twi'lek continually plotted his master's downfall, Fortuna never found the courage to usurp Jabba's power. When Jabba's sail barge fell under attack by Luke Skywalker and his friends, the weak-willed Fortuna fled. However, he was met at Jabba's palace by the B'omarr monks, who removed his brain from his body and sentenced him to a life without his senses.",
+        "species": "Twi'lek",
+        "height": "1.88 meters",
+        "homeworld": "Ryloth",
+        "affiliation": "Loyal to Jabba the Hutt",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "Hailing from the planet <a href='#glossary/' onclick='glossary.displayFromExternal('Ry')'>Ryloth</a>, Bib Fortuna began his criminal career as a smuggler of an addictive substance known as ryll. He was sentenced to death by his own people, but he escaped and found his way to <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>. On the desolate world, <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a> hired Fortuna to manage his illegal spice shipments. Due in part to constant groveling, Bib quickly worked his way up through Jabba's court and found himself appointed as the Hutt's chief aide. In this capacity, Fortuna did everything imaginable to please his master, including securing slaves and servant droids. However, Fortuna secretly became obsessed with killing Jabba and taking control of his criminal empire.<br><br>Despite his grand schemes, Fortuna had yet to act against Jabba when <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> and his allies attempted to rescue <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> from the crime lord. Jabba captured his enemies and sentenced them to die in the maw of the mighty <a href='#glossary/' onclick='glossary.displayFromExternal('Sarl')'>Sarlacc</a>, but the heroes ultimately escaped and managed to destroy the Hutt's <a href='#glossary/' onclick='glossary.displayFromExternal('sail')'>sail barge</a>. Some accounts indicate that Fortuna perished aboard the vessel with his master. However, in <i>Tales from Jabba's Palace</i>, it is suggested that the craven Fortuna fled the conflagration aboard his private <a href='#glossary/' onclick='glossary.displayFromExternal('skif')'>skiff</a>. He then returned to Jabba's palace, where he ran afoul of the <a href='#glossary/' onclick='glossary.displayFromExternal('B'omarr m')'>B'omarr monks</a>. As is customary among this sect, the monks removed Fortuna's brain and placed it in a nutrient-filled jar. Stripped of his senses, Fortuna could only contemplate the meaning of all existence. Eventually, the <a href='#glossary/' onclick='glossary.displayFromExternal('Twi'l')'>Twi'lek</a> managed to have his brain inserted into the body of another of his species named Firith Olan, and he took control of Jabba's empire.",
+        "bts": "In the rough draft of <i>Return of the Jedi</i>, Bib Fortuna is described as \"the High Beeser of Hoth,\" who is currently serving as Jabba the Hutt's advisor. The script depicts Fortuna as a wizened old man wearing a dark cloak and tall hat.<br><br>In the set, Fortuna was played by actor Michael Carter. On the first day of shooting, it took over eight hours to apply the Bib Fortuna make-up. However, by the end of Carter's five-week stint as Fortuna, make-up artist Nick Dudman had reduced the process to 59 minutes. The headpiece was extremely heavy and Carter had to spend many of his breaks reclining in a dentist's chair to relieve the pressure of the huge appliance. He also wore special enlarged contact lenses that could only be removed under the supervision of an eye doctor. At the end of the day, it took about 25 minutes for the actor to extract himself from the costume and make-up.",
+        "gallery": [
+            "Bib Fortuna slinks through the corridors of Jabba's palace.",
+            "Like other Twi'leks, Fortuna has a pair of large head-tails.",
+            "Bib Fortuna confronts C-3PO and R2-D2 after they enter Jabba's domain.",
+            "Fortuna stands at his master's side.",
+            "The conniving Bib Fortuna whispers into Jabba's ear.",
+            "Bib Fortuna confers with the bounty hunter Boushh.",
+            "Although cunning, Fortuna is weak-willed and easily controlled by the Jedi mind trick.",
+            "While under Luke Skywalker's control, Bib Fortuna demands that the young Jedi be allowed to speak."
+        ],
+        "btsimages": [
+            "The Bib Fortuna maquette prototype.",
+            "Rear view of the Fortuna maquette.",
+            "Fortuna maquette, profile view.",
+            "The Fortuna head maquette with another Bib Fortuna prototype.",
+            "A full-size head was built, using the maquette as a guide.",
+            "The actor who portrayed Bib Fortuna in <i>Return of the Jedi</i>.",
+            "The actor undergoing part of the lengthy make-up session that transformed him into Bib Fortuna.",
+            "Bib Fortuna costume and make-up, profile view.",
+            "A look at the head-tails on the Bib Fortuna costume.",
+            "Bib Fortuna costume and make-up, front view."
+        ],
+        "triviaNumber": "88",
+        "introductionRight": true,
+        "relations": {
+            "e": "LNDO",
+            "no": "JABB"
+        }
+    },
+    "GREE": {
+        "name": "Greedo",
+        "shortname": "Greedo",
+        "shortdesc": "An inept Rodian bounty hunter who once served Jabba the Hutt. Born to an outcast clan, Greedo lived a difficult and tumultuous life far from his homeworld. He eventually found himself on Nar Shaddaa, where he joined the company of skilled bounty hunters and began learning the trade. However, as his first contract, Greedo unwisely agreed to kill the smuggler Han Solo and claim the <i>Millennium Falcon</i> for Jabba. The untrained Rodian youth botched the job and was handily dispatched by Han.",
+        "species": "Rodian",
+        "height": "1.65 meters",
+        "homeworld": "Rodia",
+        "affiliation": "None",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "From the time he was a young child, Greedo's life was marked by violence. When he was only 3, thieves butchered his bounty-hunter father and stole the family's wealth. Reduced to poverty, Greedo and his pregnant mother, Neela, fled <a href='#glossary/' onclick='glossary.displayFromExternal('Rodia')'>Rodia</a>. They were joined by Neela's two brothers, Nok and Teeku, as well as several members of their familial clan. These refugees eventually discovered a lush jungle world, where they lived in tranquility for many years. <br><br>Unfortunately, when Greedo was 15, the hunters who killed his father invaded the Tetsus clan's sanctuary. In the chaos that followed, Greedo and his family managed to escape the world and landed on the port moon of <a href='#glossary/' onclick='glossary.displayFromExternal('Nar')'>Nar Shaddaa</a>, where they attempted to forge new lives. While working in the districts of Level 88, Greedo intervened when a cyborg named Gorm attacked the bounty hunters Spurch 'Warhog' Goa and Dyyz Nataz. Remarkably, Greedo killed Gorm. Impressed by the young Rodian's courage, Goa agreed to train Greedo as a bounty hunter. A few months later, the trio traveled to <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>, where Greedo hoped to become one of <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt's</a> henchmen. To please the crime lord, he foolishly accepted a mission to capture or kill the smuggler <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>.<br> <br>Ironically, like many other bounty hunters across the galaxy, Greedo apparently encountered Han Solo prior to their fateful encounter in the <a href='#glossary/' onclick='glossary.displayFromExternal('Mos Eisley can')'>Mos Eisley cantina</a>. Shortly before leaving Nar Shaddaa, Greedo attempted to steal a pair of Dekk-6 power couplings from the mechanic <a href='#glossary/' onclick='glossary.displayFromExternal('Ninx')'>Shug Ninx</a>. Unfortunately, these devices were reserved for the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>. <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a> caught Greedo, and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> took the Rodian's rancor-skin jacket as restitution. For this slight, Greedo vowed revenge. <br><br>Greedo's quest for vengeance failed utterly. After cornering Solo in the cantina, Greedo tried to shoot his enemy, but his blast went wild. Solo returned fire, ending Greedo's short career. Soon after, the cantina bartender, <a href='#glossary/' onclick='glossary.displayFromExternal('Wuh')'>Wuher</a>, stole Greedo's body. With the aid of his droid, C2-R4, he drained the bounty hunter's blood and created a potent new liquor in the hopes of pleasing Jabba the Hutt.",
+        "bts": "Greedo's language is based on Quechua, an ancient Incan dialect, and was developed by sound designer Ben Burtt. On the set, the character was portrayed by actress Maria de Aragon. The actress was originally hired to double for Anthony Daniels, who had a schedule conflict and could not film a few coverage scenes as C-3PO. However, Mark Hamill developed a conflict as well and filming was delayed until both actors could be present. A short time later, de Aragon was approached to play Greedo.<br><br>The cantina scene was actually filmed on two separate occasions. During the first shoot, Greedo's snout and ears did not move at all. Before the second attempt, Lucas sent the Greedo mask to Rick Baker, who devised a mechanism that allowed the ears to twitch. He also inserted a similar device into the snout, but this delicate piece failed on the set. To solve the problem, the crew inserted a clothespin into the mask. Beneath the mask, de Aragon gripped the clothespin between her teeth and moved it around, which in turn caused Greedo's snout to move.",
+        "gallery": [
+            "Greedo unwisely fires on Han Solo'and misses."
+        ],
+        "btsimages": [
+            "The Greedo mask and gloves, front view.",
+            "George Lucas checks Greedo's snout during filming.",
+            "Profile view of the Greedo mask.",
+            "Greedo mask, front view."
+        ],
+        "triviaNumber": "112",
+        "introductionRight": true,
+        "relations": {
+            "n": "BOBA",
+            "se": "JABB",
+            "o": "BOUS"
+        }
+    },
+    "JABB": {
+        "name": "Jabba the Hutt<br>Jabba Desilijic Tiure",
+        "shortname": "Jabba",
+        "shortdesc": "One of the galaxy's most notorious crime lords, who ruled a vast criminal empire from his desert palace on Tatooine. A grotesque, sluglike creature, Jabba was an unforgiving and sadistic being who hounded Han Solo for years after the smuggler abandoned a spice shipment. With the aid of Boba Fett, Jabba eventually acquired Solo, and went on to enslave Princess Leia when she attempted to rescue Han. However, the Hutt underestimated Leia, who strangled the disgusting gangster as the heroes escaped Jabba's sail barge.",
+        "species": "Hutt",
+        "height": "1.75 meters (3.9 meters long)",
+        "homeworld": "Nal Hutta",
+        "affiliation": "None",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "The son of a major clan leader and member of a long line of criminal masterminds, Jabba aspired to become his father's equal. Thus, by the time he was 600 years old, Jabba, whose Huttese name was Jabba Desilijic Tiure, had forged a major criminal empire. With his vast wealth, Jabba moved from his father's private estate on <a href='#glossary/' onclick='glossary.displayFromExternal('Nal')'>Nal Hutta</a> to the desert planet of <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>, where the obese crime lord built a palace around the ancient monastery of the <a href='#glossary/' onclick='glossary.displayFromExternal('B'omarr m')'>B'omarr monks</a>.<br><br>The decadence of Jabba's palace soon attracted a huge number of immoral revelers, who flocked to the citadel for drink, food, entertainment, and employment. Thieves, smugglers, assassins, spies, and all manner of criminals were constantly at Jabba's side. As the Hutt's court grew, so too did his criminal empire. Soon, he was involved in every manner of elicit enterprise throughout the <a href='#glossary/' onclick='glossary.displayFromExternal('Outer')'>Outer Rim</a>, including smuggling, glitterstim spice dealing, slave trading, assassination, loan sharking, protection, and piracy.<br><br>During the course of his illegal dealings, Jabba hired a smuggler named <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> to transport glitterstim spice from mines below the Imperial Correction Facility on <a href='#glossary/' onclick='glossary.displayFromExternal('Kess')'>Kessel</a>. However, when Solo jettisoned a glitterstim load to avoid Imperial entanglements, Jabba sent out several bounty hunters in search of the pilot. Solo killed <a href='#glossary/' onclick='glossary.displayFromExternal('Gree')'>Greedo</a>, one of Jabba's cronies, but could not escape the Hutt. Jabba confronted Solo on Tatooine, but ultimately allowed Han and his copilot, <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a>, to transport passengers to <a href='#glossary/' onclick='glossary.displayFromExternal('Ald')'>Alderaan</a> in exchange for the proceeds from the charter. Solo never returned. Enraged, Jabba posted a huge reward for the smuggler's death or capture.<br><br>Eventually, <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a> delivered Solo, encased in a block of <a href='#glossary/' onclick='glossary.displayFromExternal('carbonit')'>carbonite</a> but alive. Soon after, Han's allies infiltrated Jabba's palace to rescue the smuggler. Jabba captured <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia</a> and placed her in chains, then tried to feed <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> to his pet <a href='#glossary/' onclick='glossary.displayFromExternal('Ranc')'>rancor</a>, and later the <a href='#glossary/' onclick='glossary.displayFromExternal('Sarl')'>Sarlacc</a>. As he stood on the edge of the <a href='#glossary/' onclick='glossary.displayFromExternal('Cark')'>Great Pit of Carkoon</a>, Luke used his Jedi powers to escape his fate and a fight erupted between the Rebels and Jabba's men. During the fray, Jabba met his end at Leia's hands. Moments later, most of his court died horribly when Leia and Luke caused Jabba's <a href='#glossary/' onclick='glossary.displayFromExternal('sail')'>sail barge</a> to explode. What remained of his fortune became the property of his father, who swore vengeance against Leia and her friends.",
+        "bts": "Jabba underwent numerous designs and transformations before receiving his final form in the original version of <i>Return of the Jedi</i>. Jabba's first incarnation appears in the novelization of <i>Star Wars</i>, in which the crime lord is described as a \"great mobile tub of muscle and suet topped by a shaggy scarred skull . . .\" The character next appeared on film in a scene originally shot for <i>Star Wars: A New Hope</i>, in which the Hutt confronts Han as he is leaving Mos Eisley. For this scene, Jabba was portrayed by a large human actor (Declan Mulholland) wearing a furry tunic. Lucas intended to remove the actor from the shot and replace him with a mechanized creature effect of some sort, but the technology simply was not available. Thus, he opted to cut the scene completely. <br><br>When generating concepts for <i>Return of the Jedi</i>, Ralph McQuarrie, Nilo Rodis-Jamero, and Phil Tippet collaborated with Lucas to find the right look for Jabba. Together, they completed over 76 sketches before finalizing the Hutt's appearance. McQuarrie first envisioned Jabba as a monstrous and agile simian similar to a giant ape, while Rodis-Jamero developed the character as a refined, elderly humanoid of great intelligence. Tippett, however, introduced the notion of Jabba as a giant slug. Tippett worked on at least eight different designs for Jabba, including early models boasting several arms. <br><br>Ultimately, it required two tons of clay and 600 pounds of latex to create Jabba the Hutt at Stuart Freeborn's studio in England. The final creature was essentially a giant puppet 18 feet long and operated from within by three puppeteers. There was one puppeteer for each of Jabba's arms, while a little person controlled his tail. Jabba's cable-controlled eyes were operated by two crew members, who also inflated and deflated air bladders beneath the Hutt's skin, resulting in a wide range of facial expressions. During filming, Jabba required a full-time make-up artist as well.<br><br>For the Special Edition of <i>Star Wars: A New Hope</i>, Lucas utilized digital technology to revisit Jabba's first appearance on Mos Eisley. A completely computer-generated Jabba replaced Declan Mulholland and seamlessly interacted with actor Harrison Ford.",
+        "gallery": [
+            "Jabba the Hutt and his bounty hunter cronies confront Han Solo in Mos Eisley's Docking Bay 94.",
+            "The crime lord demands payment for a lost shipment of spice.",
+            "Although generally cruel and unforgiving, Jabba allows Han to leave Tatooine after the smuggler agrees to repay his debt with interest.",
+            "The disgusting Jabba the Hutt.",
+            "Jabba the Hutt with Oola and Salacious Crumb.",
+            "The vile Jabba makes a repulsive advance toward Princess Leia, captured in her Boushh disguise.",
+            "Jabba, with Princess Leia as his prisoner.",
+            "Jabba the Hutt underestimates the Rebel heroes and is slain by Princess Leia."
+        ],
+        "btsimages": [
+            "One of numerous concept designs for Jabba the Hutt.",
+            "Jabba's throne room is depicted in this production painting by Ralph McQuarrie.",
+            "The frame of Jabba's head. An airbag inside made facial expressions possible.",
+            "A full-scale version of Jabba the Hutt under construction.",
+            "Jabba was created at Stuart Freeborn's studio in England.",
+            "A model of one of Jabba's snacks.",
+            "The filmmakers shoot a close-up of Jabba's arm reaching for a morsel of food.",
+            "As Jabba watches with glee, Luke Skywalker and a Gamorrean guard plunge into the rancor pit in this shot from <i>Return of the Jedi</i>."
+        ],
+        "triviaNumber": "105",
+        "introductionRight": false,
+        "relations": {
+            "ne": "HANS",
+            "se": "BIBF",
+            "s": "OOLA",
+            "so": "CRUM",
+            "no": "GREE"
+        }
+    },
+    "NIEN": {
+        "name": "Nien Nunb",
+        "shortname": "Nien Nunb",
+        "shortdesc": "Lando Calrissian's Sullustan copilot during the Battle of Endor. Together, Nien and Lando navigated the <i>Millennium Falcon</i> into the heart of the second Death Star and destroyed the battle station. Prior to joining the Alliance, Nien led a band of outlaws against the SoroSuub company, which had allied itself with the Empire. For this bravado, Nunb was considered a folk hero by his people and a criminal by the Empire. His reputation earned him Lando's respect and the legendary assignment aboard the <i>Falcon</i>.",
+        "species": "Sullustan",
+        "height": "1.6 meters",
+        "homeworld": "Sullust",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "Born on the dark, volcanic world of <a href='#glossary/' onclick='glossary.displayFromExternal('Sullust')'>Sullust</a>, Nien Nunb is taller and more commanding than most <a href='#glossary/' onclick='glossary.displayFromExternal('Sullustan')'>Sullustans</a>. Like others of his species, he has prominent facial jowls, large ears, and deep black eyes. For most of Nunb's life, his planet was dominated by the powerful SoroSuub Corporation, a vast conglomerate with intergalactic influence. An accomplished pilot, Nien Nunb gained employment with SoroSuub, using a modified freighter to transport minerals and goods to neighboring systems. He quickly earned a reputation as one of the most reliable freighter pilots in the region. During this time, he also became a proficient smuggler and befriended <a href='#glossary/' onclick='glossary.displayFromExternal('Calri')'>Lando</a>.<br><br>When <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Palpatine</a> seized control of the Republic and became Emperor, SoroSuub pledged its allegiance to the new government. Disgusted, Nien Nunb defected and became a wanted criminal. But the Sullustan chose to fight the <a href='#glossary/' onclick='glossary.displayFromExternal('New Ord')'>New Order</a>, and he soon gathered a large number of smugglers, spies, pirates, and other outlaws to his cause. This unlikely band undermined SoroSuub's enterprises, stole the corporation's ships and consignments, and sabotaged plants and mining facilities. Soon, the bulk of Sullust's population stood behind Nien Nunb and his bandits, who had become folk heroes. Nunb's efforts seized the attention of the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel Alli')'>Rebel Alliance</a> when the Sullustan began donating stolen equipment and supplies to the Rebel forces.<br><br>By the time the Rebels began to plot the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Nien Nunb had become a full member of the Rebellion. When Lando too joined the Alliance, the two friends agreed to lead the dangerous assault on the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. Since the Rebellion's victory and the rise of the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>, Nunb has flown countless missions with <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a>, and Calrissian. He eventually joined Lando in a business venture on <a href='#glossary/' onclick='glossary.displayFromExternal('Kess')'>Kessel</a>, where he and several other Sullustans explored the valuable spice mines using droids instead of slave labor.",
+        "bts": "Nien Nunb spoke Haya, an African dialect from Kenya. Kipsang Rotich, a Kenyan student, was hired to read the lines, most of which were actual Hayan phrases recognizable to native speakers. However, according to rumor, one of Nien's lines translates as, \"One thousand herds of elephants are standing on my foot.\"",
+        "gallery": [
+            "Nien Nunb, serving as Lando's copilot aboard the <i>Millennium Falcon</i> during the Battle of Endor.",
+            "Nien Nunb is a brave Sullustan war hero. Like all Sullustans, he has large eyes and prominent jowls."
+        ],
+        "btsimages": [
+            "The Nien Nunb mask during various stages of construction, from the creation of the mold to the finished product.",
+            "The finished Nien Nunb mask.",
+            "Nien Nunb mask with leather helmet worn during <i>Return of the Jedi</i>."
+        ],
+        "triviaNumber": "60",
+        "introductionRight": true,
+        "relations": {
+            "ne": "MONM",
+            "so": "REBE"
+        }
+    },
+    "OOLA": {
+        "name": "Oola",
+        "shortname": "Oola",
+        "shortdesc": "A beautiful Twi'lek dancer who endured Jabba the Hutt's cruelty until her tragic death beneath the crime lord's throne room. Born on the planet Ryloth, the green-skinned Oola caught the eye of Bib Fortuna, Jabba's Twi'lek majordomo. Fortuna kidnapped the striking girl and trained her to dance, then presented her to Jabba as a gift. During her short time in Jabba's court, Oola tried desperately to please the Hutt without accepting his repulsive advances. Jabba eventually tired of Oola's resistance and fed her to his pet rancor.",
+        "species": "Twi'lek",
+        "height": "1.6 meters",
+        "homeworld": "Ryloth",
+        "affiliation": "None",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "Although Oola eventually met a grisly end, there was a moment in time when her terrible fate could have been avoided. Born on the harsh world of <a href='#glossary/' onclick='glossary.displayFromExternal('Rylo')'>Ryloth</a>, Oola was the daughter of a clan leader. At an early age, she mastered the art of <a href='#glossary/' onclick='glossary.displayFromExternal('Twi'l')'>Twi'lek</a> dancing, and this talent led to her abduction by <a href='#glossary/' onclick='glossary.displayFromExternal('Fortu')'>Bib Fortuna</a>. <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba's</a> majordomo transported Oola and another young girl, Sienn, to his secret smuggling complex. There, the girls learned increasingly more seductive dances from experienced slave dancers. After four months, Fortuna entrusted the girls to his assistant, Jerris Rudd, who brought the pair to <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>. Oola knew nothing of Jabba the Hutt, except for the fact that he was immensely wealthy, and thus believed that she was destined for a life of luxury as a respected member of the Hutt's regal court.<br><br>At the <a href='#glossary/' onclick='glossary.displayFromExternal('Mos Eisley spa')'>Mos Eisley spaceport</a> on Tatooine, Rudd temporarily hid Sienn and Oola until they could be safely delivered to Jabba. The dancers were surprised by <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>, who offered to rescue them from their fate. Sienn readily accepted, but Oola clung to her dreams and refused. Within days, she realized her error: Jabba proved a grotesque, vile, and lecherous being with no respect for life.<br><br>When <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a> arrived, Oola had yet another chance to escape. She spoke secretly with the droid, who assured the dancer that Luke would arrive and save her from the Hutt. Encouraged by this news, Oola concentrated on avoiding the Hutt's wrath. She danced with renewed passion, but this only encouraged Jabba's darker impulses. When Oola spurned his disgusting advances, the frustrated crime lord sent her tumbling into the <a href='#glossary/' onclick='glossary.displayFromExternal('rancor')'>rancor</a> pit, where she perished.",
+        "bts": "The filmmakers originally intended to expand Oola's character for <i>Return of the Jedi</i>. At one point, the script dictated scenes of Oola escaping Jabba's palace, only to be hounded and recaptured by his guards before meeting her demise in the maw of the rancor. Because of time constraints, these additional scenes were never filmed.<br><br>Dancer and actress Femi Taylor took on the role of Oola for <i>Return of the Jedi</i>, and actually reprised the part for the Special Edition release, which includes a handful of new shots showing Oola cowering in fear before Jabba and the rancor.",
+        "gallery": [
+            "Oola, chained to her master's side.",
+            "At Jabba's command, Oola begins one of her seductive dances.",
+            "Oola struggles against Jabba's advances. For her insolence, she will be sentenced to die in the rancor pit.",
+            "Oola moments before her death in the jaws of the rancor."
+        ],
+        "btsimages": [
+            "Nilos Rodis-Jamero's concept sketch for Jabba's slave dancer.",
+            "Sketches of Oola's head and face by Rodis-Jamero.",
+            "Nilo Rodis-Jamero's concept sketches of Oola as a Twi'lek dancer.",
+            "Oola in full costume, by Rodis-Jamero.",
+            "An early maquette of Jabba's slave dancer.",
+            "Prototype model of Jabba's dancer.",
+            "The back of the Oola prototype.",
+            "The Oola prototype, front view.",
+            "Oola was designed by Phil Tippett based on concept sketches by Nilo Rodis-Jamero.",
+            "The actress and dancer who portrayed Oola in <i>Return of the Jedi</i>.",
+            "Profile view of the Oola costume.",
+            "Back view of the Oola costume.",
+            "Th actress posing as Oola, Jabba's ill-fated slave.",
+            "Taylor on the set of Jabba's throne room."
+        ],
+        "triviaNumber": "123",
+        "introductionRight": true,
+        "relations": {
+            "ne": "JABB",
+            "se": "JCRT",
+            "o": "REBO"
+        }
+    },
+    "REBO": {
+        "name": "Max Rebo Band",
+        "shortname": "Max Rebo Band",
+        "shortdesc": "An ensemble of lively and talented jizz-wailers fronted by the blue-skinned Ortolan, Max Rebo. The band was in the employ of Jabba the Hutt shortly before the crime lord's death. Along with a number of back-up singers and musicians, the band included Sy Snootles on lead vocals, the neophyte Yuzzum entertainer Joh Yowza, and legendary Kitonak pipe-player Droopy McCool. Although their performances in Jabba's palace were truly inspired, the group elected to disband after the Hutt's death, each member following a separate path among the stars.",
+        "species": "Varies",
+        "height": "Varies",
+        "homeworld": "Varies",
+        "affiliation": "None",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "The odd assortment of aliens who composed the Max Rebo Band first came together as members of 'Evar Orbus and His Galactic Jizz Wailers.' Unfortunately, Evar Orbus, the multitentacled band leader, was killed in a confrontation with a gang of <a href='#glossary/' onclick='glossary.displayFromExternal('Bith')'>Bith</a> musicians, tentatively identified as the <a href='#glossary/' onclick='glossary.displayFromExternal('Modal')'>Modal Nodes</a>. Soon after, the remaining band members found themselves at <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba's</a> palace. The Hutt extended the group a lifetime contract, with payment in the form of foodstuffs. The gluttonous <a href='#glossary/' onclick='glossary.displayFromExternal('Rebo, M')'>Max</a> readily agreed, forcing the band into a strange form of slavery.<br><br>The core members of the Max Rebo Band included Max, <a href='#glossary/' onclick='glossary.displayFromExternal('Snoot')'>Sy Snootles</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('McCo')'>Droopy McCool</a>, and Joh Yowza. The chubby Max hails from the world Orto, and, like all Ortolans, is obsessed with eating. He is a brilliant musician but an incompetent manager, and often allowed Sy to handle business matters. Unfortunately, Sy, a Pa'lowick singer, could not stop Rebo from signing Jabba's contract. Seeking a way to escape her plight, Snootles became a spy for Jabba's chief rival, Lady Valarian. Meanwhile, the quiet <a href='#glossary/' onclick='glossary.displayFromExternal('Kit')'>Kitonak</a> known as Droopy McCool began to long for others of his own kind. On stage, he played the chidinkalu pipe with great devotion, but between shows he could be found weeping in his room. McCool often claimed to hear other Kitonaks in the distance, wandering the <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a> wastes, and he dreamt of the day when he would be reunited with his own kind. The fourth member, Joh Yowza, is a <a href='#glossary/' onclick='glossary.displayFromExternal('Yuzz')'>Yuzzum</a> from the forest moon of <a href='#glossary/' onclick='glossary.displayFromExternal('Endor')'>Endor</a>. After sneaking aboard a smuggling vessel, Yowza found himself on <a href='#glossary/' onclick='glossary.displayFromExternal('Nar')'>Nar Shaddaa</a>, where he met Evar Orbus and the rest of the band playing in a small caf'. Yowza immediately launched into song, to the joy of the crowd, and Evar grudgingly accepted the furry creature into the group.<br><br>Before landing in Jabba's palace, the Max Rebo Band also acquired a trio of dancers. The first, a <a href='#glossary/' onclick='glossary.displayFromExternal('Rodian')'>Rodian</a> named Greeata, was actually Sy's partner. When the vocalist was asked to join Evar's group, she insisted that Greeata be invited as well. Later, Max found the <a href='#glossary/' onclick='glossary.displayFromExternal('Twi'l')'>Twi'lek</a> Lyn Me on her homeworld of <a href='#glossary/' onclick='glossary.displayFromExternal('Ryloth')'>Ryloth</a>. One of the most skilled Twi'lek dancers ever known, Lyn Me was rescued from a burning building by <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a> as a child. In the years since, she had become obsessed with the bounty hunter and schemed to meet him. Thus, when she was offered a chance to explore the stars as part of the band, she readily agreed. The final dancer, Ryst'll, once belonged to a <a href='#glossary/' onclick='glossary.displayFromExternal('Black')'>Black Sun</a> crime lord. <a href='#glossary/' onclick='glossary.displayFromExternal('Calri')'>Lando Calrissian</a> won Ryst'll's freedom in a game of <a href='#glossary/' onclick='glossary.displayFromExternal('sabacc')'>sabacc</a>, and soon after she found herself auditioning for Rebo.  <br><br>Other members of the band included Rappertunie, an amphibious Shawda Ubb cursed with wanderlust. During his childhood, he practiced with a number of instruments until Rebo landed on Rappertunie's homeworld. Seizing the opportunity, Rappertunie displayed his many talents and was accepted as yet another back-up musician. At the palace, the band was joined by Barquin D'an, the brother of the Modal Nodes' <a href='#glossary/' onclick='glossary.displayFromExternal('D'an')'>Figrin D'an</a>. Less skilled than his famous sibling, Barquin had traveled to Tatooine to enlist Figrin's aid in a recording session. The Modal Nodes could not fit Barquin's request into their schedule, however, and the impoverished Bith musician found himself stranded on the desert world. Barquin sat in with the Max Rebo Band only briefly in the hopes of earning enough credits to leave Tatooine.<br><br>Jabba also insisted that several of his court sit in with the Max Rebo Band. Among these 'musicians' were Ak-rev, a <a href='#glossary/' onclick='glossary.displayFromExternal('Weequ')'>Weequay</a> warrior who learned to beat a drum during religious ceremonies honoring the 'thunder god.' Another drummer, the Klatooinian Umpass-stay, served as one of Jabba's bodyguards and always played with visiting bands to ferret out spies and other enemies. In one instance, Umpass-stay actually caught a group of assassins posing as musicians. Finally, one of Jabba's Rodian errand runners, Doda Bodonawieedo, proved extremely proficient at the slitherhorn and was asked to play with visiting bands on several occasions.<br><br>After Jabba's death, the Max Rebo Band completely dissolved. The bulk of the group did travel to the <a href='#glossary/' onclick='glossary.displayFromExternal('Cark')'>Great Pit of Carkoon</a>, but they leapt from Jabba's sail barge shortly before it exploded. Lost in the desert, they would have surely died if not for the martial skills of Greeata and Lyn Me. Together, these two hardened dancers routed a group of <a href='#glossary/' onclick='glossary.displayFromExternal('Tusk')'>Tusken Raiders</a> and captured several banthas for the group's return to Mos Eisley. Droopy McCool elected to remain in the desert, searching for the Kitonaks he believed lurked within the dunes. He has never been seen again, but moisture farmers often hear the haunting strains of his pipes. Lyn Me, who had finally met and spoken to Boba Fett in Jabba's palace, was enraged when she learned of his apparent death. She vowed revenge on <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia</a>; when the band reached Mos Eisley, she set off on her own to find her enemies. Joh Yowza also separated from the group, finding work on a passenger liner, where he performs with the house band in exchange for transportation to new and exotic locales. <br><br>Max, Sy, Greeata, and Ryst'll remained together for a short time, but Rebo eventually tired of touring the galaxy. He briefly joined the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel Alli')'>Rebel Alliance</a>, entertaining weary soldiers, but finally decided to open a restaurant. After the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Max's single enterprise became a recognized chain with locations on at least eight planets. The extremely wealthy Ortolan relocated to <a href='#glossary/' onclick='glossary.displayFromExternal('Corus')'>Coruscant</a>, where he lives in lavish surroundings. Meanwhile, Sy's attempts at a solo career met with dismal failure: She currently tours seedy bars on the <a href='#glossary/' onclick='glossary.displayFromExternal('Outer R')'>Outer Rim</a>, usually under a stage name. The fate of Greeata and Ryst'll remain unknown.<br><br>The amphibious Rappertunie, who had been miserable on the hot and arid Tatooine, elected to stay behind when Jabba set out for the <a href='#glossary/' onclick='glossary.displayFromExternal('Sarl')'>Sarlacc</a>. Upon hearing of the Hutt's death, he made his way to Mos Eisley, where he was reunited with Max and Sy. He performed with Snootles until her career faltered, and then he too disappeared. Ak-rev and Umpass-stay also remained at the palace, then headed for Mos Eisley when it became clear that Jabba would not return. Unfortunately, Ak-rev's landspeeder was ambushed by Tusken Raiders, who presumably murdered the Weequay. Umpass-stay was more fortunate, and he eventually escaped Tatooine and returned to Hutt space, where he found employment with another member of Jabba's clan. Finally, Doda Bodonawieedo avoided death by sheer fate; hours before the sail barge left the palace, <a href='#glossary/' onclick='glossary.displayFromExternal('Fortuna')'>Bib Fortuna</a> sent the Rodian on an errand to Mos Eisley. After receiving word of Jabba's death, Doda slipped into the Hutt's Mos Eisley townhouse and stole several priceless sculptures. He has enjoyed a life of luxury ever since.",
+        "bts": "In the original release of <i>Return of the Jedi</i>, Sy Snootles was brought to life by a complex puppet measuring 41 x 53 x 147 cm. One puppeteer operated Sy's legs from beneath the stage, while another manipulated her arms and the microphone from a walkway above the set. In the Special Edition, this puppet was almost completely replaced by a computer-generated character.<br><br>The vibrant singer Joh Yowza, a Yuzzum, was inspired by early Ewok designs. In the original release of <i>Return of the Jedi</i>, he lurks in the background of Jabba's palace, holding a large rifle. For the Special Edition, a CG version of the character was integrated into the Max Rebo Band.",
+        "gallery": [
+            "The Max Rebo Band includes (from left to right): Dodo Bodonawieedo, Barquin D'an, Joh Yowza, Rappertunie, Sy Snootles, Ryst'll, Greeata, and Lyn Me.",
+            "The Max Rebo dancers (from left to right): Ryst'll, Greeata, and Lyn Me.",
+            "Barquin D'an's instrument of choice is the Kloo horn. Here, he is playing alongside Doda Bodonawieedo, a Rodian.",
+            "Sy Snootles is known throughout the galaxy for her amazing talents.",
+            "The Kitonak Droopy McCool.",
+            "McCool longs for the company of his own kind and will eventually disappear into Tatooine's deserts.",
+            "Rappertunie joins the Max Rebo Band.",
+            "Ryst'll, Greeata, and Lyn Me also sing back-up, using a floating microphone.",
+            "Umpass-stay, one of Jabba's guards, plays drums alongside Rebo and his entourage.",
+            "Joh Yowza is a welcome addition to the Max Rebo Band. The singer is a Yuzzum, native to Endor.",
+            "Max Rebo plays his organ while Salacious Crumb looks on.",
+            "Sy Snootles sings through a red-lipped mouth at the end of a long protrusion from her face."
+        ],
+        "btsimages": [
+            "Blueprints for the Max Rebo puppet.",
+            "A maquette of Droopy McCool.",
+            "The Max Rebo maquette.",
+            "A close-up of the Sy Snootles puppet used during the original filming of <i>Return of the Jedi</i>.",
+            "During filming of <i>Jedi</i>, Snootles was controlled from below and above by skilled puppeteers.",
+            "The Sy Snootles puppet.",
+            "Sy Snootles with one of Jabba's guards, in a shot not seen in the final film.",
+            "For close-ups, the upper half of Sy Snootles was operated like a conventional puppet.",
+            "Director Richard Marquand discusses a scene with the puppeteer inside Max Rebo."
+        ],
+        "triviaNumber": "58",
+        "introductionRight": true,
+        "relations": {
+            "ne": "CRUM",
+            "e": "OOLA",
+            "se": "JSKF"
+        }
+    },
+    "THRA": {
+        "name": "Grand Admiral Thrawn",
+        "shortname": "Thrawn",
+        "shortdesc": "The highest-ranking nonhuman officer within the Imperial Navy, and the first great enemy of the New Republic. Thrawn rose to power during the Emperor's reign and managed to organize the remnants of the Imperial fleet shortly after the Battle of Endor. Refusing to recognize the New Republic, he launched a campaign of terror to reclaim the universe for the Empire. Although he was eventually defeated by the heroes of the New Republic and their allies, his efforts revitalized the Empire, ensuring that it would remain a threat for years to come.",
+        "species": "Unknown Humanoid",
+        "height": "1.8 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Empire",
+        "firstapp": "<i>Heir to the<br>Empire</i>",
+        "biography": "A blue-skinned, gaunt humanoid with red eyes and a regal bearing, Grand Admiral Thrawn was the first alien to be appointed to a position as one of the 12 Grand Admirals of the <a href='#glossary/' onclick='glossary.displayFromExternal('Empire')'>Empire</a>. He spent much of the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a> conquering the Unknown Regions on the fringes of the galaxy, and did not return to the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Co')'>Galactic Core</a> until a full five years after the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>. When he discovered that the <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor</a> had been killed, he began to rally the remaining Imperial forces for a strike on the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>. His exploits and his ultimate failure are thoroughly chronicled in <i>Heir to the Empire</i>, <i>Dark Force Rising</i>, and <i>The Last Command</i>.<br><br>Thrawn's plot to overthrow the New Republic had several components. First, he discovered that the rodentlike creatures known as <a href='#glossary/' onclick='glossary.displayFromExternal('ysal')'>ysalamiri</a> were capable of dampening a <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Kn')'>Jedi's</a> connection to the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>. After collecting a number of the beasts from the planet <a href='#glossary/' onclick='glossary.displayFromExternal('Myrk')'>Myrkr</a>, Thrawn managed to neutralize <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker's</a> powerful abilities. Thrawn also uncovered the Emperor's cache of experimental devices, including a <a href='#glossary/' onclick='glossary.displayFromExternal('cloak')'>cloaking mechanism</a> that he used to great effect in his conflict with the New Republic. Finally, Thrawn allied himself with <a href='#glossary/' onclick='glossary.displayFromExternal('C'baoth, joruu')'>Joruus C'baoth</a>, an insane <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Jed')'>Dark Jedi</a> clone who plotted to convert <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia's</a> unborn twins to the dark side and later attempted to kidnap Luke. <br><br>Thrawn's greatest weapon may have been his horde of deadly <a href='#glossary/' onclick='glossary.displayFromExternal('Nogh')'>Noghri</a>. Long before the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a> had tricked the vicious Noghri into swearing allegiance to the Empire. Emperor Palpatine subsequently molded the species into a secret death squad. Under Thrawn's control the Noghri were used for covert strikes against New Republic leaders, including Princess Leia. Thrawn also employed a Noghri named <a href='#glossary/' onclick='glossary.displayFromExternal('Rukh')'>Rukh</a> as his personal bodyguard. When the Noghri were assigned to capture Leia, however, they recognized her as Darth Vader's daughter. She then convinced the Noghri that Vader had betrayed their people. They secretly joined forces with the New Republic.<br><br>For the next several months, Thrawn plagued the heroes of the New Republic. He stole mole miners from <a href='#glossary/' onclick='glossary.displayFromExternal('Calr')'>Lando Calrissian</a>, captured a large contingent of <a href='#glossary/' onclick='glossary.displayFromExternal('Kata')'><i>Katana</i></a> <a href='#glossary/' onclick='glossary.displayFromExternal('dread')'>dreadnaughts</a>, and hounded Leia and Luke across the stars. He finally launched an assault on <a href='#glossary/' onclick='glossary.displayFromExternal('Corus')'>Coruscant</a>, but he was routed by a fleet of smugglers. Soon after this defeat, Thrawn was finally confronted by his bodyguard. Seeking to avenge the Empire's deception of his people, Rukh plunged a dagger into the Grand Admiral's heart.<br><br>Ten years after Thrawn's alleged death, the New Republic began uncovering rumors of the Grand Admiral's survival. As recounted in <i>Specter of the Past</i> and <i>Vision of the Future</i>, the full effect of Thrawn's reported return has yet to be seen, but it will surely threaten the future of the New Republic.",
+        "gallery": [],
+        "btsimages": [
+            "Grand Admiral Thrawn aboard his Star Destroyer, the <i>Chimaera</i>, in <i>Heir to the Empire</i> by Dark Horse Comics.",
+            "Thrawn discusses strategy and art with Captain Pellaeon.",
+            "In <i>Heir to the Empire</i>, Grand Admiral Thrawn uses creatures known as ysalamiri to block the Force powers of Joruus C'baoth."
+        ],
+        "triviaNumber": "110",
+        "introductionRight": true,
+        "relations": {
+            "se": "IMPO",
+            "so": "MARA"
+        }
+    },
+    "WARR": {
+        "name": "Wicket W. Warrick",
+        "shortname": "Wicket",
+        "shortdesc": "The brave young Ewok who willingly joined the Rebellion and aided in the battle against the Empire on the forest moon of Endor. Even before he encountered the Rebels, Wicket had devised methods for defeating the Imperial machines, plans which were implemented after the Ewok befriended Princess Leia and recruited his tribe to the Alliance's cause. During the Battle of Endor, Wicket fought valiantly alongside his new allies. After the conflict, he became his tribe's Lead Warrior, a position reserved for only the most cunning and courageous Ewoks.",
+        "species": "Ewok",
+        "height": ".8 meters",
+        "homeworld": "Endor",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "The youngest son of Shodu and Deej Warrick, Wicket has always been an intrepid and curious <a href='#glossary/' onclick='glossary.displayFromExternal('Ewoks')'>Ewok</a>. Before joining forces with the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>, he faced numerous monsters and other enemies, including the warlike Duloks and giant green Phlogs. He also enjoyed collecting Rainbow Berries for the Harvest Moon Feast, practicing with his bow, and flying through the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor')'>Endor</a> skies on his Ewok <a href='#glossary/' onclick='glossary.displayFromExternal('hang')'>hang glider</a>. Shortly before the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Wicket braved numerous dangers to aid the human children Mace and Cindel, and even destroyed the vile King Terak.<br> <br>When Imperial forces arrived on Endor, many Ewoks wanted to attack the invaders. However, they realized that their spears and rocks could do little against the massive Imperial vehicles. Yet, while the rest of his tribe preferred to hide from the soldiers, Wicket's curiosity led him to actively investigate the new arrivals. One day, he witnessed an <a href='#glossary/' onclick='glossary.displayFromExternal('All terrain scout transport')'>AT-ST</a> stumble on a pile of rocks, topple over, and explode. Once he shared this news with his tribe, the Ewoks realized that they could defeat the Imperials and began preparing for battle. <br><br>A short time later, Wicket encountered <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia</a>. Wicket cautiously approached the Rebel officer, and was eventually taken in by her kindness. He led the princess to his village and convinced the tribal leaders to induct her into the tribe. After a brief misunderstanding, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('R2-D2')'>R2-D2</a> were also accepted by the Ewoks. Wicket subsequently urged <a href='#glossary/' onclick='glossary.displayFromExternal('Chirpa')'>Chief Chirpa</a> to aid the Rebels in their clash with the Empire.<br><br>In the ensuing Battle of Endor, Wicket displayed unfaltering bravery in the face of stormtroopers and AT-ST walkers. Together, the Ewoks and Rebels defeated the Imperial forces and disabled the Death Star shield generator. This victory allowed the Rebel fleet to attack and destroy the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. After the fall of the Empire, the Ewoks held a massive celebration at their village, and Wicket was appointed Lead Warrior.<br><br>In the years following the Battle of Endor, Wicket adopted the remnants of the Imperial shield generator as his second home. Using vines, wood, sap, leaves, and rocks, he has constructed a lush den within the complex. A fallen AT-ST has been converted into a fireplace, while scout trooper helmets serve as Wicket's food bowls. Despite his new quarters, he remains actively involved with his tribe. In fact, most of the tribal elders agree that Wicket should succeed Chief Chirpa when the aging Ewok finally retires.",
+        "bts": "Wicket first appears in the rough draft of <i>Return of the Jedi</i>, where he is described as having huge yellow eyes. He reappears in all subsequent drafts, always playing a large role in the film. He was also alternately known as \"Warrick\" in several versions of the screenplay.<br> <br>Wicket was originally to be played by Kenny Baker, who also portrayed R2-D2 in all three films of the <i>Star Wars</i> trilogy. However, on the day that Wicket's first scene was to be shot, Baker took ill. The filmmakers quickly found 11-year-old Warwick Davis, an Ewok extra, to assume the role. Davis was the only Ewok actor who could put his tongue through his mask.<br><br>Warwick Davis reprised his role in both Ewok television films, which take place before <i>Return of the Jedi</i> on the <i>Star Wars</i> timeline. He has become a popular fixture of the <i>Star Wars</i> universe and even ranked as No. 15 on the list of the Top Twenty <i>Star Wars</i> Characters, based on polls taken by the <i>Star Wars Insider</i>.",
+        "gallery": [
+            "The brave Ewok Wicket on Endor.",
+            "Like other Ewoks, Wicket is skilled at sneaking through Endor's dense forests.",
+            "Wicket waits with R2-D2 and C-3PO during the Rebel assault on the Endor shield generator.",
+            "Wicket proved vital in convincing the Ewok elders to accept the Rebel heroes into their tribe."
+        ],
+        "btsimages": [
+            "Wicket was played by 11-year-old Warwick Davis."
+        ],
+        "triviaNumber": "129",
+        "introductionRight": false,
+        "relations": {
+            "ne": "EWKS",
+            "no": "LEIA"
+        }
+    },
+    "YODA": {
+        "name": "Yoda",
+        "shortname": "Yoda",
+        "shortdesc": "The powerful Jedi Master who taught Obi-Wan Kenobi and Luke Skywalker to learn the ways of the Force and become Jedi Knights. Nearly 900 years old, Yoda possessed uncanny wisdom and patience. He was truly attuned to the Force, able to perform remarkable feats with just a thought. Despite his vast power, Yoda knew that even he was not immortal; during the Jedi purge led by Darth Vader, Yoda retreated to the swampy world of Dagobah. There, he led Luke onto the path of the Jedi before becoming one with the Force a year later.",
+        "species": "Unknown",
+        "height": ".65 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Alliance",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Like many of the ancient <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Kn')'>Jedi</a>, Yoda's past remains a closely guarded secret. According to Yoda's own words, he trained Jedi for more than 800 years, and it is known that he was about 900 upon his death. Yoda proved a stern instructor and would only teach the most serious and committed students. Among these was <a href='#glossary/' onclick='glossary.displayFromExternal('Keno')'>Obi-Wan Kenobi</a>, a young and reckless youth who proved incredibly strong in the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>.<br><br>While training his students, Yoda demanded that they improve their bodies as well as their minds. Aspiring Jedi endured marathons and learned to balance their bodies in strange ways. They also expanded their abilities to levitate objects and sense the future.<br><br>Despite his vast power, Yoda was forced into hiding by <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor Palpatine's</a> campaign against the Jedi. Yoda retreated to <a href='#glossary/' onclick='glossary.displayFromExternal('Dagobah')'>Dagobah</a>, where he kept careful watch over a sinister tree hollow that served as a link to the dark side of the Force. On Dagobah, he subsisted on a diet of roots, plants, fruits, and fungi, and built his home of mud, sticks, and stones. He also used the Force to monitor the progress of <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Leia Organa</a>, the children of the <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Lord')'>Dark Lord of the Sith</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a>.<br><br>Eventually, Luke found his way to Dagobah and, after some debate, Yoda agreed to teach the boy. During the arduous training, Yoda lectured young Skywalker about the Force while Luke performed rigorous physical and mental exercises. As part of his teachings, Yoda warned Luke of the dark side, which had claimed Vader.<br><br>As his powers expanded, Luke learned to glimpse the future and discovered that his friends were in great danger. Despite Yoda's advice, Luke left Dagobah and traveled to <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>. There, Luke almost fell victim to Vader, much as Yoda had feared.<br><br>A year later, Luke returned to Dagobah to continue his training with Yoda. The venerated <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Mas')'>Jedi Master</a>, however, was near death. He informed Luke that he had to confront Vader once more before he passed away. A short time later, after the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Yoda, Obi-Wan Kenobi, and <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, An')'>Anakin Skywalker</a> appeared before Luke as luminescent beings at one with the Force.",
+        "bts": "It took about four months for George Lucas, Ralph McQuarrie, Stuart Freeborn, and Joe Johnston to develop Yoda's basic design and appearance. At one point, the filmmakers considered using a monkey or chimpanzee in the role. Later, a child actor was discussed. Other conceptions included a towering, eight-foot-tall humanoid with a long, white beard. In later stages, Yoda was depicted as a small, gnomish creature with wrinkled blue or purple skin and long, white hair. As the final designs for Yoda took shape, it was decided that a puppet could accurately portray the Jedi Master. Freeborn completed the prototype model, using his own features for much of Yoda's face.<br><br>After dealing with numerous malfunctioning creature effects on <i>Star Wars</i>, the filmmakers decided to manufacture three Yoda puppets, in the hopes that at least one would be able to convey the full range of emotions necessary. And, in fact, only one of the three puppets did perform correctly on the set. The two unsuitable Yodas served as the Jedi Master's stand-ins when the crew needed to choreograph upcoming shots. However, the functional Yoda puppet proved a masterful creation. Delicate internal mechanisms allowed the eyes to move in virtually every direction and controlled the puppet's eyelids, mouth, tongue, ears, and brow. The Jedi Master's simple outfit was made from thick raw silk imported from India. An entirely new Yoda was later constructed for <i>Return of the Jedi</i>.<br><br>On the set, master puppeteer Frank Oz and his assistants, Kathryn Mullen and Wendy Midener brought Yoda to life. Most of the time, the puppeteers were crouched beneath the Dagobah soundstage, controlling Yoda through trap doors while watching a video monitor. In Yoda's house, a channel cut in the floor allowed Oz to \"walk\" Yoda across the room.<br><br>While a puppet was used for most sequences, in long shots showing the Jedi Master walking through the swamp, Yoda was portrayed by a little person wearing a costume and shuffling along on his knees.",
+        "gallery": [
+            "Yoda and Luke Skywalker first meet on Dagobah.",
+            "When he first encounters Luke, Yoda hides his true identity and acts slightly crazy.",
+            "Within the warmth of his hut, Yoda expresses his reservations about accepting Luke as his student.",
+            "During his training, Luke carries Yoda on his back as the Jedi Master speaks his wisdom.",
+            "Yoda is wise and powerful, but also cryptic and mysterious.",
+            "Along with Ben Kenobi, Yoda is directly responsible for guiding Luke down the path of the Jedi.",
+            "Yoda waits patiently while Luke confronts his destiny.",
+            "Yoda instructs Luke on controlling the balance of the Force.",
+            "Using the Force, Yoda extracts Luke's X-wing from the Dagobah swamp.",
+            "Yoda in his hut on Dagobah, shortly before he became one with the Force.",
+            "Luke discusses his future and Vader's true identity with Yoda just moments before the Jedi Master's passing."
+        ],
+        "btsimages": [
+            "An early concept for Yoda.",
+            "Another concept design for Yoda. Notice the tridactyl feet, which became part of the final Yoda design.",
+            "Yoda design sketch, which closely resembles the final version.",
+            "The Yoda puppet under construction.",
+            "The electronics within the Yoda puppet are installed.",
+            "An early model of Yoda's face.",
+            "Mark Hamill and Yoda on the set of Yoda's hut.",
+            "For long shots of Yoda walking, a little person wearing a costume portrayed Yoda.",
+            "Frank Oz and Irvin Kershner discuss an upcoming scene on the Dagobah set.",
+            "The actor in the Yoda costume is readied for a scene.",
+            "During filming, Mark Hamill had to press his ear against the elevated floor to hear the puppeteers working beneath the set."
+        ],
+        "triviaNumber": "26",
+        "introductionRight": true,
+        "videoClip": true,
+        "relations": {
+            "s": "OBIW"
+        }
+    },
+    "ZUCK": {
+        "name": "Zuckuss",
+        "shortname": "Zuckuss",
+        "shortdesc": "A determined Gand bounty hunter who employs an almost supernatural intuition to find his quarry. Zuckuss joined forces with the warped protocol droid 4-LOM to serve Jabba the Hutt, and later sought out Han Solo for Darth Vader. Although he missed his opportunity to capture Solo, Zuckuss inadvertently found himself rescuing a number of Rebels fleeing the Battle of Hoth. Touched by their devotion to one another and their willingness to accept him without reservation, Zuckuss joined the Alliance and started down the long road toward redemption.",
+        "species": "Gand",
+        "height": "1.5 meters",
+        "homeworld": "Gand",
+        "affiliation": "Alliance",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Native to the gaseous planet Gand, where bounty hunters are honored, Zuckuss looked toward his ancestors when he began preparing for his career as a \"findsman.\" Using arcane rituals to improve his intuition during hunts, Zuckuss soon became a revered bounty hunter. While away from his homeworld, Zuckuss wore a special breathing mask to protect himself from harmful oxygen. He also donned a set of battle armor under his heavy cloak, and carried a computer and sensor array on straps around his neck. Despite the use of such devices, he put complete faith in his hunches and predictions, and this led to numerous captures across the galaxy.<br><br>Based on his capture ratio and dedication, Zuckuss landed a job with <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a>. The crime lord partnered Zuckuss with a rogue <a href='#glossary/' onclick='glossary.displayFromExternal('protoc')'>protocol droid</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('4-L')'>4-LOM</a>, whose analytical skills perfectly complimented Zuckuss' intuition. The pair quickly earned a reputation as two of the most competent bounty hunters in the galaxy. During one hunt, however, Zuckuss lost his breathing mask and inhaled several breaths of deadly oxygen. The resulting injuries refused to heal and it appeared that the bounty hunter was approaching death. <br><br>Zuckuss kept his worsening condition a closely guarded secret, and he and 4-LOM resumed their frighteningly efficient career together. Around the time of the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>, they were among the elite few personally selected by <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a> to find <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> and the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>. <br><br>Although <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a> succeeded in capturing Solo first, 4-LOM and Zuckuss were not idle. As related in <i>Tales of the Bounty Hunters</i>, the pair attacked and disabled the <i>Bright Hope</i>, a Rebel <a href='#glossary/' onclick='glossary.displayFromExternal('trans')'>transport</a> attempting to escape <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth')'>Hoth</a>. Soon after, they had an apparent change of heart and rescued all 90 passengers. In exchange for aiding the Rebels, Zuckuss received advanced medical treatment that healed his lungs. According to some sources, the two bounty hunters then joined forces with the Rebels as covert operatives.<br><br>However, in the comic book adaptation of <i>Shadows of the Empire</i>, Zuckuss and 4-LOM joined <a href='#glossary/' onclick='glossary.displayFromExternal('Boss')'>Bossk</a> and several other bounty hunters in pursuit of Boba Fett and Han Solo. Zuckuss was captured and humiliated by Fett, who escaped unharmed.",
+        "gallery": [],
+        "btsimages": [],
+        "triviaNumber": "83",
+        "introductionRight": false,
+        "relations": {
+            "se": "DENG",
+            "s": "BOSS"
+        }
+    },
+    "LUKE": {
+        "name": "Luke Skywalker",
+        "shortname": "Luke Skywalker",
+        "shortdesc": "The former orphan and moisture farmer who became the Rebel Alliance's savior at only 18. After liberating Princess Leia from the Death Star, he went on to destroy the space station at the Battle of Yavin. Three years later, he led the Rebel troops against impossible odds at the Battle of Hoth, and then risked both his life and Jedi training to save his friends from Imperial forces on Cloud City. He was also the mastermind behind the rescue of Han Solo from Jabba the Hutt. Luke's greatest achievement, however, was convincing his father to turn away from the dark side, a feat which brought an end to the Emperor's terrible reign and allowed Anakin Skywalker to die in peace.",
+        "species": "Human",
+        "height": "1.72 meters",
+        "homeworld": "Tatooine",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "Unlike many of his allies, Luke's past is exceptionally well-documented. Born the son of <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, An')'>Anakin Skywalker</a>, who would eventually become the villainous <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a>, Luke was separated from his mother and twin sister at birth. In order to protect the children, <a href='#glossary/' onclick='glossary.displayFromExternal('Keno')'>Obi-Wan Kenobi</a> entrusted Luke to <a href='#glossary/' onclick='glossary.displayFromExternal('Lars')'>Owen and Beru Lars</a>, moisture farmers on <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>, while Luke's sister, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Leia</a>, was adopted by <a href='#glossary/' onclick='glossary.displayFromExternal('Organ')'>Senator Bail Organa</a> of <a href='#glossary/' onclick='glossary.displayFromExternal('Alder')'>Alderaan</a>. For the next 18 years, Luke toiled on the <a href='#glossary/' onclick='glossary.displayFromExternal('moisture farm')'>moisture farm</a>, unaware of his true heritage, his father's true identity, or the existence of his sister.<br><br>In his early years, Luke became an experienced pilot by racing his <a href='#glossary/' onclick='glossary.displayFromExternal('T-16')'>T-16 skyhopper</a> through Tatooine's treacherous <a href='#glossary/' onclick='glossary.displayFromExternal('Begg')'>Beggar's Canyon</a>, using the craft's stun cannons to shoot <a href='#glossary/' onclick='glossary.displayFromExternal('womp')'>womp rats</a>. He became fast friends with <a href='#glossary/' onclick='glossary.displayFromExternal('Darklighter, B')'>Biggs Darklighter</a> and a group of youths that included Tank, <a href='#glossary/' onclick='glossary.displayFromExternal('Fixer')'>Fixer</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Camie')'>Camie</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Windy')'>Windy</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('Deak')'>Deak</a>. Together, this group spent many hours at <a href='#glossary/' onclick='glossary.displayFromExternal('Anchor')'>Anchorhead's</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Tosche')'>Tosche Station</a>. While Biggs and Tank eventually escaped Tatooine and joined the <a href='#glossary/' onclick='glossary.displayFromExternal('Acad')'>Academy</a>, Luke could only dream of leaving the desert world. <br><br>When he was 18, however, Luke's life changed forever after he encountered the droids <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('R2-D2')'>R2-D2</a>. Artoo carried a <a href='#glossary/' onclick='glossary.displayFromExternal('hologram')'>hologram</a> of a beautiful princess seeking Obi-Wan Kenobi, a powerful <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Kn')'>Jedi Knight</a> who Luke had known as the crazy hermit \"Old Ben.\" At Ben's house, Luke learned that his father had been a Jedi Knight, and that he had been betrayed and murdered by Darth Vader. Ben also gave Luke Anakin's original <a href='#glossary/' onclick='glossary.displayFromExternal('lightsab')'>lightsaber</a>, and urged the boy to join him on a quest to Alderaan. Luke refused, unwilling to abandon his commitment to Owen and Beru.<br><br>Sadly, Luke returned home to find that his adopted aunt and uncle had been murdered by stormtroopers searching for Artoo and Threepio. Luke then realized that fate had placed him in Kenobi's hands to learn the ways of the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>. The group booked passage to Alderaan aboard the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>, a starship piloted by the smuggler <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> and the <a href='#glossary/' onclick='glossary.displayFromExternal('Wook')'>Wookiee</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a>. Yet, when they arrived at the planet's position, they discovered that it had been destroyed by the massive Imperial battle station, the <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a>. <br><br>After the <i>Falcon</i>'s capture by Imperial forces, Luke became involved in a series of heroic acts that resulted in the rescue of Princess Leia. Unfortunately, he was also forced to watch as Darth Vader struck down Obi-Wan in a terrible lightsaber duel. Kenobi's sacrifice allowed the heroes to escape, and the <i>Falcon</i> fled to <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin 4')'>Yavin 4</a>. There, Luke joined the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel Alli')'>Rebel Alliance</a> and was reunited with Biggs. The plans carried by Artoo were analyzed and <a href='#glossary/' onclick='glossary.displayFromExternal('Dodo')'>General Dodonna</a> discovered the Death Star's one weakness: a small, thermal exhaust port in one of the battle station's trenches. Biggs, Luke, Wedge Antilles, and several other brave pilots agreed to make the assault on the Death Star.<br><br>During the climactic <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, most of Luke's fellow pilots were slain. Darth Vader nearly killed Luke as well, but Han Solo arrived to protect the young Skywalker. As Luke approached the exhaust port, he heeded the words of the spirit of Obi-Wan Kenobi, shut down his targeting computer, and used the Force to fire a pair of <a href='#glossary/' onclick='glossary.displayFromExternal('proton')'>proton torpedoes</a> that destroyed the Death Star.<br><br>Over the next few years, Skywalker became an integral part of the Rebel Alliance, flying many missions and eventually rising to the rank of commander. Along with <a href='#glossary/' onclick='glossary.displayFromExternal('Antil')'>Wedge</a>, he founded the X-wing <a href='#glossary/' onclick='glossary.displayFromExternal('Rogue Squa')'>Rogue Squadron</a>, and later helped stave off the Imperial attack on Hoth's <a href='#glossary/' onclick='glossary.displayFromExternal('Echo B')'>Echo Base</a> until the Rebels could escape. After the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>, Luke devoted himself to his Jedi training by traveling to <a href='#glossary/' onclick='glossary.displayFromExternal('Dago')'>Dagobah</a>, where he encountered the <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Ma')'>Jedi Master</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Yoda')'>Yoda</a>. The training proved difficult, forcing Luke to strengthen his body as well as his mind. Yoda feared that Luke was too impetuous, and that he too could be seduced by the dark side. <br><br>During his training, Luke received a vision of his friends in danger on Bespin's <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>. Despite Yoda's warnings, Luke left Dagobah to rescue Han, Leia, and Chewbacca. As a result, he stepped into a trap planned by Darth Vader. During the fierce duel that followed, Vader severed Luke's right hand and revealed the truth about the young Jedi's parentage. Vader offered Luke a chance to join him in ruling the galaxy, but Luke refused and leapt into one of Cloud City's seemingly endless reactor shafts, choosing certain death over the dark side. Miraculously, Luke survived the encounter and was rescued by the <i>Millennium Falcon</i>.<br><br>During the next year, Luke returned to Tatooine and rebuilt his lightsaber using instructions discovered in Obi-Wan's home. He also defended himself against an assassination attempt by <a href='#glossary/' onclick='glossary.displayFromExternal('Xiz')'>Prince Xizor</a>, head of the <a href='#glossary/' onclick='glossary.displayFromExternal('Black S')'>Black Sun</a> criminal organization.<br><br>Within the year, Luke also planned the rescue of Han Solo, who had been frozen in <a href='#glossary/' onclick='glossary.displayFromExternal('carboni')'>carbonite</a> and delivered to crime lord <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a> by <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a>. When Jabba proved unreasonable, Luke and his allies toppled the Hutt's cartel. With Han safe, Luke returned to Dagobah to find Master Yoda dying. Yoda confirmed that Vader was his father, but insisted that Luke had to confront the Dark Lord one more time. The spirit of Obi-Wan also appeared and revealed that Leia was Luke's twin sister.<br><br>Luke ultimately delivered himself to Vader, intent on rescuing Anakin Skywalker from the dark side. Vader did not relent and presented Luke to the Emperor aboard the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. There, Vader and Luke again clashed, and the Dark Lord learned of Leia's existence. Luke lashed out, severing Vader's right hand. However, despite the Emperor's urgings, he did not slay his father. Incensed at the young Jedi's willpower, the Emperor attacked Luke with blue Force lightning. In his anguish, Luke called out to his father and Anakin Skywalker finally emerged. Despite his own injuries, Vader hurled the Emperor into the Death Star's reactor core. Vader himself perished soon after, but not before Luke looked upon his father's face for the first'and last'time.<br><br>After the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a> and the destruction of the second Death Star, Luke played a major role in turning the Rebel Alliance into the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>. He helped fight the reptilian Ssi-ruuk invaders at <a href='#glossary/' onclick='glossary.displayFromExternal('Baku')'>Bakura</a>; followed Han Solo and Leia to the planet <a href='#glossary/' onclick='glossary.displayFromExternal('Datho')'>Dathomir</a>; fought the forces of <a href='#glossary/' onclick='glossary.displayFromExternal('Thrawn')'>Grand Admiral Thrawn</a> and stymied the attempts of a former Emperor's aide, <a href='#glossary/' onclick='glossary.displayFromExternal('Jade')'>Mara Jade</a>, to kill him; and battled a crazed, cloned Jedi who had also cloned Luke.<br><br>Ten years after the Battle of Yavin, Skywalker attempted to destroy the dark side of the Force from within. He agreed to become the reborn Emperor's apprentice, but slowly succumbed to Palpatine's powers on the planet <a href='#glossary/' onclick='glossary.displayFromExternal('Byss')'>Byss</a>. Fortunately, Leia arrived and rescued him from the brink of corruption. Together, the twins destroyed the Palpatine clone. Soon after, the Emperor returned again, only to suffer defeat once more.<br><br>Throughout his many adventures, Luke discovered that many other Force-sensitive beings were spread across the galaxy. He ultimately decided to gather and train a new army of Jedi Knights, and thus founded a <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Ac')'>Jedi academy</a> in the Great Temple of the <a href='#glossary/' onclick='glossary.displayFromExternal('Massa')'>Massassi</a> on Yavin 4. However, Luke did not realize that the evil spirit of an ancient Dark Jedi named <a href='#glossary/' onclick='glossary.displayFromExternal('Kun')'>Exar Kun</a> inhabited the temple. Kun killed one trainee, seduced another to the dark side, and nearly murdered Luke, who was eventually saved by the combined powers of his students. <br><br>In addition to his numerous missions for the New Republic, Luke has searched in vain for details about his mother. Eventually, he discovered the Jedi <a href='#glossary/' onclick='glossary.displayFromExternal('Callis')'>Callista</a> and fell in love, but Callista had her own path to follow. Luke has also grown closer to Mara Jade, his would-be assassin and now a powerful Force-user.<br><br>Luke continues to maintain his Jedi academy, training the Solo children and Chewbacca's nephew, Lowbacca. He still routinely embarks on missions for the New Republic and will instantly rise to meet any threat facing his friends and allies.",
+        "bts": "Like all of the primary characters, Luke went through numerous conceptions before becoming a farm boy from Tatooine. In early drafts of <i>Star Wars</i>, Luke Skywalker is a hardened general fighting the Imperial forces. In this incarnation, the general becomes the protector and mentor of \"Annikin Starkiller,\" the son of Skywalker's friend, Kane. In these versions, \"Annikin\" is very similar to the character Luke would become. After various revisions, the young and brash Annikin became known as Luke Starkiller, and General Obi-Wan Kenobi appeared to take on the role as teacher and guardian.<br><br>Luke's character eventually took shape, becoming more innocent and callow with each draft. At one point, Lucas contemplated changing Luke's sex, but the basic character concept remained unchanged. Finally, shortly before filming began, he revised Luke's name once more, replacing \"Starkiller\" with the familiar \"Skywalker.\"<br><br>Mark Hamill was selected to play Luke in <i>Star Wars</i>, and he reprised his role in both sequels. Throughout the films, he speaks 478 lines of dialogue, more than any other character in the trilogy (Han Solo has only 360 lines, while Leia speaks 235 lines). Hamill also portrayed Luke in the radio adaptations of all three films.",
+        "gallery": [
+            "Luke investigates the destroyed Jawa sandcrawler. He holds a Tusken Raider's gaffi stick, planted at the scene by Imperial stormtroopers.",
+            "Princess Leia consoles Luke after the death of Obi-Wan Kenobi.",
+            "While stationed on Hoth, Luke is promoted to Rebel Commander and takes charge of Rogue Squadron.",
+            "As Rogue Leader, Luke pilots a snowspeeder against Imperial AT-AT walkers at the Battle of Hoth.",
+            "Although he has lost his snowspeeder and his gunner, Dack, Luke manages to single-handedly destroy an AT-AT.",
+            "Luke listens intently as Jedi Master Yoda explains the nature of the Force.",
+            "Seriously wounded and devastated by the knowledge that Darth Vader is his father, Luke retains only enough strength to cling to one of Cloud City's weather vanes.",
+            "In order to save himself from his plight, Luke uses the Force to call to Leia. Moments later, the <i>Millennium Falcon</i> appears.",
+            "Luke arrives at Jabba the Hutt's palace to rescue Princess Leia, Han Solo, and the rest of his allies.",
+            "In the year since his battle with Vader, Luke has learned to control his Jedi powers and has constructed a new lightsaber.",
+            "Luke battles Jabba's pet rancor, a terrible beast that almost consumes the young Jedi.",
+            "During the conflict with Jabba the Hutt, Jabba's cronies attempt to feed Luke to the Sarlacc.",
+            "Realizing that he must face Vader, Luke willingly turns himself over to Imperial troops.",
+            "Luke Skywalker and Darth Vader engage in a final climactic battle aboard the second Death Star."
+        ],
+        "btsimages": [
+            "Early concept art for \"Luke,\" completed at a time when George Lucas contemplated changing Luke into a teenage girl.",
+            "A storyboard portraying Luke as he repairs a vaporator. This scene, which takes place early in <i>Star Wars</i>, was filmed but ultimately cut from the movie.",
+            "A Ralph McQuarrie production painting for <i>The Empire Strikes Back</i> of Luke and his X-wing on Dagobah.",
+            "Mark Hamill, with lightsaber prop and in make-up, on the wampa ice cave set of <i>The Empire Strikes Back</i>.",
+            "In a scene cut from <i>The Empire Strikes Back</i>, Luke wears an advanced healing bandage that repairs the wounds caused by the wampa.",
+            "The medical droid 2-1B removes Luke's bandage. This shot was also dropped from <i>Empire</i>.",
+            "Hamill and producer Gary Kurtz on location in Norway for <i>The Empire Strikes Back</i>. The location shoot proved difficult for both cast and crew.",
+            "Mark Hamill performs a stunt on the Dagobah stage.",
+            "Hamill practices his fencing skills.",
+            "Hamill and David Prowse (Darth Vader) rehearse a duel.",
+            "Hamill on the Cloud City set during filming. For the shot of Luke actually being pulled through the round window, a stunt double will take Hamill's place.",
+            "Filming of the climactic battle between Vader and Luke on Cloud City. Hamill (center) performed in all of the lightsaber duels.",
+            "Hamill prepares for his leap into Cloud City's reactor shaft.",
+            "During filming of <i>Return of the Jedi</i>, Hamill participates in yet another stunt."
+        ],
+        "triviaNumber": "24",
+        "introductionRight": true,
+        "tech": true,
+        "videoClip": true,
+        "relations": {
+            "n": "C3PO",
+            "ne": "GARI",
+            "e": "BIGG",
+            "se": "MONM",
+            "s": "REBE",
+            "so": "LEIA"
+        }
+    },
+    "GARM": {
+        "name": "Garm Bel Iblis",
+        "shortname": "Garm Bel Iblis",
+        "shortdesc": "One of the founding members of the Rebellion, and perhaps the most passionate in his hatred for the Empire. After Garm's wife and children were murdered by stormtroopers, the Corellian senator joined with Mon Mothma and Bail Organa to establish the Rebel Alliance. However, Garm began to fear that Mothma would become the galaxy's next dictator. He abandoned the Rebellion and established his own private army to fight the Empire. He later dismissed his suspicions about Mothma and became one of the New Republic's most revered leaders.",
+        "species": "Human",
+        "height": "1.75 meters",
+        "homeworld": "Corellia",
+        "affiliation": "New Republic",
+        "firstapp": "<i>Dark Force Rising</i>",
+        "biography": "As a young and idealistic senator determined to preserve freedom throughout the galaxy, Garm Bel Iblis was one of the few voices opposed to <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Senator Palpatine's</a> rapid rise to power. When Palpatine became Emperor, the villain ordered Imperial forces to arrest the entire Bel Iblis family. Garm was forced to watch as his wife and children were executed, but managed to escape the slaughter and sought the aid of <a href='#glossary/' onclick='glossary.displayFromExternal('Moth')'>Mon Mothma</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Org')'>Bail Organa</a>. Together, the trio wrote the Corellian Treaty, which officially created the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>.<br><br>In the Rebel Alliance's nascent days, Bel Iblis, Mothma, and Organa were recognized as its strongest leaders. But violent disagreements between the three occurred frequently. In most instances, Organa acted as a mediator between Bel Iblis and Mothma, whose leadership styles were vastly different. Sadly, Bail Organa was killed when the <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star')'>Death Star</a> destroyed <a href='#glossary/' onclick='glossary.displayFromExternal('Alder')'>Alderaan</a>, and suddenly Bel Iblis and Mothma found themselves locked in a struggle to claim control of the Rebellion. Bel Iblis feared that, without Organa monitoring her, Mon Mothma would one day become a despot much like the hated Emperor.<br><br>Although he was a brilliant military tactician, Bel Iblis was not as charismatic as Mothma. He began to lose influence within the Rebellion, until he eventually refused one of Mothma's direct orders and she dismissed him from the Alliance. But Garm's fight against the <a href='#glossary/' onclick='glossary.displayFromExternal('Empire')'>Empire</a> did not end with his expulsion from the Rebellion. Rather, he gathered a host of loyal troops and established a mobile base from which he launched a series of surprise attacks on Imperial installations. Bel Iblis continued to operate in this rogue fashion until shortly after the foundation of the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>.<br><br>When Mon Mothma took control of the New Republic, Bel Iblis realized that he had misjudged her intentions. He therefore agreed to aid <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> in recovering the legendary <a href='#glossary/' onclick='glossary.displayFromExternal('Kata')'><i>Katana</i> fleet</a> of <a href='#glossary/' onclick='glossary.displayFromExternal('dread')'>dreadnaughts</a>, six of which Bel Iblis already possessed. At <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Leia's</a> urging, he later joined the New Republic, then answered Mothma's pleas for help when <a href='#glossary/' onclick='glossary.displayFromExternal('Corus')'>Coruscant</a> was attacked by <a href='#glossary/' onclick='glossary.displayFromExternal('Thrawn')'>Grand Admiral Thrawn</a>. Upon Thrawn's defeat, Bel Iblis quickly rose to a position of respect and power within the New Republic.",
+        "gallery": [],
+        "btsimages": [],
+        "triviaNumber": "103",
+        "introductionRight": false,
+        "relations": {
+            "no": "ACKB"
+        }
+    },
+    "LEIA": {
+        "name": "Princess Leia",
+        "shortname": "Princess Leia",
+        "shortdesc": "The heart of the Rebel Alliance during the Galactic Civil War, and later the leader of the New Republic, a devoted mother, and Jedi Knight. Leia's efforts to topple the Empire began soon after she became the youngest senator in galactic history. Throughout her term, she secretly aided the Rebellion, eventually supplying the Alliance with the Death Star plans. Despite enduring Imperial torture, the loss of her homeworld, a devastating defeat on Hoth, and the near-murder of Han Solo, Leia has continued to protect the freedom of the galaxy.",
+        "species": "Human",
+        "height": "1.52 meters",
+        "homeworld": "Alderaan",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "The biological daughter of the villainous <a href='#glossary/' onclick='glossary.displayFromExternal('Vader')'>Darth Vader</a>, Leia was separated from her mother and twin brother at birth and secreted away to protect her from her father. She was adopted by <a href='#glossary/' onclick='glossary.displayFromExternal('Organa')'>Bail Organa</a>, the powerful Viceroy and First Chairman of <a href='#glossary/' onclick='glossary.displayFromExternal('Alde')'>Alderaan</a>. She spent her childhood surrounded by three doting aunts and her best friend, <a href='#glossary/' onclick='glossary.displayFromExternal('Winte')'>Winter</a>, and immersed herself in education, art, and politics. At the age of 18, she earned a seat on the Imperial Senate, where her compassion and intelligence became clear to the galaxy. Despite the <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor's</a> growing list of atrocities, Leia continued to strive for a more humane government. Her father, meanwhile, secretly became one of the driving forces behind the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel All')'>Rebel Alliance</a>. <br><br>Eventually, Leia covertly joined the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a> as well. Using her consular ship, the <a href='#glossary/' onclick='glossary.displayFromExternal('Tant')'><i>Tantive IV</i></a>, she conducted numerous espionage missions for the Rebels, and even intercepted the secret plans to the Imperial <a href='#glossary/' onclick='glossary.displayFromExternal('Death')'>Death Star</a>. Unfortunately, while attempting to recruit <a href='#glossary/' onclick='glossary.displayFromExternal('Keno')'>General Obi-Wan Kenobi</a> into the Rebellion, she and her ship were captured by the <a href='#glossary/' onclick='glossary.displayFromExternal('Star Des')'>Star Destroyer</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Devas')'><i>Devastator</i></a>. Leia stored the plans to the Death Star in an <a href='#glossary/' onclick='glossary.displayFromExternal('R2 un')'>R2</a> <a href='#glossary/' onclick='glossary.displayFromExternal('astromech droi')'>astromech droid</a>, which then fled the ship with a droid companion. Princess Leia Organa was captured by the menacing Darth Vader, although it would be years before either would know of the relationship that bound the two. <br><br>Taken aboard the Death Star, Leia resisted interrogation probes and refused to reveal the location of the secret Rebel Base. Furious, <a href='#glossary/' onclick='glossary.displayFromExternal('Tark')'>Grand Moff Tarkin</a> threatened to destroy Alderaan, along with Leia's father and billions of other residents, if the princess did not cooperate. She confessed that the Rebels were hidden on <a href='#glossary/' onclick='glossary.displayFromExternal('Danto')'>Dantooine</a>, a lie that Tarkin believed. Nevertheless, the ruthless Moff ordered the destruction of Alderaan, then scheduled Leia's execution.<br><br>Fortunately, <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a>, and Obi-Wan Kenobi arrived to rescue Leia. During the daring escape, Kenobi sacrificed his mortal existence in a <a href='#glossary/' onclick='glossary.displayFromExternal('lights')'>lightsaber</a> duel with his one-time student, Vader. The others, however, safely arrived at the Rebel base on <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin 4')'>Yavin 4</a>.<br><br>Using the stolen Death Star plans stored in Artoo, the Rebels discovered the battle station's weakness. Skywalker, with Solo's help, succeeded in firing a pair of <a href='#glossary/' onclick='glossary.displayFromExternal('proton')'>proton torpedoes</a> into an exhaust port, causing a chain reaction that destroyed the Death Star.<br><br>After the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, Leia became a full member of the Rebel Alliance and conducted numerous diplomatic missions designed to attract more worlds to the Rebellion. During one adventure, she encountered Vader on the planet <a href='#glossary/' onclick='glossary.displayFromExternal('Mim')'>Mimban</a>, where he badly wounded her with his lightsaber. Luke managed to rescue Leia and healed her with the powers of the Kaiburr crystal.<br><br>In the years between the Battle of Yavin and the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>, Leia realized her romantic feelings for Han Solo. As Imperials attacked <a href='#glossary/' onclick='glossary.displayFromExternal('Echo B')'>Echo Base</a> on <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth')'>Hoth</a>, she joined Han aboard the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>, accompanying him to <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Cit')'>Cloud City</a>. There, Han's former friend, <a href='#glossary/' onclick='glossary.displayFromExternal('Calr')'>Lando Calrissian</a>, betrayed the heroes to Darth Vader, who was setting a trap for Skywalker. Vader plotted to have Han encased in <a href='#glossary/' onclick='glossary.displayFromExternal('carbonit')'>carbonite</a>, and shortly before the smuggler suffered this fate, Leia confessed her love.<br><br>With Lando's help, Leia rescued Luke from Vader and escaped Cloud City, although Han remained in the clutches of the bounty hunter, <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a>. Throughout the following year, Leia plotted to rescue Solo. She also sought to uncover a plot to assassinate Luke by infiltrating the criminal organization known as <a href='#glossary/' onclick='glossary.displayFromExternal('Black Sun')'>Black Sun</a>. Within Black Sun, she almost fell victim to the powerful <a href='#glossary/' onclick='glossary.displayFromExternal('Xi')'>Prince Xizor</a>, but her allies saved her from the crime lord's evil intentions.<br><br>Months after the Black Sun affair, Leia entered the palace of <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a> disguised as the bounty hunter <a href='#glossary/' onclick='glossary.displayFromExternal('Bous')'>Boushh</a>, with Chewbacca in tow. She managed to free Han from his carbonite block, but the pair was soon captured and Jabba made Leia his slave. During Luke Skywalker's dramatic attack on Jabba's court, Leia repaid the Hutt's cruelty by strangling the obese crime lord with a chain. Together, she and Luke destroyed Jabba's <a href='#glossary/' onclick='glossary.displayFromExternal('sail')'>sail barge</a>, killing most of his henchmen.<br><br>After Jabba's death, Leia traveled with Han Solo's strike team to the forest moon of <a href='#glossary/' onclick='glossary.displayFromExternal('Endor')'>Endor</a>, where she learned that she was Luke's sister, befriended the <a href='#glossary/' onclick='glossary.displayFromExternal('Ewoks')'>Ewoks</a>, and helped destroy an Imperial shield generator protecting the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. Meanwhile, the Rebel fleet attacked and ultimately destroyed the battle station, toppling the Empire.<br><br>After the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Leia became the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic's</a> foremost ambassador, a member of the Provisional Council, and an integral component of the government's Inner Circle. She began her new career by rushing to the aid of <a href='#glossary/' onclick='glossary.displayFromExternal('Baku')'>Bakura</a>, an Imperial planet under attack by the Ssi-ruuk Imperium. While on Bakura, <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, A')'>Anakin Skywalker's</a> spirit visited Leia and begged for her forgiveness.<br><br>Leia's future with Han Solo remained uncertain until the handsome Prince Isolder of Hapes proposed marriage. In response, Han kidnapped Leia and took her to <a href='#glossary/' onclick='glossary.displayFromExternal('Datho')'>Dathomir</a>. Despite inevitable complications, Leia agreed to marry Han, and they were wed six weeks later. In the years that followed, Leia gave birth to twins <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jac')'>Jacen</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jai')'>Jaina</a>, and their son <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, A')'>Anakin</a>. All three children proved extremely strong in the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a> and eventually joined Luke Skywalker's <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Ac')'>Jedi academy</a>. Leia also began training with her brother and gained rudimentary control over her newfound abilities.<br><br>Although preoccupied with her family, Leia never ceased serving the New Republic. She proved instrumental in convincing the vicious <a href='#glossary/' onclick='glossary.displayFromExternal('Nogh')'>Noghri</a> to renounce the Empire and join the New Republic, saved Luke from the reborn Emperor, and eventually agreed to become Minister of State for the New Republic. Her duties proved extremely trying, and she found herself coping with the kidnap of her children, several threats to Han's life, and numerous attacks from newly revived Imperial forces. Despite these trials, Leia willingly assumed the role of Chief of State when Mon Mothma relinquished the title. In this capacity, she faced the <a href='#glossary/' onclick='glossary.displayFromExternal('Yev')'>Yevetha</a>, the <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Je')'>Dark Jedi</a> Kueller, whom she personally killed in battle, and an endless array of other dangers. Throughout all these trials, Leia has remained a resolute defender of peace and freedom, an intelligent warrior, a loving wife and mother, and an increasingly powerful Jedi.",
+        "bts": "Leia's role fluctuated in size and importance throughout various scripts. In the rough draft, she is described as \"about fourteen years old, possessing a soft beauty and iron will.\" In this version, she is the daughter of King Kayos and Queen Breha of Aquilae. After her planet falls under Imperial attack, Leia is entrusted to the care of General Luke Skywalker and his ward, Annikin Starkiller. Initially, she proves to be a difficult and somewhat selfish child, although Annikin eventually falls in love with the girl. After the Imperials are defeated in this draft, she becomes Queen. Leia's character underwent a few revisions, and was even dropped from one draft completely, but she finally took on her familiar role in the <i>Star Wars</i> trilogy. However, in the shooting script for <i>Star Wars</i>, she spends much of her screen time unconscious as a result of Vader's tortures, and must be carried by the Wookiee Chewbacca.<br><br>Lucas interviewed about 400 young actresses for the role of Leia, and finally tested close to 50 before eventually choosing Carrie Fisher to play the role. Before filming began, the director, who knew that he wanted a distinctive look for Leia, ordered his crew to develop unique hairstyles for the character. Ultimately, the costume designers may have used a hairstyle worn by Native American women around the late 1800s and early 1900s as inspiration for Leia's memorable hairstyle.<br><br>Princess Leia Organa's name was inspired by early drafts of <i>Star Wars</i>, which contained a planet named Organa Major.",
+        "gallery": [
+            "Princess Leia listens intently as the Battle of Yavin rages above her.",
+            "Garbed in a royal gown, Leia prepares to award medals to Luke Skywalker and Han Solo in recognition of their selfless heroism at the Battle of Yavin.",
+            "While stationed at Echo Base, Leia took on a new mantle of leadership.",
+            "Princess Leia aboard the <i>Millennium Falcon</i> shortly after the starship's narrow escape from Hoth.",
+            "During her exploits with the Rebellion, Leia proves herself an able leader, a crack shot, a competent pilot, and a skilled mechanic.",
+            "Leia confesses her love for Han before he is encased in carbonite.",
+            "Leia looks on in anguish as Han's frozen body is pulled from the carbon-freezing chamber.",
+            "In order to rescue Han Solo, Leia disguises herself as the bounty hunter Boushh.",
+            "After freeing Han from his carbonite prison, Leia removes her mask and the two lovers are reunited at last.",
+            "During the mission to rescue Han Solo, Leia is captured and enslaved by Jabba the Hutt.",
+            "As Jabba's prisoner, Leia is forced to watch as her friends suffer the Hutt's wrath.",
+            "Despite her plight, Leia retains an air of nobility. Her courage and strength later allow her to escape Jabba's clutches.",
+            "As Luke wages war against Jabba's cronies, Leia uses the distraction to strangle the crime lord.",
+            "After killing Jabba, Leia aids Luke in destroying the Hutt's cartel.",
+            "On Endor, Leia becomes a member of Chief Chirpa's Ewok tribe, only to discover that her friends have been captured by the furry aliens."
+        ],
+        "btsimages": [
+            "An early storyboard conception of Princess Leia.",
+            "Another storyboard depicting Leia as she battles stormtroopers aboard the <i>Tantive IV</i>.",
+            "Carrie Fisher and director Irvin Kershner during filming of <i>The Empire Strikes Back</i>.",
+            "Fisher and Harrison Ford take a break in the <i>Millennium Falcon</i>'s cockpit.",
+            "Carrie Fisher during filming of <i>The Empire Strikes Back</i>.",
+            "Fisher on the dramatic carbon-freezing chamber set.",
+            "Fisher and George Lucas on the set of <i>Return of the Jedi</i>. Here, the actress is wearing part of her Boushh costume.",
+            "Concept art for Leia's slave outfit hairstyle and headpiece.",
+            "Concept art for Leia's Endor hairstyle.",
+            "A miniature likeness of Princess Leia used during filming of the speeder bike chase scenes.",
+            "Fisher and Mark Hamill film a portion of the speeder bike chase in front of a blue screen."
+        ],
+        "triviaNumber": "54",
+        "introductionRight": true,
+        "tech": true,
+        "videoClip": true,
+        "relations": {
+            "ne": "LUKE",
+            "se": "WARR",
+            "s": "HKID",
+            "so": "CHEW",
+            "no": "HANS"
+        }
+    },
+    "IMPO": {
+        "name": "Imperial Officers",
+        "shortname": "Imperial Officers",
+        "shortdesc": "The haughty, arrogant, and rigid men and women who comprise the highest echelons of the Imperial military. The vast majority of the Imperial officers who participated in the Galactic Civil War perished during the conflict. Most of these individuals, such as Moff Jerjerrod and Admiral Motti, simply underestimated the Rebellion. Others, including Admiral Ozzel and Captain Needa, failed Darth Vader and were murdered by the Dark Lord of the Sith.",
+        "species": "Primarily Human",
+        "height": "Varies",
+        "homeworld": "Varies",
+        "affiliation": "Empire",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "Although literally thousands of Imperial officers served in the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a>, a handful left indelible impressions due to their close association with the conflict. During the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, one of the most important officers was <a href='#glossary/' onclick='glossary.displayFromExternal('Motti')'>Admiral Motti</a>, who was a devout follower of the <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor</a>. Motti joined <a href='#glossary/' onclick='glossary.displayFromExternal('Tark')'>Grand Moff Tarkin</a> in monitoring the construction of the <a href='#glossary/' onclick='glossary.displayFromExternal('Death')'>Death Star</a>. Like many of his ilk, Motti was outspoken and brash, and even dared to mock <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader's</a> devotion to the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>. For this transgression, Motti nearly became a victim of the <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Lord')'>Dark Lord's</a> wrath, but Tarkin intervened and saved the wretched man's life. Motti, along with almost a million other Imperials, died a short time later when the first Death Star was destroyed by the Rebel Alliance.<br><br>At the Battle of Yavin, the blunt and gruff <a href='#glossary/' onclick='glossary.displayFromExternal('Tagge')'>General Tagge</a> was the most respected tactician aboard the Death Star. With Motti and Tarkin, he formed the Death Star's ruling body. Unlike his peers, however, he felt that the Rebel Alliance posed a significant threat. Unfortunately, when the Rebel fighters attacked the Death Star, the loyal Tagge did not leave Tarkin's side, and he too was killed aboard the space station.<br><br>Because the Empire's most talented and intelligent officers were lost at the Battle of Yavin, Darth Vader found it difficult to surround himself with competent men in the years that followed. He did, however, discover a number of ambitious Imperials who wished to improve their lot by joining Vader's personal fleet. <a href='#glossary/' onclick='glossary.displayFromExternal('Ozz')'>Admiral Ozzel</a>, whose confidence far outstripped his intelligence, became commander of the fleet and captain of Vader's flagship, the <a href='#glossary/' onclick='glossary.displayFromExternal('Exec')'><i>Executor</i></a>. While searching for the Rebels, Ozzel foolishly questioned Vader's commands, but the depth of his ineptitude became most evident as the fleet approached <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth')'>Hoth</a>. Ozzel ordered the <a href='#glossary/' onclick='glossary.displayFromExternal('Star des')'>Star Destroyers</a> to emerge from hyperspace well within the Hoth system, inadvertently alerting the Alliance to the Imperial threat. The Rebels raised a planetary shield, preventing <a href='#glossary/' onclick='glossary.displayFromExternal('TIE b')'>TIE bombers</a> from descending on <a href='#glossary/' onclick='glossary.displayFromExternal('Echo B')'>Echo Base</a>. Frustrated by this failure, Vader used the force to strangle Ozzel. He then appointed <a href='#glossary/' onclick='glossary.displayFromExternal('Piett')'>Captain Piett</a> as Ozzel's successor.<br><br>Shortly after Ozzel's death, <a href='#glossary/' onclick='glossary.displayFromExternal('Needa')'>Captain Needa</a> met a similar fate. A completely barbaric commander who had earned a reputation for ruthlessness while quelling uprisings in the <a href='#glossary/' onclick='glossary.displayFromExternal('Outer Ri')'>Outer Rim</a>, Needa had been given the helm of the Star Destroyer <i>Avenger</i>. Needa relished the post, as his vessel served as the point starship in Vader's fleet. After the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>, however, he pursued and lost the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>. Needa decided to personally apologize to Lord Vader, at which point he too was killed.   <br><br>When construction of the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a> began, the Emperor decided to appoint a weak-willed yet mildly competent officer to command the battle station. Palpatine did not want an overly-ambitious man with a personal agenda, but rather a puppet who existed solely to serve the Empire. Thus, he promoted a lowly general named <a href='#glossary/' onclick='glossary.displayFromExternal('Jerjer')'>Jerjerrod</a> to the position of Imperial Moff and entrusted him with control over the Death Star's construction. While he had little combat experience, Jerjerrod's career in Logistics and Supplies and his keen administrative sense made him the perfect choice to complete the Death Star well ahead of schedule. Once Vader arrived on the space station, Jerjerrod had an even greater incentive to please the Emperor. Because of Jerjerrod's efforts, the Death Star was fully-operational when the Rebel fleet attacked. Yet, his lack of military training prevented Jerjerrod from realizing the grave danger the Alliance forces represented. Like those Imperial officers aboard the first Death Star, Jerjerrod refused to flee the battle station and was consumed in a fiery explosion. <br><br>Other important Imperials included: <a href='#glossary/' onclick='glossary.displayFromExternal('Cass')'>Officer Cass</a>, who served as Grand Moff Tarkin's assistant aboard the Death Star; <a href='#glossary/' onclick='glossary.displayFromExternal('Hija')'>Lieutenant Hija</a>, chief gunnery officer aboard the Star Destroyer <i>Devastator</i>; and <a href='#glossary/' onclick='glossary.displayFromExternal('Jho')'>Controller Jhoff</a>, who, while stationed aboard the Super Star Destroyer <i>Executor</i>, controlled all traffic around the forest moon of <a href='#glossary/' onclick='glossary.displayFromExternal('Endor')'>Endor</a>.",
+        "gallery": [
+            "General Tagge aboard the first Death Star.",
+            "Lieutenant Cabbel (left) and his superior, Captain Lennox, aboard the Imperial Star Destroyer <i>Tyrant</i>.",
+            "The incompetent Admiral Ozzel dares to question Darth Vader's judgment. He will later pay the ultimate price for his failure.",
+            "Captain Needa, commander of the Star Destroyer <i>Avenger</i>.",
+            "After losing the <i>Millennium Falcon</i>, Needa attempts to apologize to Darth Vader. The Dark Lord is not impressed.",
+            "Captain Needa meets a grisly demise courtesy of Darth Vader.",
+            "Most high-ranking Imperial officers, including this shuttle pilot, wear an Imperial officer's disc on their hats. The disc contains coded identification information.",
+            "Important leaders, such as Darth Vader, surround themselves by competent Imperial officers. This anonymous man is one of Vader's shuttle pilots.",
+            "Moff Jerjerrod oversees the construction of the second Death Star.",
+            "Disciplined and efficient Imperial officers, led by Moff Jerjerrod, await Darth Vader's arrival aboard the second Death Star.",
+            "Darth Vader strides through one of the second Death Star's many corridors, followed by an entourage of Imperial officers."
+        ],
+        "btsimages": [],
+        "triviaNumber": "114",
+        "introductionRight": false,
+        "tech": true,
+        "relations": {
+            "ne": "VEER",
+            "se": "PIET",
+            "no": "THRA"
+        }
+    },
+    "LFRI": {
+        "name": "Luke's Childhood Friends",
+        "shortname": "Luke's Friends",
+        "shortdesc": "A group of wild youths who were close friends with the Alliance hero Luke Skywalker before he left Tatooine. The youngest members of this pack, Windy and Deak, spent most of their childhoods racing skyhoppers through Beggar's Canyon alongside Luke and Biggs Darklighter. The slightly older Fixer and his girlfriend Camie manned Anchorhead's Tosche Station, a small power supply center on the outskirts of the Dune Sea. Most of the group remained on Tatooine throughout the Galactic Civil War.",
+        "species": "Human",
+        "height": "Varies",
+        "homeworld": "Tatooine",
+        "affiliation": "None",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "Despite their important role in Luke's life, very little has actually been revealed about his young friends. Other than <a href='#glossary/' onclick='glossary.displayFromExternal('Darkligh')'>Biggs</a>, the oldest appears to be <a href='#glossary/' onclick='glossary.displayFromExternal('Fixer')'>Fixer</a>, who managed <a href='#glossary/' onclick='glossary.displayFromExternal('Tosch')'>Tosche Station</a> for the power station's owner. As his name implies, Fixer is an adept mechanic. He is also a fair pilot, but in his youth he enjoyed drinking and was prone to reckless behavior. A braggart and bully, Fixer often intimidated Luke and his friends, and he took on a role as the group's leader after Biggs departed for the <a href='#glossary/' onclick='glossary.displayFromExternal('Acad')'>Academy</a>. Fixer was also known to commit acts of petty theft in order to acquire parts for his skyhopper. Shortly before Luke encountered <a href='#glossary/' onclick='glossary.displayFromExternal('R2-D2')'>Artoo</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('C-3PO')'>Threepio</a>, Skywalker damaged his own <a href='#glossary/' onclick='glossary.displayFromExternal('T-16')'>skyhopper</a> while defeating Fixer in a race through <a href='#glossary/' onclick='glossary.displayFromExternal('Begga')'>Beggar's Canyon</a>.<br> <br>The sultry <a href='#glossary/' onclick='glossary.displayFromExternal('Camie')'>Camie</a>, Fixer's steady girlfriend, is a romantic dreamer. At one point, she confessed her desire to marry Fixer, but she also realized that the mechanic was far too immature to settle down. Whether or not the couple did actually wed remains unknown.<br><br>The youngest members of the group are <a href='#glossary/' onclick='glossary.displayFromExternal('Windy')'>Windy</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Deak')'>Deak</a>. Windy lived on a <a href='#glossary/' onclick='glossary.displayFromExternal('moisture')'>moisture farm</a> only a short distance from Luke's own home, and his parents were good friends with <a href='#glossary/' onclick='glossary.displayFromExternal('Lars')'>Owen and Beru Lars</a>, Luke's adoptive aunt and uncle. Months before Luke joined the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebell')'>Rebellion</a>, he and Windy rode a <a href='#glossary/' onclick='glossary.displayFromExternal('dewb')'>dewback</a> into the <a href='#glossary/' onclick='glossary.displayFromExternal('Jund')'>Jundland Wastes</a>. They were eventually thrown from the animal, but were soon rescued by <a href='#glossary/' onclick='glossary.displayFromExternal('Keno')'>Ben Kenobi</a>. Windy also frequently served as Luke's copilot during skyhopper races. Deak, in contrast, was Fixer's toady. He carried Fixer's booze and rode alongside the bully during skyhopper races.<br><br>Perhaps the most telling information about Luke's friends came from Biggs Darklighter, who revealed in the radio adaptation of <i>Star Wars</i>: \"Fixer's <i>just</i> smart enough to know he's better off being a big noise in a small room. Cammie's (<i>sic</i>) dumb enough to think she's made the prize catch hereabouts. Windy's nothing but a follower, and Deak's the follower of a follower.\"<br><br>Unfortunately, virtually nothing is known about Tank, except the fact that the young man left <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>, presumably to join the Academy. There is also a dearth of information about the fates of Camie, Fixer, Windy, and Deak, although it is assumed that they still reside on Tatooine.",
+        "bts": "While Biggs Darklighter is a common figure in the <i>Star Wars</i> sources, almost everything known about Luke's childhood friends is derived from the novelization and radio drama adaptation of <i>Star Wars</i>. A scene with these characters was filmed for <i>Star Wars</i>, but ultimately cut. In that segment, which focuses mainly on Biggs, Camie, Fixer, and Luke, Camie was portrayed by an adult film actress, Koo Stark. The star of such films as <i>Emily</i>, Stark also dated Prince Andrew many years after her brush with <i>Star Wars</i>.",
+        "gallery": [],
+        "btsimages": [],
+        "triviaNumber": "118",
+        "introductionRight": false,
+        "relations": {
+            "o": "BIGG",
+            "no": "OWEN"
+        }
+    },
+    "REBE": {
+        "name": "Rebel Enlisted",
+        "shortname": "Rebel Enlisted",
+        "shortdesc": "The dedicated men and women who formed the foundation of the Rebel Alliance and served as its pilots, infantry, officers, and technicians. Representing virtually every world plagued by Imperial tyranny, the Rebels devoted themselves to defeating the Empire and restoring freedom to the galaxy. Brave individuals like Jek Porkins and Dack Ralter boldly sacrificed their lives to further the Rebellion's cause, while shining leaders such as Bren Derlin and Commander Willard rallied Alliance troops to victory time and again throughout the terrible conflict. Many of those who survived the Galactic Civil War later became important figures in the New Republic.",
+        "species": "Varies",
+        "height": "Varies",
+        "homeworld": "Varies",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "While all the Rebels involved in the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a> proved incredibly brave and committed, several deserve special mention for their sacrifices and heroism. Among these are the many men who perished in major engagements. At the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, numerous young men lost their lives. Among these bold pilots was <a href='#glossary/' onclick='glossary.displayFromExternal('Pork')'>Jek Porkins</a>, a free trader from the <a href='#glossary/' onclick='glossary.displayFromExternal('Bestine s')'>Bestine system</a> who learned his piloting skills in the cockpit of an <a href='#glossary/' onclick='glossary.displayFromExternal('T-16')'>Incom T-16 skyhopper</a>. After the populace of Bestine IV fell under Imperial rule, Porkins joined the Alliance and quickly gained a reputation as a skilled and fearless pilot. He only improved this reputation by participating in the Battle of Yavin, where he gave his life to protect his fellow Rebels. He was not alone in this sacrifice: Legendary heroes such as <a href='#glossary/' onclick='glossary.displayFromExternal('Dutch')'>Dutch</a>, Tiree, Pops, and many others also died at that terrible battle. During the conflict, the Rebels were led by the brilliant tactician <a href='#glossary/' onclick='glossary.displayFromExternal('Willa')'>Commander Willard</a>, who joined forces with <a href='#glossary/' onclick='glossary.displayFromExternal('Dodo')'>Jan Dodonna</a> to guide the pilots to victory.<br><br>On <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth')'>Hoth</a>, the Rebels again enjoyed powerful leadership under <a href='#glossary/' onclick='glossary.displayFromExternal('Riee')'>Carlist Rieekan</a>, who wisely delegated authority to numerous subordinates. Among these was <a href='#glossary/' onclick='glossary.displayFromExternal('Derl')'>Major Bren Derlin</a>, who was responsible for base security and operations. Derlin earned his rank during the evacuation of Nentan, a Rebel outpost hosting numerous civilian refugees. When the Empire attacked, the Rebels were unprepared and subsequently did not have enough transports ready to evacuate everyone. Rather than sacrifice the lives of innocent civilians, Derlin offered to remain behind with his unit. He led the group to an Imperial landing site, overcame the enemy, and stole a transport. With this starship, they rescued the remaining Rebels and fled. Derlin managed to survive the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a> and served as the planetside unit leader during the mission to disable the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star's</a> shield generator at the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>.<br><br>Unlike Derlin, many other Rebels did not escape the Battle of Hoth unharmed. <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke's</a> good friend, <a href='#glossary/' onclick='glossary.displayFromExternal('Ralter')'>Dack Ralter</a>, was among those who died during the conflict. An idealistic dreamer, Ralter spent much of his youth in an Imperial labor camp. With the help of another prisoner, a Rebel pilot named Breg, Dack eventually escaped and joined the Alliance. He quickly became a valued member of <a href='#glossary/' onclick='glossary.displayFromExternal('Rogue Sq')'>Rogue Squadron</a> and volunteered to serve as Luke's gunner during the Battle of Hoth but he died when laserfire from an Imperial <a href='#glossary/' onclick='glossary.displayFromExternal('All terrain arm')'>AT-AT</a> rocked their <a href='#glossary/' onclick='glossary.displayFromExternal('snowspee')'>snowspeeder</a>. <br><br>Despite his experience, the veteran pilot <a href='#glossary/' onclick='glossary.displayFromExternal('Senes')'>Zev Senesca</a> was also killed on Hoth. The child of smugglers who frequently supplied the fledgling Rebellion with weapons, Zev learned early of the Empire's evil ways. With his parents' blessing, he joined the Rebellion and began training as a pilot. Sadly, Imperial forces traced Rebel supplies to Kestic Station, where Zev's parents operated, and the Star Destroyer <i>Merciless</i> ruthlessly attacked the complex. All aboard were killed. Zev blamed the Alliance for the death of his parents and abandoned the group, but he later discovered that a spy within the Rebellion had, in fact, betrayed the Senescas. Zev rejoined the Alliance, serving with valor for several years. On Hoth, he was designated <a href='#glossary/' onclick='glossary.displayFromExternal('Rogue Tw')'>Rogue Two</a>, second only to Luke Skywalker. His dedication to the Rebellion continued unabated, and he was the pilot who discovered <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han</a> and Luke after the pair had spent a freezing night on the wastelands of Hoth. At the Battle of Hoth, he continued to fight even after suffering severe damage. Ultimately, however, his snowspeeder burst into a ball of flame and the brave Rebel was killed.<br><br>Unlike the Empire, the Alliance openly welcomes nonhumans into its ranks. Consequently, a number of the Rebellion's greatest heroes are <a href='#glossary/' onclick='glossary.displayFromExternal('Wook')'>Wookiees</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Mon Calamari ali')'>Mon Calamari</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Ewoks')'>Ewoks</a>, Sullustans, and other diverse aliens. These distinguished Rebels included the Florn <a href='#glossary/' onclick='glossary.displayFromExternal('Lampr')'>Lamproid</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Ibeg')'>Dice Ibegon</a>, who was strongly attuned to the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>. The wormlike Rebel passionately recruited others to the Alliance's cause, including a former Imperial scout named <a href='#glossary/' onclick='glossary.displayFromExternal('Sivr')'>Lak Sivrak</a>. Ibegon and Sivrak, a hairy <a href='#glossary/' onclick='glossary.displayFromExternal('Shist')'>Shistavanen</a> Wolfman, met in the <a href='#glossary/' onclick='glossary.displayFromExternal('Mos Eisley Ca')'>Mos Eisley cantina</a> and quickly fell in love. Infected by Ibegon's ideals, Lak became a pilot for the Rebellion. Ibegon lost her life at the Battle of Hoth, while Lak died a year later during the attack on the second Death Star.<br><br>Sometime before the Battle of Endor, the Alliance also secured the aid of the <a href='#glossary/' onclick='glossary.displayFromExternal('Dress')'>Dresselians</a>, small prune-faced humanoids. One of their heroes, a noted resistance fighter and scout named Orrimaarko, was the first of his species to be given command of an Alliance Special Forces team. Orrimaarko wears an eyepatch and camouflage cowl and is an exceptional combatant.",
+        "gallery": [
+            "Major Derlin, one of the brave Rebel Alliance officers."
+        ],
+        "btsimages": [],
+        "triviaNumber": "236",
+        "introductionRight": true,
+        "relations": {
+            "n": "LUKE",
+            "ne": "NIEN"
+        }
+    },
+    "CFAM": {
+        "name": "Chewbacca's Family",
+        "shortname": "Chewbacca's Family",
+        "shortdesc": "A collection of Wookiees loyal to the Rebel hero, Chewbacca. Chewie's nuclear family consists of his elderly father Attichitcuk, wife Mallatobuck, and son Waroo, who all inhabit a sprawling tree house. Other members of this group include Chewie's in-laws, siblings, and friends. Like all Wookiees, most members of Chewbacca's extended family will not hesitate to rush to his aid.",
+        "species": "Wookiee",
+        "height": "Varies",
+        "homeworld": "Kashyyyk",
+        "affiliation": "None",
+        "firstapp": "\"Star Wars<br>Holiday Special\"",
+        "biography": "Between his many early adventures with <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>, the valiant <a href='#glossary/' onclick='glossary.displayFromExternal('Wook')'>Wookiee</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a> managed to return to his home planet on a number of occasions. During one such trip, he wed <a href='#glossary/' onclick='glossary.displayFromExternal('Malla')'>Mallatobuck</a>, who was caring for his father, <a href='#glossary/' onclick='glossary.displayFromExternal('Atti')'>Attichitcuk</a> (or Itchy). Chewie and Malla soon produced their only son, who was originally named <a href='#glossary/' onclick='glossary.displayFromExternal('Lumpa')'>Lumpawarrump</a>. In his youth, Lumpy was very spirited and adventuresome, much like his famous father.<br><br>Although he spent very little time on <a href='#glossary/' onclick='glossary.displayFromExternal('Kash')'>Kashyyyk</a> throughout the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a>, Chewbacca enjoyed a form of semiretirement on his homeworld after the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a> came to power. However, events as related in <i>Tyrant's Test</i>, conspired to shatter his peaceful life. When Han Solo was kidnapped by the <a href='#glossary/' onclick='glossary.displayFromExternal('Yeve')'>Yevetha</a>, Chewbacca rallied a Wookiee strike force to rescue his friend. The team consisted of his sister Jowdrrl, his cousin Dryanta, his good friend Shoran, and Lumpy. During the course of the mission, Shoran was slain, but Han was ultimately retrieved. The adventure also completed Lumpy's \"hrrtayyk,\" a Wookiee coming-of-age ritual. As a result, Lumpawarrump was renamed <a href='#glossary/' onclick='glossary.displayFromExternal('Lumpawarrump (Wa')'>Waroo</a>, a symbolic gesture meant to recognize his ascension to adulthood. <br><br>Chewbacca's family also consists of his niece Sirrakuk, and his nephew <a href='#glossary/' onclick='glossary.displayFromExternal('Lowb')'>Lowbacca</a>, who is strong in the ways of the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>. At Chewbacca's request, Lowie was inducted into <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker's</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Aca')'>Jedi academy</a> on <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin 4')'>Yavin 4</a>. Lowie has adventured across the galaxy with <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jac')'>Jacen</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jai')'>Jaina</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, A')'>Anakin Solo</a>.<br><br>While most of Chewie's family and friends are honorable, his brother-in-law Vargi remains an immoral outcast. Shortly after the Battle of Endor, Vargi aided slavers in their attempt to imprison the Wookiees of Kashyyyk. Fortunately, Chewbacca and <a href='#glossary/' onclick='glossary.displayFromExternal('Calr')'>Lando Calrissian</a> discovered the plot and routed the villains.",
+        "bts": "Chewie's immediate family first appeared in the \"Star Wars Holiday Special,\" aired by CBS on November 17, 1978. Peter Mayhew reprised his role as Chewbacca, and Harrison Ford, Mark Hamill, Carrie Fisher, and Anthony Daniels all made appearances in the two-hour special. The show also contained a cartoon featuring the first appearance of Boba Fett. However, Stuart Freeborn, who designed the original Chewbacca costume, did not have a hand in creating the additional Wookiees seen in the \"Star Wars Holiday Special.\" Rather, these creatures (as well as several new aliens) were produced by special effects artist Stan Winston.",
+        "gallery": [],
+        "btsimages": [],
+        "triviaNumber": "94",
+        "introductionRight": true,
+        "relations": {
+            "n": "CHEW"
+        }
+    },
+    "JSKF": {
+        "name": "Jabba's Guards",
+        "shortname": "Jabba's Guards",
+        "shortdesc": "A motley pack of hardened criminals and former slaves employed by Jabba the Hutt to pilot his desert skiffs, execute the crime lord's enemies, transport illegal goods, and raid nearby settlements. Among the crew were several Weequay, Gamorreans, and Nikto, along with an assortment of humans and other aliens. All were uniformly vile and violent beings skilled in every aspect of combat. However, their abilities proved useless against Han Solo's friends, who killed most of the Hutt's guards while rescuing the smuggler.",
+        "species": "Varies",
+        "height": "Varies",
+        "homeworld": "Varies",
+        "affiliation": "Loyal to Jabba the Hutt",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "The most visible of <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba's</a> guards, and usually the first encountered by visitors to the Hutt's palace, were the vicious and foul-tempered <a href='#glossary/' onclick='glossary.displayFromExternal('Gamorre')'>Gamorreans</a>. A belligerent porcine species hailing from the world of <a href='#glossary/' onclick='glossary.displayFromExternal('Gamorr')'>Gamorr</a>, the Gamorreans spend their lives locked in war. They are experienced with a host of archaic weapons and know hundreds of methods for dispatching their foes. As strong as they are violent, Gamorreans make excellent guards, soldiers, and mercenaries. When Jabba sought warriors to protect the walls of his palace, a dozen Gamorreans answered his call. Led by the bellicose <a href='#glossary/' onclick='glossary.displayFromExternal('Ortug')'>Ortugg</a>, they challenged their would-be employer to personal combat, a practice common on Gamorr. The wily Jabba declared that the combatants must first be blindfolded, an alleged Hutt custom. However, once the Gamorreans were unable to see, Jabba ordered dozens of his cohorts to attack the warriors. During the severe beating that followed, three of the Gamorreans died. Those who survived were awed by Jabba's seemingly amazing combat prowess and became loyal followers of the crime lord. The least intelligent of the Gamorreans seemed to be Gartogg, an eager young soldier who was continually mocked by his peers. As revealed in <i>Tales from Jabba's Palace</i>, Gartogg adopted two corpses as his 'friends' shortly before the Hutt's fateful trip to the <a href='#glossary/' onclick='glossary.displayFromExternal('Cark')'>Great Pit of Carkoon</a>. Gartogg was not among those killed by <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> and his allies.<br><br>Jabba also hired a clan of <a href='#glossary/' onclick='glossary.displayFromExternal('Wee')'>Weequay</a>, also well-known for their vicious behavior and ruthlessness. Even to the most trusted members of Jabba's court, the mute Weequay remained an enigma. They could only be distinguished from one another by their ceremonial topknots, and had the ability to communicate silently amongst themselves. Like all members of their species, they worshipped the moon god, Quay. In strange religious ceremonies, the Weequay began slaughtering <a href='#glossary/' onclick='glossary.displayFromExternal('banth')'>banthas</a>. Unfortunately, this angered nearby <a href='#glossary/' onclick='glossary.displayFromExternal('Tusk')'>Tusken Raiders</a>, who threatened to find the butchers. To ease the mounting tensions, Jabba commanded the Weequay to stop their rituals. He then ordered his henchmen to plant a dead moisture farmer near a final group of murdered banthas. When the Tuskens discovered the corpses, they assumed that the local moisture farmers had been responsible for the bantha killings. By all accounts, Jabba's entire contingent of Weequay soldiers perished alongside the Hutt and his cronies.<br><br>The <a href='#glossary/' onclick='glossary.displayFromExternal('Nikto')'>Nikto</a> were another species who received a great deal of work from Jabba. These reptilian creatures display a wide variety of characteristics, but most have small facial horns and scaly flesh. Many of Jabba's Nikto guards possessed orange skin, flat faces, and multiple nostrils. A few, such as the guard named <a href='#glossary/' onclick='glossary.displayFromExternal('Klaa')'>Klaatu</a>, were reptilian variants with green skin and black eyes.<br><br>Jabba's complement of guards included several hired for specific tasks. <a href='#glossary/' onclick='glossary.displayFromExternal('Barada')'>Barada</a>, a native of <a href='#glossary/' onclick='glossary.displayFromExternal('Klat')'>Klatooine</a>, served as the Hutt's chief mechanic. The unlucky humanoid, who had olive skin and a face reminiscent of a bull dog, had been sold into a life of indentured servitude by his parents. Jabba eventually won Barada in a game of <a href='#glossary/' onclick='glossary.displayFromExternal('sabacc')'>sabacc</a>. The crime lord retained Barada as a slave by charging the unlucky mechanic room and board, while paying him just enough to meet these expenses. Barada was among those who plummeted into the mouth of the <a href='#glossary/' onclick='glossary.displayFromExternal('Sarl')'>Sarlacc</a>.<br><br>Also in Jabba's service was <a href='#glossary/' onclick='glossary.displayFromExternal('Snit')'>Pote Snitkin</a>, a chubby Skrilling who piloted one of Jabba's skiffs. Like Barada and the others, he died at the Great Pit of Carkoon. Snitkin was joined in death by a variety of humans, many wanted criminals with death sentences throughout the galaxy.<br><br>Not all those who served Jabba as guards were slain at the Great Pit of Carkoon. <a href='#glossary/' onclick='glossary.displayFromExternal('Malak')'>Malakili</a>, a paunchy guard with training as a professional beast handler, served the Hutt as the <a href='#glossary/' onclick='glossary.displayFromExternal('rancor')'>rancor's</a> keeper. A bond developed between the horrific creature and his master, and Malakili eventually trained the monster. After the rancor's death, Malakili was devastated and did not join the other guards on Jabba's <a href='#glossary/' onclick='glossary.displayFromExternal('sail')'>sail barge</a>. Once he received news of the Hutt's death, he and Jabba's head chef, Porcellus, opened a restaurant in <a href='#glossary/' onclick='glossary.displayFromExternal('Mos Eisley s')'>Mos Eisley</a>.",
+        "bts": "On the set, three of Jabba's guards were known as Klaatu, Barada, and Nikto. These names were taken from the 1951 film, <i>The Day the Earth Stood Still</i>, in which the phrase \"klaatu barada nikto\" is a command given to the robot Gort.",
+        "gallery": [
+            "A Nikto guard, surrounded by members of Jabba's court.",
+            "A Nikto known as Giran (right) and Nizuc Bek escort Luke through Jabba's palace.",
+            "Among the most visible of Jabba's guards were the violent Gamorreans.",
+            "Nysad, a Red Nikto guard, attempts to kill Luke Skywalker aboard Jabba's sail barge.",
+            "The Nikto known as Vizam was responsible for keeping the Hutt's vehicles and starships well-armed. Here, he mans a blaster cannon on Jabba's sail barge.",
+            "Luke and a Green Nikto guard clash as Princess Leia prepares to destroy the sail barge.",
+            "Many of Jabba's guards perished in the Sarlacc."
+        ],
+        "btsimages": [
+            "Concept drawing for Pote Snitkin, who pilots one of Jabba's desert skiffs.",
+            "Design sketch for Barada, a native of Klatooine.",
+            "Unpainted stop-motion models which, upon completion, will be used during <i>Return of the Jedi</i>'s dramatic skiff battle scene.",
+            "A Barada mask used in <i>Jedi</i>. Barada's hat was attached to the black patch on the mask's forehead.",
+            "A Weequay mask. Several Weequay were part of Jabba's small army.",
+            "Wooof in costume on the sail barge set.",
+            "Pote Snitkin maquette. The ILM crew liked to call the character Snit Protokin.",
+            "The complete Pote Snitkin costume.",
+            "A closer look at Pote Snitkin's detailed mask.",
+            "Malakili, the rancor keeper, in front of a blue screen. The dead rancor will be inserted behind him in post-production.",
+            "A new Klatooinian character called Umpass-stay was created for the live-action footage inserted into the Special Edition version of <i>Return of the Jedi</i>.",
+            "The Barada mask.",
+            "Taym Dren-garen, one of Jabba's guards, on the sail barge set.",
+            "A Nikto actor poses for a profile shot on Jabba's sail barge."
+        ],
+        "triviaNumber": "55",
+        "introductionRight": true,
+        "relations": {
+            "se": "JCRT",
+            "no": "REBO"
+        }
+    },
+    "HKID": {
+        "name": "Anakin, Jacen, and Jaina Solo",
+        "shortname": "Han & Leia's Kids",
+        "shortdesc": "The children of Han Solo and Princess Leia Organa Solo. All three are strong in the ways of the Force, although Anakin is especially gifted and may one day become the most powerful Jedi the galaxy has ever known. Despite their limited years, the Solo children have become embroiled in numerous adventures and have faced death several times. They have also been inducted into Luke Skywalker's Jedi training facility, where they continue to delve deeper into the mysterious nature of the Force.",
+        "species": "Human",
+        "height": "Varies",
+        "homeworld": "Coruscant",
+        "affiliation": "New Republic",
+        "firstapp": "<i>The Last Command</i><br>and <i>Dark Empire</i> # 6",
+        "biography": "<a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Leia's</a> first children, the twins <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jac')'>Jacen</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jai')'>Jaina</a>, were born five years after the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, during the height of <a href='#glossary/' onclick='glossary.displayFromExternal('Thrawn')'>Grand Admiral Thrawn's</a> assault on the forces of the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>. Because of the conflict, the twins spent most of their early years in hiding under the care of Leia's aide, <a href='#glossary/' onclick='glossary.displayFromExternal('Wint')'>Winter</a>. After Thrawn's defeat, they returned to <a href='#glossary/' onclick='glossary.displayFromExternal('Corus')'>Coruscant</a>, where both <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a> kept a careful eye on the children. As they grew older, it became apparent that both Jacen and Jaina were strongly connected to the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>. In their early teens, the twins were entrusted to their uncle, <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>, and trained at his <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Aca')'>Jedi academy</a> on <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin 4')'>Yavin 4</a>.<br><br><a href='#glossary/' onclick='glossary.displayFromExternal('Solo, A')'>Anakin</a>, the most gifted of the three children in the ways of the Force, was born a year after his brother and sister. He too was placed into hiding during Thrawn's campaign, but remained concealed from the New Republic's enemies for months after his siblings returned to Coruscant. Like Jacen and Jaina, however, he eventually grew old enough to join Luke on Yavin 4. <br><br>Both Jacen and Jaina have unruly dark hair and deep brown eyes. Although they share many personality traits, including great courage and compassion, Jacen is more deeply connected to nature and has the ability to communicate with a variety of animals. Jaina, in contrast, is strongly attuned to the mechanical world and can fix almost anything. Except for his clear blue eyes, Anakin physically resembles his siblings. Like Jaina, he is also mechanically inclined and can easily build computers, droids, and other complex devices.<br><br>The Solo children have faced a long succession of dangerous enemies, including the spirit of fallen Jedi <a href='#glossary/' onclick='glossary.displayFromExternal('Kun')'>Exar Kun</a>, vile <a href='#glossary/' onclick='glossary.displayFromExternal('Dark Jed')'>Dark Jedi</a>, and numerous Imperial factions. Throughout their trials, they have remained hopeful, trusting, and determined to use their abilities to preserve life and freedom.",
+        "gallery": [],
+        "btsimages": [],
+        "triviaNumber": "87",
+        "introductionRight": true,
+        "relations": {
+            "n": "LEIA"
+        }
+    },
+    "JDRO": {
+        "name": "Jabba's Droid Pool",
+        "shortname": "Jabba's Droid Pool",
+        "shortdesc": "A small collection of droids in the service of the crime lord, Jabba the Hutt. The Hutt's droid pool was led by the sadistic EV-9D9, a murderous mechanical sought for a number of heinous crimes across the galaxy. EV-9D9 and her lackey, 8D8, where known for torturing and ultimately dismantling other droids who had displeased Jabba. Jabba also employed BG-J38, who was programmed to gamble with the Hutt's guests. After Jabba's death, those droids who escaped destruction were scattered to the four corners of the universe.",
+        "species": "Varies",
+        "height": "Varies",
+        "homeworld": "Unknown",
+        "affiliation": "Loyal to Jabba the Hutt",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "One of <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba's</a> most valued possessions was the malignant droid <a href='#glossary/' onclick='glossary.displayFromExternal('EV-9')'>EV-9D9</a>. While most droids are programmed to be gentle and benign, EV-9D9 somehow acquired a different set of moral standards. In fact, she actively enjoyed inflicting pain on fellow droids. EV-9D9 should have been deactivated several times, but she managed to elude authorities on several systems. Even <a href='#glossary/' onclick='glossary.displayFromExternal('Calr')'>Lando Calrissian</a>, who ran afoul of EV-9D9 on <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a> long before the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, could not capture the droid. Eventually, EV-9D9 found employment at the GoCorp repulsor plant, where she increased productivity by endlessly threatening the droid laborers. Jabba the Hutt's agents discovered EV-9D9 at GoCorp and purchased her for their obese master. Once she reached the Hutt's palace, EV-9D9 continued to be an unforgiving taskmaster. She demanded that Jabba's droids work tirelessly to serve the crime lord's every desire. Those droids who proved outdated or ill-equipped were simply deactivated and dismantled. To inspire fear in her subordinates, EV-9D9 mercilessly tortured uncooperative droids with glowing energy inducers. In this terrible task, she was faithfully aided by <a href='#glossary/' onclick='glossary.displayFromExternal('8')'>8D8</a>, a white droid with a vaguely human face.<br><br>While many of the droids in Jabba's employ boarded his <a href='#glossary/' onclick='glossary.displayFromExternal('sail')'>sail barge</a>, EV-9D9 was not among them. Soon after her master's death, however, she was cornered by the droid 1-2:4C:4-1 (Wuntoo Forcee Forwun). Wuntoo ensured that EV-9D9 was destroyed as revenge for the damage she had caused on Cloud City.<br><br>While Jabba owned numerous servant droids programmed for sanitation, maintenance, construction, translation, and security, one of his most popular units was a Roche J9 worker droid designated <a href='#glossary/' onclick='glossary.displayFromExternal('BG')'>BG-J38</a>. A skilled hologame player, BG-J38 was in great demand as a partner among Jabba's cronies. However, the droid was programmed to hustle palace visitors, often winning small fortunes from those foolish enough to challenge him to a hologame match. Of course, all of the droid's winnings were placed into Jabba's coffers. Like 8D8, BG-J38 disappeared for parts unknown.<br><br>Finally, Jabba's palace was equipped with a TT-8L/Y7 \"Tattletale\" droid. The droid was installed directly into the palace's front gate to serve as a sentry. It was eventually destroyed by <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> during the Darksaber crisis.",
+        "bts": "A droid similar to EV-9D9, but known as U-8D8 (Eue-Atedeate), appears in the rough draft. The robot later became EV-8D8 in the revised second draft, and finally EV-9D9 in the third draft. The \"8D8\" moniker was not forgotten, however, and was later applied to the white droid aiding EV-9D9. On the set, director Richard Marquand supplied EV-9D9's voice.<br><br>During filming, 8D8's head was moved by wires, while EV-9D9 was operated by a system of both wires and rods. Originally, however, the special effects department planned to create a version of EV-9D9 that could actually walk. They built an elaborate rig over the droid and planned to operate EV-9D9 much like a marionette. Unfortunately, the experiment failed and EV-9D9 remained immobile throughout her screen time.",
+        "gallery": [
+            "Jabba the Hutt's TT-8L/Y7 \"Tattletale\" droid questions C-3PO and R2-D2 when they approach the crime lord's palace.",
+            "The Tattletale droid has a glass optical lens protected by a retractable blind. The eye is capable of low-light surveys, spotlight illumination, and scanning sweeps.",
+            "The sadistic EV-9D9 threatens Artoo with a life of hard labor aboard Jabba's sail barge.",
+            "EV-9D9 is an EV Supervisor Droid, programmed to oversee other droid workers, report production problems, and maintain an efficient working environment.",
+            "EV-9D9's head contains three photoreceptors, a vocabulator, logic circuits, and a high-frequency binary comlink.",
+            "At EV-9D9's command, 8D8 tortures a power droid. 8D8 is a Smelter Operator droid and has a surly personality.",
+            "BG-J38 was purchased by Jabba to serve as a general laborer, but turned out to be an excellent hologame player.",
+            "BG-J38 at a gaming console in Jabba's palace."
+        ],
+        "btsimages": [],
+        "triviaNumber": "116",
+        "introductionRight": true,
+        "relations": {
+            "no": "JCRT"
+        }
+    },
+    "EWKS": {
+        "name": "Chief Chirpa's Tribe",
+        "shortname": "Chief Chirpa's Tribe",
+        "shortdesc": "The tribe of Ewoks who befriended and aided the Rebel Alliance during the Battle of Endor. The Ewoks are led by the strong-willed Chief Chirpa, although he confers with the tribal shaman, Logray, regarding all spiritual matters. Chirpa also relies upon several other members of the tribe, including Teebo, a masterful hunter and fierce warrior, and the intrepid Paploo. Chief Chirpa's tribe battled valiantly against the Imperials and ensured the Rebel victory that ended the Galactic Civil War.",
+        "species": "Ewok",
+        "height": ".99 meters average",
+        "homeworld": "Endor",
+        "affiliation": "Alliance",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "Like most <a href='#glossary/' onclick='glossary.displayFromExternal('Ewoks')'>Ewok</a> tribes on the forest moon of <a href='#glossary/' onclick='glossary.displayFromExternal('Endor')'>Endor</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Chirp')'>Chief Chirpa's</a> tribe is essentially ruled by a Council of Elders representing the wisest members of the clan. Chirpa is the head of this council, while the shaman <a href='#glossary/' onclick='glossary.displayFromExternal('Logray')'>Logray</a> acts as his main advisor. Although Chirpa holds a great deal of power, he cannot make independent decisions and must consult with the Council before taking any actions that might threaten the welfare of the tribe. During the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic Civ')'>Galactic Civil War</a>, for example, Chief Chirpa had to convince the Council of Elders to aid the Rebels. At the time of the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Chirpa had been chief for 42 seasons. As a symbol of his position, the graying Ewok carries a reptilian staff and wears the teeth, horns, and bones of animals he has bested during the hunt.<br><br>Other important members of the tribe include <a href='#glossary/' onclick='glossary.displayFromExternal('Teebo')'>Teebo</a>, who is responsible for leading hunts and building the village's defenses. Logray oversees the spiritual life of the Ewoks, arranges marriages, and leads the tribe in worship. He also ensures that the trees surrounding the village are cared for and treated with the utmost respect. The brash Ewok <a href='#glossary/' onclick='glossary.displayFromExternal('Paplo')'>Paploo</a> became a true hero within the tribe after he risked his life to distract Imperial scout troopers during the raid on the Endor shield generator. Of course, the most famous member of the tribe may be <a href='#glossary/' onclick='glossary.displayFromExternal('Warri')'>Wicket W. Warrick</a>, who distinguished himself during the Battle of Endor and was subsequently appointed as the tribe's Lead Warrior despite his young age.",
+        "bts": "Filming in the forests of Crescent City, California was arduous for the Ewok actors, who had to bear heavy costumes while running through difficult terrain. One morning, production assistant Ian Bryce arrived on the set to discover a note from the actors claiming that the disgruntled group had quit the project and was headed for the airport. Panicked, Bryce tried to find the actors, but suffered a flat tire. As he attempted to find another car, a bus arrived on the set and disgorged the Ewok actors, all sporting T-shirts that read, \"Revenge of the Ewoks.\"<br><br>In the rough draft, Chief Chirpa is known as \"Chief Chiepa.\"",
+        "gallery": [
+            "Two members of Chief Chirpa's tribe at rest on the forest moon of Endor.",
+            "Many Ewoks in Chief Chirpa's tribe wear leather helmets.",
+            "The Ewoks of Endor wield a variety of primitive weapons.",
+            "Teebo, the lead hunter in Chief Chirpa's tribe, sneaks through Endor's foliage.",
+            "Ewoks are skilled at hiding among Endor's plants and trees.",
+            "Ewoks have excellent marksmanship when using their bows.",
+            "Chief Chirpa's tribe surrounds the Rebel heroes.",
+            "Although primitive, the Ewoks' weapons can be extremely dangerous.",
+            "A wise Ewok shaman.",
+            "The Ewok Paploo, who is responsible for distracting Imperial scout troopers by stealing a speeder bike.",
+            "Teebo during a ceremony at the Ewok village.",
+            "A group of Ewok infants.",
+            "The shaman Logray stands at Chief Chirpa's side.",
+            "The Ewoks mistake C-3PO for a deity and prepare to roast the Rebel heroes in the droid's honor.",
+            "Logray oversees the construction of a fire pit, where the Ewoks plan to cook Han Solo."
+        ],
+        "btsimages": [
+            "Concept art for the Ewoks by Nilo Rodis-Jamero.",
+            "Artwork of an Ewok with a bordok, by Joe Johnston.",
+            "Stuart Freeborn at work on an Ewok mask.",
+            "An early Ewok.",
+            "An Ewok costume.",
+            "Ewok with headdress.",
+            "A close look at the Teebo mask.",
+            "The full Teebo costume.",
+            "Kenny Baker (Paploo) on location.",
+            "Ewoks on location in Crescent City, California, display a <i>Blue Harvest</i> clapboard. <i>Blue Harvest</i> was the code name used for <i>Return of the Jedi</i> during filming.",
+            "The full company of Ewoks pose with Chewbacca (Peter Mayhew)."
+        ],
+        "triviaNumber": "95",
+        "introductionRight": false,
+        "relations": {
+            "so": "WARR"
+        }
+    },
+    "NODE": {
+        "name": "The Modal Nodes",
+        "shortname": "Modal Nodes",
+        "shortdesc": "A Bith band led by the incomparable Figrin D'an, a master of both the Kloo horn and gasan string drum. Unfortunately, D'an is a gambling addict who often loses the band's earnings (and sometimes their instruments) in high-stakes games of sabacc. Yet the Modal Nodes have managed to survive by constantly touring the galaxy and performing for various underworld luminaries, including Jabba the Hutt and Lady Valarian. They also enjoy extended engagements at various disreputable clubs, such as the Mos Eisley cantina on Tatooine.",
+        "species": "Bith",
+        "height": "1.55 meters average",
+        "homeworld": "Clak'dor VII",
+        "affiliation": "None",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "A native of Clak'dor VII in the Mayagil Sector, <a href='#glossary/' onclick='glossary.displayFromExternal('D'an, Fig')'>Figrin D'an</a> became well-known on his homeworld as a creative musician and accomplished songwriter. Nurturing dreams of fame and fortune, Figrin gathered together five contemporaries and founded 'Figrin D'an and the <a href='#glossary/' onclick='glossary.displayFromExternal('Modal')'>Modal Nodes</a>,' an intergalactic jizz band. The band leader plays both the gasan string drum and the Kloo horn, and his incredible talents have earned him the nickname 'Fiery Figrin.' The band also includes Doikk Na'ts on a Dorenian Beshniquel, or Fizzz; Tedn Dahai and Ickabel G'ont on fanfar; Nalan Cheel on the bandfill with horn bells; and Tech Mo'r playing the difficult ommni box. A reserve band member, Lirin Car'n, sometimes plays as back-up on the Kloo horn.<br><br>While traveling the galaxy, the Modal Nodes have witnessed a number of atrocities, yet they have always remained politically neutral. Providing the pay is right, Figrin D'an is willing to play for virtually any audience, including Imperial soldiers and crime lords. In fact, shortly after the band arrived on <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>, they became <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba's</a> personal band. Unfortunately, D'an also accepted a contract to play at the wedding of Lady Valarian, Jabba's only true rival. When Jabba heard of this 'betrayal' through his informant <a href='#glossary/' onclick='glossary.displayFromExternal('Labria')'>Labria</a>, the Hutt became enraged. Doikk heard of Jabba's displeasure through one of the crime lord's courier pilots, but D'an felt that the band could leave Tatooine after finishing their gig for Lady Valarian.<br><br>During the wedding, however, a brawl between the bride and groom expanded to include most of the guests. The Modal Nodes fled, but during their escape Figrin and Doikk managed to rescue an ugly human named <a href='#glossary/' onclick='glossary.displayFromExternal('Wuher')'>Wuher</a>. Coincidentally, Wuher was the bartender at the <a href='#glossary/' onclick='glossary.displayFromExternal('Mos Eisley ca')'>Mos Eisley cantina</a>. In exchange for saving his life, Wuher introduced the Modal Nodes to the cantina's owner, Chalmun the Wookiee. D'an and Chalmun worked out a contract and the Modal Nodes became the house band at the Mos Eisley cantina. D'an planned to save the group's earnings until they had amassed enough credits to finally depart Tatooine, but his plans gave way to his gambling habit. During a game of <a href='#glossary/' onclick='glossary.displayFromExternal('sab')'>sabacc</a> with Labria, D'an lost most of the band's instruments. Now even further in debt, escape seemed hopeless.<br><br>Some time after <a href='#glossary/' onclick='glossary.displayFromExternal('Keno')'>Obi-Wan Kenobi</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> met <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a> at the cantina, D'an and the Modal Nodes did earn back their instruments from Labria. The band immediately left Tatooine and began a long tour of the millions of clubs throughout the galaxy.",
+        "bts": "The Bith band was conceived by Doug Beswick and portrayed by the film's make-up crew. The band's music was inspired by jazz of the thirties and forties.",
+        "gallery": [
+            "Figrin D'an (center) and the Modal Nodes during a rousing session at the Mos Eisley cantina.",
+            "D'an (right) on Kloo horn and Tedn D'hai playing the fanfar.",
+            "The Modal Nodes from left to right: Tedn Dahai, Figrin D'an, Doikk Na'ts, Tech Mo'r, and Nalan Cheel (not pictured).",
+            "Nalan Cheel and his bandfill."
+        ],
+        "btsimages": [
+            "During breaks on the set, straws were inserted into the Bith masks to provide the actors with more air."
+        ],
+        "triviaNumber": "69",
+        "introductionRight": true,
+        "relations": {
+            "so": "CANP"
+        }
+    },
+    "JCRT": {
+        "name": "Jabba's Court",
+        "shortname": "Jabba's Court",
+        "shortdesc": "A wide spectrum of unruly aliens, wanted criminals, violent bounty hunters, murderous thieves, desperate entertainers, and na've thrill-seekers that flocked to the palace of Jabba the Hutt to revel in his legendary debauchery. Even after witnessing the Hutt's infamous temper, most of the court members remained at his side because he supplied a steady stream of food, drink, spice, music, and excitement. The majority of the court members perished when Jabba's sail barge was destroyed by Luke Skywalker and Princess Leia.",
+        "species": "Varies",
+        "height": "Varies",
+        "homeworld": "Unknown",
+        "affiliation": "None",
+        "firstapp": "<i>Return of<br>the Jedi</i>",
+        "biography": "<a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba's</a> court was a motley crew, composed of creatures from dozens of worlds. Most of these beings were hardened criminals who actually spent a great deal of time plotting Jabba's overthrow, although few had the nerve or intelligence to accomplish such a bold coup. Among the many conspirators lurking in the shadows of Jabba's palace was <a href='#glossary/' onclick='glossary.displayFromExternal('Ree')'>Ree-Yees</a>, an incurable drunk of the <a href='#glossary/' onclick='glossary.displayFromExternal('Gran')'>Gran</a> species. While working with <a href='#glossary/' onclick='glossary.displayFromExternal('Bubo')'>Bubo</a>, Ree-Yees intended to eventually murder Jabba, but he spent most of his time drinking, brawling with other guests, or passing out in a corner of the palace. Like so many others, he burned to death aboard Jabba's <a href='#glossary/' onclick='glossary.displayFromExternal('sail')'>sail barge</a>. Among those who shared this fate were the bipedal humanoid <a href='#glossary/' onclick='glossary.displayFromExternal('Sae')'>'Yak Face,'</a> at least one member of the Elom species, the green-skinned <a href='#glossary/' onclick='glossary.displayFromExternal('Ishi')'>Ishi Tib</a>, several <a href='#glossary/' onclick='glossary.displayFromExternal('Jawa')'>Jawas</a>, and a host of other aliens.<br><br>While the bulk of Jabba's court did lose their lives aboard the sail barge, quite a few also escaped the disaster. One survivor was the massive Baragwin <a href='#glossary/' onclick='glossary.displayFromExternal('Odle')'>Hermi Odle</a>, who served as Jabba's personal armorer. He was responsible for maintaining all of the Hutt's weapons, including numerous blasters, vibro-axes, force pikes, and laser cannons. During the battle above the <a href='#glossary/' onclick='glossary.displayFromExternal('Sarl')'>Sarlacc</a>, Odle simply slipped away. Jabba's accountant <a href='#glossary/' onclick='glossary.displayFromExternal('Tesse')'>Tessek</a>, or 'Squid Head,' had enough foresight to stow his personal swoop aboard Jabba's sail barge before the vessel departed for the Sarlacc. When the battle began, Tessek rushed to his swoop and fled. He returned to the Hutt's palace to collect his belongings, but ran afoul of the <a href='#glossary/' onclick='glossary.displayFromExternal('B'om')'>B'omarr monks</a>. Members of this bizarre sect removed Squid Head's brain and placed it in a nutrient-filled jar. He then joined Bubo and <a href='#glossary/' onclick='glossary.displayFromExternal('Fortu')'>Bib Fortuna</a>, who had also suffered this same fate, in their endless wanderings of the palace's lower levels. <br><br>The only member of Jabba's court who was truly loyal to the crime lord was the <a href='#glossary/' onclick='glossary.displayFromExternal('Chev')'>Chevin</a> gunrunner known as <a href='#glossary/' onclick='glossary.displayFromExternal('Mon, Ep')'>Ephant Mon</a>. During one of their early exploits together, Jabba and Ephant Mon found themselves trapped on the ice-encrusted moon of Glakka. The Chevin would have frozen to death, but Jabba smothered Ephant Mon with his oily bulk. This strategy kept Ephant Mon alive until Jabba's associates retrieved the pair. After the rescue, Ephant Mon swore an oath of fealty to the Hutt and remained at his side until <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> arrived at Jabba's palace. Sensing grave danger, Ephant Mon did not board the sail barge destined for the Great Pit of Carkoon. Instead, he returned to his homeworld to explore his spiritual inclinations while running a small criminal operation.<br><br>Given the vast number of creatures who tramped through Jabba's palace, it is impossible to determine exactly how many survived the crime lord's final fall. Among those who may have escaped the disaster were J'Quille the Whiphid, and Beedo, a Rodian bounty hunter and one of <a href='#glossary/' onclick='glossary.displayFromExternal('Greed')'>Greedo's</a> relatives.",
+        "bts": "Many of the aliens created for scenes in Jabba's palace received a great deal of attention, despite their relatively limited screen-time. For close-ups of Ree-Yees, for example, a second dummy head was manufactured and equipped with cable-controlled eyes. While constructing the creatures, Phil Tippett and his crew did not know the exact sizes of the actors who would later don the costumes. Therefore, they produced monsters in a number of sizes and consciously built costumes that would each fit at least one of the creature makers slated to travel to England with the costumes.<br><br>Filming the scenes in Jabba's court required a tremendous crew of over 90 individuals. Among this group were make-up artists, stunt people, nine mime artists, 42 extras, and 19 puppeteers. Because the costumes became uncomfortably hot during the shoot, which lasted almost a month, the crew employed ordinary hair dryers and small fans to keep the performers cool.",
+        "gallery": [
+            "The strange creature known as Wol Cabasshite tries to lick C-3PO with its tongue.",
+            "The huge Baragwin Hermi Odle with an Ishi Tib.",
+            "The Max Rebo Band entertains the members of Jabba's court.",
+            "Lando Calrissian, disguised as one of Jabba's guards, watches as Luke Skywalker battles the rancor. Lando used his false identity to spy on Jabba and his cronies.",
+            "Han Solo, Luke Skywalker, and the mighty Chewbacca are brought before Jabba's court, where the Hutt sentences them to death.",
+            "Tessek the Quarren with Max Rebo on Jabba's sail barge.",
+            "Garon Nas Tal, a Saurian combat expert, has been hired by Jabba to train the Hutt's Gamorrean guards. Tal regrets taking the job and is plotting to kill Jabba.",
+            "Ree-Yees and Bossk aboard the sail barge.",
+            "Ree-Yees (right) becomes embroiled in an argument with Saelt-Marae."
+        ],
+        "btsimages": [
+            "Concept sketch for Tessek, known commonly as \"Squid Head.\"",
+            "A Nikto mask and gloves used for a member of Jabba's court.",
+            "The articulated Ree-Yees head used for close-up shots.",
+            "Front view of the Ree-Yees head.",
+            "The Ishi Tib mask.",
+            "Maquettes for Ephant Mon (center), a Weequay (right), and a random creature.",
+            "The Saelt-Marae mask on display next to the 4-LOM mask.",
+            "Phil Tippett with Ree-Yees on the set of Jabba's sail barge.",
+            "The Askajian female Yarna d'al'Gargan, a dancer in Jabba's court.",
+            "A Nikto costume used for one of Jabba's cronies. This particular Nikto was known as Wooof on the set.",
+            "The two-headed Cane Adiss was seen only briefly in \"The Making of <i>Return of the Jedi</i>.\"",
+            "Profile view of the Hermi Odle costume.",
+            "An actor in the Ephant Mon costume on the set of Jabba's palace.",
+            "The Amanaman puppet and his three-headed staff."
+        ],
+        "triviaNumber": "115",
+        "introductionRight": true,
+        "relations": {
+            "ne": "OOLA",
+            "se": "JDRO",
+            "no": "JSKF"
+        }
+    },
+    "GARI": {
+        "name": "Garindan",
+        "shortname": "Garindan",
+        "shortdesc": "The Kubaz spy who, while in the service of the Empire, trailed Luke Skywalker, Obi-Wan Kenobi, R2-D2, and C-3PO throughout Mos Eisley, until he discovered their plans to rendezvous with Han Solo. Garindan is one of Tatooine's most accomplished information brokers and has earned a fortune spying for the Empire and Jabba the Hutt. Befitting a spy, his life is shrouded in mystery: No one knows where he lives, how he spends his money, or when he will surface again.",
+        "species": "Kubaz",
+        "height": "1.85 meters",
+        "homeworld": "Kubindi",
+        "affiliation": "None",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "As with all other members of his species, Garindan sports a long, prehensile trunk, which has earned him the nickname of \"Long Snoot\" among <a href='#glossary/' onclick='glossary.displayFromExternal('Mos Eisley s')'>Mos Eisley</a> locals. His huge eyes are highly sensitive to red wavelengths of light, and therefore Garindan wears a pair of dark glasses while traveling abroad on <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>. He also frequently dons a large, hooded robe that covers his bristly head and partially conceals his face. The spy was born on the <a href='#glossary/' onclick='glossary.displayFromExternal('Kubaz')'>Kubaz</a> homeworld of <a href='#glossary/' onclick='glossary.displayFromExternal('Kubin')'>Kubindi</a>, and he is extremely fond of eating insects. Unlike many other Kubaz, who are generally cultured creatures with a great appreciation for art, music, and literature, Garindan is greedy and immoral.<br><br>While it is unknown how or when Garindan arrived in Mos Eisley, it is known that he is closely allied with Imperial forces. Rumors even claim that he possesses a special <a href='#glossary/' onclick='glossary.displayFromExternal('comlink')'>comlink</a> providing a direct link to Prefect Talmont, the most important Imperial official on Tatooine. There are also legends suggesting that Garindan is incredibly wealthy. Despite his mysterious ways and great skill as a spy, however, Garindan is a notorious coward and will not hesitate to flee from a conflict. He does carry a blaster pistol under his robes, but he has never been forced to use the weapon in combat.",
+        "bts": "In the novelization of <i>Star Wars</i>, Garindan appears as \"something short and dark that might have been human underneath all its wrappings. . .\" The character has been alternately known as Snitch and Long Snoot.",
+        "gallery": [],
+        "btsimages": [],
+        "triviaNumber": "102",
+        "introductionRight": false,
+        "relations": {
+            "ne": "CANP",
+            "so": "LUKE"
+        }
+    },
+    "RIEE": {
+        "name": "General Carlist Rieekan",
+        "shortname": "Rieekan",
+        "shortdesc": "Leader of the Rebel forces stationed at Echo Base during the Battle of Hoth. Tall and commanding, Rieekan was revered by his troops, who willingly served the idealistic general despite the terrible conditions on the ice planet. On his order, numerous Rebel pilots sacrificed their lives to allow the remaining Alliance forces to escape Hoth. The memory of all those who were slain at the Battle of Hoth continues to haunt Rieekan and influences all of his decisions as a vital member of the New Republic Council.",
+        "species": "Human",
+        "height": "1.83 meters",
+        "homeworld": "Alderaan",
+        "affiliation": "Alliance",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Born on the peaceful world of <a href='#glossary/' onclick='glossary.displayFromExternal('Ald')'>Alderaan</a>, Carlist Rieekan left his home planet at a young age to join the Army of the Republic, where his superiors instantly recognized his leadership skills and keen tactical mind. While enlisted, Rieekan also befriended such men as <a href='#glossary/' onclick='glossary.displayFromExternal('Dodo')'>Jan Dodonna</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Madi')'>Crix Madine</a>, whose ideals he adopted in time. Thus, when the Empire rose to power, Rieekan immediately swore his allegiance to the <a href='#glossary/' onclick='glossary.displayFromExternal('Rebel All')'>Rebel Alliance</a>. As his first assignment, he was placed in command of all covert Rebel operations in the proximity of the Alderaan system. While serving this post, he made strong connections to <a href='#glossary/' onclick='glossary.displayFromExternal('Orga')'>Bail Organa</a> and his family, including <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia</a>, although he had to make great efforts to ensure that such links were never discovered by the <a href='#glossary/' onclick='glossary.displayFromExternal('Palp')'>Emperor</a>.<br><br>It is believed that Rieekan was at a transmission station near Delaya, one of Alderaan's sister planets, when his homeworld was attacked by the <a href='#glossary/' onclick='glossary.displayFromExternal('Death')'>Death Star</a>. As the massive battle station approached Alderaan, Rieekan received a number of panicked transmissions from the doomed planet. Rieekan knew that there would be no time to evacuate, and he feared that if he tried to intervene, he would reveal Alderaan's connections to the Rebel Alliance. Faced with this terrible dilemma, he could only hope that the Imperials were boasting and would not, in fact, vaporize Alderaan. Sadly, this was not the case and the planet was completely destroyed. Rieekan rejoined the main body of the Rebel Alliance and became a general, and eventually commander of <a href='#glossary/' onclick='glossary.displayFromExternal('Echo B')'>Echo Base</a> on <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth')'>Hoth</a>.<br><br>During the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>, Rieekan was instrumental in developing delaying tactics used by the Rebel <a href='#glossary/' onclick='glossary.displayFromExternal('snowspee')'>snowspeeders</a> to stall the approaching <a href='#glossary/' onclick='glossary.displayFromExternal('All terrain arm')'>AT-ATs</a>. With <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Antilles')'>Wedge Antilles</a>, he even devised a method for toppling an Imperial walker using a snowspeeder's power harpoon, a method used effectively by Wedge during the conflict. Rieekan managed to escape Hoth and survived numerous future battles. When the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a> was forming, Princess Leia personally chose Rieekan to serve as her second-in-command on the New Republic Council. During this turbulent time, it was Rieekan's duty to assume Leia's role in her absence. After surviving an assassination attempt, Rieekan was appointed to a post of New Republic Intelligence Director, a position he held throughout the New Republic's confrontations with the <a href='#glossary/' onclick='glossary.displayFromExternal('Yeve')'>Yevetha</a>. As related in the <i>Black Fleet Crisis</i> trilogy, Rieekan was responsible for terminating the official search for the <a href='#glossary/' onclick='glossary.displayFromExternal('Telj')'>vagabond \"ghost ship\"</a> that had mysteriously kidnapped <a href='#glossary/' onclick='glossary.displayFromExternal('Calr')'>Lando Calrissian</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Lobot')'>Lobot</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('R2-D2')'>R2-D2</a>. However, he also allowed Colonel Pakkpekatt to continue the quest for the vagabond in Lando's starship, the <a href='#glossary/' onclick='glossary.displayFromExternal('Lady')'><i>Lady Luck</i></a>.",
+        "gallery": [
+            "General Carlist Rieekan in Echo Base's command center on Hoth.",
+            "While stationed on Hoth, Rieekan is in command of all of the Alliance's forces.",
+            "Rieekan discusses Han Solo's imminent departure.",
+            "The general confers with Princess Leia and Wyron Serper as the Imperials begin their invasion."
+        ],
+        "btsimages": [],
+        "triviaNumber": "104",
+        "introductionRight": false,
+        "relations": {
+            "no": "MADI"
+        }
+    },
+    "BOBA": {
+        "name": "Boba Fett",
+        "shortname": "Boba Fett",
+        "shortdesc": "The merciless bounty hunter who has tirelessly pursued Han Solo and Chewbacca across the galaxy for decades. Ensconced in his Mandalorian armor, Fett is a walking arsenal equipped with wrist blasters, a grenade launcher, a miniature flame thrower, and a fibercord whip. His helmet houses advanced sensors of every kind, and his suit contains a limited life-support system. Fett, who is the only man known to have escaped Tatooine's voracious Sarlacc pit, is perhaps the most persistent opponent the Heroes of Yavin have ever faced.",
+        "species": "Human",
+        "height": "1.83 meters",
+        "homeworld": "Unknown",
+        "affiliation": "None",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Numerous tales have been told about Boba Fett's early history and exploits. In one account, reported in <i>Tales of the Bounty Hunters</i>, Fett was originally known as Jaster Mereel, a young Journeyman Protector sworn to uphold the law on the world of Concord Dawn. Mereel served his post well, but eventually murdered an immoral and corrupt colleague. Unrepentant at his trial, Jaster Mereel was convicted, stripped of his possessions, and exiled from his homeworld. Other stories also place Fett in the middle of the <a href='#glossary/' onclick='glossary.displayFromExternal('Clone')'>Clone Wars</a> and claim that he had encounters with <a href='#glossary/' onclick='glossary.displayFromExternal('R2-D2')'>R2-D2</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a> long before he led <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a> to the Rebels on <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>.<br><br>Curiously, there are very few legends discussing how or when Fett acquired his fearsome Mandalorian armor. The <a href='#glossary/' onclick='glossary.displayFromExternal('Mandalore')'>Mandalores</a> were a violent warrior sect founded over 4,000 years before the <a href='#glossary/' onclick='glossary.displayFromExternal('Galactic civ')'>Galactic Civil War</a>. They were eventually defeated by <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Kn')'>Jedi Knights</a> during the Clone Wars, but a few of the clan may still survive. Although Fett's connection with the Mandalores remains a mystery, it is clear that he has greatly modified the armored suit. The helmet is now equipped with a macrobinocular viewplate, a broad-band antenna, motion and sound sensors, an infrared device, and an internal comlink connected to his ship, <a href='#glossary/' onclick='glossary.displayFromExternal('Slave')'><i>Slave I</i></a>. A flame projector and lasers are hidden in his wrist gauntlets, along with a durable fibercord whip designed for ensnaring prey. Fett's armor is further enhanced by spiked boots, knee-pad rocket dart launchers, a concussion grenade launcher, and a jet pack equipped with a turbo-projected magnetic grappling hook and 20-meter lanyard. The bounty hunter's weapon of choice is the BlasTech EE-3 rifle. <br><br>Although he has recorded hundreds of successful bounties, Fett earned his largest fortune with the capture of Han Solo on Cloud City. Because both Darth Vader and <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a> sought Solo, Fett collected two separate rewards. He also earned the ire of several other bounty hunters, including <a href='#glossary/' onclick='glossary.displayFromExternal('Bossk')'>Bossk</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('IG')'>IG-88</a>, who hounded Fett until he safely delivered Solo's body, frozen in <a href='#glossary/' onclick='glossary.displayFromExternal('Carbonite')'>carbonite</a>, to Jabba. Fett remained at Jabba's side until Luke, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Leia</a>, and Chewbacca were captured while trying to rescue Han. Jabba sentenced the heroes to a slow death in the maw of the <a href='#glossary/' onclick='glossary.displayFromExternal('Sarl')'>Sarlacc</a>, but the rebels escaped their chains. During the ensuing battle, Fett attempted to recapture Luke, but was inadvertently knocked into the Sarlacc's gullet by a blind Han Solo. And there, it seemed, Boba Fett would ultimately perish, suffering unbearably for 1,000 years as the Sarlacc slowly digested the unlucky bounty hunter.<br><br>However, Boba Fett has reappeared in virtually every tale set in the time after the Battle of Endor. He reportedly escaped the Sarlacc and was rescued by fellow bounty hunter <a href='#glossary/' onclick='glossary.displayFromExternal('Dengar')'>Dengar</a>. Once he recovered, Fett resumed his pursuit of Han Solo. His continuing exploits have been related in sources such as <i>Dark Empire</i>, <i>Dark Empire II</i>, and <i>Boba Fett: Twin Engines of Destruction</i>. Although he has been repeatedly defeated by Han, Chewbacca, and Leia, Fett's determination never seems to wane and perhaps one day he will succeed in capturing Solo again.",
+        "bts": "Boba Fett evolved from early concepts for Darth Vader. Originally, Vader was intended to be an intergalactic mercenary and bounty hunter. He eventually transformed into a character much more akin to a fallen knight, but Vader's early bounty hunter aspect subsequently spawned Boba Fett.<br><br>Boba Fett, who was based on a design by Ralph McQuarrie, made his first appearance in an 11-minute animated short inserted into the \"Star Wars Holiday Special.\" In the cartoon, Luke Skywalker and his droids set off to find Han Solo and Chewbacca, who have disappeared while searching for a mystical talisman. After Luke crashes his Y-wing on a moon in the Panna system, he is rescued by Boba Fett. Together, the pair locates the <i>Millennium Falcon</i>, but it is soon discovered that Fett is working for Darth Vader. After he is confronted by Luke, Fett escapes.<br><br>Due to the \"Star Wars Holiday Special\" and spin-off publications, Fett quickly became one of the most anticipated characters in <i>The Empire Strikes Back</i>. ILM subsequently devoted a great deal of time to the Boba Fett costume built for filming. Joe Johnston added much detail to the character and even built portions of his suit. As his costume went through numerous evolutions, which continued even after filming began, every change was documented in photographs. The first prototype Boba Fett helmet had eyelike markings above the visor.<br><br>On the set of <i>The Empire Strikes Back</i>, English actor Jeremy Bulloch required about 20 minutes to slip into the Boba Fett costume. Bulloch played the part in both <i>Empire</i> and <i>Return of the Jedi</i>, although his voice was dubbed by an American actor in post-production. In all, Boba Fett speaks only four lines throughout the <i>Star Wars</i> trilogy.<br><br>For the Special Edition release of <i>Star Wars</i>, Boba Fett was added to a restored scene in Docking Bay 94 featuring Jabba the Hutt and Han Solo. An ILM employee wore the suit, which was filmed in front of a blue screen and seamlessly integrated into the film. The same method was also used for several new shots of Boba Fett in <i>Return of the Jedi</i>.",
+        "gallery": [
+            "The sinister Boba Fett watches as Han Solo is encased in carbonite.",
+            "Fett waits expectantly to learn whether Han has survived the carbon-freezing process.",
+            "Accompanied by stormtroopers and Bespin's guards, Fett transports Solo to his waiting ship.",
+            "Boba Fett wears braided Wookiee scalps draped over his shoulder.",
+            "Even in the relative safety of Jabba's palace, Boba Fett remains on guard.",
+            "Fett looks on as the criminal underworld gathers in Jabba's palace.",
+            "Boba Fett is surrounded by fellow bounty hunters and other undesirables.",
+            "The BlasTech EE-3 blaster rifle is Boba Fett's weapon of choice.",
+            "Fett takes aim at the Rebels during the battle over the Sarlacc pit.",
+            "Luke Skywalker deals Boba Fett a devastating blow."
+        ],
+        "btsimages": [
+            "Ralph McQuarrie concept art for Boba Fett.",
+            "Joe Johnston holds the third version of Boba Fett's helmet.",
+            "The pieces of the second Boba Fett costume. Note the \"eye\" markings on the helmet.",
+            "A closer look at the jet pack on the second prototype costume.",
+            "Johnston with the second prototype's backpack.",
+            "The boots worn with the second prototype costume.",
+            "Second prototype wrist launcher.",
+            "An early prototype backpack.",
+            "First prototype helmet, with eye markings.",
+            "The second prototype costume.",
+            "Chest plate detail on early prototype costume. The prototype costumes closely resembled the final version.",
+            "Second prototype costume.",
+            "Boba Fett (Jeremy Bulloch) poses in full costume on a Cloud City set."
+        ],
+        "triviaNumber": "70",
+        "introductionRight": true,
+        "tech": true,
+        "relations": {
+            "se": "HANS",
+            "s": "GREE",
+            "o": "DENG"
+        }
+    },
+    "PIET": {
+        "name": "Admiral Piett",
+        "shortname": "Piett",
+        "shortdesc": "One of the few Imperial officers who never incurred Darth Vader's wrath, and the able commander of the ominous <i>Executor</i> throughout much of the Galactic Civil War. Piett, who received several promotions after his predecessors enraged Vader, remained a confident and ruthless leader despite the demands of his position. His competence was rewarded shortly before the Battle of Endor, when he was given command of the entire Imperial fleet. He served with characteristic dedication until he met a grisly demise aboard the <i>Executor</i>.",
+        "species": "Human",
+        "height": "1.65 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Empire",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Like many of his contemporaries, Admiral Piett worked his way up the Imperial ranks by carefully avoiding the ire of superiors. When he found himself under <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Vader's</a> command on the <a href='#glossary/' onclick='glossary.displayFromExternal('Exec')'><i>Executor</i></a>, Piett became even more cautious, determined to avoid any errors. <a href='#glossary/' onclick='glossary.displayFromExternal('Ozz')'>Admiral Ozzel</a>, Piett's direct supervisor, was not as wise. In fact, Ozzel continually displeased Lord Vader. First, the inept commander failed to recognize the Rebel presence on <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth')'>Hoth</a>. Next, he botched the initial invasion of the ice planet and inadvertently allowed the Rebels time to raise their planetary defense shield. Enraged that he would be forced to deploy ground troops to destroy the Rebel base, Vader murdered Ozzel and appointed Piett to the post of admiral.<br><br>Admiral Piett only made two mistakes during his distinguished career. The first was allowing the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a> to escape <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>. Curiously, Vader did not punish Piett for this shortcoming. Instead, Piett was given command of the entire Imperial fleet. Piett's second error occurred at the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, when the admiral became convinced that the Rebel fighters posed no threat to his massive <a href='#glossary/' onclick='glossary.displayFromExternal('Super')'>Super Star Destroyer</a>. Yet, a pair of <a href='#glossary/' onclick='glossary.displayFromExternal('A-Win')'>A-wings</a> managed to destroy the <i>Executor</i>'s deflector shield generators, and soon after a third A-wing smashed into the Super Star Destroyer's bridge. The <i>Executor</i> spun wildly out of control and collided into the surface of the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>, where it was consumed in a massive explosion and all hands aboard were lost.",
+        "bts": "Like Wedge Antilles and many other minor characters, Admiral Piett has attracted a huge fan following. In fact, in a recent poll conducted by the <i>Star Wars Insider</i> magazine, Piett was placed at No. 17 on the list of the Top Twenty <i>Star Wars</i> Characters.",
+        "gallery": [
+            "Piett, one of Lord Vader's most competent officers.",
+            "Admiral Piett wears several code cylinders, indicating his rank and access to all but the most restricted areas.",
+            "Like other officers, Piett wears a rank insignia on his uniform and a data disc on his hat."
+        ],
+        "btsimages": [
+            "Admiral Piett and another Imperial officer in front of a blue screen during filming."
+        ],
+        "triviaNumber": "85",
+        "introductionRight": false,
+        "relations": {
+            "se": "DART",
+            "so": "PALP",
+            "no": "IMPO"
+        }
+    },
+    "VEER": {
+        "name": "General Maximilian Veers",
+        "shortname": "Veers",
+        "shortdesc": "The autocratic and hardened commander of the Imperial ground forces assigned to Darth Vader's armada during the Galactic Civil War. Veers personally supervised the invasion of the Alliance's Echo Base on Hoth, leading several AT-AT walkers, a handful of AT-STs, and hordes of Imperial snowtroopers to victory. Due to Veers' tactical genius, the Battle of Hoth dealt a devastating blow to the Alliance, claiming an untold number of Rebel soldiers and pilots.",
+        "species": "Human",
+        "height": "1.93 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Empire",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Much speculation surrounds General Veers' rise through the Imperial ranks, and it has often been suggested that he murdered many of his competitors to achieve a place at <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Lord Vader's</a> side. Whatever the case, it is clear that Veers was a ruthless and aggressive general who enjoyed wreaking havoc with the destructive Imperial ground forces. <br><br>While General Veers' ultimate fate at the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a> is often debated, the novelization of <i>The Empire Strikes Back</i> insists that he died during the clash. In the adaptation, Rebel <a href='#glossary/' onclick='glossary.displayFromExternal('Klivi')'>Hobbie Klivian</a> heroically piloted his burning snowspeeder into the cockpit of Veers' <a href='#glossary/' onclick='glossary.displayFromExternal('AT-AT')'>AT-AT</a>. The resulting collision destroyed the Imperial walker, killed Hobbie, and, in all likelihood, claimed the general as well.",
+        "bts": "Although General Veers seemingly perishes in the novelization of <i>The Empire Strikes Back</i>, his character appears in the revised rough draft of <i>Return of the Jedi</i>. In that version of the script, Veers is assigned to search for the Rebels on the so-called Sanctuary Moon (which later became the forest moon of Endor).",
+        "gallery": [
+            "General Veers, one of the Empire's greatest tactical minds.",
+            "Veers reports to Darth Vader regarding the impending Imperial invasion.",
+            "At the Battle of Hoth, Veers is personally responsible for destroying the Rebel's shield generator, allowing Darth Vader's shuttle to land."
+        ],
+        "btsimages": [],
+        "triviaNumber": "65",
+        "introductionRight": false,
+        "relations": {
+            "so": "IMPO"
+        }
+    },
+    "CANP": {
+        "name": "Mos Eisley Cantina Patrons",
+        "shortname": "Cantina Patrons",
+        "shortdesc": "Smugglers, thieves, spies, murderers, space pirates, bounty hunters, and other assorted miscreants who gather at the Mos Eisley cantina on Tatooine. The cantina's patrons hail from a thousand different worlds, but many visit the establishment seeking to buy or sell criminal services, contraband, and information. The vast majority of the cantina's patrons are prone to sudden acts of random violence and share a penchant for powerful drinks and games of chance.",
+        "species": "Varies",
+        "height": "Varies",
+        "homeworld": "Varies",
+        "affiliation": "Varies",
+        "firstapp": "<i>Star Wars:<br>A New Hope</i>",
+        "biography": "The <a href='#glossary/' onclick='glossary.displayFromExternal('Mos Eisley c')'>Mos Eisley cantina</a> is owned by Chalmun the <a href='#glossary/' onclick='glossary.displayFromExternal('Wook')'>Wookiee</a>, although most patrons deal directly with <a href='#glossary/' onclick='glossary.displayFromExternal('Wuher')'>Wuher</a>, the grumpy bartender. A brilliant chemist, Wuher dreamed of one day creating the perfect drink for <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba the Hutt</a>. In this pursuit, he joined forces with a processing droid named C2-R4. Together, they concocted a powerful drink for the Hutt using pheromones extracted from the corpse of <a href='#glossary/' onclick='glossary.displayFromExternal('Greedo')'>Greedo</a>, a bounty hunter killed in the cantina by <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a>.  <br><br>Perhaps the most notorious criminals sighted at the Mos Eisley cantina are <a href='#glossary/' onclick='glossary.displayFromExternal('Evaz')'>Dr. Evazan</a> and his partner, the <a href='#glossary/' onclick='glossary.displayFromExternal('Aqualish')'>Aqualish</a> <a href='#glossary/' onclick='glossary.displayFromExternal('Baba')'>Ponda Baba</a>. Brutal murderers and soulless smugglers, the pair have the death sentence in at least a dozen systems. Dr. Evazan began his criminal career performing 'creative surgery' on unwilling victims. His notoriety attracted numerous bounty hunters, including <a href='#glossary/' onclick='glossary.displayFromExternal('Kast')'>Jodo Kast</a>, who eventually cornered the doctor in the <a href='#glossary/' onclick='glossary.displayFromExternal('Corellian sy')'>Corellian system</a>. During the confrontation, Kast scarred Evazan's face with a blaster shot, but was cheated from his prize by the intervention of Ponda Baba.<br><br>Although he had no special affinity for Evazan, Ponda Baba saved the doctor's life as an act of revenge against Kast, who had killed one of Baba's previous partners. Originally, Ponda Baba planned to turn in Evazan himself and collect the outstanding reward for the butcher's capture. However, he realized that Evazan was worth far more as a partner. Together, they embarked on a highly successful career as smugglers and eventually took on Han Solo's old routes for Jabba the Hutt. While employed by the Hutt, Baba and Evazan frequently visited the Mos Eisley cantina, where they ran afoul of <a href='#glossary/' onclick='glossary.displayFromExternal('Keno')'>Obi-Wan Kenobi</a>.<br><br>After Ponda Baba lost his arm to the <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Kn')'>Jedi Knight</a>, he and Evazan fled into space. Soon, they began kidnapping innocent beings for Evazan's strange experiments. Evazan later offered to replace Ponda's lost arm with a bionic substitute, but the doctor botched the job and found himself in grave danger from his enraged partner. Evazan fled to <a href='#glossary/' onclick='glossary.displayFromExternal('Tatooi')'>Tatooine</a>, where he opened an illegal cybernetic replacement clinic under the name Dr. Cornelius. Ponda Baba eventually found Evazan, but the two came to a peaceful agreement. Baba received a temporary prosthetic until his partner could manufacture a more suitable replacement.<br><br>Next, the pair traveled to Ponda Baba's homeworld, <a href='#glossary/' onclick='glossary.displayFromExternal('Ando')'>Ando</a>. There, Evazan adopted a Meduza, a dangerous gelatinous creature. He also began experimenting on a host of unwilling subjects in the hopes of discovering a way to transfer his consciousness into a younger body. When Evazan discovered the means to accomplish this feat, Ponda Baba demanded to be the first test subject. The pair kidnapped an Andoan senator and Evazan began the procedure. Before he could finish, Evazan was confronted by yet another bounty hunter, whom the doctor killed with the aid of his Meduza. Meanwhile, Ponda Baba and the Andoan senator woke to find that Evazan's experiment had been a complete success: Baba was now in the senator's body, while the hapless politician was trapped in Ponda's crippled form. Ponda Baba slipped away, but the enraged senator cornered Evazan and tried to kill the doctor with a thermal detonator. Evazan was believed dead, but he was actually saved by his pet Meduza. Both he and Ponda Baba remain at large.<br><br>Another infamous cantina patron was the demonic <a href='#glossary/' onclick='glossary.displayFromExternal('Labria')'>Labria</a>. A member of the <a href='#glossary/' onclick='glossary.displayFromExternal('Devar')'>Devaronian</a> species, the sinister character earned a reputation as an incompetent spy, unreliable information broker, and complete drunkard. Before he landed on Tatooine, however, Labria was actually a powerful military leader known as <a href='#glossary/' onclick='glossary.displayFromExternal('Kardue')'>Kardue'sai'Malloc</a>. When the <a href='#glossary/' onclick='glossary.displayFromExternal('Galac Civ')'>Galactic Civil War</a> reached his homeworld of Devaron, Kardue'sai'Malloc forced his men to join the Empire. During the terrible Battle of Montellian Serat, the Devaronian ordered the executions of over 700 innocent captives, including many women and children. For this terrible act, he was labeled \"The Butcher of Montellian Serat.\" The Rebellion posted a sizable bounty for his capture. Forced to flee to Tatooine, Kardue'sai'Malloc changed his name to Labria. Once living in Mos Eisley, he committed at least four more murders, swindled <a href='#glossary/' onclick='glossary.displayFromExternal('D'an')'>Figrin D'an</a> and the <a href='#glossary/' onclick='glossary.displayFromExternal('Modal')'>Modal Nodes</a>, and frequently served Jabba the Hutt. Eventually, he retired to the planet Peppel, but <a href='#glossary/' onclick='glossary.displayFromExternal('Fett')'>Boba Fett</a> uncovered the Butcher. The bounty hunter returned Labria to Montellian Serat, where he paid for his crimes during a public execution.<br><br>Other important criminals found in the cantina include <a href='#glossary/' onclick='glossary.displayFromExternal('Tonnik')'>Brea and Senni Tonnika</a>, female swindlers known for robbing wealthy men in confidence schemes. When Obi-Wan and Luke visited the cantina, the Tonnika sisters were actually visiting Jabba's palace, but two imposters, the Mistryl Shadow Guards Shada and Karoly, had taken on the sisters' identities. <br><br>The horned and shaggy <a href='#glossary/' onclick='glossary.displayFromExternal('Gotal')'>Gotal</a> named <a href='#glossary/' onclick='glossary.displayFromExternal('Trevagg')'>Feltipern Trevagg</a> also frequented the establishment. Once a respected bounty hunter, Trevagg had tracked Kenobi to Tatooine, but was never able to locate the old Jedi Knight. He remained on the desert world, eventually becoming a corrupt tax collector. At the cantina, he met M'iiyoom Onith, a member of the H'nemthe species. The two became lovers, but after their mating, M'iiyoom killed the Gotal in a ritual common among her species. <br><br>Perhaps the most vile cantina patron is <a href='#glossary/' onclick='glossary.displayFromExternal('Jerriko')'>Dannik Jerriko</a>, a gaunt <a href='#glossary/' onclick='glossary.displayFromExternal('Anzati')'>Anzati</a>. Like all of his species, Jerriko has a small proboscis coiled in his cheek. This appendage can be extended and inserted into the nostrils of a victim until it pierces the brain, allowing the Anzati to drink the brain matter and blood of his prey. Jerriko enjoys killing fellow bounty hunters, but he also has a sick desire to suck out the 'souls' of brave heroes and those strongly connected to the <a href='#glossary/' onclick='glossary.displayFromExternal('Force,')'>Force</a>. For this reason, he visited Jabba's palace in the hopes of feeding on Princess Leia, Luke Skywalker, and Han Solo. When the trio escaped, Jerriko went mad and embarked on a rampage, killing dozens of innocents. As a result of this feeding frenzy, a huge bounty was placed on Jerriko's head and he has become a fugitive. <br><br>While known for attracting a host of criminals, the Mos Eisley cantina is probably best known as a meeting place for smugglers, such as Baniss Keeg and Ellors Madak. Both Duros with green skin and huge eyes, Keeg and Madak pilot the freighter <i>Millanti</i> and typically smuggle <a href='#glossary/' onclick='glossary.displayFromExternal('bacta')'>bacta</a>.<br><br>Not all of the cantina's customers are inherently amoral criminals. A resident of Tatooine, the <a href='#glossary/' onclick='glossary.displayFromExternal('Ithori')'>Ithorian</a> gardener <a href='#glossary/' onclick='glossary.displayFromExternal('Nadon')'>Momaw Nadon</a> is a pacifist who loves nature. Prior to arriving in Mos Eisley, Nadon had been a high priest among his people during the early years of the Galactic Civil War. When Imperials threatened to destroy hundreds of Ithorians, Nadon was forced to reveal agricultural secrets desired by the Empire. The Ithorians were spared, but for his act of 'treason,' Nadon was temporarily banished from his homeworld. After a bit of wandering, he found himself on Tatooine, where he constructed an underground greenhouse. Shortly after Obi-Wan and Luke met Han in the cantina, Momaw Nadon was allowed to return to his people. He later convinced the Ithorians to join the Alliance in the fight against the Empire.<br><br>The <a href='#glossary/' onclick='glossary.displayFromExternal('Shistav')'>Shistavanen</a> Wolfman <a href='#glossary/' onclick='glossary.displayFromExternal('Sivra')'>Lak Sivrak</a> proved to be another Rebel sympathizer. Originally a hunter and scout for the Empire, Sivrak became disgusted by Imperial atrocities. After he refused to reveal the location of a colony loyal to the Alliance, the Empire targeted Sivrak for elimination. He defeated a cadre of Imperial stormtroopers, then relocated to Tatooine, where he met a Florn <a href='#glossary/' onclick='glossary.displayFromExternal('Lampr')'>Lamproid</a> named <a href='#glossary/' onclick='glossary.displayFromExternal('Ibeg')'>Dice Ibegon</a>. Despite their disparate appearances, physiology, and backgrounds, Ibegon and Sivrak fell in love. The Lamproid convinced her lover to join the Alliance, and both became Rebel operatives about a year before the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>. Sadly, Ibegon perished during the evacuation of Hoth's <a href='#glossary/' onclick='glossary.displayFromExternal('Echo B')'>Echo Base</a>. Driven by a desire for revenge, Sivrak became one of the Alliance's most courageous pilots. At the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Lak Sivrak flew an <a href='#glossary/' onclick='glossary.displayFromExternal('X-win')'>X-wing</a> against the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a> and destroyed numerous <a href='#glossary/' onclick='glossary.displayFromExternal('TIE f')'>TIE fighters</a>. But his luck did not hold, and Sivrak's fighter suffered severe damage. The Wolfman's X-wing crashed on the moon of Endor, where Sivrak perished. <br><br>The goals and morals of many cantina visitors remain somewhat ambiguous. For example, the <a href='#glossary/' onclick='glossary.displayFromExternal('Chadra')'>Chadra-fan</a> pickpocket named <a href='#glossary/' onclick='glossary.displayFromExternal('Kabe')'>Kabe</a> and her bodyguard <a href='#glossary/' onclick='glossary.displayFromExternal('Muftak')'>Muftak</a>, a furry <a href='#glossary/' onclick='glossary.displayFromExternal('Talz')'>Talz</a>, survived through petty theft and spying. Around the time of the Battle of Yavin, the pair plotted to rob Jabba the Hutt's townhouse in Mos Eisley. After breaking into the palatial estate, they unwittingly discovered the Hutt's torture chamber, where a Rebel officer was being held. The anguished Rebel entrusted sensitive information to Kabe and Muftak, who agreed to deliver the data to a <a href='#glossary/' onclick='glossary.displayFromExternal('Mon Calamari ali')'>Mon Calamari</a> contact in exchange for 30,000 credits. Before they could flee, they were cornered by Bib Fortuna and several <a href='#glossary/' onclick='glossary.displayFromExternal('Gamorre')'>Gamorrean guards</a>. Although Muftak offered to sacrifice himself for his partner, Kabe bravely joined the battle to protect her friend. After a dramatic fight, they both managed to escape. Days later, they met with the Rebellion's Mon Cal contact and received their reward, along with two travel vouchers signed by <a href='#glossary/' onclick='glossary.displayFromExternal('Tark')'>Grand Moff Tarkin</a>! With their loot, the pair left Tatooine forever.<br><br>Another of the more benign cantina patrons is Melas, a reptilian Sarkan. Born with blue eyes, a short stature, and stubby claws, Melas was considered deformed by his people. In addition, the xenophobic Sarkans were appalled when they discovered that Melas actually enjoyed fraternizing with non-Sarkasn. For this 'crime,' he was exiled. Fortunately, the Sarkan homeworld is rich in precious gems, and Melas collected a large fortune before he left the planet. Now, he uses this considerable wealth to travel the universe at his leisure.<br><br>Other cantina patrons remain completely enigmatic. Ketwol, a horned Pacithhip from an unknown world, is regarded as a polite yet mysterious individual who earns his living by selling precious metals and booking charters. He is rumored to be an incredible shot, and his chief weapon is a dart pistol hidden beneath his tunic. Additional aliens, such as the Arcona Hem Dazon, <a href='#glossary/' onclick='glossary.displayFromExternal('Myo')'>Myo the Abyssin</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('Helrot')'>Elis Helrot</a> the <a href='#glossary/' onclick='glossary.displayFromExternal('Givin')'>Givin</a>, also frequented the cantina. The stories of many of the cantina patrons are related in <i>Tales from the Mos Eisley Cantina</i>, which reveals the backgrounds, personalities, and fates of these varied characters.",
+        "bts": "The cantina segment was actually filmed twice, partly because director Lucas was dissatisfied with the aliens featured in the original shoot. Stuart Freeborn, who developed Chewbacca, also worked on several of the cantina aliens, but he fell ill during filming and was hospitalized for eight weeks. For reshoots, Lucas contacted Rick Baker, who manufactured a number of new aliens and improved Greedo. Ron Cobb, Doug Beswick, and many others were also involved in creating the myriad cantina creatures. New footage was shot in California and combined with the existing footage. Many of the creatures were played by the costume designers, moldmakers, and make-up artists.<br><br>During filming, the crew knew the cantina creatures by a host of colorful names: the green-skinned Duros were called Goggle Eyes, while Lak Sivrak was Hyena Man. Dice Ibegon, a Lamproid, was known as Snake Head; Hem Dazon the Arcona was called T-Head; and the Givin Elis Helrot was Skull Head. \"Cyclops\" referred to the one-eyed Myo, an Abyssin, and the Stennes Shifter Trinto Duaba was named the Terminal Man.<br><br>Several of the cantina creatures reappeared, along with a few new creations by Stan Winston, in the \"Star Wars Holiday Special\" during a similar cantina scene. Although latex masks have a tendency to disintegrate over time, several of the costumes that survived were reused in both <i>The Empire Strikes Back</i> and <i>Return of the Jedi</i>.<br><br>The cantina scene was revisited during work on the Special Edition release of <i>Star Wars</i>. For that version of the film, two new aliens were created and inserted into the cantina scenes. The new aliens are the tusked Ketwol and the reptilian Melas. Surprisingly, both aliens were brought to life using a single mask that was simply filmed from a different angle. In the Melas shot, the mask's tusks were covered by a red turban.",
+        "gallery": [
+            "Myo the Abyssin (foreground) and Muftak the Talz in the Mos Eisley cantina",
+            "A pair of Duros discuss business.",
+            "Bom Vimdim, an Advozse smuggler from the planet Riflor.",
+            "An unknown alien lurking in the cantina.",
+            "Djas Puhr, a Sakiyan bounty hunter.",
+            "Another unsavory character from the cantina.",
+            "A bizarre collection of aliens gather at one of the cantina's tables.",
+            "Labria, a wicked Devaronian spy and informant.",
+            "Lak Sivrak (right) and the Lamproid Dice Ibegon begin a romance that will end with Ibegon's death on Hoth."
+        ],
+        "btsimages": [
+            "A sketch for the Gotal by Ron Cobb.",
+            "Rick Baker's mask of Bom Vimdim, an Advozse.",
+            "A Duro mask and gloves.",
+            "The Muftak costume on display.",
+            "The actor portraying Dannik Jerriko, in full make-up.",
+            "Ponda Baba mask and gloves.",
+            "George Lucas on the set with (left to right) Elis Helrot, Feltipern Trevagg, and M'iiyoom Onith.",
+            "A close look at a Saurian mask seen in the cantina.",
+            "Duro mask, profile view.",
+            "\"Brainee\" mask."
+        ],
+        "triviaNumber": "120",
+        "introductionRight": false,
+        "relations": {
+            "ne": "NODE",
+            "so": "GARI"
+        }
+    },
+    "LNDO": {
+        "name": "Lando Calrissian",
+        "shortname": "Lando Calrissian",
+        "shortdesc": "The suave gambler who became Cloud City's Baron Administrator after winning the title in a game of sabacc. Unfortunately, the price of leadership was high and Lando was forced to betray Han Solo to protect Cloud City from Imperial rule. He eventually redeemed himself, however, by braving the dangers of Jabba the Hutt's palace to rescue Han. Throughout his life, Lando has been called by many names'traitor, scoundrel, soldier-of-fortune'but he ultimately proved to be Han Solo's loyal friend and one of the Alliance's greatest heroes.",
+        "species": "Human",
+        "height": "1.78 meters",
+        "homeworld": "Unknown",
+        "affiliation": "Alliance",
+        "firstapp": "<i>The Empire<br>Strikes Back</i>",
+        "biography": "Very little is known about the early years of Lando Calrissian. His past is a well-guarded secret, although as a young man he quickly earned a reputation as a skilled soldier-of-fortune, treasure seeker, and gambler. It is recorded in the <i>Lando Calrissian Adventures</i> trilogy that about 10 years before the <a href='#glossary/' onclick='glossary.displayFromExternal('Yavin, Bat')'>Battle of Yavin</a>, Lando owned the <a href='#glossary/' onclick='glossary.displayFromExternal('Mill')'><i>Millennium Falcon</i></a>. During this time, Lando and his droid Vuffi Raa scoured the universe in search of riches. Calrissian claimed the Rafar system's precious gems, recovered several ancient artifacts, won a sizable fortune while playing <a href='#glossary/' onclick='glossary.displayFromExternal('sabacc')'>sabacc</a>, and helped free an alien race known as the Oswaft from Imperial rule.<br><br>Throughout his travels in the <i>Falcon</i>, which encompassed over a year of his life, Lando amassed considerable wealth. He used the fortune to finance numerous business ventures, many with slightly criminal connotations. While experimenting with a smuggling ring, he first encountered <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, H')'>Han Solo</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Chew')'>Chewbacca</a>. Soon after, Lando lost the <i>Falcon</i> to Solo in a game of sabacc.<br><br>Left without his favorite craft, Lando traveled the galaxy in a wide range of starships, all the while maintaining his various operations. During one excursion, he led the legendary offensive at the Battle of <a href='#glossary/' onclick='glossary.displayFromExternal('Taanab')'>Taanab</a>, defeating a large contingent of pirates through guile and cunning.<br><br>After the Battle of Taanab, Lando eventually found himself on <a href='#glossary/' onclick='glossary.displayFromExternal('Cloud Ci')'>Cloud City</a>, a small Tibanna gas mining colony orbiting <a href='#glossary/' onclick='glossary.displayFromExternal('Bespin')'>Bespin</a>. Recognizing Cloud City's potential, Lando challenged the foolish Baron Administrator Raynor to a round of sabacc, with ownership of the settlement as the prize. Secretly aided by the cyborg <a href='#glossary/' onclick='glossary.displayFromExternal('Lobot')'>Lobot</a>, Lando handily won the game and became Cloud City's new Baron Administrator.<br><br>Under Lando's rule, Cloud City flourished. He increased the mining station's production and profits considerably within months of taking control. He also used the floating colony for more clandestine activities, such as smuggling, and began covertly aiding the growing Rebel Alliance. During his time as Baron Administrator, Lando relied heavily on Lobot and the two became close allies. According to <i>Tales from Jabba's Palace</i>, Lobot even saved Lando in an encounter with the sadistic <a href='#glossary/' onclick='glossary.displayFromExternal('EV-9')'>EV-9D9</a>.<br><br>Shortly after the Rebels were brutally defeated at the <a href='#glossary/' onclick='glossary.displayFromExternal('Hoth, Bat')'>Battle of Hoth</a>, an Imperial force led by the sinister <a href='#glossary/' onclick='glossary.displayFromExternal('Vad')'>Darth Vader</a> visited Cloud City. In his plot to capture <a href='#glossary/' onclick='glossary.displayFromExternal('Skywalker, Luk')'>Luke Skywalker</a>, Vader threatened to take complete control of Cloud City and force all of its denizens into the Empire's servitude, unless Lando agreed to betray Han Solo. Although he agonized over the decision, Lando ultimately resolved to sacrifice the life of his friend to save hundreds of Bespins. Therefore, when Han, Chewbacca, <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, P')'>Princess Leia</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('C-3')'>C-3PO</a> arrived on Cloud City, Lando greeted them with open arms. After the Rebels had been duped by Lando's charms, Vader captured and tortured them, knowing that their suffering would attract Skywalker. Vader was not disappointed and Luke's approaching X-wing was soon detected.<br><br>As a result of Lando's betrayal, Han Solo was ultimately encased in <a href='#glossary/' onclick='glossary.displayFromExternal('carbonit')'>carbonite</a>. Yet as he watched his friend being lowered into the carbon-freezing chamber, Lando quietly vowed to rectify the harm he had caused, no matter the cost. Soon after, he freed the Rebels, ordered the full evacuation of Cloud City, and aided in rescuing a wounded Luke Skywalker. <br><br>After fleeing Bespin, Lando joined Chewbacca in a quest to find Han. As related in <i>Shadows of the Empire</i>, he was only temporarily distracted from this mission when he set out to rescue Princess Leia from <a href='#glossary/' onclick='glossary.displayFromExternal('Xiz')'>Prince Xizor's</a> skyhook. Lando proved instrumental in defeating Xizor's lackeys. <br><br>Eventually, Lando took great risks to infiltrate <a href='#glossary/' onclick='glossary.displayFromExternal('Jabba D')'>Jabba's</a> palace, disguised as a guard. Once his allies arrived, he fought alongside Luke in the dramatic battle above the <a href='#glossary/' onclick='glossary.displayFromExternal('Sarl')'>Sarlacc</a>, nearly losing his life during the conflict.<br><br>After Han's rescue, Lando officially joined the Rebel Alliance. In recognition of his achievements at the Battle of Taanab and his courage during the conflict with Jabba, Lando became a general. More importantly, <a href='#glossary/' onclick='glossary.displayFromExternal('Moth')'>Mon Mothma</a>, <a href='#glossary/' onclick='glossary.displayFromExternal('Madine')'>Crix Madine</a>, and <a href='#glossary/' onclick='glossary.displayFromExternal('Ackbar')'>Admiral Ackbar</a> agreed that General Calrissian should lead the attack on the second <a href='#glossary/' onclick='glossary.displayFromExternal('Death Star II')'>Death Star</a>. During the <a href='#glossary/' onclick='glossary.displayFromExternal('Endor, Bat')'>Battle of Endor</a>, Lando's keen tactical mind served the Rebellion well, and he was largely responsible for the Alliance's success during that engagement. In fact, Lando himself flew into the heart of the Death Star and bombarded the reactor core, causing the space station's destruction.<br><br>After the Rebel victory, the defeat of the Empire, and the rise of the <a href='#glossary/' onclick='glossary.displayFromExternal('New Rep')'>New Republic</a>, Lando balanced his time between military service and private ventures. He returned to Bespin and was reunited with Lobot, aided the <a href='#glossary/' onclick='glossary.displayFromExternal('Ugnau')'>Ugnaughts</a> in their overthrow of Imperial forces, and reclaimed Cloud City. He also frequently undertook missions for the New Republic as part of the Senate Interplanetary Intelligence Network (or SPIN).<br><br>In the many years following the Battle of Endor, Lando has again become a savvy, if slightly unlucky, entrepreneur. He lost Cloud City to Zorba the Hutt in a game of sabacc, and eventually abandoned Hologram Fun World, an amusement park in space. During <a href='#glossary/' onclick='glossary.displayFromExternal('Thrawn')'>Grand Admiral Thrawn's</a> bid for power, Lando operated Nomad City, a mining colony on the planet Nkllon in the Athega system. After a series of adventures involving the war with Thrawn, Lando eventually relinquished control of this settlement as well.<br><br>During Emperor Palpatine's resurgence, as chronicled in <i>Dark Empire</i> and <i>Dark Empire II</i>, Lando rejoined the New Republic without reservation. He was partnered with <a href='#glossary/' onclick='glossary.displayFromExternal('Antill')'>Wedge Antilles</a> during many of his missions. The pair lost two command ships during battles with Palpatine's forces, but nonetheless proved vital to the Republic's victory.<br><br>Since Palpatine's defeat, Lando has aided Luke in his search for Jedi trainees, rescued Han from <a href='#glossary/' onclick='glossary.displayFromExternal('Kessel')'>Kessel</a>, flirted with the notion of marriage, and explored the mysteries of the <a href='#glossary/' onclick='glossary.displayFromExternal('Telj')'>Teljkon vagabond</a>, a craft that could never be boarded or captured. He also opened GemDiver Station, a mining facility in orbit around the planet Yavin. With Lobot at his side as chief aide, Lando secured almost limitless fortunes. Yet GemDiver was also the scene of tragedy. While <a href='#glossary/' onclick='glossary.displayFromExternal('Lowbacca')'>Lowbacca</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jac')'>Jacen</a> and <a href='#glossary/' onclick='glossary.displayFromExternal('Solo, Jai')'>Jaina Solo</a> were visiting the station during a field trip away from Luke's <a href='#glossary/' onclick='glossary.displayFromExternal('Jedi Ac')'>Jedi academy</a>, GemDiver was attacked by Imperial forces and the Dathomirian Night Sister Tamith Kai. Lando did everything in his power to stop the invaders, but ultimately the three young Jedi were kidnapped. Calrissian vowed to follow Tamith Kai to the ends of the galaxy to rescue the children, but Luke Skywalker and Tenel Ka had already undertaken the quest. Lando instead turned his attentions toward ensuring that those aboard GemDiver would always be safe from their enemies.",
+        "bts": "According to Lucas, Lando developed as an alter ego for Han and as a means to develop Solo's past in a greater depth. However, like all the major characters, Lando still went through several incarnations as the drafts of <i>The Empire Strikes Back</i> progressed. Early on, he was portrayed as a suave smuggler, possibly with one or two female sidekicks. Later, he became a powerful businessman running a general store on a Wookiee planet. This version of the character had numerous political ties, strong Imperial connections, and an affinity for smugglers.<br><br>The most interesting premise for Lando suggested that he was a clone whose species was almost entirely eliminated during the Clone Wars. If Lando had indeed been written in this manner, a scene in the final film of the trilogy may have involved his discovery of a clan of clones, all of whom looked exactly like Lando.<br><br>In the film, Lando was portrayed by actor Billy Dee Williams, who took the role as part of his plan to shatter racial stereotypes. He also felt that Lando's betrayal of Han was necessary to save Cloud City and all its inhabitants, who depended upon the Baron Administrator.<br><br>Lando's role in <i>Jedi</i> also evolved over time. Early in the writing process, Lawrence Kasdan argued that one of the heroes, most likely Lando, should perish within the Sarlacc to emphasize the danger posed by the creature. Lucas, however, felt that only villains should die during the sequence, and thus Lando was spared. In addition, Lucas originally intended for Lando to defeat Boba Fett in a battle on Jabba's desert skiff.",
+        "gallery": [
+            "Lando and his entourage welcome Han Solo, Princess Leia, Chewbacca, and C-3PO to Cloud City.",
+            "After many years, Lando and Han finally meet again, although their friendly reunion will be short-lived.",
+            "As Han is lowered into the carbon-freezing chamber, Lando realizes the extent of his betrayal.",
+            "Distraught and conflicted, Lando makes certain that Han has survived the carbon-freezing process.",
+            "Lando and Lobot bravely risk their own lives to free Princess Leia, Chewbacca, and Threepio.",
+            "Lando leads his new allies in search of Boba Fett. Unfortunately, they are unable to stop Fett from escaping with Han Solo's body.",
+            "Despite great personal risk, Lando rescues Luke from the bottom of Cloud City.",
+            "Disguised as a guard, Lando spies on Jabba the Hutt and prepares for the rescue of Han Solo.",
+            "Although he cannot reveal himself yet, Lando tries to protect Leia from the depraved Jabba the Hutt.",
+            "During the battle with Jabba's cronies, Lando is knocked from a desert skiff and almost becomes the Sarlacc's next meal.",
+            "With Han and Chewie's aid, Lando manages to escape the terrible Sarlacc.",
+            "Before the Battle of Endor, Lando becomes General Calrissian and agrees to lead the attack on the second Death Star.",
+            "Within the cockpit of the <i>Millennium Falcon</i>, Lando prepares to make a daring trip into the very heart of the Death Star.",
+            "General Lando Calrissian becomes a hero after he and Wedge Antilles destroy the second Death Star."
+        ],
+        "btsimages": [
+            "Billy Dee Williams, as Lando, on one of the Cloud City sets. The blue screen will later be replaced by a cityscape of Cloud City.",
+            "Williams and Mark Hamill film a scene in which Lando rescues Luke from the bottom of Cloud City. The action shown here was cut from the final film.",
+            "Williams stands in front of a blue screen while filming a scene for <i>Return of the Jedi</i>.",
+            "Billy Dee Williams as General Lando Calrissian, leader of the Rebellion's starfighter squadrons."
+        ],
+        "triviaNumber": "33",
+        "introductionRight": false,
+        "videoClip": true,
+        "relations": {
+            "e": "CHEW",
+            "so": "LOBO",
+            "no": "BIBF"
+        }
+    }
+}//TODO: Refactor this as a constructor for multiple views: glossary, behind/people, EU/sources
+//Return method to display a file from outside of glossary
+//Multiple photos for sources
+//Film credits need some rework in order to fit.
 
+function initGlossary(panel) {
+    var selectCategory = document.getElementById(panel + "-category"),
+        selectTerms = document.getElementById(panel + "-terms"),
+        buttonFprev = document.getElementById(panel + "-fprev"),
+        buttonFnext = document.getElementById(panel + "-fnext"),
+        inputSearch = document.getElementById(panel + "-search"),
+        buttonPrevEntry = document.getElementById(panel + "-prevent"),
+        buttonNextEntry = document.getElementById(panel + "-nextent"),
+        spanName = document.getElementById(panel + "-name"),
+        placeholderPicture = document.getElementById(panel + "-picture"),
+        pDescription = document.getElementById(panel + "-description"),
+        aTopic = document.getElementById(panel + "-topic"),
+        btnDivAppears = document.getElementById(panel + "-sources");
 
-    function clearSelectTerms(){
-        while(selectTerms.firstChild){
+    if (panel == "glossary") {
+        var indexGlossary = function (name) {
+            return glossary.indexOf(
+                glossary.find(function (a) {return a.name.indexOf(name) != -1}) || glossary[0]
+            )
+        }
+
+        var displayFromExternal = function (name) {
+            displayFile(indexGlossary(name))
+        }
+
+        glossary.displayFromExternal = displayFromExternal;
+    }
+
+    function clearSelectTerms() {
+        while (selectTerms.firstChild) {
             selectTerms.removeChild(selectTerms.firstChild);
         }
     }
 
-    function constructSelectTerms(array, indexes){
+    function constructSelectTerms(array, indexes) {
         var glosLength = array.length;
         indexes = indexes || [];
-        for(var i = 0; i != glosLength; i++){
+        for (var i = 0; i != glosLength; i++) {
             var option = document.createElement("option");
             option.innerHTML = array[i].name;
             option.value = indexes[i] || i;
@@ -4298,123 +6165,130 @@ var acronyms = {
         }
     }
 
-    function addSources(acronymsSTR){
+    function addSources(acronymsSTR) {
         var acronymsArr = acronymsSTR.split(",");
-        acronymsArr = acronymsArr.map(function(el){
+        acronymsArr = acronymsArr.map(function (el) {
             return el.trim();
         });
         var ul = document.createElement("ul");
-        for(var i=0; i<acronymsArr.length; i++){
+        for (var i = 0; i < acronymsArr.length; i++) {
             /* global acronyms */
-            if(acronyms[ acronymsArr[i] ]){
-                var value = acronyms[ acronymsArr[i] ];
+            if (acronyms[acronymsArr[i]]) {
+                var value = acronyms[acronymsArr[i]];
                 var li = document.createElement("li");
-                li.innerHTML = '<i>'+value+'</i>';
+                li.innerHTML = '<i>' + value + '</i>';
                 ul.appendChild(li);
             }
         }
         return ul;
     }
 
-    function indexGlossary(name){
-        return glossary.indexOf(
-            glossary.find(
-                function(a){return a.name.indexOf(name) != -1}
-            )
-        )
-    }
 
-    function displayFile(index){
+
+    function displayFile(index) {
         var file = glossary[index];
         spanName.innerHTML = file.name;
         pDescription.innerHTML = file.description;
 
-        if (file.picture){
-            placeholderPicture.style.display ="block";
-            placeholderPicture.style.backgroundImage ='url("/assets/GLOSSARY/STILLS/'+file.picture+'")';
-        } else { placeholderPicture.style.display = 'none'}
+        if (file.picture) {
+            placeholderPicture.style.display = "block";
+            placeholderPicture.style.backgroundImage = 'url("/assets/GLOSSARY/STILLS/' + file.picture + '")';
+        }
+        else {
+            placeholderPicture.style.display = 'none'
+        }
 
-        if (file.topic){
+        if (file.topic) {
             aTopic.href = file.topic;
             aTopic.style.display = "block";
-        } else { aTopic.style.display= "none" }
+        }
+        else {
+            aTopic.style.display = "none"
+        }
 
-        if (file.appearance){
+        if (file.appearance) {
             var ul = addSources(file.appearance);
             btnDivAppears.style.display = "block";
-            btnDivAppears.onclick = createModalText.bind(null,
-                {
-                    "title": "References in the Expanded Universe",
-                    "background": "lightblue",
-                    "content": ul
-                }
-            );
-        } else { btnDivAppears.style.display = "none"; }
+            btnDivAppears.onclick = createModalText.bind(null, {
+                "title": "References in the Expanded Universe",
+                "background": "lightblue",
+                "content": ul
+            });
+        }
+        else {
+            btnDivAppears.style.display = "none";
+        }
     }
 
-    function search(str, direction){
-        if (str == "") { return false }
+    function search(str, direction) {
+        if (str == "") {
+            return false
+        }
 
         selectTerms.selectedIndex += direction;
-        while (selectTerms.value && !glossary[selectTerms.value].description.includes(str) ){
+        while (selectTerms.value && !glossary[selectTerms.value].description.includes(str)) {
             selectTerms.selectedIndex += direction;
         }
 
-        if(selectTerms.selectedIndex < 0 || selectTerms.selectedIndex > glossary.length){
-            selectTerms.selectedIndex = direction < 0 ? 0 : selectTerms.childElementCount -1;
+        if (selectTerms.selectedIndex < 0 || selectTerms.selectedIndex > glossary.length) {
+            selectTerms.selectedIndex = direction < 0 ? 0 : selectTerms.childElementCount - 1;
         }
 
-            selectTerms.onchange();
+        selectTerms.onchange();
 
-            var escapedstr = (function escapeRegExp(str) {
-                return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
-            })(str)
-            pDescription.innerHTML = pDescription.innerHTML.replace(new RegExp(escapedstr, "g"), "<mark>"+str+"</mark>");
+        var escapedstr = (function escapeRegExp(str) {
+            return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+        })(str)
+        pDescription.innerHTML = pDescription.innerHTML.replace(new RegExp(escapedstr, "g"), "<mark>" + str + "</mark>");
     }
 
     /* global glossary */
-    selectCategory.onchange = function(){
+    selectCategory.onchange = function () {
         var category = selectCategory.value;
         var indexes = [];
-        if(category != ""){
-            var gloscategorized = glossary.filter(function(element, index){
-                if(element.category == category){
+        if (category != "") {
+            var gloscategorized = glossary.filter(function (element, index) {
+                if (element.category == category) {
                     indexes.push(index);
                     return true;
                 }
             });
-        } else { var gloscategorized = glossary }
+        }
+        else {
+            var gloscategorized = glossary
+        }
         clearSelectTerms();
         constructSelectTerms(gloscategorized, indexes);
-        selectTerms.selectedIndex = 0; selectTerms.onchange(); //Trigger the onchange event
+        selectTerms.selectedIndex = 0;
+        selectTerms.onchange(); //Trigger the onchange event
     };
 
-    selectTerms.onchange = function(){
+    selectTerms.onchange = function () {
         displayFile(selectTerms.value);
     };
 
-    buttonPrevEntry.onclick = function(){
-        if(selectTerms.selectedIndex){
+    buttonPrevEntry.onclick = function () {
+        if (selectTerms.selectedIndex) {
             selectTerms.selectedIndex--;
             selectTerms.onchange()
         }
     }
-    buttonNextEntry.onclick = function(){
-        if(selectTerms.selectedIndex != (selectTerms.childElementCount - 1) ){
+    buttonNextEntry.onclick = function () {
+        if (selectTerms.selectedIndex != (selectTerms.childElementCount - 1)) {
             selectTerms.selectedIndex++;
             selectTerms.onchange();
         }
     }
 
-    inputSearch.onkeypress = function(evt){
-        if(evt.which == 13){
+    inputSearch.onkeypress = function (evt) {
+        if (evt.which == 13) {
             buttonFnext.click();
         }
     };
-    buttonFnext.onclick = function(){
+    buttonFnext.onclick = function () {
         search(inputSearch.value, 1);
     }
-    buttonFprev.onclick = function(){
+    buttonFprev.onclick = function () {
         search(inputSearch.value, -1);
     }
 
@@ -4424,8 +6298,8 @@ var acronyms = {
     selectTerms.selectedIndex = 0;
     displayFile(0);
 }
-
 function watchingAppCache() {
+    // TODO: switch to UpUp. Application Cache is deprecated
     var loadingSpan = document.getElementById("launcherSpan");
     window.applicationCache.addEventListener("progress", function (e) {
         loadingSpan.innerText = "Loading assets... " + e.loaded + "/" + e.total;
@@ -4450,7 +6324,7 @@ function watchingAppCache() {
             var audio = new Audio();
             audio.src = "assets/launcher/r2beep.mp3";
             audio.play();
-            audio.onended = start.bind(this, location.hash);
+            audio.onended = start.bind(this, window.location.hash);
         };
 
         loadingSpan.parentNode.appendChild(launcherBtn);
@@ -4466,7 +6340,7 @@ function start(href) {
     /* global renderViews */ renderViews();
 
     // Init some views
-    /* global initGlossary*/ initGlossary();
+    /* global initGlossary*/ initGlossary("glossary");
 
     if (href == "" || href == "#mainMenu") {
         //Start the intro video and switch to MainMenu when it ends or on skip
@@ -4489,7 +6363,6 @@ HTMLMediaElement.prototype.start = function(){
 };
 
 function startVideo(src, actions) {
-    //TODO: do what's in callback by default not written in callback parameter.
     var videoPlayer = document.getElementById("videoPlayer");
 
     var vP_keydown = function(e){
@@ -4517,8 +6390,8 @@ function startVideo(src, actions) {
 
     document.addEventListener("keydown", vP_keydown, false);
 
-    videoPlayer.start();
     videoPlayer.onended = callback.bind(this, videoPlayer);
+    videoPlayer.start();
 
 }
 
@@ -4596,7 +6469,14 @@ if (!localStorage.getItem("BTMsettings")){
 function updateSettings(key, value){
     window.BTMsettings[key] = value;
     localStorage.setItem("BTMsettings", JSON.stringify(window.BTMsettings));
-}var viewsOBJ = {}, modalsOBJ = {};
+}// Is useful for conditionals in switchTo, use either ES6 includes or a personal includes function
+String.prototype.includes = String.prototype.includes || function (it) {
+    return this.indexOf(it) != -1;
+};
+
+var viewsOBJ = {},
+    modalsOBJ = {};
+
 function renderViews() {
     var app = document.createElement("div");
     app.id = "app";
@@ -4607,7 +6487,7 @@ function renderViews() {
 
     var templates = document.querySelectorAll('script[type="text/html"]');
 
-    for (var i=0; i< templates.length; i++) {
+    for (var i = 0; i < templates.length; i++) {
         var div = document.createElement("div");
         div.className = templates[i].dataset.class;
         div.id = templates[i].dataset.id;
@@ -4619,9 +6499,10 @@ function renderViews() {
             blur: templates[i].onreset
         };
 
-        if(div.className.indexOf("view") > -1 ){
-            viewsOBJ[div.id] = obj2append ;
-        }else if (div.className.indexOf("modal") > -1 ){
+        if (div.className.indexOf("view") > -1) {
+            viewsOBJ[div.id] = obj2append;
+        }
+        else if (div.className.indexOf("modal") > -1) {
             modalsOBJ[div.id] = obj2append;
         }
 
@@ -4632,50 +6513,86 @@ function renderViews() {
 }
 
 function switchTo(hash, isFromEvent) {
-    hash = hash.slice(1) // no # in views object
+    hash = hash.slice(1); // no # in views object
     isFromEvent = isFromEvent || false;
+    var optionalArg=[];
 
-    if (!isValidHash(hash)) {
-        console.log("Moving to #mainMenu because a switch to an unknown hash has been attempted: #" + hash||"[empty hash, no problem]");
-        hash = "mainMenu";
+    if (!viewsOBJ.hasOwnProperty(hash)) {
+        // this hash is not a real view, let's try to locate the real one for this hash.
+
+        // make a "best match" system: regex on the complete hash for static route-part,
+        //then apply conditions to distinguish the data or to invalid the route
+
+        /* global characters_main */
+        var routes = {
+            "characters/main/(.+?)/(explore/)?": function (match) {
+                if (!characters_main[match[1]]) {
+                    return false;
+                }
+                if (!!match[2]) {
+                    return ["explore", [ characters_main, match[1] ] ];
+                }
+                else {
+                    return ["overview", [ characters_main, match[1] ] ];
+                }
+            }
+        };
+
+        // Find which regex matches
+        var results = (function(){
+            for (var key in routes) {
+                if (!routes.hasOwnProperty(key)) continue;
+                var route_match = hash.match(RegExp(key));
+                if(!!route_match) return routes[key](route_match);
+            }
+        })();
+
+
+
+        if (!results) {
+            console.log("Moving to #mainMenu because a switch to an unknown hash has been attempted: #" + hash || "[empty hash, no problem]");
+            hash = "mainMenu";
+        }
+        else {
+            hash = results[0];
+            optionalArg = results[1];
+        }
     }
 
 
     if (switchTo.active !== "") {
         var el = viewsOBJ[switchTo.active];
-        el.blur.apply(viewsOBJ[switchTo.active].selector);
-        el.selector.classList.remove('enableAnimation')
+        el.blur.call(viewsOBJ[switchTo.active].selector);
+        el.selector.classList.remove('enableAnimation');
         el.selector.classList.remove("active");
     }
 
     el = viewsOBJ[hash];
     el.selector.classList.add("active");
-    el.focus.apply(viewsOBJ[hash].selector);
+    el.focus.call(viewsOBJ[hash].selector, optionalArg);
 
     /* These piece of code is hack.
     Transitions don't fire when there is display:none to block on the element
     Workaround is to add custom class which will trigger transitions after DOM has rendered the element
     */
-    setTimeout(function(){
-        el.selector.classList.add('enableAnimation')
-    }, 10)
+    setTimeout(function () {
+        el.selector.classList.add('enableAnimation');
+    }, 10);
 
-    if(!isFromEvent){ location.hash = hash }
+    if (!isFromEvent && !optionalArg) {
+        window.location.hash = hash;
+    }
     switchTo.active = hash;
 }
 switchTo.active = "";
 
-function isValidHash(hash) {
-    // Valid until now, need to say yes when there is characters/weapons/vehicles name in the hash
-    return (viewsOBJ.hasOwnProperty(hash));
-}
-
-function createModalText(options){
+//TODO Refactor this?
+function createModalText(options) {
     options = {
         "title": options.title || "Modal Window",
         "background": options.background || "black",
         "content": options.content || ""
-    }
+    };
 
     document.getElementById("modal-text-title").innerHTML = options.title;
     var inner = document.getElementById("modal-text-inner");
@@ -4685,11 +6602,104 @@ function createModalText(options){
     modalsOBJ["modal-text"].selector.classList.add("modal-active");
 }
 
-window.addEventListener("hashchange", function(hashchange){
+window.addEventListener("hashchange", function (hashchange) {
     var videoPlayer = document.getElementById("videoPlayer");
-    if( videoPlayer.classList.contains("active") ){
+    if (videoPlayer.classList.contains("active")) {
         videoPlayer.pause();
         videoPlayer.classList.remove("active");
     }
-    switchTo(location.hash, true);
+    switchTo(window.location.hash, true);
 })
+
+function make_overview(content){
+    var database = content[0];
+    var match = content[1];
+
+    var file = database[match];
+
+    var _overview = viewsOBJ.overview.selector;
+    var _pane = _overview.querySelector(".pane")
+    var _name = document.getElementById("overview-name");
+    var _shortdesc = document.getElementById("overview-shortdesc");
+    var _explore = document.getElementById("overview-explore");
+    var _n = document.getElementById("overview-n");
+    var _ne = document.getElementById("overview-ne");
+    var _e = document.getElementById("overview-e");
+    var _se = document.getElementById("overview-se");
+    var _s = document.getElementById("overview-s");
+    var _so = document.getElementById("overview-so");
+    var _o = document.getElementById("overview-o");
+    var _no = document.getElementById("overview-no");
+
+    _overview.style.backgroundImage = "url('"+database.location+match+"/"+match+"01AB.JPG')";
+    file.introductionRight ? _pane.classList.add("pane-right") : _pane.classList.remove("pane-right");
+    _name.innerHTML = file.name;
+    _shortdesc.innerHTML = file.shortdesc;
+    _explore.href = window.location.hash+"explore/";
+
+    /* global getTopRoute */
+    var topRoute = getTopRoute(window.location.hash)
+    if(file.relations.n){
+        _n.classList.remove("bullet-hidden");
+        _n.href = topRoute + file.relations.n + "/";
+        _n.innerHTML = database[file.relations.n].shortname;
+    }else{
+        _n.classList.add("bullet-hidden");
+    }
+
+    if(file.relations.ne){
+        _ne.classList.remove("bullet-hidden");
+        _ne.href = topRoute + file.relations.ne + "/";
+        _ne.innerHTML = database[file.relations.ne].shortname;
+    }else{
+        _ne.classList.add("bullet-hidden");
+    }
+
+    if(file.relations.e){
+        _e.classList.remove("bullet-hidden");
+        _e.href = topRoute + file.relations.e + "/";
+        _e.innerHTML = database[file.relations.e].shortname;
+    }else{
+        _e.classList.add("bullet-hidden");
+    }
+
+    if(file.relations.se){
+        _se.classList.remove("bullet-hidden");
+        _se.href = topRoute + file.relations.se + "/";
+        _se.innerHTML = database[file.relations.se].shortname;
+    }else{
+        _se.classList.add("bullet-hidden");
+    }
+
+    if(file.relations.s){
+        _s.classList.remove("bullet-hidden");
+        _s.href = topRoute + file.relations.s + "/";
+        _s.innerHTML = database[file.relations.s].shortname;
+    }else{
+        _s.classList.add("bullet-hidden");
+    }
+
+    if(file.relations.so){
+        _so.classList.remove("bullet-hidden");
+        _so.href = topRoute + file.relations.so + "/";
+        _so.innerHTML = database[file.relations.so].shortname;
+    }else{
+        _so.classList.add("bullet-hidden");
+    }
+
+    if(file.relations.o){
+        _o.classList.remove("bullet-hidden");
+        _o.href = topRoute + file.relations.o + "/";
+        _o.innerHTML = database[file.relations.o].shortname;
+    }else{
+        _o.classList.add("bullet-hidden");
+    }
+
+    if(file.relations.no){
+        _no.classList.remove("bullet-hidden");
+        _no.href = topRoute + file.relations.no + "/";
+        _no.innerHTML = database[file.relations.no].shortname;
+    }else{
+        _no.classList.add("bullet-hidden");
+    }
+}

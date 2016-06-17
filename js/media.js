@@ -6,7 +6,6 @@ HTMLMediaElement.prototype.start = function(){
 };
 
 function startVideo(src, actions) {
-    //TODO: do what's in callback by default not written in callback parameter.
     var videoPlayer = document.getElementById("videoPlayer");
 
     var vP_keydown = function(e){
@@ -34,8 +33,8 @@ function startVideo(src, actions) {
 
     document.addEventListener("keydown", vP_keydown, false);
 
-    videoPlayer.start();
     videoPlayer.onended = callback.bind(this, videoPlayer);
+    videoPlayer.start();
 
 }
 

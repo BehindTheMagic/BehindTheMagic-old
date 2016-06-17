@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Trying a new reset: http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation */
 html {
   -ms-text-size-adjust: 100%;
@@ -92,7 +93,7 @@ body {
   border-color: white;
   z-index: inherit; }
 
-.close:after {
+.close_done:after {
   content: "Done";
   color: white;
   position: absolute;
@@ -127,7 +128,7 @@ Import all partials for each panel for the app
   top: 28px;
   left: 93px;
   width: 445px;
-  height: 342px;
+  height: 358px;
   box-shadow: 10px 10px 10px #111; }
 
 .modal-text-inner {
@@ -135,7 +136,7 @@ Import all partials for each panel for the app
   height: 287px;
   width: 420px;
   padding: 10px;
-  top: 10px;
+  top: 26px;
   left: 5px;
   position: relative;
   border-radius: 10px;
@@ -146,8 +147,8 @@ Import all partials for each panel for the app
 
 .modal-title {
   position: relative;
-  color: #989898;
-  top: 5px;
+  color: #dddddd;
+  top: 15px;
   left: 10px;
   font-family: "Mech";
   font-size: 24px; }
@@ -222,16 +223,16 @@ Import all partials for each panel for the app
     left: 150px;
     padding: 5px 38px 5px 0; }
   .mainMenu_map .chars {
-    top: 70px;
-    left: 65px;
+    top: 86px;
+    left: 102px;
     text-align: right; }
   .mainMenu_map .mtech {
     top: 152px;
     left: 80px;
     padding: 5px 38px 5px 0; }
   .mainMenu_map .tech {
-    top: 162px;
-    left: 55px;
+    top: 175px;
+    left: 90px;
     text-align: right; }
   .mainMenu_map .mlocs {
     top: 258px;
@@ -250,23 +251,23 @@ Import all partials for each panel for the app
     left: 117px;
     padding: 5px 38px 5px 0; }
   .mainMenu_map .scenes {
-    top: 347px;
-    left: 45px;
+    top: 364px;
+    left: 90px;
     text-align: right; }
   .mainMenu_map .mbehind {
     left: 403px;
     padding: 5px 0 5px 38px;
     top: 338px; }
   .mainMenu_map .behind {
-    left: 414px;
-    top: 345px; }
+    left: 455px;
+    top: 360px; }
   .mainMenu_map .mexpd {
     left: 462px;
     padding: 5px 0 5px 38px;
     top: 258px; }
   .mainMenu_map .expd {
-    left: 479px;
-    top: 266px; }
+    left: 510px;
+    top: 280px; }
   .mainMenu_map .mglos {
     left: 295px;
     padding: 38px 0 0 0;
@@ -325,7 +326,7 @@ Import all partials for each panel for the app
   border-radius: 50%;
   background-color: transparent; }
 .characters_main a:hover, .characters_aliens a:hover {
-  background-color: rgba(255, 255, 255, 0.2); }
+  background-color: rgba(255, 255, 255, 0.04); }
 
 .characters_main {
   background-image: url("/assets/CHARS/MAINCHAR/IMAGES/CMB_BACK.JPG"); }
@@ -500,7 +501,7 @@ Import all partials for each panel for the app
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    box-shadow: inset 1px 0 3px white;
+    box-shadow: inset 1px 0 3px 1px white;
     font-size: 10px;
     white-space: nowrap; }
   .characters_main_map .e:after {
@@ -954,11 +955,10 @@ Import all partials for each panel for the app
     left: 650px;
     font-family: 'Mech';
     font-size: 70px;
-    color: white;
-    transition: transform 0.5s ease-out; }
+    color: white; }
   .technology_weapons.enableAnimation > .title {
-    transform: translateX(-170px);
-    transition: transform 0; }
+    transition: transform 0.5s ease-out;
+    transform: translateX(-170px); }
   .technology_weapons a {
     display: block;
     position: absolute;
@@ -966,11 +966,10 @@ Import all partials for each panel for the app
     font-family: 'Mech';
     color: white;
     opacity: 0;
-    text-align: center;
-    transition: opacity 0.5s linear 0.2s; }
+    text-align: center; }
   .technology_weapons.enableAnimation > a {
-    opacity: 1;
-    transition: opacity 0; }
+    transition: opacity 0.5s linear 0.2s;
+    opacity: 1; }
   .technology_weapons a:hover {
     background-color: rgba(255, 255, 255, 0.2); }
   .technology_weapons a[href*="personal"] {
@@ -1200,7 +1199,7 @@ Import all partials for each panel for the app
     top: 13.5px;
     left: 337px;
     font-size: 10px; }
-  .glossary #glosname {
+  .glossary #glossary-name {
     top: 85px;
     left: 207px;
     display: block;
@@ -1209,15 +1208,16 @@ Import all partials for each panel for the app
     padding-left: 5px;
     background-color: rgba(0, 0, 0, 0.5);
     line-height: 38px; }
-  .glossary #glospicture {
+  .glossary #glossary-picture {
     position: absolute;
     top: 140px;
     left: 215px;
     width: 120px;
     height: 120px;
     border-radius: 10%;
-    box-shadow: black 3px 3px 10px; }
-  .glossary #glosdescription {
+    box-shadow: black 3px 3px 10px;
+    background-size: cover; }
+  .glossary #glossary-description {
     color: white;
     margin: 0;
     font-size: 12px;
@@ -1226,8 +1226,10 @@ Import all partials for each panel for the app
     left: 347px;
     width: 292px;
     height: 285px;
+    line-height: normal;
+    word-spacing: 2px;
     overflow-y: auto; }
-  .glossary #glostopic {
+  .glossary #glossary-topic {
     position: absolute;
     top: 280px;
     left: 230px;
@@ -1238,11 +1240,11 @@ Import all partials for each panel for the app
     color: #303030;
     background-color: white;
     box-shadow: inset #808080 -2px -2px 4px; }
-  .glossary #glostopic:hover {
+  .glossary #glossary-topic:hover {
     background-color: #E0E0E0; }
-  .glossary #glostopic:active {
+  .glossary #glossary-topic:active {
     box-shadow: inset #808080 2px 2px 4px; }
-  .glossary #btnglosappears {
+  .glossary #glossary-sources {
     position: absolute;
     top: 330px;
     left: 230px;
@@ -1254,6 +1256,211 @@ Import all partials for each panel for the app
     color: white;
     border: black solid 1px;
     background-color: #151515; }
+
+.overview .pane {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1; }
+.overview .pane-right {
+  right: 0; }
+.overview .name {
+  color: #98B4B0;
+  font-size: 36px;
+  font-family: "Mech";
+  text-align: center;
+  display: block;
+  top: -25px;
+  position: relative;
+  line-height: 32px; }
+.overview.enableAnimation .name {
+  transition: transform 1s;
+  transform: translateY(37px); }
+.overview .under-name {
+  position: absolute;
+  top: 25px;
+  left: -230px;
+  background-color: #980000;
+  height: 2px;
+  width: 227px; }
+.overview.enableAnimation .pane .under-name {
+  transition: transform 1s;
+  transform: translateX(260px); }
+.overview .pane-right .under-name {
+  left: 300px; }
+.overview.enableAnimation .pane.pane-right .under-name {
+  transition: transform 1s;
+  transform: translateX(-269px); }
+.overview .under-name:after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -18px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #E00808; }
+.overview .shortdesc {
+  color: white;
+  font-size: 11px;
+  padding: 24px;
+  line-height: 1.2;
+  opacity: 0; }
+.overview.enableAnimation .shortdesc {
+  transition: opacity 1s 1s;
+  opacity: 1; }
+.overview .explore {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-color: black;
+  border: 1.5px solid #C8C4B8;
+  border-radius: 50%;
+  right: 33px;
+  perspective: 26px;
+  opacity: 0; }
+.overview.enableAnimation .explore {
+  transition: opacity 0.5s 2s;
+  opacity: 1; }
+.overview .explore:before {
+  content: "➡";
+  color: #C8C4B8;
+  font-size: 24px;
+  display: block;
+  transform: rotateX(45deg) rotateZ(-90deg) scale3d(1, 3, 1);
+  backface-visibility: hidden;
+  outline: 1px solid transparent;
+  transition: transform 1s ease-in-out; }
+.overview .explore:hover:before {
+  transform: rotateX(45deg) rotateZ(-90deg) translateX(31px) scale3d(1, 3, 1); }
+.overview .explore:after {
+  content: "Explore";
+  font-family: "Mech";
+  color: white;
+  position: relative;
+  top: 4px;
+  left: -4px;
+  font-size: 20px; }
+.overview .relation-center {
+  position: absolute;
+  top: 388px;
+  left: 132px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #E00808;
+  background-color: rgba(245, 245, 245, 0.5);
+  box-shadow: 0 0 64px 42px rgba(245, 245, 245, 0.5); }
+.overview .bullet {
+  color: white;
+  font-size: 10px;
+  position: absolute; }
+.overview .bullet-hidden {
+  display: none !important; }
+.overview .bullet:before {
+  content: "";
+  background-color: #E00808;
+  width: 1px;
+  height: 11px;
+  position: absolute; }
+.overview .bullet:after {
+  content: "";
+  position: absolute;
+  background-color: #606060;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #C0C0C0;
+  box-shadow: inset -1px -1px 4px black;
+  border-radius: 50%; }
+.overview #overview-n {
+  top: 350px;
+  left: 130px; }
+.overview #overview-n:before {
+  top: 27px;
+  left: 10px; }
+.overview #overview-n:after {
+  top: 15px;
+  left: 5px; }
+.overview #overview-ne {
+  top: 370px;
+  left: 170px; }
+.overview #overview-ne:before {
+  transform: rotate(45deg);
+  top: 12px;
+  left: -19px; }
+.overview #overview-ne:after {
+  top: 3px;
+  left: -17px; }
+.overview #overview-e {
+  top: 393px;
+  left: 179px; }
+.overview #overview-e:before {
+  transform: rotate(90deg);
+  top: -1px;
+  left: -25px; }
+.overview #overview-e:after {
+  top: -1px;
+  left: -19px; }
+.overview #overview-se {
+  top: 412px;
+  left: 170px; }
+.overview #overview-se:before {
+  transform: rotate(-45deg);
+  top: -10px;
+  left: -20px; }
+.overview #overview-se:after {
+  top: -2px;
+  left: -18px; }
+.overview #overview-s {
+  top: 430px;
+  left: 130px; }
+.overview #overview-s:before {
+  top: -24px;
+  left: 10px; }
+.overview #overview-s:after {
+  top: -13px;
+  left: 5px; }
+.overview #overview-so {
+  display: inline-block;
+  top: 410px;
+  left: 75px;
+  word-break: break-word;
+  width: 42px; }
+.overview #overview-so:before {
+  transform: rotate(45deg);
+  top: -8px;
+  left: 56px; }
+.overview #overview-so:after {
+  top: -1px;
+  left: 42px; }
+.overview #overview-o {
+  display: inline-block;
+  top: 383px;
+  left: 70px;
+  word-break: break-word;
+  width: 42px; }
+.overview #overview-o:before {
+  transform: rotate(90deg);
+  top: 9px;
+  left: 56px; }
+.overview #overview-o:after {
+  top: 8px;
+  left: 39px; }
+.overview #overview-no {
+  display: inline-block;
+  top: 362px;
+  left: 78px;
+  word-break: break-word;
+  width: 38px; }
+.overview #overview-no:before {
+  transform: rotate(-45deg);
+  top: 20px;
+  left: 52px; }
+.overview #overview-no:after {
+  top: 11px;
+  left: 39px; }
 
 /*
 Making a cute launcher
@@ -1279,7 +1486,7 @@ Making a cute launcher
     font-size: 16px; }
   .launcher button:hover, .launcher button:focus {
     background-color: white;
-    font-size: 18px; }
+    font-style: italic; }
   .launcher span {
     color: white;
     text-align: center;

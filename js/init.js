@@ -1,4 +1,5 @@
 function watchingAppCache() {
+    // TODO: switch to UpUp. Application Cache is deprecated
     var loadingSpan = document.getElementById("launcherSpan");
     window.applicationCache.addEventListener("progress", function (e) {
         loadingSpan.innerText = "Loading assets... " + e.loaded + "/" + e.total;
@@ -23,7 +24,7 @@ function watchingAppCache() {
             var audio = new Audio();
             audio.src = "assets/launcher/r2beep.mp3";
             audio.play();
-            audio.onended = start.bind(this, location.hash);
+            audio.onended = start.bind(this, window.location.hash);
         };
 
         loadingSpan.parentNode.appendChild(launcherBtn);
@@ -39,7 +40,7 @@ function start(href) {
     /* global renderViews */ renderViews();
 
     // Init some views
-    /* global initGlossary*/ initGlossary();
+    /* global initGlossary*/ initGlossary("glossary");
 
     if (href == "" || href == "#mainMenu") {
         //Start the intro video and switch to MainMenu when it ends or on skip

@@ -55,7 +55,7 @@ body{ background-color: black };
     border-color: white;
     z-index: inherit;
 }
-.close:after{
+.close_done:after{
     content: "Done";
     color: white;
     position: absolute;
@@ -76,6 +76,8 @@ Import all partials for each panel for the app
 @import 'partials/locations';
 
 @import 'partials/glossary';
+
+@import 'partials/overview';
 
 
 
@@ -109,7 +111,7 @@ Making a cute launcher
 
     button:hover, button:focus{
         background-color: white;
-        font-size: 18px;
+        font-style: italic;
     }
 
     span {

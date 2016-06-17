@@ -74,7 +74,7 @@
         font-size: 10px;
     }
 
-    #glosname{
+    #glossary-name{
         top: 85px; left: 207px;
         display: block;
         width: 428px; height: 38px;
@@ -83,15 +83,16 @@
         line-height: 38px;
     }
 
-    #glospicture{
+    #glossary-picture{
         position: absolute;
         top: 140px; left: 215px;
         width: 120px; height: 120px;
         border-radius: 10%;
         box-shadow: black 3px 3px 10px;
+        background-size: cover;
     }
 
-    #glosdescription{
+    #glossary-description{
         color: white;
         margin: 0;
         font-size: 12px;
@@ -100,10 +101,12 @@
         left: 347px;
         width: 292px;
         height: 285px;
+        line-height: normal;
+        word-spacing: 2px;
         overflow-y: auto;
     }
 
-    #glostopic{
+    #glossary-topic{
         position: absolute;
         top: 280px;
         left: 230px;
@@ -116,15 +119,15 @@
         box-shadow: inset #808080 -2px -2px 4px;
     }
 
-    #glostopic:hover{
+    #glossary-topic:hover{
         background-color: #E0E0E0;
     }
 
-    #glostopic:active{
+    #glossary-topic:active{
         box-shadow: inset #808080 2px 2px 4px;
     }
 
-    #btnglosappears{
+    #glossary-sources{
         position: absolute;
         top: 330px;
         left: 230px;

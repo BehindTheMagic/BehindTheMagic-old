@@ -339,9 +339,9 @@
     onreset="document.getElementById('glossary-Music').pause()">
         <audio id="glossary-Music" src="/assets/GENERAL/MUSIC/lost.snm.mp3"></audio>
         <span class="glossary">Glossary of Terms</span>
-        <button id="glosfprev" class="fprev">Find Prev &#9664;</button>
+        <button id="glossary-fprev" class="fprev">Find Prev &#9664;</button>
         <input type="text" id="glossary-search" style="text-align:center;">
-        <button id="glosfnext" class="fnext">&#9654 Find Next</button>
+        <button id="glossary-fnext" class="fnext">&#9654 Find Next</button>
 
         <select size="5" id="glossary-category">
             <option value="" selected>All</option>
@@ -366,20 +366,42 @@
 
         <select size="20" id="glossary-terms"></select>
 
-        <button id="glosprevent" class="prevent">&#9664; Previous Entry</button>
+        <button id="glossary-prevent" class="prevent">&#9664; Previous Entry</button>
 
-        <button id="glosnextent" class="nextent">&#9654; Next Entry</button>
+        <button id="glossary-nextent" class="nextent">&#9654; Next Entry</button>
 
-        <span id="glosname"></span>
-        <div id="glospicture"></div>
-        <p id="glosdescription"></p>
-        <a href="#" id="glostopic">Go To Topic</a>
-        <button id="btnglosappears">References in the Expanded Universe</button>
+        <span id="glossary-name"></span>
+        <div id="glossary-picture"></div>
+        <p id="glossary-description"></p>
+        <a href="#" id="glossary-topic">Go To Topic</a>
+        <button id="glossary-sources">References in the Expanded Universe</button>
 
     </script>
 
+    <script type="text/html" data-id="overview" data-class="view overview"
+    onsubmit="make_overview(event);document.getElementById('overview-sound').start()"
+    onreset="document.getElementById('overview-sound').pause()">
+        <div class="pane pane-right">
+            <div class="under-name"></div>
+            <span class="name" id="overview-name">Obi-Wan "Ben" Kenobi</span>
+            <p class="shortdesc" id="overview-shortdesc">The wizened Jedi Knight who first revealed the mysteries of the Force to young Luke Skywalker. Long before, Obi-Wan had taken another student in Luke's father, Anakin. Sadly, Obi-Wan underestimated the power of the dark side and ultimately lost Anakin to the lure of evil. Years later, Obi-Wan tried to redeem himself by confronting Anakin, who had been transformed into the vile Darth Vader. Kenobi was struck down, but even after death, he managed to guide Luke as the young Jedi attempted to save Anakin's spirit and topple the Empire.</p>
+            <a id="overview-explore" href="#explore"><div class="explore"></div></a>
+            <div class="relation-center"></div>
+            <a id="overview-n" class="bullet" href="#">Yoda</a>
+            <a id="overview-ne" class="bullet" href="#">R2-D2</a>
+            <a id="overview-e" class="bullet bullet-hidden" href="#"></a>
+            <a id="overview-se" class="bullet" href="#">C-3PO</a>
+            <a id="overview-s" class="bullet bullet-hidden" href="#"></a>
+            <a id="overview-so" class="bullet" href="#">Darth Vader</a>
+            <a id="overview-o" class="bullet" href="#">Anakin Skywalker</a>
+            <a id="overview-no" class="bullet bullet-hidden" href="#"></a>
+        </div>
+
+        <audio id="overview-sound" src="assets/GENERAL/SOUNDS/TXTAPPR.mp3"></audio>
+    </script>
+
     <script type="text/html" data-id="modal-text" data-class="modal modal-text">
-        <button class="close" style="top:5px; right:5px" onclick="this.parentElement.classList.remove('modal-active')">X</button>
+        <button class="close" style="top:15px; right:5px" onclick="this.parentElement.classList.remove('modal-active')">X</button>
         <span class="modal-title" id="modal-text-title">Title des Modals</span>
         <div class="modal-text-inner" id="modal-text-inner"></div>
     </script>

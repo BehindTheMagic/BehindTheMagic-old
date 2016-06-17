@@ -1,0 +1,273 @@
+.overview{
+
+    .pane{
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 280px;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1;
+    }
+    .pane-right{
+        right: 0;
+    }
+
+    .name{
+        color: #98B4B0;
+        font-size: 36px;
+        font-family: "Mech";
+        text-align: center;
+        display: block;
+        top: -25px;
+        position: relative;
+        line-height: 32px;
+    }
+    &.enableAnimation .name {
+        transition: transform 1s;
+        transform: translateY(37px);
+    }
+
+    .under-name{
+        position: absolute;
+        top: 25px;
+        left: -230px;
+        background-color: #980000;
+        height: 2px;
+        width: 227px;
+    }
+
+    &.enableAnimation .pane .under-name{
+        transition: transform 1s;
+        transform: translateX(260px);
+    }
+
+    .pane-right .under-name{
+        left: 300px;
+    }
+
+    &.enableAnimation .pane.pane-right .under-name{
+        transition: transform 1s;
+        transform: translateX(-269px);
+    }
+
+    .under-name:after{
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: -18px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid #E00808;
+    }
+
+    .shortdesc{
+        color: white;
+        font-size: 11px;
+        padding: 24px;
+        line-height: 1.2;
+        opacity: 0;
+    }
+
+    &.enableAnimation .shortdesc{
+        transition: opacity 1s 1s;
+        opacity: 1;
+    }
+
+    .explore{
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        background-color: black;
+        border: 1.5px solid #C8C4B8;
+        border-radius: 50%;
+        right: 33px;
+        perspective: 26px;
+        opacity: 0;
+    }
+
+    &.enableAnimation .explore{
+        transition: opacity 0.5s 2s;
+        opacity: 1;
+    }
+    .explore:before{
+        content: "➡";
+        color: #C8C4B8;
+        font-size: 24px;
+        display: block;
+        transform: rotateX(45deg) rotateZ(-90deg) scale3d(1,3,1);
+        backface-visibility: hidden;
+        outline: 1px solid transparent;
+        transition: transform 1s ease-in-out;
+    }
+
+    .explore:hover:before{
+        transform: rotateX(45deg) rotateZ(-90deg) translateX(31px) scale3d(1,3,1);
+    }
+
+    .explore:after{
+        content:"Explore";
+        font-family:"Mech";
+        color: white;
+        position: relative;
+        top: 4px; left: -4px;
+        font-size: 20px;
+    }
+
+    .relation-center{
+        position: absolute;
+        top: 388px;
+        left: 132px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid #E00808;
+        background-color: rgba(245,245,245, 0.5);
+        box-shadow: 0 0 64px 42px rgba(245,245,245,0.5)
+    }
+
+    .bullet{
+        color: white;
+        font-size: 10px;
+        position: absolute;
+    }
+
+    .bullet-hidden{
+        display: none!important;
+    }
+
+    .bullet:before{
+        content:"";
+        background-color: #E00808;
+        width: 1px;
+        height: 11px;
+        position: absolute;
+    }
+    .bullet:after{
+        content:"";
+        position: absolute;
+        background-color: #606060;
+        width: 10px; height: 10px;
+        border: 1px solid #C0C0C0;
+        box-shadow: inset -1px -1px 4px black;
+        border-radius: 50%;
+    }
+
+    #overview-n{
+        top: 350px;
+        left: 130px;
+    }
+    #overview-n:before{
+        top: 27px;
+        left: 10px;
+    }
+    #overview-n:after{
+        top: 15px;
+        left: 5px;
+    }
+
+    #overview-ne{
+        top: 370px;
+        left: 170px;
+    }
+    #overview-ne:before{
+        transform: rotate(45deg);
+        top: 12px;
+        left: -19px;
+    }
+    #overview-ne:after{
+        top: 3px;
+        left: -17px;
+    }
+
+    #overview-e{
+        top: 393px;
+        left: 179px;
+    }
+    #overview-e:before{
+        transform: rotate(90deg);
+        top: -1px;
+        left: -25px;
+    }
+    #overview-e:after{
+        top: -1px;
+        left: -19px;
+    }
+
+    #overview-se{
+        top: 412px;
+        left: 170px;
+    }
+    #overview-se:before{
+        transform: rotate(-45deg);
+        top: -10px;
+        left: -20px;
+    }
+    #overview-se:after{
+        top: -2px;
+        left: -18px;
+    }
+
+    #overview-s{
+        top: 430px;
+        left: 130px;
+    }
+    #overview-s:before{
+        top: -24px;
+        left: 10px;
+    }
+    #overview-s:after{
+        top: -13px;
+        left: 5px;
+    }
+
+    #overview-so{
+        display: inline-block;
+        top: 410px;
+        left: 75px;
+        word-break: break-word;
+        width: 42px;
+    }
+    #overview-so:before{
+        transform: rotate(45deg);
+        top: -8px;
+        left: 56px;
+    }
+    #overview-so:after{
+        top: -1px;
+        left: 42px;
+    }
+
+    #overview-o{
+        display: inline-block;
+        top: 383px;
+        left: 70px;
+        word-break: break-word;
+        width: 42px;
+    }
+    #overview-o:before{
+        transform: rotate(90deg);
+        top: 9px;
+        left: 56px;
+    }
+    #overview-o:after{
+        top: 8px;
+        left: 39px;
+    }
+
+    #overview-no{
+        display: inline-block;
+        top: 362px;
+        left: 78px;
+        word-break: break-word;
+        width: 38px;
+    }
+    #overview-no:before{
+        transform: rotate(-45deg);
+        top: 20px;
+        left: 52px;
+    }
+    #overview-no:after{
+        top: 11px;
+        left: 39px;
+    }
+}

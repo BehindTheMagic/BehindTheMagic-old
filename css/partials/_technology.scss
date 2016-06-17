@@ -130,11 +130,10 @@
         font-family: 'Mech';
         font-size: 70px;
         color: white;
-        transition: transform 0.5s ease-out;
     }
     &.enableAnimation > .title{
+        transition: transform 0.5s ease-out;
         transform: translateX(-170px);
-        transition: transform 0;
     }
 
     a{
@@ -145,12 +144,11 @@
         color: white;
         opacity: 0;
         text-align: center;
-        transition: opacity 0.5s linear 0.2s;
     }
 
     &.enableAnimation > a{
+        transition: opacity 0.5s linear 0.2s;
         opacity: 1;
-        transition: opacity 0;
     }
 
     a:hover{

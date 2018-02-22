@@ -75,7 +75,7 @@ function initGlossary(panel) {
 
         if (file.picture) {
             placeholderPicture.style.display = "block";
-            placeholderPicture.style.backgroundImage = 'url("/assets/GLOSSARY/STILLS/' + file.picture + '")';
+            placeholderPicture.style.backgroundImage = 'url("assets/GLOSSARY/STILLS/' + file.picture + '")';
         }
         else {
             placeholderPicture.style.display = 'none'

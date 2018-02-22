@@ -154,7 +154,7 @@ Import all partials for each panel for the app
   font-size: 24px; }
 
 .mainMenu {
-  background-image: url("/assets/GENERAL/IMAGES/MAINMENU.JPG"); }
+  background-image: url("assets/GENERAL/IMAGES/MAINMENU.JPG"); }
   .mainMenu nav {
     position: absolute;
     top: 20px;
@@ -192,7 +192,7 @@ Import all partials for each panel for the app
     left: 257px; }
 
 .mainMenu_map {
-  background-image: url("/assets/GENERAL/IMAGES/MAINMAP.JPG"); }
+  background-image: url("assets/GENERAL/IMAGES/MAINMAP.JPG"); }
   .mainMenu_map span {
     color: white;
     position: absolute;
@@ -277,7 +277,7 @@ Import all partials for each panel for the app
     left: 610px; }
 
 .characters_menu {
-  background-image: url("/assets/CHARS/IMAGES/CHARMENU.JPG"); }
+  background-image: url("assets/CHARS/IMAGES/CHARMENU.JPG"); }
   .characters_menu video {
     position: absolute;
     top: 58px;
@@ -329,7 +329,7 @@ Import all partials for each panel for the app
   background-color: rgba(255, 255, 255, 0.04); }
 
 .characters_main {
-  background-image: url("/assets/CHARS/MAINCHAR/IMAGES/CMB_BACK.JPG"); }
+  background-image: url("assets/CHARS/MAINCHAR/IMAGES/CMB_BACK.JPG"); }
   .characters_main .title {
     color: black;
     top: 209px;
@@ -483,7 +483,7 @@ Import all partials for each panel for the app
     height: 102px; }
 
 .characters_main_map {
-  background-image: url("/assets/CHARS/MAINCHAR/IMAGES/CLB_MAP.JPG"); }
+  background-image: url("assets/CHARS/MAINCHAR/IMAGES/CLB_MAP.JPG"); }
   .characters_main_map .close {
     top: 22px;
     left: 620px; }
@@ -761,7 +761,7 @@ Import all partials for each panel for the app
     left: 355px; }
 
 .characters_aliens {
-  background-image: url("/assets/CHARS/ALIENS/IMAGES/CRMENU.JPG"); }
+  background-image: url("assets/CHARS/ALIENS/IMAGES/CRMENU.JPG"); }
   .characters_aliens span {
     color: white;
     font-size: 20px; }
@@ -856,7 +856,7 @@ Import all partials for each panel for the app
     height: 116px; }
 
 .technology_menu {
-  background-image: url("/assets/TECH/IMAGES/TECHMENO.JPG"); }
+  background-image: url("assets/TECH/IMAGES/TECHMENO.JPG"); }
   .technology_menu span {
     position: absolute;
     top: 18px;
@@ -892,7 +892,7 @@ Import all partials for each panel for the app
     height: 92px; }
 
 .technology_vehicles {
-  background-image: url("/assets/TECH/VEHICLES/IMAGES/VEHIMENU.JPG"); }
+  background-image: url("assets/TECH/VEHICLES/IMAGES/VEHIMENU.JPG"); }
   .technology_vehicles span {
     position: absolute;
     bottom: 40px;
@@ -947,7 +947,7 @@ Import all partials for each panel for the app
     box-shadow: 0 0 10px white; }
 
 .technology_weapons {
-  background-image: url("/assets/TECH/WEAPONS/IMAGES/WEAPMENU.JPG"); }
+  background-image: url("assets/TECH/WEAPONS/IMAGES/WEAPMENU.JPG"); }
   .technology_weapons .title {
     position: absolute;
     transform: translateX(0);
@@ -1009,7 +1009,7 @@ Import all partials for each panel for the app
     left: 0;
     width: 640px;
     height: 87px;
-    background-image: url("/assets/TECH/WEAPONS/TOPICS/WEAPTEST/WT_BOTT.JPG"); }
+    background-image: url("assets/TECH/WEAPONS/TOPICS/WEAPTEST/WT_BOTT.JPG"); }
   .technology_weaptest .title {
     position: absolute;
     top: 5px;
@@ -1043,7 +1043,7 @@ Import all partials for each panel for the app
     padding: 10px 0 10px 35px; }
 
 .locations_menu {
-  background-image: url("/assets/LOCALE/IMAGES/LOCMENU.JPG"); }
+  background-image: url("assets/LOCALE/IMAGES/LOCMENU.JPG"); }
   .locations_menu span {
     font-family: 'Mech';
     font-size: 22px;
@@ -1131,7 +1131,7 @@ Import all partials for each panel for the app
     height: 118px; }
 
 .glossary {
-  background-image: url("/assets/GLOSSARY/GLOSBACK.jpg"); }
+  background-image: url("assets/GLOSSARY/GLOSBACK.jpg"); }
   .glossary span {
     font-family: 'Mech';
     font-size: 30px;

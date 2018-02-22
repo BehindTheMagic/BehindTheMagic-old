@@ -4270,7 +4270,7 @@ var acronyms = {
     "etc.": "Luke is everywhere"
 };
 var characters_main = {
-    "location": "/assets/CHARS/MAINCHAR/",
+    "location": "assets/CHARS/MAINCHAR/",
     "WEDG": {
         "name": "Wedge Antilles",
         "shortname": "Wedge",
@@ -6192,7 +6192,7 @@ function initGlossary(panel) {
 
         if (file.picture) {
             placeholderPicture.style.display = "block";
-            placeholderPicture.style.backgroundImage = 'url("/assets/GLOSSARY/STILLS/' + file.picture + '")';
+            placeholderPicture.style.backgroundImage = 'url("assets/GLOSSARY/STILLS/' + file.picture + '")';
         }
         else {
             placeholderPicture.style.display = 'none'
@@ -6345,7 +6345,7 @@ function start(href) {
     if (href == "" || href == "#mainMenu") {
         //Start the intro video and switch to MainMenu when it ends or on skip
         /* global startVideo */
-        startVideo("/assets/INTRO/intrbtm.mp4", function () {
+        startVideo("assets/INTRO/intrbtm.mp4", function () {
             switchTo("#mainMenu");
         });
     }
@@ -6403,7 +6403,7 @@ function startIntro(src, actions){
 
     if (window.BTMsettings.playIntros || !window.BTMsettings[src]){
         updateSettings(src, true);
-        startVideo("/assets/INTRO/"+src, function(){
+        startVideo("assets/INTRO/"+src, function(){
             nextview.classList.add("active");
             actions();
         });
@@ -6418,32 +6418,32 @@ function weapTest(vid){
     var player = document.getElementById("tech_weaptest_vid");
     switch(vid){
         case "ewok":
-            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_ROCK.SNM.mp4";
+            player.src = "assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_ROCK.SNM.mp4";
             player.start();
         break;
         case "blaster":
-            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_BLAST.SNM.mp4";
+            player.src = "assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_BLAST.SNM.mp4";
             player.start();
         break;
         case "lightsaber":
-            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_SABRE.SNM.mp4";
+            player.src = "assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_SABRE.SNM.mp4";
             player.start();
         break;
         case "thermal":
-            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_THERM.SNM.mp4";
+            player.src = "assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_THERM.SNM.mp4";
             player.start();
         break;
         case "dsray":
-            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/STDAUDIO.SNM.mp4";
+            player.src = "assets/TECH/WEAPONS/TOPICS/WEAPTEST/STDAUDIO.SNM.mp4";
             player.start();
             player.onended = function(){ player.src=""}
         break;
         case "init":
-            player.style.backgroundImage = 'url("/assets/TECH/WEAPONS/TOPICS/WEAPTEST/WTBACK0.JPG")';
-            player.src = "/assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_BLAST.SNM.mp4";
+            player.style.backgroundImage = 'url("assets/TECH/WEAPONS/TOPICS/WEAPTEST/WTBACK0.JPG")';
+            player.src = "assets/TECH/WEAPONS/TOPICS/WEAPTEST/ST_BLAST.SNM.mp4";
             player.currentTime = 22;
             player.volume = window.BTMsettings.volume;
-            player.onended = function(){ player.style.backgroundImage = "url('/assets/TECH/WEAPONS/TOPICS/WEAPTEST/WT_BACK.JPG')"; }
+            player.onended = function(){ player.style.backgroundImage = "url('assets/TECH/WEAPONS/TOPICS/WEAPTEST/WT_BACK.JPG')"; }
             player.play()
         break;
     }

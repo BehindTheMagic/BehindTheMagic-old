@@ -1,5 +1,5 @@
 .characters_menu{
-    background-image: url('/assets/CHARS/IMAGES/CHARMENU.JPG');
+    background-image: url('assets/CHARS/IMAGES/CHARMENU.JPG');
 
     video{
         position: absolute;
@@ -72,7 +72,7 @@
 
 .characters_main{
     @extend %characters_submenu_styles;
-    background-image: url('/assets/CHARS/MAINCHAR/IMAGES/CMB_BACK.JPG');
+    background-image: url('assets/CHARS/MAINCHAR/IMAGES/CMB_BACK.JPG');
 
     .title{
         color: black;
@@ -207,7 +207,7 @@
 }
 
 .characters_main_map{
-    background-image: url("/assets/CHARS/MAINCHAR/IMAGES/CLB_MAP.JPG");
+    background-image: url("assets/CHARS/MAINCHAR/IMAGES/CLB_MAP.JPG");
 
     .close {
         top: 22px;
@@ -419,7 +419,7 @@
 
 .characters_aliens{
     @extend %characters_submenu_styles;
-    background-image: url('/assets/CHARS/ALIENS/IMAGES/CRMENU.JPG');
+    background-image: url('assets/CHARS/ALIENS/IMAGES/CRMENU.JPG');
 
     span{
         color: white;

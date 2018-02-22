@@ -45,7 +45,7 @@ function start(href) {
     if (href == "" || href == "#mainMenu") {
         //Start the intro video and switch to MainMenu when it ends or on skip
         /* global startVideo */
-        startVideo("/assets/INTRO/intrbtm.mp4", function () {
+        startVideo("assets/INTRO/intrbtm.mp4", function () {
             switchTo("#mainMenu");
         });
     }
